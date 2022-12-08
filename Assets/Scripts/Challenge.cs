@@ -7,15 +7,22 @@ using System;
 public class Challenge : NetworkBehaviour
 {
 
-    public ServerData serverData;
+    public IdKeyPairs idKeyPairs;
     private string message;
     public string messageEncrypted;
     public int activePlayerId;
     public int passivePlayerId;
     public Porta porta;
 
-    //per test cami
+    //for debug
     public string test = "TEST";
+
+    //in multi: NullReferenceException: Object reference not set to an instance of an object
+    private void Start()
+    {
+        idKeyPairs = GameObject.FindWithTag("IdKeyPairs").GetComponent<IdKeyPairs>();
+    }
+    
 
 
     //for encryption and decryption
@@ -59,8 +66,8 @@ public class Challenge : NetworkBehaviour
     {
         long[] m = new long[message.Length];
         long pt, ct, k;
-        long key = serverData.getEncode(passivePlayerId);
-        int n = serverData.getModule(passivePlayerId);
+        long key = idKeyPairs.getEncode(passivePlayerId);
+        int n = idKeyPairs.getModule(passivePlayerId);
         int i = 0;
 
         while (i < message.Length)
@@ -92,7 +99,7 @@ public class Challenge : NetworkBehaviour
     private string decrypt(int key)
     {
         long pt, ct, k;
-        int n = serverData.getModule(passivePlayerId);
+        int n = idKeyPairs.getModule(passivePlayerId);
         int i = 0;
         while (en[i] < en.Length)
         {

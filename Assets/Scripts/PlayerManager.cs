@@ -7,18 +7,21 @@ using UnityEngine;
 public class PlayerManager : NetworkBehaviour
 {
     public Challenge challenge;
-    public ServerData serverData;
-
-    private int id;
-    private int publicKeyEncode;
-    private int publicKeyModule;
+    public IdKeyPairs idKeyPairs;
+    public int id;
+    public int publicKeyEncode;
+    public int publicKeyModule;
     private bool invited = false;
     private string password;
+
     
+
     void Start()
     {
+        //in multi: NullReferenceException: Object reference not set to an instance of an object
+        idKeyPairs = GameObject.FindWithTag("IdKeyPairs").GetComponent<IdKeyPairs>(); ;
         challenge = GameObject.FindWithTag("Challenge").GetComponentInChildren<Challenge>();
-        if (hasAuthority) { CmdSetPlayerInfo(); } 
+        if (isOwned) { CmdSetPlayerInfo(); } 
         Debug.Log(String.Format(challenge.test));
     }
 
@@ -43,11 +46,11 @@ public class PlayerManager : NetworkBehaviour
     public void CmdSetPlayerInfo()
     {
         for (int i = 0; i < 3; i++) {
-            if (serverData.idAvailable(i))
+            if (idKeyPairs.idAvailable(i))
             {
                 id = i;
-                publicKeyEncode = serverData.getEncode(id);
-                publicKeyModule = serverData.getModule(id);
+                publicKeyEncode = idKeyPairs.getEncode(id);
+                publicKeyModule = idKeyPairs.getModule(id);
                 break;
             }
              

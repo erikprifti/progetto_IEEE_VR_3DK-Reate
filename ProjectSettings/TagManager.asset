@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Challenge
   - Porta
+  - IdKeyPairs
   layers:
   - Default
   - TransparentFX
