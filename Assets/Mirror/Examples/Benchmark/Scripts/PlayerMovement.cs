@@ -5,6 +5,7 @@ namespace Mirror.Examples.Benchmark
     public class PlayerMovement : NetworkBehaviour
     {
         public float speed = 5;
+        public CharacterController controller;
 
         void Update()
         {
@@ -13,8 +14,10 @@ namespace Mirror.Examples.Benchmark
             float h = Input.GetAxis("Horizontal");
             float v = Input.GetAxis("Vertical");
 
-            Vector3 dir = new Vector3(h, 0, v);
-            transform.position += dir.normalized * (Time.deltaTime * speed);
+            Vector3 move = (transform.right * h) + (transform.forward * v);
+            
+
+            controller.Move(speed * Time.deltaTime * move);  
         }
     }
 }
