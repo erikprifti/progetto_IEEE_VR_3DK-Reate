@@ -503,6 +503,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2904276257689887346, guid: b66e5668aad7bd24699403cabb9843c6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Challenge
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b66e5668aad7bd24699403cabb9843c6, type: 3}
 --- !u!1 &1515342973

@@ -9,14 +9,18 @@ public class MouseLook : MonoBehaviour
     public float mouseSensitivity = 100f;
     public Transform playerBody;
     float xRotation = 0f;
+    public NetworkIdentity player;
     void Start()
     {
+        if (!player.isLocalPlayer) { return; }
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!player.isLocalPlayer) { return; }
+        
         float mouseX = Input.GetAxis("Mouse X") * (mouseSensitivity * Time.deltaTime);
         float mouseY = Input.GetAxis("Mouse Y") * (mouseSensitivity * Time.deltaTime);
 
