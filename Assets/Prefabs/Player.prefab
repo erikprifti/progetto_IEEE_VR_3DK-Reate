@@ -135,7 +135,11 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   challenge: {fileID: 0}
-  serverData: {fileID: 0}
+  idKeyPairs: {fileID: 0}
+  id: 0
+  publicKeyEncode: 0
+  publicKeyModule: 0
+  networkIdentity: {fileID: 1345469280158695625}
 --- !u!114 &1345469280158695639
 MonoBehaviour:
   m_ObjectHideFlags: 0

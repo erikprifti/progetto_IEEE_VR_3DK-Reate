@@ -4,7 +4,7 @@ using UnityEngine;
 using Mirror;
 using System;
 
-public class Challenge : NetworkBehaviour
+public class Challenge : MonoBehaviour
 {
 
     public IdKeyPairs idKeyPairs;

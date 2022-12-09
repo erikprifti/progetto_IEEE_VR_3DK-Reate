@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 using Key;
+using System;
 
-public class IdKeyPairs : NetworkBehaviour
+public class IdKeyPairs : MonoBehaviour
 {
 
     static readonly Dictionary<int, PublicKey> idKeyPairs = new Dictionary<int, PublicKey>
@@ -35,6 +36,11 @@ public class IdKeyPairs : NetworkBehaviour
     {
         id_available.Remove(id);
         id_available.Add(id, false);
+
+        Debug.Log(String.Format(id_available.GetValueOrDefault(1) + " " +
+                                id_available.GetValueOrDefault(2) + " " +
+                                   id_available.GetValueOrDefault(3) + " " +
+                                   id_available.GetValueOrDefault(4) + " "));
     }
 
      public bool idAvailable(int id)

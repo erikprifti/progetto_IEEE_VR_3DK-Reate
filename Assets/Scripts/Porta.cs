@@ -4,7 +4,7 @@ using UnityEngine;
 using Mirror;
 using System;
 
-public class Porta : NetworkBehaviour
+public class Porta : MonoBehaviour
 {
     private string password;
 
