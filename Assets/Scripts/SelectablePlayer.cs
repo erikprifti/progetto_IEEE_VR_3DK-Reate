@@ -25,14 +25,19 @@ public class SelectablePlayer : NetworkBehaviour
 
     public void OnSelection()
     {
-        if (isLocalPlayer) { return; }
+       
         playerCheMiSeleziona = takeScript.interactorsSelecting[0].transform.gameObject;
-        Debug.Log("Ho interagito con " + takeScript.interactorsSelecting[0].transform.gameObject.name);
-        //challenge.setChallenge(takeScript.interactorsSelecting[0].transform.gameObject.name, gameObject);
-        challenge.GetComponent<MeshRenderer>().material=verde;
+        Debug.LogError(playerCheMiSeleziona);
+        playerCheMiSeleziona.GetComponent<HandChild>().player.cmdSelectPlayer(gameObject);
 
     }
 
+    public void Selected()
+    {
+        Debug.Log("Ho interagito con " + takeScript.interactorsSelecting[0].transform.gameObject.name);
+        //challenge.setChallenge(takeScript.interactorsSelecting[0].transform.gameObject.name, gameObject);
+        challenge.GetComponent<MeshRenderer>().material = verde;
+    }
    
 
 }

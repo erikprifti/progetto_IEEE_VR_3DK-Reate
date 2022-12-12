@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1145141888653756835}
   - component: {fileID: 1145141888653756834}
   - component: {fileID: 1145141888653756837}
+  - component: {fileID: 3359466503654400425}
   m_Layer: 0
   m_Name: LeftHand Controller
   m_TagString: Untagged
@@ -595,6 +596,19 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
+--- !u!114 &3359466503654400425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145141888653756839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55af1273e7cae124dbd5754a7b9d1509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 917600830457950366}
 --- !u!1 &1145141888806873495
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,6 +623,7 @@ GameObject:
   - component: {fileID: 1145141888806873491}
   - component: {fileID: 1145141888806873490}
   - component: {fileID: 1145141888806873493}
+  - component: {fileID: 8620427262891264463}
   m_Layer: 0
   m_Name: RightHand Controller
   m_TagString: Untagged
@@ -1190,6 +1205,19 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
+--- !u!114 &8620427262891264463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145141888806873495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55af1273e7cae124dbd5754a7b9d1509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 917600830457950366}
 --- !u!1 &1145141889127971832
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,6 +1276,8 @@ GameObject:
   - component: {fileID: 4691976792610039901}
   - component: {fileID: 2175665664571409112}
   - component: {fileID: 2737377175397514731}
+  - component: {fileID: 917600830457950366}
+  - component: {fileID: 7861816825610951518}
   m_Layer: 0
   m_Name: XR Origin Network
   m_TagString: GameController
@@ -1650,6 +1680,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6e1f2f9e0c66c547b437f14e1ce7481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0.1
   challenge: {fileID: 0}
   takeScript: {fileID: -7958803593821527373}
   playerCheMiSeleziona: {fileID: 0}
@@ -1666,7 +1699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncDirection: 0
+  syncDirection: 1
   syncMode: 0
   syncInterval: 0
   target: {fileID: 1145141888653756836}
@@ -1694,7 +1727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncDirection: 0
+  syncDirection: 1
   syncMode: 0
   syncInterval: 0
   target: {fileID: 1145141888806873492}
@@ -1722,7 +1755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncDirection: 0
+  syncDirection: 1
   syncMode: 0
   syncInterval: 0
   target: {fileID: 1145141890673469683}
@@ -1738,6 +1771,38 @@ MonoBehaviour:
   showGizmos: 0
   showOverlay: 0
   overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+--- !u!114 &917600830457950366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145141890269195025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef5170f230571e2428bf2ea0deb643a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0.1
+  input: {fileID: 7861816825610951518}
+  XRsim: {fileID: 2887737474208104077}
+--- !u!114 &7861816825610951518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145141890269195025}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca18bbea1f7b1d14981fc24f56f7f002, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0.1
 --- !u!1 &1145141890673469682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1961,7 +2026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 100
   playerBody: {fileID: 1145141890269195020}
-  player: {fileID: 0}
+  player: {fileID: 8461726665893524286}
 --- !u!1 &2425688608429008639
 GameObject:
   m_ObjectHideFlags: 0

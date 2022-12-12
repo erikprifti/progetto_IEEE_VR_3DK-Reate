@@ -44,23 +44,26 @@ public class PlayerNetInput : NetworkBehaviour
             }
             else
             {
-                if (callSyncDict[KeyCode.G] != Input.GetKey(KeyCode.G))
-                {
-                    CmdUpdateKey(KeyCode.G, Input.GetKey(KeyCode.G));
-                }
-                if (callSyncDict[KeyCode.R] != Input.GetKey(KeyCode.R))
-                {
-                    CmdUpdateKey(KeyCode.R, Input.GetKey(KeyCode.R));
+                //if (callSyncDict[KeyCode.G] != Input.GetKey(KeyCode.G))
+                //{
+                //    CmdUpdateKey(KeyCode.G, Input.GetKey(KeyCode.G));
+                //}
+                //if (callSyncDict[KeyCode.R] != Input.GetKey(KeyCode.R))
+                //{
+                //    CmdUpdateKey(KeyCode.R, Input.GetKey(KeyCode.R));
 
-                }
-                if (callSyncDict[KeyCode.LeftShift] != Input.GetKey(KeyCode.LeftShift))
-                {
-                    CmdUpdateKey(KeyCode.LeftShift, Input.GetKey(KeyCode.LeftShift));
-                }
-                if (callSyncDict[KeyCode.Space] != Input.GetKey(KeyCode.Space))
-                {
-                    CmdUpdateKey(KeyCode.Space, Input.GetKey(KeyCode.Space));
-                }
+                //}
+                //if (callSyncDict[KeyCode.LeftShift] != Input.GetKey(KeyCode.LeftShift))
+                //{
+                //    CmdUpdateKey(KeyCode.LeftShift, Input.GetKey(KeyCode.LeftShift));
+                //}
+                //if (callSyncDict[KeyCode.Space] != Input.GetKey(KeyCode.Space))
+                //{
+                //    CmdUpdateKey(KeyCode.Space, Input.GetKey(KeyCode.Space));
+                //}
+                CmdUpdateKey(KeyCode.G, Input.GetKey(KeyCode.G));
+                CmdUpdateKey(KeyCode.LeftShift, Input.GetKey(KeyCode.LeftShift));
+                CmdUpdateKey(KeyCode.Space, Input.GetKey(KeyCode.Space));
             }
         }
     }
