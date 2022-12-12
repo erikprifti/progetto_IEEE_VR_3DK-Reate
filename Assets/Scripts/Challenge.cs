@@ -4,6 +4,7 @@ using UnityEngine;
 using Mirror;
 using System;
 
+
 public class Challenge : NetworkBehaviour
 {
     public Porta porta;
@@ -15,7 +16,6 @@ public class Challenge : NetworkBehaviour
     [SyncVar]
     public int passivePlayerId;
     public string messageEncrypted;
-    private bool busy = false;
 
 
     //for debug
@@ -24,10 +24,12 @@ public class Challenge : NetworkBehaviour
     //in multi: NullReferenceException: Object reference not set to an instance of an object
     private void Start()
     {
-       // idKeyPairs = GameObject.FindWithTag("IdKeyPairs").GetComponent<IdKeyPairs>();
-       // porta = GameObject.FindWithTag("Porta").GetComponent<Porta>(); ;
+        idKeyPairs = GameObject.FindWithTag("IdKeyPairs").GetComponent<IdKeyPairs>();
+        porta = GameObject.FindWithTag("Porta").GetComponent<Porta>(); ;
         //Debug.Log(String.Format(idKeyPairs.test));
-       // Debug.Log(String.Format(porta.test));
+        // Debug.Log(String.Format(porta.test));
+        //if (isServer)
+        //  gameObject.GetComponent<NetworkIdentity>().AssignClientAuthority(this.GetComponent<NetworkIdentity>().connectionToClient);
 
     }
     
@@ -41,13 +43,14 @@ public class Challenge : NetworkBehaviour
     [Command]
     public void setChallenge(GameObject activePlayer, GameObject passivePlayer)
     {
-        if (busy) { return; }
+        Debug.Log(String.Format("SONO IN SETCHALLENGE "));
+      
         if(!activePlayer.CompareTag("Player") || !passivePlayer.CompareTag("Player"))
         {
             Debug.Log(String.Format("not a player/s in setChallenge"));
             return;
         }
-        setBusy(true);
+       
         activePlayerId = activePlayer.GetComponentInChildren<PlayerManager>().getId();
         passivePlayerId = passivePlayer.GetComponentInChildren<PlayerManager>().getId();
         message = generateMessage();
@@ -59,7 +62,8 @@ public class Challenge : NetworkBehaviour
         en = new long[message.Length];
 
         encrypt();
-     //   newChallengeNotify();
+        Debug.Log(String.Format("after encrypt"));
+        //   newChallengeNotify();
     }
 
     
@@ -71,7 +75,6 @@ public class Challenge : NetworkBehaviour
         if (!playerId.Equals(passivePlayerId)) { return; }
         string messageDecrypted = decrypt(key);
         playerManager.setPassword(messageDecrypted);
-        setBusy(false);
     }
 
     private string generateMessage()
@@ -169,10 +172,6 @@ public class Challenge : NetworkBehaviour
         }
     }
 
-    [Command]
-    private void setBusy(bool b)
-    {
-        busy = b;
-    }
+    
 }
 
