@@ -5,7 +5,7 @@ using UnityEngine;
 public class PasswordCalculator : MonoBehaviour
 
 {
-    private int password = 0;
+    private static int password = 0;
    
     public void incrementPassword()
     {
