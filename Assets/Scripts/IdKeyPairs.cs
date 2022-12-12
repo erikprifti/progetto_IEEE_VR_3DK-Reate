@@ -7,6 +7,7 @@ using System;
 
 public class IdKeyPairs : MonoBehaviour
 {
+    public string test = "IDKEY TEST";
 
     static readonly Dictionary<int, PublicKey> idKeyPairs = new Dictionary<int, PublicKey>
     {

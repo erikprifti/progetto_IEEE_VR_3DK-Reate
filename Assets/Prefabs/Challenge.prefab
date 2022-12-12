@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8019895221431681728}
   - component: {fileID: 7320935565202759569}
   - component: {fileID: 5120239966104730365}
-  - component: {fileID: 8861586823166095859}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -98,24 +97,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8861586823166095859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3106116366636075183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ae37c3ab948e46ea80920910675b2e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  idKeyPairs: {fileID: 0}
-  messageEncrypted: 
-  activePlayerId: 0
-  passivePlayerId: 0
-  porta: {fileID: 0}
-  test: TEST
 --- !u!1 &5456422630263335479
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,11 +143,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae37c3ab948e46ea80920910675b2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idKeyPairs: {fileID: 0}
-  messageEncrypted: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0.1
+  message: 
   activePlayerId: 0
   passivePlayerId: 0
-  porta: {fileID: 0}
+  messageEncrypted: 
   test: TEST
 --- !u!114 &3300848985403970519
 MonoBehaviour:

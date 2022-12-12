@@ -7,7 +7,7 @@ using System;
 
 public class Porta : MonoBehaviour
 {
-    private string password;
+    public string password;
 
     //for debug
     public string test = "TEST PORTA";

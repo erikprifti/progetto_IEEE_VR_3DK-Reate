@@ -6,13 +6,17 @@ using System;
 
 public class Challenge : NetworkBehaviour
 {
-
-    public IdKeyPairs idKeyPairs;
-    private string message;
-    public string messageEncrypted;
-    public int activePlayerId;
-    public int passivePlayerId;
     public Porta porta;
+    public IdKeyPairs idKeyPairs;
+    [SyncVar]
+    public string message;
+    [SyncVar]
+    public int activePlayerId;
+    [SyncVar]
+    public int passivePlayerId;
+    public string messageEncrypted;
+    private bool busy = false;
+
 
     //for debug
     public string test = "TEST CHALLENGE";
@@ -20,8 +24,11 @@ public class Challenge : NetworkBehaviour
     //in multi: NullReferenceException: Object reference not set to an instance of an object
     private void Start()
     {
-        idKeyPairs = GameObject.FindWithTag("IdKeyPairs").GetComponent<IdKeyPairs>();
-        Debug.Log(String.Format(porta.test));
+       // idKeyPairs = GameObject.FindWithTag("IdKeyPairs").GetComponent<IdKeyPairs>();
+       // porta = GameObject.FindWithTag("Porta").GetComponent<Porta>(); ;
+        //Debug.Log(String.Format(idKeyPairs.test));
+       // Debug.Log(String.Format(porta.test));
+
     }
     
 
@@ -31,10 +38,16 @@ public class Challenge : NetworkBehaviour
     long[] temp;
     long[] en; //encrypted message in long array
 
-
+    [Command]
     public void setChallenge(GameObject activePlayer, GameObject passivePlayer)
     {
-        if(!activePlayer.CompareTag("Player") || !passivePlayer.CompareTag("Player")) { return;  }
+        if (busy) { return; }
+        if(!activePlayer.CompareTag("Player") || !passivePlayer.CompareTag("Player"))
+        {
+            Debug.Log(String.Format("not a player/s in setChallenge"));
+            return;
+        }
+        setBusy(true);
         activePlayerId = activePlayer.GetComponentInChildren<PlayerManager>().getId();
         passivePlayerId = passivePlayer.GetComponentInChildren<PlayerManager>().getId();
         message = generateMessage();
@@ -46,9 +59,10 @@ public class Challenge : NetworkBehaviour
         en = new long[message.Length];
 
         encrypt();
-        newChallengeNotify();
+     //   newChallengeNotify();
     }
 
+    
     public void resolveChallenge(int key, GameObject player)
     {
         if (!player.CompareTag("Player")) {  return; }
@@ -57,12 +71,14 @@ public class Challenge : NetworkBehaviour
         if (!playerId.Equals(passivePlayerId)) { return; }
         string messageDecrypted = decrypt(key);
         playerManager.setPassword(messageDecrypted);
+        setBusy(false);
     }
 
     private string generateMessage()
     {
         return "Bangtan Sonyeondan";
     }
+
 
     private void encrypt()
     {
@@ -129,6 +145,7 @@ public class Challenge : NetworkBehaviour
         return decryptMex;
     }
 
+    [Command]
     public void newChallengeNotify()
     {
         GameObject[] players = GameObject.FindGameObjectsWithTag("player");
@@ -150,6 +167,12 @@ public class Challenge : NetworkBehaviour
             }
 
         }
+    }
+
+    [Command]
+    private void setBusy(bool b)
+    {
+        busy = b;
     }
 }
 

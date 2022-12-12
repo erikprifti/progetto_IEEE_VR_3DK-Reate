@@ -14,7 +14,9 @@ public class PlayerManager : NetworkBehaviour
     public int publicKeyEncode;
     [SyncVar]
     public int publicKeyModule;
+    [SyncVar]
     private bool invited = false;
+    [SyncVar]
     private string password;
     public NetworkIdentity networkIdentity;
     
@@ -26,9 +28,11 @@ public class PlayerManager : NetworkBehaviour
         if (isClient && isLocalPlayer) {
            
             CmdSetPlayerInfo();
+           
         }
-        Debug.Log(String.Format(challenge.test));
+
         
+
     }
 
    
@@ -48,7 +52,7 @@ public class PlayerManager : NetworkBehaviour
         password = p;
     }
 
-    [Command] //da rivedere perche il secondo giocatore spawnato non viene settato
+    [Command] 
     public void CmdSetPlayerInfo()
     {
         for (int i = 1; i < 5; i++) {
@@ -67,6 +71,7 @@ public class PlayerManager : NetworkBehaviour
         
     }
 
+    [Command]
     public void isInvited(bool b)
     {
         invited = b;
