@@ -9,7 +9,7 @@ public class SocketScript : MonoBehaviour
     {
         Debug.Log("AOOO Trigger attivo");
         password.incrementPassword();
-        Debug.Log(password.getPassword());
+        Debug.Log("Contatore : " + password.getPassword());
 
     }
 
@@ -17,8 +17,9 @@ public class SocketScript : MonoBehaviour
     {
         Debug.Log("é uscito Trigger");
         password.decrementPassword();
-        Debug.Log(password.getPassword());
+        Debug.Log("Contatore : " + password.getPassword());
     }
+
 
 
 }

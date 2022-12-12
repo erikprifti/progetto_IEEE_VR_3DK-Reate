@@ -9,16 +9,25 @@ public class PasswordCalculator : MonoBehaviour
    
     public void incrementPassword()
     {
-        password++;
+        //password++;
+        Debug.Log("Contatore : " + ++password);
+
     }
 
     public void decrementPassword()
     {
-        password--;
+        //password--;
+        Debug.Log("Contatore : " + --password);
+
     }
 
     public int getPassword()
     {
         return password;
+    }
+
+    public void AddCount()
+    {
+        Debug.Log("aggiungi valore count");
     }
 }
