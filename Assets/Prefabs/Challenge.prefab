@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8019895221431681728}
   - component: {fileID: 7320935565202759569}
   - component: {fileID: 5120239966104730365}
+  - component: {fileID: 8861586823166095859}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -97,6 +98,24 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8861586823166095859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3106116366636075183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae37c3ab948e46ea80920910675b2e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idKeyPairs: {fileID: 0}
+  messageEncrypted: 
+  activePlayerId: 0
+  passivePlayerId: 0
+  porta: {fileID: 0}
+  test: TEST
 --- !u!1 &5456422630263335479
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,9 +125,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1528690998866049703}
+  - component: {fileID: 8683987749039770895}
+  - component: {fileID: 3300848985403970519}
   m_Layer: 0
   m_Name: Challenge
-  m_TagString: Untagged
+  m_TagString: Challenge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,3 +150,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8683987749039770895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5456422630263335479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae37c3ab948e46ea80920910675b2e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idKeyPairs: {fileID: 0}
+  messageEncrypted: 
+  activePlayerId: 0
+  passivePlayerId: 0
+  porta: {fileID: 0}
+  test: TEST
+--- !u!114 &3300848985403970519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5456422630263335479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 1642924183
+  serverOnly: 0
+  visible: 0
+  hasSpawned: 0

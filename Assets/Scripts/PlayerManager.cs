@@ -21,15 +21,14 @@ public class PlayerManager : NetworkBehaviour
 
     void Start()
     {
-        Debug.Log(String.Format("Starting the player"));
-        Debug.Log(String.Format("is Client " + isClient));
         idKeyPairs = GameObject.FindWithTag("IdKeyPairs").GetComponent<IdKeyPairs>(); ;
         challenge = GameObject.FindWithTag("Challenge").GetComponentInChildren<Challenge>();
-        if (isClient) {
+        if (isClient && isLocalPlayer) {
            
             CmdSetPlayerInfo();
         }
         Debug.Log(String.Format(challenge.test));
+        
     }
 
    
@@ -52,8 +51,6 @@ public class PlayerManager : NetworkBehaviour
     [Command] //da rivedere perche il secondo giocatore spawnato non viene settato
     public void CmdSetPlayerInfo()
     {
-        
-        Debug.Log(String.Format("inside command setPlayerInfo"));
         for (int i = 1; i < 5; i++) {
             if (idKeyPairs.idAvailable(i))
             {
@@ -62,7 +59,7 @@ public class PlayerManager : NetworkBehaviour
                 publicKeyEncode = idKeyPairs.getEncode(id);
                 publicKeyModule = idKeyPairs.getModule(id);
                 idKeyPairs.setUnavailable(id);
-                Debug.Log(String.Format("Because available: " + publicKeyEncode + " " + publicKeyModule));
+                
                 break;
             }
              
@@ -74,4 +71,11 @@ public class PlayerManager : NetworkBehaviour
     {
         invited = b;
     }
+
+    private void OnPlayerDisconnected(NetworkIdentity player)
+    {
+        //da rivedere
+        idKeyPairs.setAvailable(id);
+    }
+
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using Mirror;
 using System;
 
-public class Challenge : MonoBehaviour
+public class Challenge : NetworkBehaviour
 {
 
     public IdKeyPairs idKeyPairs;
@@ -15,12 +15,13 @@ public class Challenge : MonoBehaviour
     public Porta porta;
 
     //for debug
-    public string test = "TEST";
+    public string test = "TEST CHALLENGE";
 
     //in multi: NullReferenceException: Object reference not set to an instance of an object
     private void Start()
     {
         idKeyPairs = GameObject.FindWithTag("IdKeyPairs").GetComponent<IdKeyPairs>();
+        Debug.Log(String.Format(porta.test));
     }
     
 
@@ -29,6 +30,7 @@ public class Challenge : MonoBehaviour
     long[] m; //message in long array
     long[] temp;
     long[] en; //encrypted message in long array
+
 
     public void setChallenge(GameObject activePlayer, GameObject passivePlayer)
     {

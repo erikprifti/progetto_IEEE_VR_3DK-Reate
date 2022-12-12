@@ -4,9 +4,13 @@ using UnityEngine;
 using Mirror;
 using System;
 
+
 public class Porta : MonoBehaviour
 {
     private string password;
+
+    //for debug
+    public string test = "TEST PORTA";
 
     public void setPassword(string p)
     {
