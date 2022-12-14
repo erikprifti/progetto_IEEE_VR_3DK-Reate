@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7972820333114546764}
   - component: {fileID: 7972820333114546763}
   m_Layer: 0
-  m_Name: Plane (1)
-  m_TagString: Untagged
+  m_Name: Challenge Room
+  m_TagString: ChallengeRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

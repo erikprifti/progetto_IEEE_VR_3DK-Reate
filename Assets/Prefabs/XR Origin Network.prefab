@@ -1685,7 +1685,7 @@ MonoBehaviour:
   syncInterval: 0.1
   challenge: {fileID: 0}
   takeScript: {fileID: -7958803593821527373}
-  playerCheMiSeleziona: {fileID: 0}
+  selectingHand: {fileID: 0}
   verde: {fileID: 2100000, guid: a7d6245e2509a1049a549bb54fb22c3e, type: 2}
 --- !u!114 &4691976792610039901
 MonoBehaviour:

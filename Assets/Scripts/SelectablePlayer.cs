@@ -10,7 +10,7 @@ public class SelectablePlayer : NetworkBehaviour
 {
     public GameObject challenge;
     public XRSimpleInteractable takeScript;
-    public GameObject playerCheMiSeleziona;
+    public GameObject selectingHand;
     public Material verde;
     
 
@@ -26,18 +26,26 @@ public class SelectablePlayer : NetworkBehaviour
     public void OnSelection()
     {
        
-        playerCheMiSeleziona = takeScript.interactorsSelecting[0].transform.gameObject;
-        Debug.LogError(playerCheMiSeleziona);
-        playerCheMiSeleziona.GetComponent<HandChild>().player.cmdSelectPlayer(gameObject);
+        selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
+        selectingHand.GetComponent<HandChild>().player.cmdSelectPlayer(gameObject);
 
     }
 
     public void Selected()
     {
-        Debug.Log("Ho interagito con " + takeScript.interactorsSelecting[0].transform.gameObject.name);
+        //Debug.LogError("Ho interagito con " + takeScript.interactorsSelecting[0].transform.gameObject.name);
         //challenge.setChallenge(takeScript.interactorsSelecting[0].transform.gameObject.name, gameObject);
         challenge.GetComponent<MeshRenderer>().material = verde;
+        challenge.GetComponent<SphereCollider>().enabled = true;
     }
-   
+
+    [ClientRpc]
+    public void rpcSelected()
+    {
+        //if (isLocalPlayer) return;
+        Selected();
+    }
+
+
 
 }
