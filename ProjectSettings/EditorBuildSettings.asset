@@ -4,17 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/MoriartyOffline.unity
-    guid: d4dd768c54d28334d88e24a9e9c8ca50
-  - enabled: 1
-    path: Assets/Scenes/Moriarti Online.unity
-    guid: 5e5dd6d15b189ee4fa4aa78e69e0b4a2
+  m_Scenes: []
   m_configObjects:
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 01c6612ac2a52b04ca248631587dfcd1,
-      type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 44bde958bb94e76468721d3dd8241d66,
-      type: 2}
-    xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: 79d3221f2983d41aaa043e4b79808d7a,
       type: 2}
