@@ -4,7 +4,15 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Moriarti Offline.unity
+    guid: a5415fee7c28565498df94a0c4f2408f
+  - enabled: 1
+    path: Assets/Scenes/Moriarti Online.unity
+    guid: 5e5dd6d15b189ee4fa4aa78e69e0b4a2
   m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 01c6612ac2a52b04ca248631587dfcd1,
+      type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 44bde958bb94e76468721d3dd8241d66,
       type: 2}

@@ -7,8 +7,6 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Teleport : NetworkBehaviour
 {
-    // Start is called before the first frame update
-
     public GameObject ChallengeRoom;
     public GameObject selectingHand;
     public XRSimpleInteractable takeScript;
@@ -17,21 +15,23 @@ public class Teleport : NetworkBehaviour
     public void Start()
     {
         ChallengeRoom = GameObject.FindGameObjectWithTag("ChallengeRoom");
+
     }
 
     public void OnSelection()
     {
-
-        selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
-        selectingHand.GetComponent<HandChild>().player.cmdTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject);
+        if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == gameObject.GetComponent<Challenge>().passivePlayerId)
+        {
+            selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
+            selectingHand.GetComponent<HandChild>().player.cmdTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject);
+        }
 
     }
 
     public void Teleportation()
     {
-        //selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
+        
         GetComponent<MeshRenderer>().material = GetComponent<Teleport>().rosso;
-        // if(gameObject.GetInstanceID()== challenge.GetPassivePlayerID())
 
         PlayerNet p = selectingHand.GetComponent<HandChild>().player;
         p.transform.position = ChallengeRoom.transform.position;
