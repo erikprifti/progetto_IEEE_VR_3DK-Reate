@@ -35,10 +35,7 @@ public class Challenge : NetworkBehaviour
     
 
 
-    //for encryption and decryption
-    long[] m; //message in long array
-    long[] temp;
-    long[] en; //encrypted message in long array
+    
 
     [Command]
     public void setChallenge(GameObject activePlayer, GameObject passivePlayer)
@@ -57,16 +54,18 @@ public class Challenge : NetworkBehaviour
         porta.setPassword(message);
         activePlayer.GetComponentInChildren<PlayerManager>().setPassword(message);
 
-        m = new long[message.Length];
-        temp = new long[message.Length];
-        en = new long[message.Length];
+        
 
         encrypt();
         Debug.Log(String.Format("after encrypt"));
         //   newChallengeNotify();
     }
 
-    
+    //for encryption and decryption
+    long[] m; //message in long array
+    long[] temp;
+    long[] en; //encrypted message in long array
+
     public void resolveChallenge(int key, GameObject player)
     {
         if (!player.CompareTag("Player")) {  return; }
@@ -85,7 +84,9 @@ public class Challenge : NetworkBehaviour
 
     private void encrypt()
     {
-        long[] m = new long[message.Length];
+        m = new long[message.Length];
+        temp = new long[message.Length];
+        en = new long[message.Length];
         long pt, ct, k;
         long key = idKeyPairs.getEncode(passivePlayerId);
         int n = idKeyPairs.getModule(passivePlayerId);
