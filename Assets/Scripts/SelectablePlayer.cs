@@ -8,7 +8,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class SelectablePlayer : NetworkBehaviour
 {
-    public Challenge challenge;
+    public GameObject challenge;
     public XRSimpleInteractable takeScript;
     public GameObject selectingHand;
     public Material verde;
@@ -18,19 +18,15 @@ public class SelectablePlayer : NetworkBehaviour
 
     public void Start()
     {
-        challenge = GameObject.FindWithTag("Challenge").GetComponent<Challenge>();
+        challenge = GameObject.FindWithTag("Challenge");
 
     }
     
 
     public void OnSelection()
     {
-        //if (!takeScript.interactorsSelecting[0].transform.gameObject.CompareTag("Player") || !gameObject.CompareTag("Player"))
-        //{
-        //    Debug.Log(String.Format("not a player/s in setChallenge"));
-        //    return;
-        //}
-        Debug.LogError("Ho interagito con " + takeScript.interactorsSelecting[0].transform.gameObject.name);
+        
+        //Debug.LogError("Ho interagito con " + takeScript.interactorsSelecting[0].transform.gameObject.name);
         int activeID = takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId();
         int passiveID = gameObject.GetComponent<PlayerManager>().getId();
         selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
@@ -41,7 +37,7 @@ public class SelectablePlayer : NetworkBehaviour
     public void Selected(int aID,int pID)
     {
         //Debug.Log("Ho interagito con " + takeScript.interactorsSelecting[0].transform.gameObject.name + " " + gameObject.name);
-        challenge.setChallenge(aID,pID);
+        challenge.GetComponent<Challenge>().setChallenge(aID,pID);
         challenge.GetComponent<MeshRenderer>().material = verde;
         challenge.GetComponent<SphereCollider>().enabled = true;
     }

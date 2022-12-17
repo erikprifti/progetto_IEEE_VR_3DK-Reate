@@ -1745,7 +1745,6 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0.1
-  input: {fileID: 0}
   XRsim: {fileID: 2887737474208104077}
 --- !u!114 &8227101904623567853
 MonoBehaviour:

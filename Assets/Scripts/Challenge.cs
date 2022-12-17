@@ -14,22 +14,12 @@ public class Challenge : NetworkBehaviour
     public int activePlayerId;
     public int passivePlayerId;
     public string messageEncrypted;
-  
-
-
-    //for debug
-    public string test = "TEST CHALLENGE";
-
-    //in multi: NullReferenceException: Object reference not set to an instance of an object
+ 
     private void Start()
     {
         idKeyPairs = GameObject.FindWithTag("IdKeyPairs").GetComponent<IdKeyPairs>();
         porta = GameObject.FindWithTag("Porta").GetComponent<Porta>(); ;
-        //Debug.Log(String.Format(idKeyPairs.test));
-        // Debug.Log(String.Format(porta.test));
-        //if (isServer)
-        //  gameObject.GetComponent<NetworkIdentity>().AssignClientAuthority(this.GetComponent<NetworkIdentity>().connectionToClient);
-
+        
     }
 
 
@@ -40,7 +30,7 @@ public class Challenge : NetworkBehaviour
     long[] en; //encrypted message in long array
     public void setChallenge(int activePlayer, int passivePlayer)
     {
-        Debug.LogError(String.Format("SONO IN SETCHALLENGE "));
+        //Debug.LogError(String.Format("SONO IN SETCHALLENGE "));
 
         activePlayerId = activePlayer;
         passivePlayerId = passivePlayer;
@@ -51,33 +41,12 @@ public class Challenge : NetworkBehaviour
         PlayerManager player = findPlayerById(activePlayerId);
         player.GetComponent<PlayerManager>().setPassword(message);
 
-        m = new long[message.Length];
-        temp = new long[message.Length];
-        en = new long[message.Length];
+       
 
         encrypt();
-        Debug.LogError(String.Format("after encrypt"));
-        //rpcSetChallenge(activePlayer,passivePlayer);
-        //   newChallengeNotify();
+        //Debug.LogError(String.Format("after encrypt"));
+       
     }
-
-    //[ClientRpc]
-    //public void rpcSetChallenge()
-    //{
-    //    activePlayerId = activePlayer.GetComponent<PlayerManager>().getId();
-    //    passivePlayerId = passivePlayer.GetComponent<PlayerManager>().getId();
-    //    message = generateMessage();
-    //    porta.setPassword(message);
-    //    activePlayer.GetComponent<PlayerManager>().setPassword(message);
-
-    //    m = new long[message.Length];
-    //    temp = new long[message.Length];
-    //    en = new long[message.Length];
-
-    //    encrypt();
-    //    Debug.Log(String.Format("after encrypt"));
-    //}
-
 
     public void resolveChallenge(int key, GameObject player)
     {
@@ -91,24 +60,31 @@ public class Challenge : NetworkBehaviour
 
     private string generateMessage()
     {
-        return "Bangtan Sonyeondan";
+        return "Kebab";
     }
 
 
     private void encrypt()
     {
-        Debug.LogError(String.Format("in ENCRYPTED " ));
-
-        long[] m = new long[message.Length];
+        //Debug.LogError(String.Format("in ENCRYPTED " ));
+        m = new long[message.Length];
+        temp = new long[message.Length];
+        en = new long[message.Length];
         long pt, ct, k;
         long key = idKeyPairs.getEncode(passivePlayerId);
         int n = idKeyPairs.getModule(passivePlayerId);
+        //Debug.LogError("public key: " + key + " module: " + n);
         int i = 0;
+
+        for(int j = 0; j<message.Length; j++)
+        {
+            m[j] = (int)message[j];
+        }
 
         while (i < message.Length)
         {
             pt = m[i];
-            pt = pt - 96;
+            pt = pt - 64;
             k = 1;
             for (long j = 0; j < key; j++)
             {
@@ -116,23 +92,24 @@ public class Challenge : NetworkBehaviour
                 k = k % n;
             }
             temp[i] = k;
-            ct = k + 96;
+            ct = k + 64;
             en[i] = ct;
             i++;
         }
 
-        string encryptMex = "";
+        string encryptMex = string.Empty;
         for (i = 0; i < en.Length; i++)
         {
-            Debug.LogError((char)en[i]);
-            encryptMex.Append<char>((char)en[i]);
+            //Debug.LogError(m[i] + " -> " + en[i]);
+            //Debug.LogError((char)en[i]);
+            encryptMex = encryptMex + (char)en[i];
         }
         messageEncrypted = encryptMex;
-        Debug.LogError(String.Format("\nTHE ENCRYPTED MESSAGE IS " + messageEncrypted));
+        //Debug.LogError(String.Format("\nTHE ENCRYPTED MESSAGE IS " + messageEncrypted));
 
     }
 
-    private string decrypt(int key)
+    public string decrypt(int key)
     {
         long pt, ct, k;
         int n = idKeyPairs.getModule(passivePlayerId);
@@ -146,15 +123,17 @@ public class Challenge : NetworkBehaviour
                 k = k * ct;
                 k = k % n;
             }
-            pt = k + 96;
+            pt = k + 64;
             m[i] = pt;
             i++;
         }
 
-        string decryptMex = string.Empty;
+        string decryptMex = null;
 
         for (i = 0; i < m.Length; i++)
         {
+            //Debug.LogError(m[i]);
+            //Debug.LogError((char)en[i]);
             decryptMex = decryptMex + (char)m[i];
         }
 
@@ -163,39 +142,16 @@ public class Challenge : NetworkBehaviour
         return decryptMex;
     }
 
-    //[Command]
-    //public void newChallengeNotify()
-    //{
-    //    GameObject[] players = GameObject.FindGameObjectsWithTag("player");
-    //    for (int i = 0; i < players.Length; i++)
-    //    {
-    //        GameObject p = players[i];
-
-    //        if (passivePlayerId.Equals(p.GetComponent<PlayerManager>().getId()))
-    //        {
-    //            p.GetComponent<PlayerManager>().isInvited(true);
-    //        }
-    //        else if (activePlayerId.Equals(p.GetComponent<PlayerManager>().getId()))
-    //        {
-    //            p.GetComponent<PlayerManager>().isInvited(true);
-    //        }
-    //        else
-    //        {
-    //            p.GetComponent<PlayerManager>().isInvited(false);
-    //        }
-
-    //    }
-    //}
     private PlayerManager findPlayerById(int activePlayerId)
     {
-        Debug.LogError("activePlayer is " + activePlayerId);
+        //Debug.LogError("activePlayer is " + activePlayerId);
         GameObject[] listaPlayer = GameObject.FindGameObjectsWithTag("Player");
         for (int i = 0; i < listaPlayer.Length; i++)
         {
-            Debug.LogError(listaPlayer[i].GetComponent<PlayerManager>().getId());
+            //Debug.LogError(listaPlayer[i].GetComponent<PlayerManager>().getId());
             if (listaPlayer[i].GetComponent<PlayerManager>().getId().Equals(activePlayerId))
             {
-                Debug.LogError("trovato l'active " +listaPlayer[i].GetComponent<PlayerManager>().getId());
+                //Debug.LogError("trovato l'active " +listaPlayer[i].GetComponent<PlayerManager>().getId());
                 return listaPlayer[i].GetComponent<PlayerManager>();
             }
         }

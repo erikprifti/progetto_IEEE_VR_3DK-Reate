@@ -7,7 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class BackToLobby : NetworkBehaviour
 {
-    public Challenge challenge;
+    public GameObject challenge;
     public GameObject Lobby;
     public GameObject selectingHand;
     public XRSimpleInteractable takeScript;
@@ -16,7 +16,7 @@ public class BackToLobby : NetworkBehaviour
     public void Start()
     {
         Lobby = GameObject.FindGameObjectWithTag("Lobby");
-        challenge = GameObject.FindWithTag("Challenge").GetComponent<Challenge>();
+        challenge = GameObject.FindWithTag("Challenge");
     }
 
     public void OnSelection()
@@ -28,9 +28,13 @@ public class BackToLobby : NetworkBehaviour
     public void LobbyTeleport()
     {
 
-        challenge.GetComponent<MeshRenderer>().material = challenge.GetComponent<BackToLobby>().azzurro;
-        //pulire challenge dai dati della challenge appena terminata
+        challenge.GetComponent<MeshRenderer>().material = azzurro;
+        
         PlayerNet p = selectingHand.GetComponent<HandChild>().player;
+        if(p.GetComponentInParent<PlayerManager>().getId() == 1)
+             p.GetComponentInParent<PlayerManager>().setPassword(challenge.GetComponent<Challenge>().decrypt(7653));
+        if (p.GetComponentInParent<PlayerManager>().getId() == 2)
+            p.GetComponentInParent<PlayerManager>().setPassword(challenge.GetComponent<Challenge>().decrypt(1153));
         p.transform.position = Lobby.transform.position;
 
     }

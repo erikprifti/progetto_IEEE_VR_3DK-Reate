@@ -14,8 +14,6 @@ public class PlayerManager : NetworkBehaviour
     public int publicKeyEncode;
     [SyncVar]
     public int publicKeyModule;
-    //[SyncVar]
-    //private bool invited = false;
     [SyncVar]
     public string password;
     public NetworkIdentity networkIdentity;
@@ -29,29 +27,10 @@ public class PlayerManager : NetworkBehaviour
 
         if (isClient  && isLocalPlayer)
         {
-            //CmdSetAutoChallenge(networkIdentity, challenge.GetComponent<NetworkIdentity>());
             CmdSetPlayerInfo();
 
         }
-
-
-        //StartCoroutine(ValueOfPlayer());
     }
-
-    //IEnumerator ValueOfPlayer()
-    //{
-    //    yield return new WaitForSeconds(2f);
-
-    //    if (id == 2)
-    //    {
-    //        challenge.setChallenge(gameObject, GameObject.FindGameObjectsWithTag("Player")[0]);
-    //        Debug.Log(String.Format("setChallenge by " + id));
-    //    }
-    //    else
-    //        Debug.Log(String.Format("CHALLENGE NOT SET, because id = " + id));
-    //}
-
-
 
     public int getId()
     {
@@ -88,24 +67,9 @@ public class PlayerManager : NetworkBehaviour
 
     }
 
-    //[Command]
-    //public void isInvited(bool b)
-    //{
-    //    invited = b;
-    //}
-
     private void OnPlayerDisconnected(NetworkIdentity player)
     {
         //da rivedere
         idKeyPairs.setAvailable(id);
     }
-
-    //[Command]
-    //public void CmdSetAutoChallenge(NetworkIdentity author, NetworkIdentity target)
-    //{
-    //    Debug.LogError(challenge.name + " " + gameObject.name);
-    //    challenge.GetComponent<NetworkIdentity>().RemoveClientAuthority();
-    //    challenge.GetComponent<NetworkIdentity>().AssignClientAuthority(author.connectionToClient);
-    //}
-
 }
