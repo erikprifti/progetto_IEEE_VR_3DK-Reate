@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Interface : MonoBehaviour
 {
-    private static int[,,] val = new int[3,3,3];
+    private static int[,,] matrix = new int[3,3,3];
   
-    public int[,,] Val
+    public int[,,] Matrix
     {
-        get { return val; }
-        set { val = value; }
+        get { return matrix; }
+        set { matrix = value; }
     }
    
     public void setSocketOccupied(int x, int y, int z)
     {
-        val[x, y, z] = 1;
+        matrix[x, y, z] = 1;
         Debug.Log("Occupato : " + x + y + z );
     }
     
