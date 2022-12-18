@@ -5,9 +5,11 @@ using UnityEngine;
 public class PasswordCalculator : MonoBehaviour
 
 {
-    private Interface Mat0, Mat1, Mat2;
+    public void OnCollisionEnter(Collision collision)
+    {
+        
+    }
 
-    
 
-   
+
 }

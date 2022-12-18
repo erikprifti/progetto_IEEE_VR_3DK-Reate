@@ -15,7 +15,7 @@ public class Interface : MonoBehaviour
     public void setSocketOccupied(int x, int y, int z)
     {
         val[x, y, z] = 1;
-        Debug.Log("daje forte" + val[x, y, z]);
+        Debug.Log("Occupato : " + x + y + z );
     }
     
 }
