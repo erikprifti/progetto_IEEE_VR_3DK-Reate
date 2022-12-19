@@ -30,6 +30,7 @@ public class PlayerManager : NetworkBehaviour
     public TrackedPoseDriver tpd;
     public ActionBasedController l, r;
     public XRRayInteractor xrRr, xrRl;
+    public Camera cameraActive;
 
 
 
@@ -44,6 +45,7 @@ public class PlayerManager : NetworkBehaviour
             if (isClient)
                 CmdSetPlayerInfo();
 
+            cameraActive.gameObject.SetActive(true);
         }
         else
         {

@@ -1809,6 +1809,7 @@ MonoBehaviour:
   r: {fileID: 1145141888806873489}
   xrRr: {fileID: 1145141888653756832}
   xrRl: {fileID: 1145141888806873488}
+  cameraActive: {fileID: 1145141890673469678}
 --- !u!1 &1145141890673469682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,7 +1830,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1145141890673469683
 Transform:
   m_ObjectHideFlags: 0
