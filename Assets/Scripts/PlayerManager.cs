@@ -50,7 +50,7 @@ public class PlayerManager : NetworkBehaviour
         else
         {
             xrOrigin.enabled = false;
-            iAM.enabled = false;
+            //iAM.enabled = false;
             cc.enabled = false;
             stpb.enabled = false;
             tpd.enabled = false;
