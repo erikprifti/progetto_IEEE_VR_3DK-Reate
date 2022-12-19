@@ -29,7 +29,7 @@ public class orientationDetection : MonoBehaviour
         coll_1.enabled = true;
         coll_2.enabled = false;
 
-        if (front.isActive() && coll_1.isActive())
+      /* if (front.isActive() && coll_1.isActive())
         {
             cube = ruotaX(cube);
 
@@ -55,7 +55,8 @@ public class orientationDetection : MonoBehaviour
                 cube = ruotaZ(cube);
             }
         }
-        else if (back.isActive() && coll_1.isActive())
+       */
+        if (back.isActive() && coll_1.isActive())
         {
             cube = ruotaX(cube);
             cube = ruotaX(cube);
@@ -124,6 +125,7 @@ public class orientationDetection : MonoBehaviour
             else if (bottom.isActive())
             {
                 cube = ruotaX(cube);
+              
             }
             else if (back.isActive())
             {
@@ -193,7 +195,7 @@ public class orientationDetection : MonoBehaviour
         printMat(cube);
     }
 
-    private int[,,] ruotaZ(int[,,] mat)
+    private int[,,] ruotaY(int[,,] mat)
     {
         int temp, temp2;
 
@@ -224,8 +226,8 @@ public class orientationDetection : MonoBehaviour
         }
 
         return mat;
-    }
-    private int[,,] ruotaY(int[,,] mat)
+    } // da rifare
+    private int[,,] ruotaX(int[,,] mat)
     {
         int temp, temp2;
 
@@ -240,7 +242,7 @@ public class orientationDetection : MonoBehaviour
             temp = mat[i, 2, 2];
             mat[i, 2, 2] = temp2;
 
-            mat[i, 0, 0] = temp;
+            mat[i, 0, 2] = temp;
 
             temp = mat[i, 1, 0];
             mat[i, 1, 0] = mat[i, 0, 1];
@@ -251,38 +253,38 @@ public class orientationDetection : MonoBehaviour
             temp = mat[i, 1, 2];
             mat[i, 1, 2] = temp2;
 
-            mat[i, 0, 1] = temp;
+            mat[i, 1, 0] = temp;
         }
 
         return mat;
-    }
-    private int[,,] ruotaX(int[,,] mat)
+    } // da rifare
+    private int[,,] ruotaZ(int[,,] mat)
     {
         int temp, temp2;
 
         for (int i = 0; i < 3; i++)
         {
-            temp = mat[0, 2, i];
-            mat[0, 2, i] = mat[0, 0, i];
+            temp = mat[2, 0, i];
+            mat[2, 0, i] = mat[0, 0, i];
 
             temp2 = mat[2, 2, i];
             mat[2, 2, i] = temp;
 
-            temp = mat[2, 0, i];
-            mat[2, 0, i] = temp2;
+            temp = mat[0, 2, i];
+            mat[0, 2, i] = temp2;
 
             mat[0, 0, i] = temp;
 
-            temp = mat[1, 2, i];
-            mat[1, 2, i] = mat[0, 1, i];
+            temp = mat[2, 1, i];
+            mat[2, 1, i] = mat[1, 0, i];
 
-            temp2 = mat[2, 1, i];
-            mat[2, 1, i] = temp;
+            temp2 = mat[1, 2, i];
+            mat[1, 2, i] = temp;
 
-            temp = mat[1, 0, i];
-            mat[1, 0, i] = temp2;
+            temp = mat[0, 1, i];
+            mat[0, 1, i] = temp2;
 
-            mat[0, 1, i] = temp;
+            mat[1, 0, i] = temp;
         }
 
         return mat;
@@ -291,13 +293,12 @@ public class orientationDetection : MonoBehaviour
     public void printMat(int[,,] mat)
     {
         // per adesso stampo solo la faccia frontale
-        for(int i = 0; i < 3; i++)
+        for (int i = 0; i < 3; i++)
         {
-            Debug.Log("Riga " + i);
-            for (int j = 0; j < 3; j++)
-            {
-                Debug.Log(mat[i, j, 0]);
-            }
+            Debug.Log("matrice " + i + ": \n");
+            Debug.Log(mat[0, 0, i] + " " + mat[1, 0, i] + " " + mat[2, 0, i] + "\n" +
+                      mat[0, 1, i] + " " + mat[1, 1, i] + " " + mat[2, 1, i] + "\n" +
+                      mat[0, 2, i] + " " + mat[1, 2, i] + " " + mat[2, 2, i]);
         }
     }
 
