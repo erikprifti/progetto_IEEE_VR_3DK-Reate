@@ -159,4 +159,12 @@ public class Challenge : NetworkBehaviour
         return null;
     }
 
+    public void resetChallenge()
+    {
+        message = null;
+        activePlayerId = 0;
+        passivePlayerId = 0;
+        messageEncrypted = null;
+    }
+
 }

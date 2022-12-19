@@ -48,6 +48,7 @@ public class PlayerNet : NetworkBehaviour
         Debug.LogError("IN COMMAND TELEPORT PLAYER");
         t.GetComponent<MeshRenderer>().material = t.GetComponent<Teleport>().rosso;
         t.GetComponent<SphereCollider>().enabled = false;
+        t.GetComponent<Teleport>().rpcChallengeStarted();
         t.GetComponent<Teleport>().rpcSelectedTeleport(play.GetComponent<NetworkIdentity>().connectionToClient);
 
     }
@@ -56,7 +57,7 @@ public class PlayerNet : NetworkBehaviour
     public void cmdLobbyTeleportPlayer(GameObject play, GameObject c,GameObject t)
     {
         //Debug.LogError(c);
-        c.GetComponent<MeshRenderer>().material = t.GetComponent<BackToLobby>().azzurro;
+        //c.GetComponent<MeshRenderer>().material = t.GetComponent<BackToLobby>().azzurro;
         t.GetComponent<BackToLobby>().rpcLobbyTeleport(play.GetComponent<NetworkIdentity>().connectionToClient);
 
 
@@ -69,7 +70,18 @@ public class PlayerNet : NetworkBehaviour
     public void cmdFinalTeleportPlayer(GameObject play, GameObject t)
     {
         //Debug.LogError(t);
+        
+
+        t.GetComponent<Porta>().passingTheTreshold++;
+
+        GameObject.FindGameObjectWithTag("Challenge").GetComponent<Challenge>().resetChallenge();
+        GameObject.FindGameObjectWithTag("Challenge").GetComponent<SphereCollider>().enabled = true;
+        GameObject.FindGameObjectWithTag("Challenge").GetComponent<MeshRenderer>().material = t.GetComponent<Porta>().azzurro;
+
         t.GetComponent<Porta>().rpcFinalTeleport(play.GetComponent<NetworkIdentity>().connectionToClient);
+
+        if (t.GetComponent<Porta>().passingTheTreshold == 2)
+            t.GetComponent<Porta>().rpcResetChallenge();
 
     }
 

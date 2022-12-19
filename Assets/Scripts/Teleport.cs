@@ -20,7 +20,6 @@ public class Teleport : NetworkBehaviour
 
     public void OnSelection()
     {
-        Debug.LogError("outer IF on selection in teleport, id del passive: " + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId());
         if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == gameObject.GetComponent<Challenge>().passivePlayerId)
         {
             Debug.LogError("on selection in teleport, id del passive: " + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId());
@@ -31,24 +30,12 @@ public class Teleport : NetworkBehaviour
 
     }
 
-    public void OnSelectionDebug()
-    {
-        Debug.LogError("outer IF on selection in teleport, id del passive: 111111" + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId());
-        
 
-    }
-
-    public void OnSelectionDebug2()
-    {
-        Debug.LogError("outer IF on selection in teleport, id del passive: 222222" + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId());
-
-
-    }
 
     public void Teleportation()
     {
         
-        GetComponent<MeshRenderer>().material = GetComponent<Teleport>().rosso;
+      //  GetComponent<MeshRenderer>().material = GetComponent<Teleport>().rosso;
 
         PlayerNet p = selectingHand.GetComponent<HandChild>().player;
         p.transform.position = ChallengeRoom.transform.position;
@@ -60,6 +47,14 @@ public class Teleport : NetworkBehaviour
     {
         //if (isLocalPlayer) return;
         Teleportation();
+    }
+
+    [ClientRpc]
+    public void rpcChallengeStarted()
+    {
+        GetComponent<MeshRenderer>().material = rosso;
+        GetComponent<SphereCollider>().enabled = false;
+
     }
 
 }

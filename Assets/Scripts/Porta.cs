@@ -13,6 +13,8 @@ public class Porta : NetworkBehaviour
     public GameObject selectingHand;
     public XRSimpleInteractable takeScript;
     public GameObject FinalScene;
+    public Material azzurro;
+    public int passingTheTreshold = 0;
 
     private void Start()
     {
@@ -69,6 +71,15 @@ public class Porta : NetworkBehaviour
     public void rpcFinalTeleport(NetworkConnection target)
     {
         //if (isLocalPlayer) return;
+       
         FinalTeleport();
+
+    }
+
+    [ClientRpc]
+    public void rpcResetChallenge()
+    {
+        challenge.resetChallenge();
+        challenge.GetComponent<MeshRenderer>().material = azzurro;
     }
 }

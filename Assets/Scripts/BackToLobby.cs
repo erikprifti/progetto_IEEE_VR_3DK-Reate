@@ -11,7 +11,7 @@ public class BackToLobby : NetworkBehaviour
     public GameObject Lobby;
     public GameObject selectingHand;
     public XRSimpleInteractable takeScript;
-    public Material azzurro;
+  //  public Material azzurro;
 
     public void Start()
     {
@@ -28,7 +28,7 @@ public class BackToLobby : NetworkBehaviour
     public void LobbyTeleport()
     {
 
-        challenge.GetComponent<MeshRenderer>().material = azzurro;
+      //  challenge.GetComponent<MeshRenderer>().material = azzurro;
         
         PlayerNet p = selectingHand.GetComponent<HandChild>().player;
         if(p.GetComponentInParent<PlayerManager>().getId() == 1)
