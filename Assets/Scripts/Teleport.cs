@@ -31,6 +31,20 @@ public class Teleport : NetworkBehaviour
 
     }
 
+    public void OnSelectionDebug()
+    {
+        Debug.LogError("outer IF on selection in teleport, id del passive: 111111" + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId());
+        
+
+    }
+
+    public void OnSelectionDebug2()
+    {
+        Debug.LogError("outer IF on selection in teleport, id del passive: 222222" + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId());
+
+
+    }
+
     public void Teleportation()
     {
         
