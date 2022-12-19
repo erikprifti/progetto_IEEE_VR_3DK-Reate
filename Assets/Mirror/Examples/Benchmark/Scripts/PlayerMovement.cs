@@ -7,6 +7,11 @@ namespace Mirror.Examples.Benchmark
         public float speed = 5;
         public CharacterController controller;
 
+        private void Start()
+        {
+            if (!isLocalPlayer) enabled = false;
+        }
+
         void Update()
         {
             if (!isLocalPlayer) return;

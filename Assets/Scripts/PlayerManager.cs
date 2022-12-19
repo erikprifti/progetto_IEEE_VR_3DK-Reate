@@ -3,6 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
+using UnityEngine.XR;
+using Unity.XR.CoreUtils;
+using UnityEngine.XR.Interaction.Toolkit.Inputs;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.InputSystem.XR;
 
 public class PlayerManager : NetworkBehaviour
 {
@@ -18,6 +23,15 @@ public class PlayerManager : NetworkBehaviour
     public string password;
     public NetworkIdentity networkIdentity;
 
+    public XROrigin xrOrigin;
+    public InputActionManager iAM;
+    public CharacterController cc;
+    public SnapTurnProviderBase stpb;
+    public TrackedPoseDriver tpd;
+    public ActionBasedController l, r;
+    public XRRayInteractor xrRr, xrRl;
+
+
 
     void Start()
     {
@@ -25,11 +39,25 @@ public class PlayerManager : NetworkBehaviour
         challenge = GameObject.FindWithTag("Challenge").GetComponent<Challenge>();
 
 
-        if (isClient  && isLocalPlayer)
+        if (isLocalPlayer)
         {
-            CmdSetPlayerInfo();
+            if (isClient)
+                CmdSetPlayerInfo();
 
         }
+        else
+        {
+            xrOrigin.enabled = false;
+            iAM.enabled = false;
+            cc.enabled = false;
+            stpb.enabled = false;
+            tpd.enabled = false;
+            l.enabled = false;
+            r.enabled = false;
+            xrRl.enabled = false;
+            xrRr.enabled = false;
+        }
+        
     }
 
     public int getId()
