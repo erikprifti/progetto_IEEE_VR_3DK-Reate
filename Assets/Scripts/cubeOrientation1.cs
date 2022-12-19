@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cubeOrientationCollider : MonoBehaviour
+public class cubeOrientation1 : MonoBehaviour
 {
     private bool _isActive = false;
+    private bool rotation = false;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -22,4 +23,5 @@ public class cubeOrientationCollider : MonoBehaviour
     {
         return _isActive;
     }
+ 
 }

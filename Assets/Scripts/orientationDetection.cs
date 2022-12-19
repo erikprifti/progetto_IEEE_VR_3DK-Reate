@@ -13,27 +13,28 @@ public class orientationDetection : MonoBehaviour
     public socketCollision right;
     public socketCollision bottom;
 
-    public cubeOrientationCollider coll_1;
-    public cubeOrientationCollider coll_2;
+    public cubeOrientation1 coll_1;
+    public cubeOrientation2 coll_2;
+
+    public PasswordCalculator passwordCalculator;
 
     public Interface _interface;
 
     private static int[,,] cube = new int[3, 3, 3];
 
 
+
     public void makeRotations()
     {
+        Debug.Log("Entrato nella condizione giusta 0");
 
         cube = _interface.Matrix;
 
-        coll_1.enabled = true;
-        coll_2.enabled = false;
-
-      /* if (front.isActive() && coll_1.isActive())
+        if (front.isActive() && coll_1.isActive() && front.isPosition())
         {
-            cube = ruotaX(cube);
+            Debug.Log("Entrato nella condizione sbagliata 1");
 
-            coll_2.enabled = true;
+            cube = ruotaX(cube);
 
             if (left.isActive())
             {
@@ -45,6 +46,8 @@ public class orientationDetection : MonoBehaviour
             }
             else if (right.isActive())
             {
+                Debug.Log("Entrato nella condizione sbagliata 2");
+
                 cube = ruotaZ(cube);
                 cube = ruotaZ(cube);
                 cube = ruotaZ(cube);
@@ -55,14 +58,11 @@ public class orientationDetection : MonoBehaviour
                 cube = ruotaZ(cube);
             }
         }
-       */
-        if (back.isActive() && coll_1.isActive())
+        else if (back.isActive() && coll_1.isActive() && back.isPosition())
         {
             cube = ruotaX(cube);
             cube = ruotaX(cube);
             cube = ruotaX(cube);
-
-            coll_2.enabled = true;
             
             if (left.isActive())
             {
@@ -84,13 +84,11 @@ public class orientationDetection : MonoBehaviour
                 // già a posto
             }
         }
-        else if (left.isActive() && coll_1.isActive())
+        else if (left.isActive() && coll_1.isActive() && left.isPosition())
         {
             cube = ruotaZ(cube);
             cube = ruotaZ(cube);
             cube = ruotaZ(cube);
-
-            coll_2.enabled = true;
 
             if (front.isActive())
             {
@@ -112,14 +110,14 @@ public class orientationDetection : MonoBehaviour
                 cube = ruotaX(cube);
             }
         }
-        else if (right.isActive() && coll_1.isActive())
+        else if (right.isActive() && coll_1.isActive()  && back.isPosition())
         {
+            Debug.Log("Entrato nella condizione giusta 1");
             cube=ruotaZ(cube);
-
-            coll_2.enabled = true;
 
             if (front.isActive())
             {
+                Debug.Log("Entrato nella condizione giusta 2");
                 // già a posto
             }
             else if (bottom.isActive())
@@ -139,12 +137,10 @@ public class orientationDetection : MonoBehaviour
                 cube = ruotaX(cube);
             }
         }
-        else if(bottom.isActive() && coll_1.isActive())
+        else if(bottom.isActive() && coll_1.isActive() && bottom.isPosition())
         {
             cube = ruotaX(cube);
             cube = ruotaX(cube);
-
-            coll_2.enabled=true;
 
             if (back.isActive())
             {
@@ -167,8 +163,6 @@ public class orientationDetection : MonoBehaviour
         }
         else
         {
-            coll_2.enabled = true;
-
             if (front.isActive())
             {
                // già orientato nel verso predefinito
@@ -191,8 +185,17 @@ public class orientationDetection : MonoBehaviour
         }
 
         _interface.Matrix = cube;
+        Debug.Log("Entrato nella condizione giusta 3");
 
         printMat(cube);
+        Debug.Log("Entrato nella condizione giusta 4");
+
+        passwordCalculator.multiplyMatrix();
+        Debug.Log("Entrato nella condizione giusta 5");
+
+        passwordCalculator.printValues();
+        Debug.Log("Entrato nella condizione giusta 6");
+
     }
 
     private int[,,] ruotaY(int[,,] mat)
@@ -226,7 +229,7 @@ public class orientationDetection : MonoBehaviour
         }
 
         return mat;
-    } // da rifare
+    } 
     private int[,,] ruotaX(int[,,] mat)
     {
         int temp, temp2;
@@ -257,7 +260,7 @@ public class orientationDetection : MonoBehaviour
         }
 
         return mat;
-    } // da rifare
+    } 
     private int[,,] ruotaZ(int[,,] mat)
     {
         int temp, temp2;

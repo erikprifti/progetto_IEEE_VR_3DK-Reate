@@ -371,6 +371,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115285287d87c5341901f681deeffc8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coll_1: {fileID: 0}
+  coll_2: {fileID: 0}
 --- !u!1 &162662435
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,8 +383,8 @@ GameObject:
   m_Component:
   - component: {fileID: 162662436}
   - component: {fileID: 162662437}
-  - component: {fileID: 162662438}
   - component: {fileID: 162662439}
+  - component: {fileID: 162662440}
   m_Layer: 0
   m_Name: orientation2
   m_TagString: Untagged
@@ -418,18 +420,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &162662438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 162662435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32dc161565c0f214296eed9ca6ab7dbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &162662439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,6 +501,18 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &162662440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162662435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b82d6fd2937b843a8f6cb9c7eaa9e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &191224461
 GameObject:
   m_ObjectHideFlags: 0
@@ -3667,6 +3669,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115285287d87c5341901f681deeffc8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coll_1: {fileID: 2085395577}
+  coll_2: {fileID: 162662440}
 --- !u!114 &771930778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7131,6 +7135,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a1bbbee545c06347b64282af07f52a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1390270934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1390270936}
+  - component: {fileID: 1390270935}
+  m_Layer: 0
+  m_Name: PasswordCalculator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1390270935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390270934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98998539f964ab8429172714473d6505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interface: {fileID: 1389437854}
+--- !u!4 &1390270936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390270934}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.12485589, y: 0.54026103, z: 2.1145458}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1451156071
 GameObject:
   m_ObjectHideFlags: 0
@@ -7190,6 +7239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115285287d87c5341901f681deeffc8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coll_1: {fileID: 2085395577}
+  coll_2: {fileID: 162662440}
 --- !u!114 &1451156076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7596,6 +7647,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115285287d87c5341901f681deeffc8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coll_1: {fileID: 2085395577}
+  coll_2: {fileID: 162662440}
 --- !u!114 &1510912680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8497,6 +8550,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115285287d87c5341901f681deeffc8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coll_1: {fileID: 2085395577}
+  coll_2: {fileID: 162662440}
 --- !u!114 &1633906026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9145,7 +9200,8 @@ MonoBehaviour:
   right: {fileID: 1510912679}
   bottom: {fileID: 771930777}
   coll_1: {fileID: 2085395577}
-  coll_2: {fileID: 162662438}
+  coll_2: {fileID: 162662440}
+  passwordCalculator: {fileID: 1390270935}
   _interface: {fileID: 1389437854}
 --- !u!114 &1825352962
 MonoBehaviour:
@@ -11002,6 +11058,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115285287d87c5341901f681deeffc8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coll_1: {fileID: 2085395577}
+  coll_2: {fileID: 162662440}
 --- !u!114 &2124815968
 MonoBehaviour:
   m_ObjectHideFlags: 0
