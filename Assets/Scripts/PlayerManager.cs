@@ -51,7 +51,7 @@ public class PlayerManager : NetworkBehaviour
         {
             xrOrigin.enabled = false;
             //iAM.enabled = false;
-            cc.enabled = false;
+            //cc.enabled = false;
             stpb.enabled = false;
             tpd.enabled = false;
             l.enabled = false;
