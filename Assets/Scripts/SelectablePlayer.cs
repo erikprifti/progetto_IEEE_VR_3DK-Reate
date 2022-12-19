@@ -26,10 +26,11 @@ public class SelectablePlayer : NetworkBehaviour
     public void OnSelection()
     {
         
-        //Debug.LogError("Ho interagito con " + takeScript.interactorsSelecting[0].transform.gameObject.name);
+        Debug.LogError("Ho interagito con " + takeScript.interactorsSelecting[0].transform.gameObject.name);
         int activeID = takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId();
         int passiveID = gameObject.GetComponent<PlayerManager>().getId();
         selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
+        Debug.LogError("in ONSelection "+activeID + " ha selezionato, mentre " + passiveID + " è stato selezionato");
         selectingHand.GetComponent<HandChild>().player.cmdSelectPlayer(gameObject, activeID, passiveID); //passiamo a cmdSelectPlayer gameObject=player selezionato(passivePlayer)
 
     }

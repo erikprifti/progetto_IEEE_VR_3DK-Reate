@@ -33,7 +33,9 @@ public class PlayerNet : NetworkBehaviour
 
     [Command]
     public void cmdSelectPlayer(GameObject target, int activeID, int passiveID)
-    {   
+    {
+        Debug.LogError("in CMDSELECTPLAYER "+activeID + " ha selezionato, mentre " + passiveID + " è stato selezionato");
+
         target.GetComponent<SelectablePlayer>().challenge.GetComponent<Challenge>().setChallenge(activeID,passiveID);
         target.GetComponent<SelectablePlayer>().challenge.GetComponent<MeshRenderer>().material = target.GetComponent<SelectablePlayer>().verde;
         target.GetComponent<SelectablePlayer>().challenge.GetComponent<SphereCollider>().enabled = true;
@@ -43,7 +45,7 @@ public class PlayerNet : NetworkBehaviour
     [Command]
     public void cmdTeleportPlayer(GameObject play, GameObject t)
     {
-        //Debug.LogError(t);
+        Debug.LogError("IN COMMAND TELEPORT PLAYER");
         t.GetComponent<MeshRenderer>().material = t.GetComponent<Teleport>().rosso;
         t.GetComponent<SphereCollider>().enabled = false;
         t.GetComponent<Teleport>().rpcSelectedTeleport(play.GetComponent<NetworkIdentity>().connectionToClient);
