@@ -45,7 +45,7 @@ public class PlayerManager : NetworkBehaviour
             if (isClient)
                 CmdSetPlayerInfo();
 
-            cameraActive.gameObject.tag = "MainCamera";
+            cameraActive.gameObject.SetActive(true);
         }
         else
         {
