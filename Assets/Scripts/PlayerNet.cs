@@ -60,8 +60,10 @@ public class PlayerNet : NetworkBehaviour
         //c.GetComponent<MeshRenderer>().material = t.GetComponent<BackToLobby>().azzurro;
         btl.GetComponent<BackToLobby>().rpcLobbyTeleport(player.GetComponent<NetworkIdentity>().connectionToClient);
 
-
-        player.GetComponentInParent<PlayerManager>().setPassword(c.GetComponent<Challenge>().decrypt(1153)); //chiave del player con id=2
+        if (player.GetComponentInParent<PlayerManager>().getId() == 1)
+            player.GetComponentInParent<PlayerManager>().setPassword(c.GetComponent<Challenge>().decrypt(867));
+        if (player.GetComponentInParent<PlayerManager>().getId() == 2)
+            player.GetComponentInParent<PlayerManager>().setPassword(c.GetComponent<Challenge>().decrypt(379));
 
     }
 
@@ -74,14 +76,15 @@ public class PlayerNet : NetworkBehaviour
 
         porta.GetComponent<Porta>().passingTheTreshold++;
 
-        c.GetComponent<Challenge>().resetChallenge();
-        c.GetComponent<SphereCollider>().enabled = true;
-        c.GetComponent<MeshRenderer>().material = porta.GetComponent<Porta>().azzurro;
 
         porta.GetComponent<Porta>().rpcFinalTeleport(play.GetComponent<NetworkIdentity>().connectionToClient);
 
-        if (porta.GetComponent<Porta>().passingTheTreshold == 2)
+        if (porta.GetComponent<Porta>().passingTheTreshold < 2)
+        {
+            c.GetComponent<Challenge>().resetChallenge();
+            c.GetComponent<MeshRenderer>().material = porta.GetComponent<Porta>().azzurro;
             porta.GetComponent<Porta>().rpcResetChallenge();
+        }
 
     }
 

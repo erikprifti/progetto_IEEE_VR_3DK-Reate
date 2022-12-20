@@ -44,18 +44,21 @@ public class Porta : NetworkBehaviour
     //di seguito un prototipo 
     public void OnSelection()
     {
-        if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == challenge.GetComponent<Challenge>().passivePlayerId)
+        if (passingTheTreshold < 2)
         {
-            selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
-            if (!verifyPassword(selectingHand.transform.gameObject.GetComponentInParent<PlayerManager>().getPassword())) { return; }
-            selectingHand.GetComponent<HandChild>().player.cmdFinalTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject,challenge);
-        }
+            if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == challenge.GetComponent<Challenge>().passivePlayerId)
+            {
+                selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
+                if (!verifyPassword(selectingHand.transform.gameObject.GetComponentInParent<PlayerManager>().getPassword())) { return; }
+                selectingHand.GetComponent<HandChild>().player.cmdFinalTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject, challenge);
+            }
 
-        if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == challenge.GetComponent<Challenge>().activePlayerId)
-        {
-            selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
-            if (!verifyPassword(selectingHand.transform.gameObject.GetComponentInParent<PlayerManager>().getPassword())) { return; }
-            selectingHand.GetComponent<HandChild>().player.cmdFinalTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject,challenge);
+            if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == challenge.GetComponent<Challenge>().activePlayerId)
+            {
+                selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
+                if (!verifyPassword(selectingHand.transform.gameObject.GetComponentInParent<PlayerManager>().getPassword())) { return; }
+                selectingHand.GetComponent<HandChild>().player.cmdFinalTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject, challenge);
+            }
         }
 
     }
@@ -79,6 +82,8 @@ public class Porta : NetworkBehaviour
     [ClientRpc]
     public void rpcResetChallenge()
     {
+        passingTheTreshold = 0;
+        password = null;
         challenge.GetComponent<Challenge>().resetChallenge();
         challenge.GetComponent<MeshRenderer>().material = azzurro;
     }

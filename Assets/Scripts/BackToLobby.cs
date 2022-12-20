@@ -32,9 +32,9 @@ public class BackToLobby : NetworkBehaviour
         
         PlayerNet p = selectingHand.GetComponent<HandChild>().player;
         if(p.GetComponentInParent<PlayerManager>().getId() == 1)
-             p.GetComponentInParent<PlayerManager>().setPassword(challenge.GetComponent<Challenge>().decrypt(7653));
+             p.GetComponentInParent<PlayerManager>().setPassword(challenge.GetComponent<Challenge>().decrypt(867));
         if (p.GetComponentInParent<PlayerManager>().getId() == 2)
-            p.GetComponentInParent<PlayerManager>().setPassword(challenge.GetComponent<Challenge>().decrypt(1153));
+            p.GetComponentInParent<PlayerManager>().setPassword(challenge.GetComponent<Challenge>().decrypt(379));
         p.transform.position = Lobby.transform.position;
 
     }

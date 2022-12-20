@@ -11,9 +11,9 @@ public class IdKeyPairs : MonoBehaviour
 
     static readonly Dictionary<int, PublicKey> idKeyPairs = new Dictionary<int, PublicKey>
     {
-        { 1, new PublicKey(5753, 5893)},
-        { 2, new PublicKey(5281, 5459)},
-        { 3, new PublicKey(6283, 6541)},
+        { 1, new PublicKey(203, 253)},
+        { 2, new PublicKey(435, 493)},
+        { 3, new PublicKey(811, 893)},
         { 4, new PublicKey(7625, 7849)},
     };
 
