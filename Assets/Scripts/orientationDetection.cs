@@ -29,13 +29,15 @@ public class orientationDetection : MonoBehaviour
 
     private static int[,,] cube = new int[3, 3, 3];
 
-    public void passwordGenerator()
+    public int passwordGenerator() //last method that confirm the challenge
     {
         makeRotations();
 
         multiplyMatrix();
 
         Debug.Log(getKey());
+
+        return getKey();
     }
 
     public void makeRotations()

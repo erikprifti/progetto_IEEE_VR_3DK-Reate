@@ -11,7 +11,8 @@ public class BackToLobby : NetworkBehaviour
     public GameObject Lobby;
     public GameObject selectingHand;
     public XRSimpleInteractable takeScript;
-  //  public Material azzurro;
+    public orientationDetection _oriDet;
+    //  public Material azzurro;
 
     public void Start()
     {
@@ -21,8 +22,17 @@ public class BackToLobby : NetworkBehaviour
 
     public void OnSelection()
     {
+        //leggo la chiave a partire dal socket
+        int key = _oriDet.passwordGenerator();
         selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
-        selectingHand.GetComponent<HandChild>().player.cmdLobbyTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, challenge,gameObject);
+
+        PlayerNet p = selectingHand.GetComponent<HandChild>().player;
+
+        //setto password nel player che ha selezionato BackToLobby
+        p.GetComponentInParent<PlayerManager>().setPassword(challenge.GetComponent<Challenge>().decrypt(key));
+        
+        //teleporto il player attraverso command
+        p.cmdLobbyTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, challenge,gameObject);
     }
 
     public void LobbyTeleport()
@@ -31,10 +41,14 @@ public class BackToLobby : NetworkBehaviour
       //  challenge.GetComponent<MeshRenderer>().material = azzurro;
         
         PlayerNet p = selectingHand.GetComponent<HandChild>().player;
-        if(p.GetComponentInParent<PlayerManager>().getId() == 1)
-             p.GetComponentInParent<PlayerManager>().setPassword(challenge.GetComponent<Challenge>().decrypt(867));
-        if (p.GetComponentInParent<PlayerManager>().getId() == 2)
-            p.GetComponentInParent<PlayerManager>().setPassword(challenge.GetComponent<Challenge>().decrypt(379));
+
+        if (p.GetComponentInParent<PlayerManager>().password == null)
+        {
+            if (p.GetComponentInParent<PlayerManager>().getId() == 1)
+                p.GetComponentInParent<PlayerManager>().setPassword(challenge.GetComponent<Challenge>().decrypt(867));
+            if (p.GetComponentInParent<PlayerManager>().getId() == 2)
+                p.GetComponentInParent<PlayerManager>().setPassword(challenge.GetComponent<Challenge>().decrypt(379));
+        }
         p.transform.position = Lobby.transform.position;
 
     }
