@@ -31,7 +31,7 @@ public class orientationDetection : MonoBehaviour
 
     public void passwordGenerator()
     {
-       // makeRotations();
+        makeRotations();
 
         multiplyMatrix();
 
