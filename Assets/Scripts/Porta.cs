@@ -9,7 +9,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Porta : NetworkBehaviour
 {
     public string password;
-    public Challenge challenge;
+    public GameObject challenge;
     public GameObject selectingHand;
     public XRSimpleInteractable takeScript;
     public GameObject FinalScene;
@@ -19,7 +19,7 @@ public class Porta : NetworkBehaviour
     private void Start()
     {
         FinalScene = GameObject.FindGameObjectWithTag("FinalScene");
-        challenge = GameObject.FindWithTag("Challenge").GetComponent<Challenge>();
+        challenge = GameObject.FindWithTag("Challenge");
     }
 
     public void setPassword(string p)
@@ -44,18 +44,18 @@ public class Porta : NetworkBehaviour
     //di seguito un prototipo 
     public void OnSelection()
     {
-        if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == challenge.passivePlayerId)
+        if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == challenge.GetComponent<Challenge>().passivePlayerId)
         {
             selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
             if (!verifyPassword(selectingHand.transform.gameObject.GetComponentInParent<PlayerManager>().getPassword())) { return; }
-            selectingHand.GetComponent<HandChild>().player.cmdFinalTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject);
+            selectingHand.GetComponent<HandChild>().player.cmdFinalTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject,challenge);
         }
 
-        if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == challenge.activePlayerId)
+        if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == challenge.GetComponent<Challenge>().activePlayerId)
         {
             selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
             if (!verifyPassword(selectingHand.transform.gameObject.GetComponentInParent<PlayerManager>().getPassword())) { return; }
-            selectingHand.GetComponent<HandChild>().player.cmdFinalTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject);
+            selectingHand.GetComponent<HandChild>().player.cmdFinalTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject,challenge);
         }
 
     }
@@ -79,7 +79,7 @@ public class Porta : NetworkBehaviour
     [ClientRpc]
     public void rpcResetChallenge()
     {
-        challenge.resetChallenge();
+        challenge.GetComponent<Challenge>().resetChallenge();
         challenge.GetComponent<MeshRenderer>().material = azzurro;
     }
 }
