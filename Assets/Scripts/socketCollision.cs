@@ -12,13 +12,17 @@ public class socketCollision : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         _isActive = true;
-        if(other == coll_1) { _isPosition = true; }
+        if(other == coll_1)
+        {
+            _isPosition = true;
+        }
         Debug.Log("AAA socket attivo");
     }
 
     public void OnTriggerExit(Collider other)
     {
         _isActive=false;
+        _isPosition = false;    
         Debug.Log("AAA socket uscito");
 
     }

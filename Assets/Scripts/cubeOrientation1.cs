@@ -5,7 +5,6 @@ using UnityEngine;
 public class cubeOrientation1 : MonoBehaviour
 {
     private bool _isActive = false;
-    private bool rotation = false;
 
     public void OnTriggerEnter(Collider other)
     {

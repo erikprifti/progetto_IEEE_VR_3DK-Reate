@@ -510,7 +510,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 162662435}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19b82d6fd2937b843a8f6cb9c7eaa9e6, type: 3}
+  m_Script: {fileID: 11500000, guid: 24629bc644bee964788be98e619e9987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &191224461
@@ -3669,8 +3669,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115285287d87c5341901f681deeffc8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coll_1: {fileID: 2085395577}
-  coll_2: {fileID: 162662440}
+  coll_1: {fileID: 0}
+  coll_2: {fileID: 0}
 --- !u!114 &771930778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7194,8 +7194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115285287d87c5341901f681deeffc8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coll_1: {fileID: 2085395577}
-  coll_2: {fileID: 162662440}
+  coll_1: {fileID: 0}
+  coll_2: {fileID: 0}
 --- !u!114 &1451156076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7602,8 +7602,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115285287d87c5341901f681deeffc8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coll_1: {fileID: 2085395577}
-  coll_2: {fileID: 162662440}
+  coll_1: {fileID: 0}
+  coll_2: {fileID: 0}
 --- !u!114 &1510912680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8505,8 +8505,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115285287d87c5341901f681deeffc8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coll_1: {fileID: 2085395577}
-  coll_2: {fileID: 162662440}
+  coll_1: {fileID: 0}
+  coll_2: {fileID: 0}
 --- !u!114 &1633906026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10593,8 +10593,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2085395575}
   - component: {fileID: 2085395576}
-  - component: {fileID: 2085395577}
   - component: {fileID: 2085395578}
+  - component: {fileID: 2085395577}
   m_Layer: 0
   m_Name: orientation1
   m_TagString: Untagged
@@ -11012,8 +11012,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115285287d87c5341901f681deeffc8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coll_1: {fileID: 2085395577}
-  coll_2: {fileID: 162662440}
+  coll_1: {fileID: 0}
+  coll_2: {fileID: 0}
 --- !u!114 &2124815968
 MonoBehaviour:
   m_ObjectHideFlags: 0

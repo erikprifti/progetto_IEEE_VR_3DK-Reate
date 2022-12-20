@@ -17,7 +17,9 @@ public class orientationDetection : MonoBehaviour
     public cubeOrientation2 coll_2;
 
 
-    private int[,] multiplier = { { 1, 2, 4 }, { 8, 16, 32 }, { 64, 128, 256 } };
+    private int[,] multiplier = { { 1, 2, 4 }, 
+                                  { 8, 16, 32 }, 
+                                  { 64, 128, 256 } };
 
     private int[] values = {0,0,0};
 
@@ -29,7 +31,7 @@ public class orientationDetection : MonoBehaviour
 
     public void passwordGenerator()
     {
-        makeRotations();
+       // makeRotations();
 
         multiplyMatrix();
 
@@ -44,8 +46,6 @@ public class orientationDetection : MonoBehaviour
 
         if (front.isActive() && coll_1.isActive() && front.isPosition())
         {
-            Debug.Log("Entrato nella condizione sbagliata 1");
-
             cube = ruotaX(cube);
 
             if (left.isActive())
@@ -58,8 +58,6 @@ public class orientationDetection : MonoBehaviour
             }
             else if (right.isActive())
             {
-                Debug.Log("Entrato nella condizione sbagliata 2");
-
                 cube = ruotaZ(cube);
                 cube = ruotaZ(cube);
                 cube = ruotaZ(cube);
@@ -177,7 +175,9 @@ public class orientationDetection : MonoBehaviour
         {
             if (front.isActive())
             {
-               // già orientato nel verso predefinito
+                // già orientato nel verso predefinito
+                Debug.Log("Entrato nella condizione giusta 1");
+
             }
             else if (left.isActive())
             {
@@ -197,13 +197,43 @@ public class orientationDetection : MonoBehaviour
         }
 
         _interface.Matrix = cube;
-        Debug.Log("Entrato nella condizione giusta 3");
+        Debug.Log("Entrato nella condizione giusta 2");
 
         printMat(cube);
         Debug.Log("Rotazioni finite");
 
     }
+    private int[,,] ruotaX(int[,,] mat)
+    {
+        int temp, temp2;
 
+        for (int i = 0; i < 3; i++)
+        {
+            temp = mat[i, 0, 0];
+            mat[i, 0, 0] = mat[i, 0, 2];
+
+            temp2 = mat[i, 2, 0];
+            mat[i, 2, 0] = temp;
+
+            temp = mat[i, 2, 2];
+            mat[i, 2, 2] = temp2;
+
+            mat[i, 0, 2] = temp;
+
+            temp = mat[i, 1, 0];
+            mat[i, 1, 0] = mat[i, 0, 1];
+
+            temp2 = mat[i, 2, 1];
+            mat[i, 2, 1] = temp;
+
+            temp = mat[i, 1, 2];
+            mat[i, 1, 2] = temp2;
+
+            mat[i, 1, 0] = temp;
+        }
+
+        return mat;
+    }
     private int[,,] ruotaY(int[,,] mat)
     {
         int temp, temp2;
@@ -232,37 +262,6 @@ public class orientationDetection : MonoBehaviour
 
             mat[1, i, 2] = temp;
 
-        }
-
-        return mat;
-    } 
-    private int[,,] ruotaX(int[,,] mat)
-    {
-        int temp, temp2;
-
-        for (int i = 0; i < 3; i++)
-        {
-            temp = mat[i, 0, 0];
-            mat[i, 0, 0] = mat[i, 0, 2];
-
-            temp2 = mat[i, 2, 0];
-            mat[i, 2, 0] = temp;
-
-            temp = mat[i, 2, 2];
-            mat[i, 2, 2] = temp2;
-
-            mat[i, 0, 2] = temp;
-
-            temp = mat[i, 1, 0];
-            mat[i, 1, 0] = mat[i, 0, 1];
-
-            temp2 = mat[i, 2, 1];
-            mat[i, 2, 1] = temp;
-
-            temp = mat[i, 1, 2];
-            mat[i, 1, 2] = temp2;
-
-            mat[i, 1, 0] = temp;
         }
 
         return mat;
@@ -326,8 +325,11 @@ public class orientationDetection : MonoBehaviour
             {
                 for(int k = 0; k < 3; k++)
                 {
-                    mat[k, j, i] = mat[k, j, i] * multiplier[k, j];
+                    mat[k, j, i] = mat[k, j, i] * multiplier[j, k];
+                    Debug.Log("reading from mat, prof " + i + ", riga " + j + ", colonna " + k + " : " + mat[k, j, i] + ", with multiplier:  " + multiplier[j, k]);
+
                     values[i] += mat[k, j, i];
+                    Debug.Log("after increment value " + i + ": " + values[i]);
                 }
             }
         }
