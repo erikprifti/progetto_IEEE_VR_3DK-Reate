@@ -9,6 +9,7 @@ public class burgerScript : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         Debug.Log("haitocccatoilBurger");
-        _oriDet.makeRotations();
+
+        _oriDet.passwordGenerator();
     }
 }

@@ -16,13 +16,25 @@ public class orientationDetection : MonoBehaviour
     public cubeOrientation1 coll_1;
     public cubeOrientation2 coll_2;
 
-    public PasswordCalculator passwordCalculator;
+
+    private int[,] multiplier = { { 1, 2, 4 }, { 8, 16, 32 }, { 64, 128, 256 } };
+
+    private int[] values = {0,0,0};
+
+    private int key;
 
     public Interface _interface;
 
     private static int[,,] cube = new int[3, 3, 3];
 
+    public void passwordGenerator()
+    {
+        makeRotations();
 
+        multiplyMatrix();
+
+        Debug.Log(getKey());
+    }
 
     public void makeRotations()
     {
@@ -188,13 +200,7 @@ public class orientationDetection : MonoBehaviour
         Debug.Log("Entrato nella condizione giusta 3");
 
         printMat(cube);
-        Debug.Log("Entrato nella condizione giusta 4");
-
-        passwordCalculator.multiplyMatrix();
-        Debug.Log("Entrato nella condizione giusta 5");
-
-        passwordCalculator.printValues();
-        Debug.Log("Entrato nella condizione giusta 6");
+        Debug.Log("Rotazioni finite");
 
     }
 
@@ -305,4 +311,52 @@ public class orientationDetection : MonoBehaviour
         }
     }
 
+
+
+
+    public void multiplyMatrix()
+    {
+        Debug.Log("Entrato in multiplyMatrix");
+        int[,,] mat = _interface.Matrix;
+        for (int i = 0; i < 3; i++)
+        {
+            Debug.Log("Entrato in multiplyMatrix " + i);
+            
+            for (int j = 0; j < 3; j++)
+            {
+                for(int k = 0; k < 3; k++)
+                {
+                    mat[k, j, i] = mat[k, j, i] * multiplier[k, j];
+                    values[i] += mat[k, j, i];
+                }
+            }
+        }
+        _interface.Matrix = mat;
+        Debug.Log("finito in multiplyMatrix");
+
+    }
+
+    public void filterValues()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            values[i] = values[i] % 10;
+            Debug.Log(values[i]);
+        }
+    }
+
+    public int[] getValues()
+    {
+        return values;
+    }
+
+    public int getKey()
+    {
+        filterValues();
+        key = values[0] + values[1]*10 + values[2]*100;
+        return key;
+    }
+
 }
+
+

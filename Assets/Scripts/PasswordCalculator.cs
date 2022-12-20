@@ -17,9 +17,9 @@ public class PasswordCalculator : MonoBehaviour
         int[,,] mat = _interface.Matrix;
         for (int i = 0; i < 3; i++)
         {
-            Debug.Log("Entrato in multiplyMatrix");
+            Debug.Log("Entrato in multiplyMatrix" + i);
 
-            for (int j = 0; j < 3; j++)
+            /*for (int j = 0; j < 3; j++)
             {
                 for(int k = 0; k < 3; k++)
                 {
@@ -27,9 +27,11 @@ public class PasswordCalculator : MonoBehaviour
                     values[i] += mat[k, j, i];
                 }
 
-            }
+            }*/
+           // values[i] = i;
+
         }
-        _interface.Matrix = mat;
+        //_interface.Matrix = mat;
         Debug.Log("finito in multiplyMatrix");
 
     }
