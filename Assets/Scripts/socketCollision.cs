@@ -11,19 +11,27 @@ public class socketCollision : MonoBehaviour
     private bool _isPosition = false;
     public void OnTriggerEnter(Collider other)
     {
-        _isActive = true;
-        if(other == coll_1)
+        if(other.GetComponent<cubeOrientation1>() || other.GetComponent<cubeOrientation2>())
         {
-            _isPosition = true;
+            _isActive = true;
+            if (other == coll_1.gameObject.GetComponent<Collider>())
+            {
+                _isPosition = true;
+            }
+            Debug.Log("AAA socket attivo");
         }
-        Debug.Log("AAA socket attivo");
+        
     }
 
     public void OnTriggerExit(Collider other)
     {
-        _isActive=false;
-        _isPosition = false;    
-        Debug.Log("AAA socket uscito");
+        if (other.GetComponent<cubeOrientation1>() || other.GetComponent<cubeOrientation2>())
+        {
+            _isActive = false;
+            _isPosition = false;
+            Debug.Log("AAA socket uscito");
+        }
+            
 
     }
 
