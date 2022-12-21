@@ -54,16 +54,16 @@ public class PlayerNet : NetworkBehaviour
     }
 
     [Command]
-    public void cmdLobbyTeleportPlayer(GameObject player, GameObject c,GameObject btl)
+    public void cmdLobbyTeleportPlayer(GameObject player, GameObject btl)
     {
         //Debug.LogError(c);
         //c.GetComponent<MeshRenderer>().material = t.GetComponent<BackToLobby>().azzurro;
         btl.GetComponent<BackToLobby>().rpcLobbyTeleport(player.GetComponent<NetworkIdentity>().connectionToClient);
 
-        if (player.GetComponentInParent<PlayerManager>().getId() == 1)
-            player.GetComponentInParent<PlayerManager>().setPassword(c.GetComponent<Challenge>().decrypt(867));
-        if (player.GetComponentInParent<PlayerManager>().getId() == 2)
-            player.GetComponentInParent<PlayerManager>().setPassword(c.GetComponent<Challenge>().decrypt(379));
+        //if (player.GetComponentInParent<PlayerManager>().getId() == 1)
+        //    player.GetComponentInParent<PlayerManager>().setPassword(c.GetComponent<Challenge>().decrypt(867));
+        //if (player.GetComponentInParent<PlayerManager>().getId() == 2)
+        //    player.GetComponentInParent<PlayerManager>().setPassword(c.GetComponent<Challenge>().decrypt(379));
 
     }
 

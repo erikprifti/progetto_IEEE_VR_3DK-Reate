@@ -39,9 +39,9 @@ public class Teleport : NetworkBehaviour
         
       //  GetComponent<MeshRenderer>().material = GetComponent<Teleport>().rosso;
 
-        PlayerNet p = selectingHand.GetComponent<HandChild>().player;
-        Debug.LogError("in Teleportation, player id: " + p.gameObject.GetComponent<PlayerManager>().getId());
-        Debug.LogError("ChallengeRoom poisition: " + ChallengeRoom.transform.position);
+        //PlayerNet p = selectingHand.GetComponent<HandChild>().player;
+        //Debug.LogError("in Teleportation, player id: " + p.gameObject.GetComponent<PlayerManager>().getId());
+        //Debug.LogError("ChallengeRoom poisition: " + ChallengeRoom.transform.position);
 
         p.gameObject.transform.position = ChallengeRoom.transform.position;
         

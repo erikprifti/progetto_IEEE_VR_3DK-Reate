@@ -29,31 +29,35 @@ public class BackToLobby : NetworkBehaviour
         selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
         PlayerNet p = selectingHand.GetComponent<HandChild>().player;
 
-        Debug.LogError("In OnSelection in BackToLobby, id del selettore: " + p.gameObject.GetComponent<PlayerManager>().getId());
+        //Debug.LogError("In OnSelection in BackToLobby, id del selettore: " + p.gameObject.GetComponent<PlayerManager>().getId());
+        Debug.LogError("In OnSelection in BackToLobby, password del selettore before: " + p.gameObject.GetComponent<PlayerManager>().password);
 
 
         //setto password nel player che ha selezionato BackToLobby
         p.GetComponentInParent<PlayerManager>().setPassword(challenge.GetComponent<Challenge>().decrypt(key));
-        
+
+        Debug.LogError("In OnSelection in BackToLobby, password del selettore after: " + p.gameObject.GetComponent<PlayerManager>().password);
+
         //teleporto il player attraverso command
-        p.cmdLobbyTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, challenge,gameObject);
+        p.cmdLobbyTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject);
     }
 
     public void LobbyTeleport()
     {
 
-      //  challenge.GetComponent<MeshRenderer>().material = azzurro;
-        
+        //  challenge.GetComponent<MeshRenderer>().material = azzurro;
+        Debug.LogError("In LobbyTeleport in BackToLobby ");
+
         PlayerNet p = selectingHand.GetComponent<HandChild>().player;
 
-        if (p.GetComponentInParent<PlayerManager>().password == null)
-        {
-            if (p.GetComponentInParent<PlayerManager>().getId() == 1)
-                p.GetComponentInParent<PlayerManager>().setPassword(challenge.GetComponent<Challenge>().decrypt(867));
-            if (p.GetComponentInParent<PlayerManager>().getId() == 2)
-                p.GetComponentInParent<PlayerManager>().setPassword(challenge.GetComponent<Challenge>().decrypt(379));
-        }
-        p.transform.position = Lobby.transform.position;
+        //if (p.GetComponentInParent<PlayerManager>().password == null)
+        //{
+        //    if (p.GetComponentInParent<PlayerManager>().getId() == 1)
+        //        p.GetComponentInParent<PlayerManager>().setPassword(challenge.GetComponent<Challenge>().decrypt(867));
+        //    if (p.GetComponentInParent<PlayerManager>().getId() == 2)
+        //        p.GetComponentInParent<PlayerManager>().setPassword(challenge.GetComponent<Challenge>().decrypt(379));
+        //}
+        p.gameObject.transform.position = Lobby.transform.position;
 
     }
 
