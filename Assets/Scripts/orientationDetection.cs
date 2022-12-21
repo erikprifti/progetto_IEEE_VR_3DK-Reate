@@ -42,8 +42,6 @@ public class orientationDetection : MonoBehaviour
 
     public void makeRotations()
     {
-        Debug.Log("Entrato nella condizione giusta 0");
-
         cube = _interface.Matrix;
 
         if (front.isActive() && coll_1.isActive() && front.isPosition())
@@ -124,12 +122,10 @@ public class orientationDetection : MonoBehaviour
         }
         else if (right.isActive() && coll_1.isActive()  && back.isPosition())
         {
-            Debug.Log("Entrato nella condizione giusta 1");
             cube=ruotaZ(cube);
 
             if (front.isActive())
             {
-                Debug.Log("Entrato nella condizione giusta 2");
                 // già a posto
             }
             else if (bottom.isActive())
@@ -178,8 +174,6 @@ public class orientationDetection : MonoBehaviour
             if (front.isActive())
             {
                 // già orientato nel verso predefinito
-                Debug.Log("Entrato nella condizione giusta 1");
-
             }
             else if (left.isActive())
             {
@@ -199,11 +193,8 @@ public class orientationDetection : MonoBehaviour
         }
 
         _interface.Matrix = cube;
-        Debug.Log("Entrato nella condizione giusta 2");
 
         printMat(cube);
-        Debug.Log("Rotazioni finite");
-
     }
     private int[,,] ruotaX(int[,,] mat)
     {
@@ -317,7 +308,7 @@ public class orientationDetection : MonoBehaviour
 
     public void multiplyMatrix()
     {
-        Debug.Log("Entrato in multiplyMatrix");
+        //Debug.Log("Entrato in multiplyMatrix");
         int[,,] mat = _interface.Matrix;
         for (int i = 0; i < 3; i++)
         {
@@ -328,15 +319,15 @@ public class orientationDetection : MonoBehaviour
                 for(int k = 0; k < 3; k++)
                 {
                     mat[k, j, i] = mat[k, j, i] * multiplier[j, k];
-                    Debug.Log("reading from mat, prof " + i + ", riga " + j + ", colonna " + k + " : " + mat[k, j, i] + ", with multiplier:  " + multiplier[j, k]);
+//                      Debug.Log("reading from mat, prof " + i + ", riga " + j + ", colonna " + k + " : " + mat[k, j, i] + ", with multiplier:  " + multiplier[j, k]);
 
                     values[i] += mat[k, j, i];
-                    Debug.Log("after increment value " + i + ": " + values[i]);
+ //                   Debug.Log("after increment value " + i + ": " + values[i]);
                 }
             }
         }
         _interface.Matrix = mat;
-        Debug.Log("finito in multiplyMatrix");
+ //       Debug.Log("finito in multiplyMatrix");
 
     }
 

@@ -8,7 +8,7 @@ public class burgerScript : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log("haitocccatoilBurger");
+        //Debug.Log("haitocccatoilBurger");
 
         _oriDet.passwordGenerator();
     }
