@@ -1376,9 +1376,9 @@ GameObject:
   - component: {fileID: 9114576124974340762}
   - component: {fileID: 8880943450424470577}
   - component: {fileID: 7428343397262964727}
+  - component: {fileID: 3497203127672331388}
   - component: {fileID: 3078827337427204210}
   - component: {fileID: 6990341277966934478}
-  - component: {fileID: 3497203127672331388}
   m_Layer: 0
   m_Name: XR Origin Network
   m_TagString: Player
@@ -1817,6 +1817,7 @@ MonoBehaviour:
   xrRr: {fileID: 1145141888653756832}
   xrRl: {fileID: 1145141888806873488}
   cameraActive: {fileID: 1145141890673469678}
+  avatar: {fileID: 572273186850898775}
 --- !u!114 &8880943450424470577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1875,6 +1876,45 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
+--- !u!114 &3497203127672331388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145141890269195025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919e39492806b334982b6b84c90dd927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_System: {fileID: 8880943450424470577}
+  m_TurnSpeed: 40
+  m_LeftHandTurnAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Left Hand Turn
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 042a643b-f8cf-4732-a45d-8e1d03b05ce5
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_RightHandTurnAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Right Hand Turn
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 845f2ee6-8109-44c0-8212-e888d5016ee8
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!114 &3078827337427204210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2013,45 +2053,6 @@ MonoBehaviour:
         m_Flags: 8
       m_Flags: 0
     m_Reference: {fileID: -8525429354371678379, guid: c348712bda248c246b8c49b3db54643f,
-      type: 3}
---- !u!114 &3497203127672331388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1145141890269195025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 919e39492806b334982b6b84c90dd927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_System: {fileID: 8880943450424470577}
-  m_TurnSpeed: 40
-  m_LeftHandTurnAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Left Hand Turn
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 042a643b-f8cf-4732-a45d-8e1d03b05ce5
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  m_RightHandTurnAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Right Hand Turn
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 845f2ee6-8109-44c0-8212-e888d5016ee8
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
 --- !u!1 &1145141890673469682
 GameObject:

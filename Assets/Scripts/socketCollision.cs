@@ -18,7 +18,7 @@ public class socketCollision : MonoBehaviour
             {
                 _isPosition = true;
             }
-            Debug.Log("AAA socket attivo");
+         //   Debug.Log("AAA socket attivo");
         }
         
     }
@@ -29,7 +29,7 @@ public class socketCollision : MonoBehaviour
         {
             _isActive = false;
             _isPosition = false;
-            Debug.Log("AAA socket uscito");
+          //  Debug.Log("AAA socket uscito");
         }
             
 
