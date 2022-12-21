@@ -14,5 +14,9 @@ public class Socket_2_2_0 : MonoBehaviour
     {
         _interface.setSocketOccupied(x, y, z);
     }
+    public void setFree()
+    {
+        _interface.setSocketFree(x, y, z);
+    }
 
 }
