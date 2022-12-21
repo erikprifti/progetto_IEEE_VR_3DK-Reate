@@ -26,20 +26,28 @@ public class PlayerManager : NetworkBehaviour
     public XROrigin xrOrigin;
     public InputActionManager iAM;
     public CharacterController cc;
-    public SnapTurnProviderBase stpb;
     public TrackedPoseDriver tpd;
     public ActionBasedController l, r;
     public XRRayInteractor xrRr, xrRl;
+    public ActionBasedContinuousMoveProvider abcM;
+    public ActionBasedContinuousTurnProvider abcT;
+    public LocomotionSystem lS;
     public Camera cameraActive;
     public GameObject avatar;
+    public GameObject cRoom;
 
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.T))
+        gameObject.transform.position = cRoom.transform.position;
+    }
 
     void Start()
     {
         idKeyPairs = GameObject.FindWithTag("IdKeyPairs").GetComponent<IdKeyPairs>();
         challenge = GameObject.FindWithTag("Challenge").GetComponent<Challenge>();
-
+        cRoom = GameObject.FindGameObjectWithTag("ChallengeRoom");
 
         if (isLocalPlayer)
         {
@@ -53,7 +61,9 @@ public class PlayerManager : NetworkBehaviour
             xrOrigin.enabled = false;
             //iAM.enabled = false;
             //cc.enabled = false;
-            stpb.enabled = false;
+            lS.enabled = false;
+            abcM.enabled = false;
+            abcT.enabled = false;
             tpd.enabled = false;
             l.enabled = false;
             r.enabled = false;

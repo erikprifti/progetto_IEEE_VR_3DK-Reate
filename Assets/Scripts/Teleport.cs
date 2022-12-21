@@ -18,6 +18,7 @@ public class Teleport : NetworkBehaviour
 
     }
 
+
     public void OnSelection()
     {
         Debug.LogError("on selection in teleport, id selezionatore della challenge: " + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId());

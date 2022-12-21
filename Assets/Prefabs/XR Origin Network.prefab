@@ -1809,14 +1809,17 @@ MonoBehaviour:
   xrOrigin: {fileID: 1145141890269195023}
   iAM: {fileID: 1145141890269195022}
   cc: {fileID: -8923567878714385832}
-  stpb: {fileID: 0}
   tpd: {fileID: 1145141890673469680}
   l: {fileID: 1145141888653756833}
   r: {fileID: 1145141888806873489}
   xrRr: {fileID: 1145141888653756832}
   xrRl: {fileID: 1145141888806873488}
+  abcM: {fileID: 7428343397262964727}
+  abcT: {fileID: 3497203127672331388}
+  lS: {fileID: 8880943450424470577}
   cameraActive: {fileID: 1145141890673469678}
   avatar: {fileID: 572273186850898775}
+  cRoom: {fileID: 0}
 --- !u!114 &8880943450424470577
 MonoBehaviour:
   m_ObjectHideFlags: 0
