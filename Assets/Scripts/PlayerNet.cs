@@ -39,13 +39,15 @@ public class PlayerNet : NetworkBehaviour
         target.GetComponent<SelectablePlayer>().challenge.GetComponent<Challenge>().setChallenge(activeID,passiveID);
         target.GetComponent<SelectablePlayer>().challenge.GetComponent<MeshRenderer>().material = target.GetComponent<SelectablePlayer>().verde;
         target.GetComponent<SelectablePlayer>().challenge.GetComponent<SphereCollider>().enabled = true;
+
         target.GetComponent<SelectablePlayer>().rpcSelected(activeID,passiveID);
+        target.GetComponent<SelectablePlayer>().rpcSelectableChallenge(target.GetComponent<NetworkIdentity>().connectionToClient);
     }
 
     [Command]
     public void cmdTeleportPlayer(GameObject player, GameObject challenge)
     {
-        //Debug.LogError("IN COMMAND TELEPORT PLAYER"); //su server
+        Debug.LogError("IN COMMAND TELEPORT PLAYER"); //su server
         challenge.GetComponent<MeshRenderer>().material = challenge.GetComponent<Teleport>().rosso;
         challenge.GetComponent<SphereCollider>().enabled = false;
         challenge.GetComponent<Teleport>().rpcChallengeStarted();

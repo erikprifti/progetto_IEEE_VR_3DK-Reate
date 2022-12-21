@@ -42,7 +42,7 @@ public class SelectablePlayer : NetworkBehaviour
         //Debug.Log("Ho interagito con " + takeScript.interactorsSelecting[0].transform.gameObject.name + " " + gameObject.name);
         challenge.GetComponent<Challenge>().setChallenge(aID,pID);
         challenge.GetComponent<MeshRenderer>().material = verde;
-        challenge.GetComponent<SphereCollider>().enabled = true;
+        //challenge.GetComponent<SphereCollider>().enabled = true;
     }
 
     [ClientRpc]
@@ -52,6 +52,11 @@ public class SelectablePlayer : NetworkBehaviour
         Selected(aID,pID);
     }
 
+    [TargetRpc]
+    public void rpcSelectableChallenge(NetworkConnection target)
+    {
+        challenge.GetComponent<SphereCollider>().enabled = true;
+    }
 
 
 }
