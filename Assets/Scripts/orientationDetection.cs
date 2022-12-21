@@ -27,7 +27,7 @@ public class orientationDetection : MonoBehaviour
 
     public Interface _interface;
 
-    private static int[,,] cube = new int[3, 3, 3];
+    private static int[,,] cube;
 
     public int passwordGenerator() //last method that confirm the challenge
     {
@@ -42,15 +42,17 @@ public class orientationDetection : MonoBehaviour
 
     public void makeRotations()
     {
+ //       cube = new int[3, 3, 3];
+
         cube = _interface.Matrix;
 
         if (front.isActive() && coll_1.isActive() && front.isPosition())
         {
-            cube = ruotaX(cube);
+            cube = ruotaX();
 
             if (left.isActive())
             {
-                cube = ruotaZ(cube);
+                cube = ruotaZ();
             }
             else if (bottom.isActive())
             {
@@ -58,36 +60,36 @@ public class orientationDetection : MonoBehaviour
             }
             else if (right.isActive())
             {
-                cube = ruotaZ(cube);
-                cube = ruotaZ(cube);
-                cube = ruotaZ(cube);
+                cube = ruotaZ();
+                cube = ruotaZ();
+                cube = ruotaZ();
             }
             else
             {
-                cube = ruotaZ(cube);
-                cube = ruotaZ(cube);
+                cube = ruotaZ();
+                cube = ruotaZ();
             }
         }
         else if (back.isActive() && coll_1.isActive() && back.isPosition())
         {
-            cube = ruotaX(cube);
-            cube = ruotaX(cube);
-            cube = ruotaX(cube);
+            cube = ruotaX();
+            cube = ruotaX();
+            cube = ruotaX();
             
             if (left.isActive())
             {
-                cube = ruotaZ(cube);
-                cube = ruotaZ(cube);
-                cube = ruotaZ(cube);
+                cube = ruotaZ();
+                cube = ruotaZ();
+                cube = ruotaZ();
             }
             else if (bottom.isActive())
             {
-                cube = ruotaZ(cube);
-                cube = ruotaZ(cube);
+                cube = ruotaZ();
+                cube = ruotaZ();
             }
             else if (right.isActive())
             {
-                cube = ruotaZ(cube);
+                cube = ruotaZ();
             }
             else
             {
@@ -96,9 +98,9 @@ public class orientationDetection : MonoBehaviour
         }
         else if (left.isActive() && coll_1.isActive() && left.isPosition())
         {
-            cube = ruotaZ(cube);
-            cube = ruotaZ(cube);
-            cube = ruotaZ(cube);
+            cube = ruotaZ();
+            cube = ruotaZ();
+            cube = ruotaZ();
 
             if (front.isActive())
             {
@@ -106,23 +108,23 @@ public class orientationDetection : MonoBehaviour
             }
             else if (bottom.isActive())
             {
-                cube = ruotaX(cube);
+                cube = ruotaX();
             }
             else if (back.isActive())
             {
-                cube = ruotaX(cube);
-                cube = ruotaX(cube);
+                cube = ruotaX();
+                cube = ruotaX();
             }
             else
             {
-                cube = ruotaX(cube);
-                cube = ruotaX(cube);
-                cube = ruotaX(cube);
+                cube = ruotaX();
+                cube = ruotaX();
+                cube = ruotaX();
             }
         }
         else if (right.isActive() && coll_1.isActive()  && back.isPosition())
         {
-            cube=ruotaZ(cube);
+            cube=ruotaZ();
 
             if (front.isActive())
             {
@@ -130,25 +132,25 @@ public class orientationDetection : MonoBehaviour
             }
             else if (bottom.isActive())
             {
-                cube = ruotaX(cube);
+                cube = ruotaX();
               
             }
             else if (back.isActive())
             {
-                cube = ruotaX(cube);
-                cube = ruotaX(cube);
+                cube = ruotaX();
+                cube = ruotaX();
             }
             else
             {
-                cube = ruotaX(cube);
-                cube = ruotaX(cube);
-                cube = ruotaX(cube);
+                cube = ruotaX();
+                cube = ruotaX();
+                cube = ruotaX();
             }
         }
         else if(bottom.isActive() && coll_1.isActive() && bottom.isPosition())
         {
-            cube = ruotaX(cube);
-            cube = ruotaX(cube);
+            cube = ruotaX();
+            cube = ruotaX();
 
             if (back.isActive())
             {
@@ -156,18 +158,18 @@ public class orientationDetection : MonoBehaviour
             }
             if (right.isActive())
             {
-                cube = ruotaZ(cube);
+                cube = ruotaZ();
             }
             if (front.isActive())
             {
-                cube = ruotaZ(cube);
-                cube = ruotaZ(cube);
+                cube = ruotaZ();
+                cube = ruotaZ();
             }
             if (left.isActive())
             {
-                cube = ruotaZ(cube);
-                cube = ruotaZ(cube);
-                cube = ruotaZ(cube);            }
+                cube = ruotaZ();
+                cube = ruotaZ();
+                cube = ruotaZ();            }
         }
         else
         {
@@ -177,129 +179,129 @@ public class orientationDetection : MonoBehaviour
             }
             else if (left.isActive())
             {
-                cube = ruotaY(cube);
+                cube = ruotaY();
             }
             else if (back.isActive())
             {
-                cube = ruotaY(cube);
-                cube = ruotaY(cube);
+                cube = ruotaY();
+                cube = ruotaY();
             }
             else if(right.isActive())
             {
-                cube = ruotaY(cube);
-                cube = ruotaY(cube);
-                cube = ruotaY(cube);
+                cube = ruotaY();
+                cube = ruotaY();
+                cube = ruotaY();
             }
         }
 
-        _interface.Matrix = cube;
+ //       _interface.Matrix = cube;
 
-        printMat(cube);
+        printMat();
     }
-    private int[,,] ruotaX(int[,,] mat)
+    private int[,,] ruotaX()
     {
         int temp, temp2;
 
         for (int i = 0; i < 3; i++)
         {
-            temp = mat[i, 0, 0];
-            mat[i, 0, 0] = mat[i, 0, 2];
+            temp = cube[i, 0, 0];
+            cube[i, 0, 0] = cube[i, 0, 2];
 
-            temp2 = mat[i, 2, 0];
-            mat[i, 2, 0] = temp;
+            temp2 = cube[i, 2, 0];
+            cube[i, 2, 0] = temp;
 
-            temp = mat[i, 2, 2];
-            mat[i, 2, 2] = temp2;
+            temp = cube[i, 2, 2];
+            cube[i, 2, 2] = temp2;
 
-            mat[i, 0, 2] = temp;
+            cube[i, 0, 2] = temp;
 
-            temp = mat[i, 1, 0];
-            mat[i, 1, 0] = mat[i, 0, 1];
+            temp = cube[i, 1, 0];
+            cube[i, 1, 0] = cube[i, 0, 1];
 
-            temp2 = mat[i, 2, 1];
-            mat[i, 2, 1] = temp;
+            temp2 = cube[i, 2, 1];
+            cube[i, 2, 1] = temp;
 
-            temp = mat[i, 1, 2];
-            mat[i, 1, 2] = temp2;
+            temp = cube[i, 1, 2];
+            cube[i, 1, 2] = temp2;
 
-            mat[i, 1, 0] = temp;
+            cube[i, 1, 0] = temp;
         }
 
-        return mat;
+        return cube;
     }
-    private int[,,] ruotaY(int[,,] mat)
+    private int[,,] ruotaY()
     {
         int temp, temp2;
 
         for (int i = 0; i < 3; i++)
         {
-            temp = mat[0, i, 2];
-            mat[0, i, 2] = mat[0, i, 0];
+            temp = cube[0, i, 2];
+            cube[0, i, 2] = cube[0, i, 0];
 
-            temp2 = mat[2, i, 2];
-            mat[2, i, 2] = temp;
+            temp2 = cube[2, i, 2];
+            cube[2, i, 2] = temp;
 
-            temp = mat[2, i, 0];
-            mat[2, i, 0] = temp2;
+            temp = cube[2, i, 0];
+            cube[2, i, 0] = temp2;
 
-            mat[0, i, 0] = temp;
+            cube[0, i, 0] = temp;
 
-            temp = mat[2, i, 1];
-            mat[2, i, 1] = mat[1, i, 2];
+            temp = cube[2, i, 1];
+            cube[2, i, 1] = cube[1, i, 2];
 
-            temp2 = mat[1, i, 0];
-            mat[1, i, 0] = temp;
+            temp2 = cube[1, i, 0];
+            cube[1, i, 0] = temp;
 
-            temp = mat[0, i, 1];
-            mat[0, i, 1] = temp2;
+            temp = cube[0, i, 1];
+            cube[0, i, 1] = temp2;
 
-            mat[1, i, 2] = temp;
+            cube[1, i, 2] = temp;
 
         }
 
-        return mat;
+        return cube;
     } 
-    private int[,,] ruotaZ(int[,,] mat)
+    private int[,,] ruotaZ()
     {
         int temp, temp2;
 
         for (int i = 0; i < 3; i++)
         {
-            temp = mat[2, 0, i];
-            mat[2, 0, i] = mat[0, 0, i];
+            temp = cube[2, 0, i];
+            cube[2, 0, i] = cube[0, 0, i];
 
-            temp2 = mat[2, 2, i];
-            mat[2, 2, i] = temp;
+            temp2 = cube[2, 2, i];
+            cube[2, 2, i] = temp;
 
-            temp = mat[0, 2, i];
-            mat[0, 2, i] = temp2;
+            temp = cube[0, 2, i];
+            cube[0, 2, i] = temp2;
 
-            mat[0, 0, i] = temp;
+            cube[0, 0, i] = temp;
 
-            temp = mat[2, 1, i];
-            mat[2, 1, i] = mat[1, 0, i];
+            temp = cube[2, 1, i];
+            cube[2, 1, i] = cube[1, 0, i];
 
-            temp2 = mat[1, 2, i];
-            mat[1, 2, i] = temp;
+            temp2 = cube[1, 2, i];
+            cube[1, 2, i] = temp;
 
-            temp = mat[0, 1, i];
-            mat[0, 1, i] = temp2;
+            temp = cube[0, 1, i];
+            cube[0, 1, i] = temp2;
 
-            mat[1, 0, i] = temp;
+            cube[1, 0, i] = temp;
         }
 
-        return mat;
+        return cube;
     }
 
-    public void printMat(int[,,] mat)
+    public void printMat()
     {
         // per adesso stampo solo la faccia frontale
         for (int i = 0; i < 3; i++)
         {
-            Debug.Log("matrice " + i + ": \n");
-            Debug.Log(mat[0, 0, i] + " " + mat[1, 0, i] + " " + mat[2, 0, i] + "\n" +
-                      mat[0, 1, i] + " " + mat[1, 1, i] + " " + mat[2, 1, i] + "\n" +
-                      mat[0, 2, i] + " " + mat[1, 2, i] + " " + mat[2, 2, i]);
+            Debug.Log("cuberice " + i + ": \n");
+            Debug.Log(cube[0, 0, i] + " " + cube[1, 0, i] + " " + cube[2, 0, i] + "\n" +
+                      cube[0, 1, i] + " " + cube[1, 1, i] + " " + cube[2, 1, i] + "\n" +
+                      cube[0, 2, i] + " " + cube[1, 2, i] + " " + cube[2, 2, i]);
         }
     }
 
@@ -309,7 +311,6 @@ public class orientationDetection : MonoBehaviour
     public void multiplyMatrix()
     {
         //Debug.Log("Entrato in multiplyMatrix");
-        int[,,] mat = _interface.Matrix;
         for (int i = 0; i < 3; i++)
         {
             Debug.Log("Entrato in multiplyMatrix " + i);
@@ -318,15 +319,14 @@ public class orientationDetection : MonoBehaviour
             {
                 for(int k = 0; k < 3; k++)
                 {
-                    mat[k, j, i] = mat[k, j, i] * multiplier[j, k];
-//                      Debug.Log("reading from mat, prof " + i + ", riga " + j + ", colonna " + k + " : " + mat[k, j, i] + ", with multiplier:  " + multiplier[j, k]);
+                    cube[k, j, i] = cube[k, j, i] * multiplier[j, k];
+//                      Debug.Log("reading from cube, prof " + i + ", riga " + j + ", colonna " + k + " : " + cube[k, j, i] + ", with multiplier:  " + multiplier[j, k]);
 
-                    values[i] += mat[k, j, i];
+                    values[i] += cube[k, j, i];
  //                   Debug.Log("after increment value " + i + ": " + values[i]);
                 }
             }
         }
-        _interface.Matrix = mat;
  //       Debug.Log("finito in multiplyMatrix");
 
     }
