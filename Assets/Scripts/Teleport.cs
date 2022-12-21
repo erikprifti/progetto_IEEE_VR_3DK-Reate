@@ -20,7 +20,7 @@ public class Teleport : NetworkBehaviour
 
     public void OnSelection()
     {
-        Debug.LogError("on selection in teleport, id selezionatore: " + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId());
+        Debug.LogError("on selection in teleport, id selezionatore della chalenge: " + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId());
         Debug.LogError("on selection in teleport, id del passive: " + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId());
 
         if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == gameObject.GetComponent<Challenge>().passivePlayerId)
@@ -43,7 +43,7 @@ public class Teleport : NetworkBehaviour
         Debug.LogError("in Teleportation, player id: " + p.gameObject.GetComponent<PlayerManager>().getId());
         Debug.LogError("ChallengeRoom poisition: " + ChallengeRoom.transform.position);
 
-        p.transform.position = ChallengeRoom.transform.position;
+        p.gameObject.transform.position = ChallengeRoom.transform.position;
         
     }
 

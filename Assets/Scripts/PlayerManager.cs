@@ -31,6 +31,7 @@ public class PlayerManager : NetworkBehaviour
     public ActionBasedController l, r;
     public XRRayInteractor xrRr, xrRl;
     public Camera cameraActive;
+    public GameObject avatar;
 
 
 
@@ -45,7 +46,7 @@ public class PlayerManager : NetworkBehaviour
             if (isClient)
                 CmdSetPlayerInfo();
 
-            cameraActive.gameObject.SetActive(true);
+            cameraActive.enabled = true;
         }
         else
         {
@@ -58,6 +59,7 @@ public class PlayerManager : NetworkBehaviour
             r.enabled = false;
             xrRl.enabled = false;
             xrRr.enabled = false;
+            avatar.SetActive(true);
         }
         
     }

@@ -45,7 +45,6 @@ public class Challenge : NetworkBehaviour
 
 
         encrypt();
-        Debug.LogError(String.Format("after encrypt"));
        
     }
 
