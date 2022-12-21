@@ -1378,7 +1378,6 @@ GameObject:
   - component: {fileID: 7428343397262964727}
   - component: {fileID: 3497203127672331388}
   - component: {fileID: 3078827337427204210}
-  - component: {fileID: 6990341277966934478}
   m_Layer: 0
   m_Name: XR Origin Network
   m_TagString: Player
@@ -1574,7 +1573,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 0.5
+  m_Height: 1
   m_Radius: 0.34
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -1588,7 +1587,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145141890269195025}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c482338c8cc6d4a3cba81934c0151972, type: 3}
   m_Name: 
@@ -1810,7 +1809,7 @@ MonoBehaviour:
   xrOrigin: {fileID: 1145141890269195023}
   iAM: {fileID: 1145141890269195022}
   cc: {fileID: -8923567878714385832}
-  stpb: {fileID: 6990341277966934478}
+  stpb: {fileID: 0}
   tpd: {fileID: 1145141890673469680}
   l: {fileID: 1145141888653756833}
   r: {fileID: 1145141888806873489}
@@ -1860,7 +1859,15 @@ MonoBehaviour:
       m_Id: 3013e0cf-1fca-4ad0-b3b1-1fc7656cd6e5
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings: []
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: d2a730fd-c4fa-4386-8b14-0d7fed1fc3bb
+        m_Path: 
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Left Hand Move
+        m_Flags: 0
       m_Flags: 0
     m_Reference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
@@ -1927,133 +1934,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6bf904e410ee8479f9093d8830d1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LocomotionProvider: {fileID: 6990341277966934478}
-  m_MinHeight: 1
-  m_MaxHeight: 2
---- !u!114 &6990341277966934478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1145141890269195025}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2213c36610e3b1c4bbf886810ed9db12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_System: {fileID: 8880943450424470577}
-  m_TurnAmount: 10
-  m_DebounceTime: 0.5
-  m_EnableTurnLeftRight: 1
-  m_EnableTurnAround: 1
-  m_DelayTime: 0
-  m_LeftHandSnapTurnAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Left Hand Snap Turn
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 74c112c5-c4ec-49ad-962e-88925cb21ba7
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 2D Vector
-        m_Id: 90d7f10d-e740-4a01-92bb-875b1eddb784
-        m_Path: 2DVector
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Left Hand Snap Turn
-        m_Flags: 4
-      - m_Name: up
-        m_Id: bcaab0ff-8282-4afd-aaa8-3aa1798e3eee
-        m_Path: 
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Left Hand Snap Turn
-        m_Flags: 8
-      - m_Name: down
-        m_Id: 0affa9b3-3280-4a8b-b775-af507bad3a13
-        m_Path: 
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Left Hand Snap Turn
-        m_Flags: 8
-      - m_Name: left
-        m_Id: 8f0569d7-9e02-4440-8c93-c9eb2f75c851
-        m_Path: 
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Left Hand Snap Turn
-        m_Flags: 8
-      - m_Name: right
-        m_Id: d0e6e25c-1fb7-485c-a676-91eb392d0133
-        m_Path: 
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Left Hand Snap Turn
-        m_Flags: 8
-      m_Flags: 0
-    m_Reference: {fileID: -7374733323251553461, guid: c348712bda248c246b8c49b3db54643f,
-      type: 3}
-  m_RightHandSnapTurnAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Right Hand Snap Turn
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 262a41ff-f7df-4fee-9dbf-d8f9fe95bcc1
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 2D Vector
-        m_Id: ace77995-0f65-4331-a942-80ffc2d4c762
-        m_Path: 2DVector
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Right Hand Snap Turn
-        m_Flags: 4
-      - m_Name: up
-        m_Id: 7683591a-836c-41a7-a952-34567aabddf7
-        m_Path: 
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Right Hand Snap Turn
-        m_Flags: 8
-      - m_Name: down
-        m_Id: 83b8fd9c-8e3e-4ca3-a835-d34f1f481786
-        m_Path: 
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Right Hand Snap Turn
-        m_Flags: 8
-      - m_Name: left
-        m_Id: 45c02107-823f-4479-8c90-25ff29d3df4d
-        m_Path: 
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Right Hand Snap Turn
-        m_Flags: 8
-      - m_Name: right
-        m_Id: 9c67c948-c852-4f97-9d59-e145f354bd4f
-        m_Path: 
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Right Hand Snap Turn
-        m_Flags: 8
-      m_Flags: 0
-    m_Reference: {fileID: -8525429354371678379, guid: c348712bda248c246b8c49b3db54643f,
-      type: 3}
+  m_LocomotionProvider: {fileID: 7428343397262964727}
+  m_MinHeight: 0
+  m_MaxHeight: 10
 --- !u!1 &1145141890673469682
 GameObject:
   m_ObjectHideFlags: 0

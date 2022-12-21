@@ -44,6 +44,7 @@ public class Teleport : NetworkBehaviour
         Debug.LogError("ChallengeRoom poisition: " + ChallengeRoom.transform.position);
 
         p.gameObject.transform.position = ChallengeRoom.transform.position;
+     //   p.gameObject.transform.TransformPoint(ChallengeRoom.transform.position);
 
         Debug.LogError("player after poisition: " + p.gameObject.transform.position);
 
