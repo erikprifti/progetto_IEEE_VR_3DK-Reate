@@ -24,9 +24,13 @@ public class BackToLobby : NetworkBehaviour
     {
         //leggo la chiave a partire dal socket
         int key = _oriDet.passwordGenerator();
-        selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
+        Debug.LogError("In OnSelection in BackToLobby, key read: " + key);
 
+        selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
         PlayerNet p = selectingHand.GetComponent<HandChild>().player;
+
+        Debug.LogError("In OnSelection in BackToLobby, id del selettore: " + p.gameObject.GetComponent<PlayerManager>().getId());
+
 
         //setto password nel player che ha selezionato BackToLobby
         p.GetComponentInParent<PlayerManager>().setPassword(challenge.GetComponent<Challenge>().decrypt(key));

@@ -41,11 +41,11 @@ public class Challenge : NetworkBehaviour
         PlayerManager player = findPlayerById(activePlayerId);
         player.GetComponent<PlayerManager>().setPassword(message);
 
-        Debug.LogError("IN SETCHALLENGE" +activePlayer + " ha selezionato, mentre " + passivePlayer + " è stato selezionato");
+        Debug.LogError("IN SETCHALLENGE: " +activePlayer + " ha selezionato, mentre " + passivePlayer + " è stato selezionato");
 
 
         encrypt();
-        //Debug.LogError(String.Format("after encrypt"));
+        Debug.LogError(String.Format("after encrypt"));
        
     }
 
