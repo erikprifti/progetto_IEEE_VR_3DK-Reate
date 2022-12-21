@@ -83,7 +83,7 @@ public class Porta : NetworkBehaviour
     public void rpcResetChallenge()
     {
         passingTheTreshold = 0;
-        password = null;
+        //password = null;
         challenge.GetComponent<Challenge>().resetChallenge();
         challenge.GetComponent<MeshRenderer>().material = azzurro;
     }

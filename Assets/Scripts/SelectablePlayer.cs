@@ -22,7 +22,16 @@ public class SelectablePlayer : NetworkBehaviour
 
     }
     
+    public void OnSelectionPublicId()
+    {
+        Debug.LogError("in ONSelectionPublicId");
+        int activeID = takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId();
+        int passiveID = gameObject.GetComponent<PublicId>().id;
+        if (activeID == passiveID)
+            return;
+        Debug.LogError("in ONSelection " + activeID + " ha selezionato, mentre "  + passiveID + " è stato selezionato");
 
+    }
     public void OnSelection()
     {
         

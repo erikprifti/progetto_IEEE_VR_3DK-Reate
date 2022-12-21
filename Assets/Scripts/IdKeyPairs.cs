@@ -7,7 +7,6 @@ using System;
 
 public class IdKeyPairs : MonoBehaviour
 {
-    public string test = "IDKEY TEST";
 
     static readonly Dictionary<int, PublicKey> idKeyPairs = new Dictionary<int, PublicKey>
     {
@@ -56,5 +55,10 @@ public class IdKeyPairs : MonoBehaviour
     public int getModule(int id)
     {
         return idKeyPairs.GetValueOrDefault(id).module;
+    }
+
+    public PublicKey getKey(int id)
+    {
+        return idKeyPairs.GetValueOrDefault(id);
     }
 }
