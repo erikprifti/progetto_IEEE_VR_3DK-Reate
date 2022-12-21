@@ -17,5 +17,10 @@ public class Interface : MonoBehaviour
         matrix[x, y, z] = 1;
         Debug.Log("Occupato : " + x + y + z );
     }
-    
+    public void setSocketFree(int x, int y, int z)
+    {
+        matrix[x, y, z] = 0;
+        Debug.Log("Libero : " + x + y + z);
+    }
+
 }
