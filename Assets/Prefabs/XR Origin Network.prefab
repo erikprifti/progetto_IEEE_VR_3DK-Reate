@@ -1735,7 +1735,7 @@ MonoBehaviour:
   challenge: {fileID: 0}
   takeScript: {fileID: -7958803593821527373}
   selectingHand: {fileID: 0}
-  verde: {fileID: 2100000, guid: a7d6245e2509a1049a549bb54fb22c3e, type: 2}
+  verde: {fileID: 2100000, guid: 57e4b756a1503654496e41418102ef32, type: 2}
 --- !u!114 &917600830457950366
 MonoBehaviour:
   m_ObjectHideFlags: 0

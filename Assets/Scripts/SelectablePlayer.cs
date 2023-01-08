@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -50,7 +51,7 @@ public class SelectablePlayer : NetworkBehaviour
     {
         //Debug.Log("Ho interagito con " + takeScript.interactorsSelecting[0].transform.gameObject.name + " " + gameObject.name);
         challenge.GetComponent<Challenge>().setChallenge(aID,pID);
-        challenge.GetComponent<MeshRenderer>().material = verde;
+        challenge.GetNamedChild("Schermo").GetComponent<MeshRenderer>().material = verde; 
         //challenge.GetComponent<SphereCollider>().enabled = true;
     }
 
@@ -64,7 +65,7 @@ public class SelectablePlayer : NetworkBehaviour
     [TargetRpc]
     public void rpcSelectableChallenge(NetworkConnection target)
     {
-        challenge.GetComponent<SphereCollider>().enabled = true;
+        challenge.GetComponent<BoxCollider>().enabled = true;
     }
 
 

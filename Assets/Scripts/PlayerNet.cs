@@ -7,6 +7,7 @@ using UnityEngine.Windows;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
 using UnityEngine.XR.Interaction.Toolkit;
+using Unity.XR.CoreUtils;
 //using UnityEngine.InputSystem;
 //using UnityEditor;
 //using UnityEngine.UIElements;
@@ -37,8 +38,8 @@ public class PlayerNet : NetworkBehaviour
         Debug.LogError("in CMDSELECTPLAYER "+activeID + " ha selezionato, mentre " + passiveID + " è stato selezionato");
 
         target.GetComponent<SelectablePlayer>().challenge.GetComponent<Challenge>().setChallenge(activeID,passiveID);
-        target.GetComponent<SelectablePlayer>().challenge.GetComponent<MeshRenderer>().material = target.GetComponent<SelectablePlayer>().verde;
-        target.GetComponent<SelectablePlayer>().challenge.GetComponent<SphereCollider>().enabled = true;
+        target.GetComponent<SelectablePlayer>().challenge.GetNamedChild("Schermo").GetComponent<MeshRenderer>().material = target.GetComponent<SelectablePlayer>().verde;
+        target.GetComponent<SelectablePlayer>().challenge.GetComponent<BoxCollider>().enabled = true;
 
         target.GetComponent<SelectablePlayer>().rpcSelected(activeID,passiveID);
         target.GetComponent<SelectablePlayer>().rpcSelectableChallenge(target.GetComponent<NetworkIdentity>().connectionToClient);
@@ -48,8 +49,8 @@ public class PlayerNet : NetworkBehaviour
     public void cmdTeleportPlayer(GameObject player, GameObject challenge)
     {
         Debug.LogError("IN COMMAND TELEPORT PLAYER"); //su server
-        challenge.GetComponent<MeshRenderer>().material = challenge.GetComponent<Teleport>().rosso;
-        challenge.GetComponent<SphereCollider>().enabled = false;
+        challenge.GetNamedChild("Schermo").GetComponent<MeshRenderer>().material = challenge.GetComponent<Teleport>().rosso;
+        challenge.GetComponent<BoxCollider>().enabled = false;
         challenge.GetComponent<Teleport>().rpcChallengeStarted();
         challenge.GetComponent<Teleport>().rpcSelectedTeleport(player.GetComponent<NetworkIdentity>().connectionToClient);
 
@@ -84,7 +85,7 @@ public class PlayerNet : NetworkBehaviour
         if (porta.GetComponent<Porta>().passingTheTreshold < 2)
         {
             c.GetComponent<Challenge>().resetChallenge();
-            c.GetComponent<MeshRenderer>().material = porta.GetComponent<Porta>().azzurro;
+            c.GetNamedChild("Schermo").GetComponent<MeshRenderer>().material = porta.GetComponent<Porta>().azzurro;
             porta.GetComponent<Porta>().rpcResetChallenge();
         }
 
