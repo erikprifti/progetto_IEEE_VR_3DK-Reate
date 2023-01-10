@@ -2394,7 +2394,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh61498
+  m_Name: pb_Mesh59302
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3557,7 +3557,7 @@ MonoBehaviour:
   syncInterval: 0.1
   ChallengeRoom: {fileID: 0}
   selectingHand: {fileID: 0}
-  takeScript: {fileID: 0}
+  takeScript: {fileID: 410688956}
   rosso: {fileID: 2100000, guid: 6ac21c5fef1050043aa715c4748d23e1, type: 2}
 --- !u!114 &410688954
 MonoBehaviour:
