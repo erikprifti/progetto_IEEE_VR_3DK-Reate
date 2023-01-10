@@ -1211,8 +1211,8 @@ MonoBehaviour:
   challenge: {fileID: 0}
   Lobby: {fileID: 0}
   selectingHand: {fileID: 0}
-  takeScript: {fileID: 0}
-  _oriDet: {fileID: 0}
+  takeScript: {fileID: 151423351}
+  _oriDet: {fileID: 1532627059}
 --- !u!114 &151423350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3634,7 +3634,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31126
+  m_Name: pb_Mesh54246
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7446,7 +7446,7 @@ MonoBehaviour:
   password: 
   challenge: {fileID: 0}
   selectingHand: {fileID: 0}
-  takeScript: {fileID: 0}
+  takeScript: {fileID: 874579191}
   FinalScene: {fileID: 0}
   azzurro: {fileID: 2100000, guid: 7682c9e0c03d2294f835758128b46c46, type: 2}
   passingTheTreshold: 0
@@ -14396,8 +14396,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1053908400}
-  - {fileID: 1769266790}
   - {fileID: 402499554}
+  - {fileID: 1769266790}
   - {fileID: 190490650}
   - {fileID: 1319696400}
   - {fileID: 2135962872}
