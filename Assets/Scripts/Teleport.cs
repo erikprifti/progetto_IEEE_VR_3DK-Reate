@@ -65,7 +65,7 @@ public class Teleport : NetworkBehaviour
     public void rpcChallengeStarted()
     {
         gameObject.GetNamedChild("Schermo").GetComponent<MeshRenderer>().material = rosso;
-        gameObject.GetComponent<SphereCollider>().enabled = false;
+        gameObject.GetComponent<BoxCollider>().enabled = false;
 
     }
 

@@ -14,6 +14,7 @@ public class Porta : NetworkBehaviour
     public XRSimpleInteractable takeScript;
     public GameObject FinalScene;
     public Material azzurro;
+
     public int passingTheTreshold = 0;
 
     private void Start()
