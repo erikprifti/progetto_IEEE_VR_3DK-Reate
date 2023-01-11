@@ -32,34 +32,26 @@ public class Challenge : NetworkBehaviour
     long[] tempP;
     long[] tempA;
     long[] en; //encrypted message in long array
-    public void setChallenge(int activePlayer, int passivePlayer)
-    {
+    //public void setChallenge(int activePlayer, int passivePlayer)
+    //{
 
-        activePlayerId = activePlayer;
-        passivePlayerId = passivePlayer;
-        message = generateMessage();
-        porta.setPassword(message);
-
-
-        PlayerManager player = findPlayerById(activePlayerId);
-        player.GetComponent<PlayerManager>().setPassword(message);
-
-        Debug.LogError("IN SETCHALLENGE: " +activePlayer + " ha selezionato, mentre " + passivePlayer + " è stato selezionato");
+    //    activePlayerId = activePlayer;
+    //    passivePlayerId = passivePlayer;
+    //    message = generateMessage();
+    //    porta.setPassword(message);
 
 
-        encrypt();
+    //    PlayerManager player = findPlayerById(activePlayerId);
+    //    player.GetComponent<PlayerManager>().setPassword(message);
+
+    //    Debug.LogError("IN SETCHALLENGE: " +activePlayer + " ha selezionato, mentre " + passivePlayer + " è stato selezionato");
+
+
+    //    encrypt();
        
-    }
+    //}
 
-    public void resolveChallenge(int key, GameObject player)
-    {
-        if (!player.CompareTag("Player")) { return; }
-        PlayerManager playerManager = player.GetComponent<PlayerManager>();
-        int playerId = playerManager.getId();
-        if (!playerId.Equals(passivePlayerId)) { return; }
-        string messageDecrypted = decrypt(key);
-        playerManager.setPassword(messageDecrypted);
-    }
+ 
 
     private string generateMessage()
     {
@@ -170,17 +162,30 @@ public class Challenge : NetworkBehaviour
     {
         PlayerManager p = player.GetComponent<PlayerManager>();
 
-        if (activePlayerId == 0) //play chiamato dall attivo dopo aver messo la sua chiave privata con la quale decriptare per prima il messaggio
+        if (activePlayerId == 0 && passivePlayerId == 0 ) //play chiamato dall attivo dopo aver messo la sua chiave privata con la quale decriptare per prima il messaggio
         {
+            activePlayerId = p.id;
             string mex = generateMessage();
             messageEncryptedA = encrypt(mex, key, idKeyPairs.getModule(p.id), 0);
+            porta.setPassword(doorPassword);
+            p.setPassword(doorPassword);
         }
-        else
+        else if(activePlayerId != 0 && passivePlayerId != 0)
         {
-
-            messageEncryptedP = encrypt(messageEncryptedA, key, idKeyPairs.getModule(p.id), 1);
+            //momento di decriptazione
+            resolveChallenge(key, player);
 
         }
+    }
+
+    public void sendMessage(GameObject player) //player passivo a cui mandare mex
+    {
+        int pId = player.GetComponent<PlayerManager>().id;
+        passivePlayerId = pId;
+        int publicKey = idKeyPairs.getEncode(passivePlayerId);
+        messageEncryptedP = encrypt(messageEncryptedA, publicKey, idKeyPairs.getModule(pId), 1);
+        message = messageEncryptedP;
+        player.GetComponent<PlayerNet>().cmdChallengeFreeTarget(gameObject, player);
     }
 
     private string encrypt(string mex, int key, int n, int caso)
@@ -231,21 +236,29 @@ public class Challenge : NetworkBehaviour
             encryptMex = encryptMex + (char)en[i];
         }
 
-        tempA = temp;
         return encryptMex;
     }
 
-    public string decrypt(string mex, int key, int n)
+    public string decrypt(string mex, int key, int n, int caso)
     {
         long pt, ct, k;
         int i = 0;
         ma = new long[mex.Length];
+        long[] temp;
 
+        if (caso == 0)
+        {
+            temp = tempA;
+        }
+        else
+        {
+            temp = tempP;
+        }
         //invece che usare en e ma devo prendere la stringa encryptmessage e usarla come array
         while (i < mex.Length)
         {
 
-            ct = tempP[i];
+            ct = temp[i];
             k = 1;
             for (long j = 0; j < key; j++)
             {
@@ -267,5 +280,23 @@ public class Challenge : NetworkBehaviour
 
         return decryptMex;
     }
+   public void resolveChallenge(int privateKey, GameObject player)
+    {
+        if (!player.CompareTag("Player")) { return; }
+        PlayerManager playerManager = player.GetComponent<PlayerManager>();
+        int playerId = playerManager.getId();
+        if (!playerId.Equals(passivePlayerId)) { return; }
 
+        string messageDecryptedP = decrypt(message, privateKey, idKeyPairs.getModule(passivePlayerId), 1);
+        string messageDecryptedA = decrypt(messageDecryptedP, idKeyPairs.getEncode(activePlayerId), idKeyPairs.getModule(activePlayerId), 0);
+        playerManager.setPassword(messageDecryptedA);
+        player.GetComponent<PlayerNet>().cmdChallengeFree(gameObject);
+
+    }
+
+    [TargetRpc]
+    public void rpcSendMessageTarget(NetworkConnection target, GameObject player)
+    {
+        sendMessage(player);
+    }
 }

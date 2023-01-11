@@ -23,16 +23,16 @@ public class Teleport : NetworkBehaviour
         Debug.LogError("on selection in teleport, id selezionatore della challenge: " + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId());
         Debug.LogError("on selection in teleport, id del passive: " + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId());
 
-        //gameObject.GetComponent<BoxCollider>().enabled = false;
-        //selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
-        //selectingHand.GetComponent<HandChild>().player.cmdTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject);
+        gameObject.GetComponent<BoxCollider>().enabled = false;
+        selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
+        selectingHand.GetComponent<HandChild>().player.cmdTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject);
 
-        if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == gameObject.GetComponent<Challenge>().passivePlayerId)
-        {
+        //if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == gameObject.GetComponent<Challenge>().passivePlayerId)
+        //{
 
-            selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
-            selectingHand.GetComponent<HandChild>().player.cmdTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject);
-        }
+        //    selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
+        //    selectingHand.GetComponent<HandChild>().player.cmdTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject);
+        //}
 
     }
 
@@ -79,4 +79,11 @@ public class Teleport : NetworkBehaviour
         gameObject.GetComponent<BoxCollider>().enabled = true;
     }
 
+
+    [TargetRpc]
+    public void rpcChallengeFreeTarget(NetworkConnection target)
+    {
+        gameObject.GetNamedChild("Schermo").GetComponent<MeshRenderer>().material = verde;
+        gameObject.GetComponent<BoxCollider>().enabled = true;
+    }
 }
