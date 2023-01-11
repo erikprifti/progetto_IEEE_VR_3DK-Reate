@@ -2804,7 +2804,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51530
+  m_Name: pb_Mesh49630
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4820,6 +4820,8 @@ GameObject:
   - component: {fileID: 536583799}
   - component: {fileID: 536583798}
   - component: {fileID: 536583797}
+  - component: {fileID: 536583802}
+  - component: {fileID: 536583801}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -4889,7 +4891,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536583801}
+        m_TargetAssemblyTypeName: SelectablePlayer, Assembly-CSharp
+        m_MethodName: OnSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -5051,6 +5065,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 536583795}
   m_CullTransparentMesh: 1
+--- !u!114 &536583801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536583795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e1f2f9e0c66c547b437f14e1ce7481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0.1
+  challenge: {fileID: 0}
+  takeScript: {fileID: 536583797}
+  selectingHand: {fileID: 0}
+  verde: {fileID: 0}
+  id: 0
+--- !u!114 &536583802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536583795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 2791186445
+  _assetId: 0
+  serverOnly: 0
+  visible: 0
+  hasSpawned: 0
 --- !u!1 &542892171
 GameObject:
   m_ObjectHideFlags: 0
@@ -7192,6 +7243,8 @@ GameObject:
   - component: {fileID: 697122943}
   - component: {fileID: 697122942}
   - component: {fileID: 697122941}
+  - component: {fileID: 697122946}
+  - component: {fileID: 697122945}
   m_Layer: 5
   m_Name: Text (TMP) (3)
   m_TagString: Untagged
@@ -7261,7 +7314,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 697122945}
+        m_TargetAssemblyTypeName: SelectablePlayer, Assembly-CSharp
+        m_MethodName: OnSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -7423,6 +7488,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697122939}
   m_CullTransparentMesh: 1
+--- !u!114 &697122945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697122939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e1f2f9e0c66c547b437f14e1ce7481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0.1
+  challenge: {fileID: 0}
+  takeScript: {fileID: 697122941}
+  selectingHand: {fileID: 0}
+  verde: {fileID: 0}
+  id: 0
+--- !u!114 &697122946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697122939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3536116562
+  _assetId: 0
+  serverOnly: 0
+  visible: 0
+  hasSpawned: 0
 --- !u!1 &732085024
 GameObject:
   m_ObjectHideFlags: 0
@@ -7790,6 +7892,7 @@ Transform:
   - {fileID: 192829517}
   - {fileID: 1844646219}
   - {fileID: 364443487}
+  - {fileID: 1555471216}
   - {fileID: 1592881476}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -8305,6 +8408,8 @@ GameObject:
   - component: {fileID: 811355645}
   - component: {fileID: 811355644}
   - component: {fileID: 811355643}
+  - component: {fileID: 811355648}
+  - component: {fileID: 811355647}
   m_Layer: 5
   m_Name: Text (TMP) (2)
   m_TagString: Untagged
@@ -8374,7 +8479,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 811355647}
+        m_TargetAssemblyTypeName: SelectablePlayer, Assembly-CSharp
+        m_MethodName: OnSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -8536,6 +8653,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811355641}
   m_CullTransparentMesh: 1
+--- !u!114 &811355647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811355641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e1f2f9e0c66c547b437f14e1ce7481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0.1
+  challenge: {fileID: 0}
+  takeScript: {fileID: 811355643}
+  selectingHand: {fileID: 0}
+  verde: {fileID: 0}
+  id: 0
+--- !u!114 &811355648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811355641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3096805693
+  _assetId: 0
+  serverOnly: 0
+  visible: 0
+  hasSpawned: 0
 --- !u!1 &849472356
 GameObject:
   m_ObjectHideFlags: 0
@@ -11506,6 +11660,8 @@ GameObject:
   - component: {fileID: 1156722146}
   - component: {fileID: 1156722145}
   - component: {fileID: 1156722144}
+  - component: {fileID: 1156722149}
+  - component: {fileID: 1156722148}
   m_Layer: 5
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
@@ -11575,7 +11731,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1156722148}
+        m_TargetAssemblyTypeName: SelectablePlayer, Assembly-CSharp
+        m_MethodName: OnSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -11737,6 +11905,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1156722142}
   m_CullTransparentMesh: 1
+--- !u!114 &1156722148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156722142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e1f2f9e0c66c547b437f14e1ce7481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0.1
+  challenge: {fileID: 0}
+  takeScript: {fileID: 1156722144}
+  selectingHand: {fileID: 0}
+  verde: {fileID: 0}
+  id: 0
+--- !u!114 &1156722149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156722142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 1637249091
+  _assetId: 0
+  serverOnly: 0
+  visible: 0
+  hasSpawned: 0
 --- !u!1 &1166992252
 GameObject:
   m_ObjectHideFlags: 0
@@ -15135,8 +15340,8 @@ RectTransform:
   - {fileID: 1156722143}
   - {fileID: 811355642}
   - {fileID: 697122940}
-  m_Father: {fileID: 1592881476}
-  m_RootOrder: 3
+  m_Father: {fileID: 737367276}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -15697,7 +15902,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 9b1718f95b267c1429ce5c1c313db2e6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9b1718f95b267c1429ce5c1c313db2e6,
         type: 3}
@@ -15774,6 +15979,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_leaderboard
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9b1718f95b267c1429ce5c1c313db2e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: LeaderBoard
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b1718f95b267c1429ce5c1c313db2e6, type: 3}
 --- !u!4 &1592881476 stripped
@@ -15801,6 +16011,42 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 0.9981525}
   m_Center: {x: 0.0000009536743, y: -0.00000011920929, z: 0.5009161}
+--- !u!114 &1592881479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592881477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c73626f2596f1f4494df6241c3bfa75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0.1
+  slot1: {fileID: 536583799}
+  slot2: {fileID: 1156722146}
+  slot3: {fileID: 811355645}
+  slot4: {fileID: 697122943}
+--- !u!114 &1592881480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592881477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 2315892034
+  _assetId: 502116551
+  serverOnly: 0
+  visible: 0
+  hasSpawned: 0
 --- !u!1 &1598609683
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,6 +20,7 @@ public class Leaderboard : NetworkBehaviour
 
     public void Start()
     {
+        slot1.text = "cioa";
         id_text_map.Add(1, slot1);
         id_text_map.Add(2, slot2);
         id_text_map.Add(3, slot3);
@@ -29,6 +30,8 @@ public class Leaderboard : NetworkBehaviour
 
     public void addPlayer(int id, GameObject player)
     {
+        Debug.LogError("in LB");
+
         id_player_map.Add(id, player);
 
         player.GetComponent<PlayerNet>().cmdSetTextOnLB(gameObject, id);

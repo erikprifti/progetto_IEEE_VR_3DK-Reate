@@ -10,6 +10,7 @@ TagManager:
   - IdKeyPairs
   - Lobby
   - FinalScene
+  - LeaderBoard
   layers:
   - Default
   - TransparentFX

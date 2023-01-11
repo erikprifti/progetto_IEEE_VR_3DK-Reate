@@ -53,8 +53,11 @@ public class PlayerManager : NetworkBehaviour
 
         if (isLocalPlayer)
         {
-            if (isClient)
+            if (isClient) {
+
                 CmdSetPlayerInfo();
+                leaderBoard.addPlayer(id, gameObject);
+            }
 
             cameraActive.enabled = true;
         }
@@ -103,9 +106,10 @@ public class PlayerManager : NetworkBehaviour
                 publicKeyEncode = idKeyPairs.getEncode(id);
                 publicKeyModule = idKeyPairs.getModule(id);
                 idKeyPairs.setUnavailable(id);
-                leaderBoard.addPlayer(id, gameObject);
+                Debug.LogError("arrivata qua");
+                
+                Debug.LogError("dopo qua");
 
-                break;
             }
 
         }
