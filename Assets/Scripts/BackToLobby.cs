@@ -27,28 +27,19 @@ public class BackToLobby : NetworkBehaviour
         Debug.LogError("In OnSelection in BackToLobby, key read: " + key);
 
         selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
-
-      //  selectingHand.GetComponent<HandChild>().gameObject.GetComponent<ActivePlayer>().setPrivateKey(key);
-
         PlayerNet p = selectingHand.GetComponent<HandChild>().player;
 
-
-
+        Debug.LogError("In OnSelection in BackToLobby, id del selettore: " + p.gameObject.GetComponent<PlayerManager>().getId());
         Debug.LogError("In OnSelection in BackToLobby, password del selettore before: " + p.gameObject.GetComponent<PlayerManager>().password);
 
 
-        //setto password nel player che ha selezionato BackToLobby, da spezzare, 
-        //anzi fare metodo play in challenge che gestisce se sono active e player a seconda di cosa è salvato in challenge, 
-        //e setta anche la password in me perchè gli passo io come riferimento
-
-        //challenge.GetComponent<Challenge>().play(key, p.gameObject);
+        //setto password nel player che ha selezionato BackToLobby
         p.GetComponentInParent<PlayerManager>().setPassword(challenge.GetComponent<Challenge>().decrypt(key));
 
         Debug.LogError("In OnSelection in BackToLobby, password del selettore after: " + p.gameObject.GetComponent<PlayerManager>().password);
 
         //teleporto il player attraverso command
         p.cmdLobbyTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject);
-        //
     }
 
     public void LobbyTeleport()
