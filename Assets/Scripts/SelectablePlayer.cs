@@ -13,6 +13,7 @@ public class SelectablePlayer : NetworkBehaviour
     public XRSimpleInteractable takeScript;
     public GameObject selectingHand;
     public Material verde;
+    public int id;
  
 
    
@@ -25,18 +26,28 @@ public class SelectablePlayer : NetworkBehaviour
 
 
 
+    
     public void OnSelection()
     {
-
-        Debug.LogError("Ho interagito con " + takeScript.interactorsSelecting[0].transform.gameObject.name);
+        Leaderboard lb = gameObject.GetComponentInParent<Leaderboard>();
+        
+        
+        Debug.LogError("selezione da " + takeScript.interactorsSelecting[0].transform.gameObject.name);
         int activeID = takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId();
-        int passiveID = gameObject.GetComponent<PlayerManager>().getId();
+        int passiveID = id;
         if (activeID == passiveID)
             return;
         selectingHand = takeScript.interactorsSelecting[0].transform.gameObject; //selectingHand è l'attivo
         Debug.LogError("in ONSelection " + activeID + " ha selezionato, mentre " + passiveID + " è stato selezionato");
 
-        selectingHand.GetComponent<HandChild>().player.cmdSendMessage(challenge, activeID, passiveID); //passiamo a cmdSelectPlayer gameObject=player selezionato(passivePlayer)
+        //selectingHand.GetComponent<HandChild>().player.cmdSendMessage(challenge, activeID, passiveID); //passiamo a cmdSelectPlayer gameObject=player selezionato(passivePlayer)
+
+        selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
+        Debug.LogError("in ONSelection "+activeID + " ha selezionato, mentre " + passiveID + " è stato selezionato");
+
+        //qui deve chiamare le cose che sto facendo io sul pc di fede
+
+        //selectingHand.GetComponent<HandChild>().player.cmdSelectPlayer(gameObject, activeID, passiveID); //passiamo a cmdSelectPlayer gameObject=player selezionato(passivePlayer)
 
     }
 
