@@ -51,7 +51,8 @@ public class PlayerNet : NetworkBehaviour
         Debug.LogError("IN COMMAND TELEPORT PLAYER"); //su server
         challenge.GetNamedChild("Schermo").GetComponent<MeshRenderer>().material = challenge.GetComponent<Teleport>().rosso;
         challenge.GetComponent<BoxCollider>().enabled = false;
-        challenge.GetComponent<Teleport>().rpcChallengeStarted();
+
+        challenge.GetComponent<Teleport>().rpcChallengeBusy();
         challenge.GetComponent<Teleport>().rpcSelectedTeleport(player.GetComponent<NetworkIdentity>().connectionToClient);
 
     }
@@ -61,6 +62,7 @@ public class PlayerNet : NetworkBehaviour
     {
         //Debug.LogError(c);
         //c.GetComponent<MeshRenderer>().material = t.GetComponent<BackToLobby>().azzurro;
+
         btl.GetComponent<BackToLobby>().rpcLobbyTeleport(player.GetComponent<NetworkIdentity>().connectionToClient);
 
         //if (player.GetComponentInParent<PlayerManager>().getId() == 1)
@@ -69,6 +71,12 @@ public class PlayerNet : NetworkBehaviour
         //    player.GetComponentInParent<PlayerManager>().setPassword(c.GetComponent<Challenge>().decrypt(379));
 
     }
+
+    //[Command]
+    //public void cmdChallengeFree(GameObject challenge)
+    //{
+    //    challenge.GetComponent<Teleport>().rpcChallengeFree();
+    //}
 
 
     [Command]

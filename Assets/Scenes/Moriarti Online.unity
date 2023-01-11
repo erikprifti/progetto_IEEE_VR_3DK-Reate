@@ -4183,6 +4183,7 @@ MonoBehaviour:
   selectingHand: {fileID: 0}
   takeScript: {fileID: 410688956}
   rosso: {fileID: 2100000, guid: 6ac21c5fef1050043aa715c4748d23e1, type: 2}
+  verde: {fileID: 0}
 --- !u!114 &410688954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4204,6 +4205,8 @@ MonoBehaviour:
   activePlayerId: 0
   passivePlayerId: 0
   messageEncrypted: 
+  messageEncrypted2: 
+  doorPassword: 
 --- !u!114 &410688955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5200,7 +5203,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51328
+  m_Name: pb_Mesh41234
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6926,7 +6929,7 @@ GameObject:
   - component: {fileID: 737367277}
   m_Layer: 0
   m_Name: Sala Giochi
-  m_TagString: Lobby
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17431,7 +17434,7 @@ GameObject:
   - component: {fileID: 2025861919}
   m_Layer: 0
   m_Name: StartPosition
-  m_TagString: Untagged
+  m_TagString: Lobby
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -65,6 +65,7 @@ public class SelectablePlayer : NetworkBehaviour
     [TargetRpc]
     public void rpcSelectableChallenge(NetworkConnection target)
     {
+        //da cambiare per new logic
         challenge.GetComponent<BoxCollider>().enabled = true;
     }
 
