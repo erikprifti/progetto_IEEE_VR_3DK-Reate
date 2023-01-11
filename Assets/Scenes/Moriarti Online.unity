@@ -4204,8 +4204,8 @@ MonoBehaviour:
   message: 
   activePlayerId: 0
   passivePlayerId: 0
-  messageEncrypted: 
-  messageEncrypted2: 
+  messageEncryptedP: 
+  messageEncryptedA: 
   doorPassword: 
 --- !u!114 &410688955
 MonoBehaviour:
@@ -17459,7 +17459,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2025861918}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.1, z: 0.77}
+  m_LocalPosition: {x: 0.5, y: 0.01, z: 0.77}
   m_LocalScale: {x: 0.033333335, y: 0.1, z: 0.033333335}
   m_ConstrainProportionsScale: 0
   m_Children: []
