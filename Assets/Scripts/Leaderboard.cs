@@ -6,6 +6,8 @@ using Mirror;
 
 public class Leaderboard : NetworkBehaviour
 {
+
+    
     public TMP_Text slot1;
     public TMP_Text slot2;
     public TMP_Text slot3;
@@ -23,8 +25,6 @@ public class Leaderboard : NetworkBehaviour
         id_text_map.Add( 4,  slot4 );
 
     }
-
-    private int freeslot = 1;
 
     public void addPlayer(int id, GameObject player)
     {
