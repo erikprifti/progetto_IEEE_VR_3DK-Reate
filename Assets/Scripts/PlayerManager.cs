@@ -13,6 +13,7 @@ public class PlayerManager : NetworkBehaviour
 {
     public Challenge challenge;
     public IdKeyPairs idKeyPairs;
+    public Leaderboard leaderBoard;
     [SyncVar]
     public int id;
     [SyncVar]
@@ -47,6 +48,7 @@ public class PlayerManager : NetworkBehaviour
     {
         idKeyPairs = GameObject.FindWithTag("IdKeyPairs").GetComponent<IdKeyPairs>();
         challenge = GameObject.FindWithTag("Challenge").GetComponent<Challenge>();
+        leaderBoard = GameObject.FindWithTag("LeaderBoard").GetComponent<Leaderboard>();
         cRoom = GameObject.FindGameObjectWithTag("ChallengeRoom");
 
         if (isLocalPlayer)
@@ -101,6 +103,7 @@ public class PlayerManager : NetworkBehaviour
                 publicKeyEncode = idKeyPairs.getEncode(id);
                 publicKeyModule = idKeyPairs.getModule(id);
                 idKeyPairs.setUnavailable(id);
+                leaderBoard.addPlayer(id, gameObject);
 
                 break;
             }

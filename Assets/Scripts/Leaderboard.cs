@@ -2,32 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Mirror;
 
-public class Leaderboard : MonoBehaviour
+public class Leaderboard : NetworkBehaviour
 {
-    public TextMeshPro slot1;
-    public TextMeshPro slot2;
-    public TextMeshPro slot3;
+    public TMP_Text slot1;
+    public TMP_Text slot2;
+    public TMP_Text slot3;
+    public TMP_Text slot4;
+
 
     private int freeslot = 1;
 
-    public void addPlayer(string name)
+    public readonly Dictionary<int, TMP_Text> id_text_map = new Dictionary<int, TMP_Text>();
+
+    public Dictionary<int, GameObject> id_player_map = new Dictionary<int, GameObject>();
+
+    public void Start()
     {
-        if (freeslot == 1)
-        {
-            freeslot++;
-            slot1.text = name;
-        }
-        if (freeslot == 2)
-        {
-            freeslot++;
-            slot2.text = name;
-        }
-        if (freeslot == 3)
-        {
-            freeslot++;
-            slot3.text = name;
-        }
+        id_text_map.Add(1, slot1);
+        id_text_map.Add(2, slot2);
+        id_text_map.Add(3, slot3);
+        id_text_map.Add(4, slot4);
+
+    }
+
+    public void addPlayer(int id, GameObject player)
+    {
+        id_player_map.Add(id, player);
+
+        player.GetComponent<PlayerNet>().cmdSetTextOnLB(gameObject, id);
+    }
+
+    [ClientRpc]
+    public void rpcSetTextOnLB(int id)
+    {
+        TMP_Text t = id_text_map.GetValueOrDefault(id);
+        t.GetComponent<SelectablePlayer>().id = id;
+
+        t.text = "player " + id; 
     }
 
 }

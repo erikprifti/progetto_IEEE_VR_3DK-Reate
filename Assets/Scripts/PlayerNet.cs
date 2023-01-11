@@ -99,7 +99,13 @@ public class PlayerNet : NetworkBehaviour
     public void cmdSendMessage(GameObject challenge, GameObject playerP)
     {
         challenge.GetComponent<Challenge>().sendMessage(playerP);
-        challenge.GetComponent<Challenge>().rpcSendMessageTarget(playerP.GetComponent<NetworkIdentity>().connectionToClient);
+        //challenge.GetComponent<Challenge>().rpcSendMessageTarget(playerP.GetComponent<NetworkIdentity>().connectionToClient);
+    }
+    [Command]
+    public void cmdSetTextOnLB(GameObject lb, int id)
+    {
+        lb.GetComponent<Leaderboard>().rpcSetTextOnLB(id);
+
     }
 
 }
