@@ -99,4 +99,11 @@ public class PlayerNet : NetworkBehaviour
 
     }
 
+    [Command]
+   public void cmdSetTextOnLB(GameObject lb, int id)
+    {
+
+        lb.GetComponent<Leaderboard>().rpcSetTextOnLB(id);
+    }
+
 }
