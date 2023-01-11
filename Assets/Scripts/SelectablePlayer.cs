@@ -23,17 +23,10 @@ public class SelectablePlayer : NetworkBehaviour
         challenge = GameObject.FindWithTag("Challenge");
 
     }
-    
-    //public void OnSelectionPublicId()
-    //{
-    //    Debug.LogError("in ONSelectionPublicId");
-    //    int activeID = takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId();
-    //    int passiveID = gameObject.GetComponent<PublicId>().id;
-    //    if (activeID == passiveID)
-    //        return;
-    //    Debug.LogError("in ONSelection " + activeID + " ha selezionato, mentre "  + passiveID + " è stato selezionato");
 
-    //}
+
+
+    
     public void OnSelection()
     {
         Leaderboard lb = gameObject.GetComponentInParent<Leaderboard>();
@@ -44,6 +37,11 @@ public class SelectablePlayer : NetworkBehaviour
         int passiveID = id;
         if (activeID == passiveID)
             return;
+        selectingHand = takeScript.interactorsSelecting[0].transform.gameObject; //selectingHand è l'attivo
+        Debug.LogError("in ONSelection " + activeID + " ha selezionato, mentre " + passiveID + " è stato selezionato");
+
+        //selectingHand.GetComponent<HandChild>().player.cmdSendMessage(challenge, activeID, passiveID); //passiamo a cmdSelectPlayer gameObject=player selezionato(passivePlayer)
+
         selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
         Debug.LogError("in ONSelection "+activeID + " ha selezionato, mentre " + passiveID + " è stato selezionato");
 
