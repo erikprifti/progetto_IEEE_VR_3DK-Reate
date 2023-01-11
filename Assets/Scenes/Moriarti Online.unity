@@ -2438,7 +2438,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51928
+  m_Name: pb_Mesh53548
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2804,7 +2804,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51530
+  m_Name: pb_Mesh53128
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5515,7 +5515,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30694
+  m_Name: pb_Mesh52914
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7781,7 +7781,7 @@ Transform:
   m_GameObject: {fileID: 737367271}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 14, y: 4.666667, z: 14}
+  m_LocalScale: {x: 11, y: 3.6666667, z: 11}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 874579187}
@@ -15773,6 +15773,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_leaderboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9b1718f95b267c1429ce5c1c313db2e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: LeaderBoard
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b1718f95b267c1429ce5c1c313db2e6, type: 3}
