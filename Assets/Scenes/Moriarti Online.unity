@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.44225433, g: 0.4912786, b: 0.5711671, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1292,7 +1292,7 @@ PrefabInstance:
     - target: {fileID: 5073843440183493646, guid: b83eb6d64aaa91545840560abfd50d9d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.23283663
+      value: 0.158
       objectReference: {fileID: 0}
     - target: {fileID: 5073843440183493646, guid: b83eb6d64aaa91545840560abfd50d9d,
         type: 3}
@@ -2438,7 +2438,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh44488
+  m_Name: pb_Mesh38828
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2804,7 +2804,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh44082
+  m_Name: pb_Mesh38414
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5585,7 +5585,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh49808
+  m_Name: pb_Mesh38178
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12866,7 +12866,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 10
   m_Range: 11.314511
   m_SpotAngle: 28.26719
   m_InnerSpotAngle: 18.299393
@@ -12908,7 +12908,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -14494,14 +14494,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529527621}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.546, y: 0.995, z: 0.337}
+  m_LocalRotation: {x: 0.85644734, y: 0, z: 0, w: 0.51623446}
+  m_LocalPosition: {x: 0.593, y: 1.01, z: 0.96}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1156130625}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 117.84, y: 0, z: 0}
 --- !u!114 &1529527623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17261,14 +17261,14 @@ Transform:
   - {fileID: 190490650}
   - {fileID: 680957367}
   - {fileID: 1963333182}
-  - {fileID: 591300071}
   - {fileID: 755898476}
-  - {fileID: 629498517}
+  - {fileID: 591300071}
   - {fileID: 177884334}
+  - {fileID: 629498517}
+  - {fileID: 1976588314}
   - {fileID: 1980856479}
   - {fileID: 1502279307}
   - {fileID: 1542094115}
-  - {fileID: 1976588314}
   m_Father: {fileID: 737367276}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18926,7 +18926,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 10
   m_Range: 11.314511
   m_SpotAngle: 28.26719
   m_InnerSpotAngle: 18.299393
