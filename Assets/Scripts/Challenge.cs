@@ -233,7 +233,8 @@ public class Challenge : NetworkBehaviour
                 k = k * pt;
                 k = k % n;
             }
-            temp[i] = k;
+            temp.Insert(i, k);
+           // temp[i] = k;
             ct = k + 64;
             en[i] = ct;
             i++;
