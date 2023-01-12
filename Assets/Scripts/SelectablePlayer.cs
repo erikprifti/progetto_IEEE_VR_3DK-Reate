@@ -30,16 +30,16 @@ public class SelectablePlayer : NetworkBehaviour
         int selector = takeScript.interactorsHovering[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId();
         if (id == 0  || challenge.GetComponent<Challenge>().activePlayerId == 0)
         {
-            if(id == selector)
-            {
-                gameObject.GetComponent<TextMeshProUGUI>().color = Color.blue;
-
-            }
-            else
                gameObject.GetComponent<TextMeshProUGUI>().color = Color.red;
 
             return;
+
         }
+        else if(id == selector)
+            {
+            gameObject.GetComponent<TextMeshProUGUI>().color = Color.yellow;
+
+        }else
         gameObject.GetComponent<TextMeshProUGUI>().color = Color.green;
     }
     
@@ -61,6 +61,7 @@ public class SelectablePlayer : NetworkBehaviour
         int passiveID = id;
         if (activeID == passiveID)
             return;
+
         selectingHand = takeScript.interactorsSelecting[0].transform.gameObject; //selectingHand è l'attivo
         Debug.LogError("in ONSelection " + activeID + " ha selezionato, mentre " + passiveID + " è stato selezionato");
         GameObject playerP = lb.id_player_map.GetValueOrDefault(passiveID);

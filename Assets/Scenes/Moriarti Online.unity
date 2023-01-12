@@ -4178,7 +4178,7 @@ MonoBehaviour:
   selectingHand: {fileID: 0}
   takeScript: {fileID: 410688956}
   rosso: {fileID: 2100000, guid: 6ac21c5fef1050043aa715c4748d23e1, type: 2}
-  verde: {fileID: 0}
+  verde: {fileID: 2100000, guid: a7d6245e2509a1049a549bb54fb22c3e, type: 2}
 --- !u!114 &410688954
 MonoBehaviour:
   m_ObjectHideFlags: 0
