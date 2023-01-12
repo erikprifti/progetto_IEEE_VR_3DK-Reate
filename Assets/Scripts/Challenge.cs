@@ -165,6 +165,10 @@ public class Challenge : NetworkBehaviour
         activePlayerId = 0;
         passivePlayerId = 0;
         messageEncryptedP = null;
+        messageEncryptedA = null;
+        doorPassword = null;
+        tempA.Clear();
+        tempP.Clear();
     }
 
     public void play(int key, int Id) //CHIMATA IN LOCALE

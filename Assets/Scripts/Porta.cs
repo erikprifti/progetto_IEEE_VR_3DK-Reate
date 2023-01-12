@@ -15,8 +15,8 @@ public class Porta : NetworkBehaviour
     public XRSimpleInteractable takeScript;
     public GameObject FinalScene;
     public Material azzurro;
-
-    public int passingTheTreshold = 0;
+    [SyncVar]
+    public int threshold = 0;
 
     private void Start()
     {
@@ -47,19 +47,22 @@ public class Porta : NetworkBehaviour
     public void OnSelection()
     {
         
-            if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == challenge.GetComponent<Challenge>().passivePlayerId)
-            {
-                selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
-                if (!verifyPassword(selectingHand.transform.gameObject.GetComponentInParent<PlayerManager>().getPassword())) { return; }
-                selectingHand.GetComponent<HandChild>().player.cmdFinalTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject, challenge);
-            }
+        if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == challenge.GetComponent<Challenge>().passivePlayerId)
+        {
+            selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
+            Debug.LogError("password di " + selectingHand.GetComponentInParent<PlayerManager>().getId() + " alla porta: " + selectingHand.transform.gameObject.GetComponentInParent<PlayerManager>().getPassword());
+            if (!verifyPassword(selectingHand.transform.gameObject.GetComponentInParent<PlayerManager>().getPassword())) { return; }
+            selectingHand.GetComponent<HandChild>().player.cmdFinalTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject, challenge);
+        }
 
-            if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == challenge.GetComponent<Challenge>().activePlayerId)
-            {
-                selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
-                if (!verifyPassword(selectingHand.transform.gameObject.GetComponentInParent<PlayerManager>().getPassword())) { return; }
-                selectingHand.GetComponent<HandChild>().player.cmdFinalTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject, challenge);
-            }
+        if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == challenge.GetComponent<Challenge>().activePlayerId)
+        {
+            selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
+            Debug.LogError("password di " + selectingHand.GetComponentInParent<PlayerManager>().getId() + " alla porta: " + selectingHand.transform.gameObject.GetComponentInParent<PlayerManager>().getPassword());
+
+            if (!verifyPassword(selectingHand.transform.gameObject.GetComponentInParent<PlayerManager>().getPassword())) { return; }
+            selectingHand.GetComponent<HandChild>().player.cmdFinalTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject, challenge);
+        }
         
 
     }
@@ -83,7 +86,6 @@ public class Porta : NetworkBehaviour
     [ClientRpc]
     public void rpcResetChallenge()
     {
-        passingTheTreshold = 0;
         //password = null;
         challenge.GetComponent<Challenge>().resetChallenge();
         challenge.GetComponent<MeshRenderer>().material = azzurro;

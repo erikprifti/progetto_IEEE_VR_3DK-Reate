@@ -58,11 +58,11 @@ public class PlayerNet : NetworkBehaviour
 
     }
 
-    [Command]
-    public void cmdChallengeFree(GameObject challenge)
-    {
-        challenge.GetComponent<Teleport>().rpcChallengeFree();
-    }
+    //[Command]
+    //public void cmdChallengeFree(GameObject challenge)
+    //{
+    //    challenge.GetComponent<Teleport>().rpcChallengeFree();
+    //}
 
     //[Command]
     //public void cmdChallengeFreeTarget(GameObject challenge, GameObject playerP)
@@ -72,19 +72,17 @@ public class PlayerNet : NetworkBehaviour
 
 
     [Command]
-    public void cmdFinalTeleportPlayer(GameObject play, GameObject porta,GameObject c)
+    public void cmdFinalTeleportPlayer(GameObject play, GameObject porta, GameObject c)
     {
-        porta.GetComponent<Porta>().passingTheTreshold++;
-
 
         porta.GetComponent<Porta>().rpcFinalTeleport(play.GetComponent<NetworkIdentity>().connectionToClient);
-
-        if (porta.GetComponent<Porta>().passingTheTreshold < 2)
-        {
+        porta.GetComponent<Porta>().threshold++;
+        if (porta.GetComponent<Porta>().threshold == 2) {
             c.GetComponent<Challenge>().resetChallenge();
-            c.GetNamedChild("Schermo").GetComponent<MeshRenderer>().material = porta.GetComponent<Porta>().azzurro;
-            porta.GetComponent<Porta>().rpcResetChallenge();
+           // porta.GetComponent<Porta>().rpcResetChallenge();
+            return; 
         }
+        
 
     }
 
