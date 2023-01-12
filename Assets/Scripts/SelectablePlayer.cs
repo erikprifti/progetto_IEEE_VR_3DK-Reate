@@ -66,6 +66,8 @@ public class SelectablePlayer : NetworkBehaviour
         Debug.LogError("in ONSelection " + activeID + " ha selezionato, mentre " + passiveID + " è stato selezionato");
         GameObject playerP = lb.id_player_map.GetValueOrDefault(passiveID);
         selectingHand.GetComponent<HandChild>().player.cmdSendMessage(challenge, playerP); //passiamo a cmdSelectPlayer gameObject=player selezionato(passivePlayer)
+      
+        gameObject.GetComponent<TextMeshProUGUI>().color = Color.red;
 
     }
 
