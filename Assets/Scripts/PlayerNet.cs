@@ -113,7 +113,7 @@ public class PlayerNet : NetworkBehaviour
     [Command]
     public void cmdPlayChallenge(int key, GameObject challenge)
     {
-        challenge.GetComponent<Challenge>().play(key, gameObject);
+        challenge.GetComponent<Challenge>().play(key, gameObject.GetComponent<PlayerManager>().id);
     }
 
 }

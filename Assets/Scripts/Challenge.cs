@@ -10,6 +10,7 @@ public class Challenge : NetworkBehaviour
 {
     public Porta porta;
     public IdKeyPairs idKeyPairs;
+
     [SyncVar]
     public string message;
     [SyncVar]
@@ -166,10 +167,10 @@ public class Challenge : NetworkBehaviour
         messageEncryptedP = null;
     }
 
-    public void play(int key, GameObject player) //CHIMATA IN LOCALE
+    public void play(int key, int Id) //CHIMATA IN LOCALE
     {
         Debug.LogError("IN PLAY");
-        PlayerManager p = player.GetComponent<PlayerManager>();
+        PlayerManager p = findPlayerById(Id);
 
         if (activePlayerId == 0 && passivePlayerId == 0 ) //play chiamato dall attivo dopo aver messo la sua chiave privata con la quale decriptare per prima il messaggio
         {
@@ -182,7 +183,7 @@ public class Challenge : NetworkBehaviour
         else if(activePlayerId != 0 && passivePlayerId != 0)
         {
             //momento di decriptazione
-            resolveChallenge(key, player);
+            resolveChallenge(key, p.gameObject);
 
         }
     }
@@ -299,9 +300,10 @@ public class Challenge : NetworkBehaviour
 
         string messageDecryptedP = decrypt(message, privateKey, idKeyPairs.getModule(passivePlayerId), 1);
         string messageDecryptedA = decrypt(messageDecryptedP, idKeyPairs.getEncode(activePlayerId), idKeyPairs.getModule(activePlayerId), 0);
-        playerManager.setPassword(messageDecryptedA); //questo da verificare
-       // PlayerManager test = findPlayerById(playerId);
-       // player.GetComponent<PlayerNet>().cmdChallengeFree(gameObject);
+        PlayerManager p = findPlayerById(playerId);
+        p.setPassword(messageDecryptedA); //questo da verificare
+
+        // player.GetComponent<PlayerNet>().cmdChallengeFree(gameObject);
         gameObject.GetComponent<Teleport>().rpcChallengeFree();
 
     }
