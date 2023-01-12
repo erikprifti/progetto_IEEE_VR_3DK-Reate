@@ -5075,6 +5075,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   challenge: {fileID: 0}
+  lb: {fileID: 1592881479}
   takeScript: {fileID: 536583797}
   selectingHand: {fileID: 0}
   verde: {fileID: 0}
@@ -7776,6 +7777,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   challenge: {fileID: 0}
+  lb: {fileID: 1592881479}
   takeScript: {fileID: 744058845}
   selectingHand: {fileID: 0}
   verde: {fileID: 0}
@@ -13478,6 +13480,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   challenge: {fileID: 0}
+  lb: {fileID: 1592881479}
   takeScript: {fileID: 1349058308}
   selectingHand: {fileID: 0}
   verde: {fileID: 0}
@@ -17860,6 +17863,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   challenge: {fileID: 0}
+  lb: {fileID: 1592881479}
   takeScript: {fileID: 1885231878}
   selectingHand: {fileID: 0}
   verde: {fileID: 0}

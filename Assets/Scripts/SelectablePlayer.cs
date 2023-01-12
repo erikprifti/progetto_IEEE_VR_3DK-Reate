@@ -27,8 +27,17 @@ public class SelectablePlayer : NetworkBehaviour
 
     public void onHoverEnter()
     {
-        if (id == 0 || challenge.GetComponent<Challenge>().activePlayerId == 0)
+        int selector = takeScript.interactorsHovering[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId();
+        if (id == 0  || challenge.GetComponent<Challenge>().activePlayerId == 0)
         {
+            if(id == selector)
+            {
+                gameObject.GetComponent<TextMeshProUGUI>().color = Color.blue;
+
+            }
+            else
+               gameObject.GetComponent<TextMeshProUGUI>().color = Color.red;
+
             return;
         }
         gameObject.GetComponent<TextMeshProUGUI>().color = Color.green;
@@ -44,7 +53,6 @@ public class SelectablePlayer : NetworkBehaviour
         Debug.LogError("selezione da" + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() + " selezionato " + id);
         if(id == 0 || challenge.GetComponent<Challenge>().activePlayerId == 0)
         {
-            GameObject p  = lb.id_player_map.GetValueOrDefault(id);
             return;
         }
        

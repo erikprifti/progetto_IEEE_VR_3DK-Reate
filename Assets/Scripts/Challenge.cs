@@ -10,13 +10,23 @@ public class Challenge : NetworkBehaviour
 {
     public Porta porta;
     public IdKeyPairs idKeyPairs;
+    [SyncVar]
     public string message;
+    [SyncVar]
     public int activePlayerId;
+    [SyncVar]
     public int passivePlayerId;
+    [SyncVar]
     public string messageEncryptedP;
+    [SyncVar]
     public string messageEncryptedA;
+    [SyncVar]
     public string doorPassword;
- 
+   
+    SyncList<long> tempP = new SyncList<long>();
+
+    SyncList<long> tempA = new SyncList<long>();
+
     private void Start()
     {
         idKeyPairs = GameObject.FindWithTag("IdKeyPairs").GetComponent<IdKeyPairs>();
@@ -29,8 +39,6 @@ public class Challenge : NetworkBehaviour
     //for encryption and decryption
     long[] mb; //message in long array
     long[] ma;
-    long[] tempP;
-    long[] tempA;
     long[] en; //encrypted message in long array
     //public void setChallenge(int activePlayer, int passivePlayer)
     //{
@@ -60,79 +68,79 @@ public class Challenge : NetworkBehaviour
     }
 
 
-    private void encrypt()
-    {
-        mb = new long[message.Length];
-        ma = new long[message.Length];
+    //private void encrypt()
+    //{
+    //    mb = new long[message.Length];
+    //    ma = new long[message.Length];
 
-        tempP = new long[message.Length]; //temp mi salva i numeri che poi mi servono per decript
-        en = new long[message.Length];
-        long pt, ct, k;
-        long key = idKeyPairs.getEncode(passivePlayerId);
-        int n = idKeyPairs.getModule(passivePlayerId);
-        int i = 0;
+    //    tempP = new SyncList<long>(); //temp mi salva i numeri che poi mi servono per decript
+    //    en = new long[message.Length];
+    //    long pt, ct, k;
+    //    long key = idKeyPairs.getEncode(passivePlayerId);
+    //    int n = idKeyPairs.getModule(passivePlayerId);
+    //    int i = 0;
 
-        for(int j = 0; j<message.Length; j++)
-        {
-            mb[j] = (int)message[j];
-        }
+    //    for(int j = 0; j<message.Length; j++)
+    //    {
+    //        mb[j] = (int)message[j];
+    //    }
 
-        while (i < message.Length)
-        {
-            pt = mb[i];
-            pt = pt - 64;
-            k = 1;
-            for (long j = 0; j < key; j++)
-            {
-                k = k * pt;
-                k = k % n;
-            }
-            tempP[i] = k;
-            ct = k + 64;
-            en[i] = ct;
-            i++;
-        }
+    //    while (i < message.Length)
+    //    {
+    //        pt = mb[i];
+    //        pt = pt - 64;
+    //        k = 1;
+    //        for (long j = 0; j < key; j++)
+    //        {
+    //            k = k * pt;
+    //            k = k % n;
+    //        }
+    //        tempP[i] = k;
+    //        ct = k + 64;
+    //        en[i] = ct;
+    //        i++;
+    //    }
 
-        string encryptMex = string.Empty;
-        for (i = 0; i < en.Length; i++)
-        {
-            encryptMex = encryptMex + (char)en[i];
-        }
-        messageEncryptedP = encryptMex;
+    //    string encryptMex = string.Empty;
+    //    for (i = 0; i < en.Length; i++)
+    //    {
+    //        encryptMex = encryptMex + (char)en[i];
+    //    }
+    //    messageEncryptedP = encryptMex;
 
-    }
+    //}
 
-    public string decrypt(int key)
-    {
-        long pt, ct, k;
-        int n = idKeyPairs.getModule(passivePlayerId);
-        int i = 0;
-        //invece che usare en e ma devo prendere la stringa encryptmessage e usarla come array
-        while (i < en.Length) 
-        {
+    //public string decrypt(int key)
+    //{
+    //    long pt, ct, k;
+    //    int n = idKeyPairs.getModule(passivePlayerId);
+    //    int i = 0;
+    //    //invece che usare en e ma devo prendere la stringa encryptmessage e usarla come array
+    //    while (i < en.Length) 
+    //    {
 
-            ct = tempP[i];
-            k = 1;
-            for (long j = 0; j < key; j++)
-            {
-                k = k * ct;
-                k = k % n;
-            }
-            pt = k + 64;
-            ma[i] = pt;
+    //        ct = tempP[i];
+    //        k = 1;
+    //        for (long j = 0; j < key; j++)
+    //        {
+    //            k = k * ct;
+    //            k = k % n;
+    //        }
+    //        pt = k + 64;
+    //        ma[i] = pt;
         
-            i++;
-        }
+    //        i++;
+    //    }
 
-        string decryptMex = null;
+    //    string decryptMex = null;
 
-        for (i = 0; i < ma.Length; i++)
-        {
-            decryptMex = decryptMex + (char)ma[i];
-        }
+    //    for (i = 0; i < ma.Length; i++)
+    //    {
+    //        decryptMex = decryptMex + (char)ma[i];
+    //    }
 
-        return decryptMex;
-    }
+    //    return decryptMex;
+    //}
 
     private PlayerManager findPlayerById(int activePlayerId)
     {
@@ -158,8 +166,9 @@ public class Challenge : NetworkBehaviour
         messageEncryptedP = null;
     }
 
-    public void play(int key, GameObject player)
+    public void play(int key, GameObject player) //CHIMATA IN LOCALE
     {
+        Debug.LogError("IN PLAY");
         PlayerManager p = player.GetComponent<PlayerManager>();
 
         if (activePlayerId == 0 && passivePlayerId == 0 ) //play chiamato dall attivo dopo aver messo la sua chiave privata con la quale decriptare per prima il messaggio
@@ -192,16 +201,16 @@ public class Challenge : NetworkBehaviour
     {
 
         mb = new long[mex.Length];
-        long[] temp;
+        SyncList<long> temp;
 
         if (caso == 0)
         {
-            tempA = new long[mex.Length];
+            
             temp = tempA;
         }
         else
         {
-            tempP = new long[mex.Length];
+            
             temp = tempP;
         }
 
@@ -244,7 +253,7 @@ public class Challenge : NetworkBehaviour
         long pt, ct, k;
         int i = 0;
         ma = new long[mex.Length];
-        long[] temp;
+        SyncList<long> temp;
 
         if (caso == 0)
         {
@@ -280,7 +289,7 @@ public class Challenge : NetworkBehaviour
 
         return decryptMex;
     }
-   public void resolveChallenge(int privateKey, GameObject player)
+    public void resolveChallenge(int privateKey, GameObject player)
     {
         if (!player.CompareTag("Player")) { return; }
         PlayerManager playerManager = player.GetComponent<PlayerManager>();
@@ -297,6 +306,10 @@ public class Challenge : NetworkBehaviour
     [TargetRpc]
     public void rpcSendMessageTarget(NetworkConnection target, GameObject player)
     {
+
         sendMessage(player);
     }
+
+
+    
 }

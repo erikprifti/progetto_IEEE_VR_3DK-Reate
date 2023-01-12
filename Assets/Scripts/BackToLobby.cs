@@ -32,7 +32,8 @@ public class BackToLobby : NetworkBehaviour
         Debug.LogError("In OnSelection in BackToLobby, password del selettore before: " + p.gameObject.GetComponent<PlayerManager>().password);
 
 
-        challenge.GetComponent<Challenge>().play(key, p.gameObject);
+        p.cmdPlayChallenge(key, challenge);
+     //   challenge.GetComponent<Challenge>().play(key, p.gameObject);
 
         Debug.LogError("In OnSelection in BackToLobby, password del selettore after: " + p.gameObject.GetComponent<PlayerManager>().password);
 
@@ -43,19 +44,8 @@ public class BackToLobby : NetworkBehaviour
 
     public void LobbyTeleport()
     {
-
-        //  challenge.GetComponent<MeshRenderer>().material = azzurro;
-        Debug.LogError("In LobbyTeleport in BackToLobby ");
-
         PlayerNet p = selectingHand.GetComponent<HandChild>().player;
 
-        //if (p.GetComponentInParent<PlayerManager>().password == null)
-        //{
-        //    if (p.GetComponentInParent<PlayerManager>().getId() == 1)
-        //        p.GetComponentInParent<PlayerManager>().setPassword(challenge.GetComponent<Challenge>().decrypt(867));
-        //    if (p.GetComponentInParent<PlayerManager>().getId() == 2)
-        //        p.GetComponentInParent<PlayerManager>().setPassword(challenge.GetComponent<Challenge>().decrypt(379));
-        //}
         p.gameObject.transform.position = Lobby.transform.position;
 
     }
@@ -63,7 +53,6 @@ public class BackToLobby : NetworkBehaviour
     [TargetRpc]
     public void rpcLobbyTeleport(NetworkConnection target)
     {
-        //if (isLocalPlayer) return;
         LobbyTeleport();
     }
 
