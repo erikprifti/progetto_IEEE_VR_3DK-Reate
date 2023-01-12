@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using Unity.XR.CoreUtils;
 using UnityEngine;
+using TMPro;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class SelectablePlayer : NetworkBehaviour
@@ -23,25 +24,38 @@ public class SelectablePlayer : NetworkBehaviour
 
     }
 
-
+    public void onHoverEnter()
+    {
+        int activeID = takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId();
+        if (id == 0 || id == activeID || challenge.GetComponent<Challenge>().activePlayerId == 0)
+        {
+            return;
+        }
+        gameObject.GetComponent<TextMeshProUGUI>().color = Color.green;
+    }
+    
+    public void onHoverExit()
+    {
+        gameObject.GetComponent<TextMeshProUGUI>().color = Color.white;
+    }
 
     public void OnSelection()
     {
-        if(id == 0)
+        Debug.LogError("selezione da" + takeScript.interactorsSelecting[0].transform.gameObject.name + "selezionato " + id);
+        if(id == 0 || challenge.GetComponent<Challenge>().activePlayerId == 0)
         {
             return;
         }
         Leaderboard lb = gameObject.GetComponentInParent<Leaderboard>();
 
-        Debug.LogError("selezione da" + takeScript.interactorsSelecting[0].transform.gameObject.name);
         int activeID = takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId();
         int passiveID = id;
         if (activeID == passiveID)
             return;
         selectingHand = takeScript.interactorsSelecting[0].transform.gameObject; //selectingHand è l'attivo
         Debug.LogError("in ONSelection " + activeID + " ha selezionato, mentre " + passiveID + " è stato selezionato");
-
-        //selectingHand.GetComponent<HandChild>().player.cmdSendMessage(challenge, activeID, passiveID); //passiamo a cmdSelectPlayer gameObject=player selezionato(passivePlayer)
+        GameObject playerP = lb.id_player_map.GetValueOrDefault(passiveID);
+        selectingHand.GetComponent<HandChild>().player.cmdSendMessage(challenge, playerP); //passiamo a cmdSelectPlayer gameObject=player selezionato(passivePlayer)
 
     }
 

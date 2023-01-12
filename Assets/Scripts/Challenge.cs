@@ -185,7 +185,7 @@ public class Challenge : NetworkBehaviour
         int publicKey = idKeyPairs.getEncode(passivePlayerId);
         messageEncryptedP = encrypt(messageEncryptedA, publicKey, idKeyPairs.getModule(pId), 1);
         message = messageEncryptedP;
-        player.GetComponent<PlayerNet>().cmdChallengeFreeTarget(gameObject, player);
+        
     }
 
     private string encrypt(string mex, int key, int n, int caso)

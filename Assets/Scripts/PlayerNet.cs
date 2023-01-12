@@ -3,8 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Windows;
-using UnityEngine.InputSystem.XR;
+using TMPro;
 using UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
 using UnityEngine.XR.Interaction.Toolkit;
 using Unity.XR.CoreUtils;
@@ -20,12 +19,6 @@ public class PlayerNet : NetworkBehaviour
 
      void Start()
     {
-        //if (isServer)
-        //{
-        //    //input.keyboardNet[KeyCode.G].AddListener(SelectCheDeviAncoraDefinirla);
-        //    //input.keyboardNet[KeyCode.R].AddListener(SelectCheDeviAncoraDefinirla);
-        //    XRsim.enabled = false;
-        //}
         if (!isLocalPlayer)
         {
             XRsim.enabled = false; 
@@ -71,11 +64,11 @@ public class PlayerNet : NetworkBehaviour
         challenge.GetComponent<Teleport>().rpcChallengeFree();
     }
 
-    [Command]
-    public void cmdChallengeFreeTarget(GameObject challenge, GameObject playerP)
-    {
-        challenge.GetComponent<Teleport>().rpcChallengeFreeTarget(playerP.GetComponent<NetworkIdentity>().connectionToClient);
-    }
+    //[Command]
+    //public void cmdChallengeFreeTarget(GameObject challenge, GameObject playerP)
+    //{
+    //    challenge.GetComponent<Teleport>().rpcChallengeFreeTarget(playerP.GetComponent<NetworkIdentity>().connectionToClient);
+    //}
 
 
     [Command]
@@ -98,14 +91,23 @@ public class PlayerNet : NetworkBehaviour
     [Command]
     public void cmdSendMessage(GameObject challenge, GameObject playerP)
     {
-        challenge.GetComponent<Challenge>().sendMessage(playerP);
-        //challenge.GetComponent<Challenge>().rpcSendMessageTarget(playerP.GetComponent<NetworkIdentity>().connectionToClient);
-    }
-    [Command]
-    public void cmdSetTextOnLB(GameObject lb, int id)
-    {
-        lb.GetComponent<Leaderboard>().rpcSetTextOnLB(id);
+        challenge.GetComponent<Challenge>().sendMessage(playerP); //in server
+        //cmdChallengeFreeTarget(gameObject, playerP);
+        challenge.GetComponent<Challenge>().rpcSendMessageTarget(playerP.GetComponent<NetworkIdentity>().connectionToClient, playerP); //setto challenge client specifico
+        challenge.GetComponent<Teleport>().rpcChallengeFreeTarget(playerP.GetComponent<NetworkIdentity>().connectionToClient); //enable challenge su client specifico
 
     }
+
+    //[Command]
+    //public void cmdSetTextOnLB(GameObject lb, int id)
+    //{
+    //    GameObject t = lb.GetComponent<Leaderboard>().id_text_map.GetValueOrDefault(id);
+    //    Debug.LogError("in  player net : " + id);
+
+    //    t.GetComponent<SelectablePlayer>().id = id;
+    //    t.GetComponent<TextMeshProUGUI>().text = "player " + id;
+    //    lb.GetComponent<Leaderboard>().rpcSetTextOnLB(id);
+
+    //}
 
 }
