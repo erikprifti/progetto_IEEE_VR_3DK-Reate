@@ -290,7 +290,7 @@ public class Challenge : NetworkBehaviour
 
         return decryptMex;
     }
-    public void resolveChallenge(int privateKey, GameObject player)
+    public void resolveChallenge(int privateKey, GameObject player) //chiamata da command
     {
         if (!player.CompareTag("Player")) { return; }
         PlayerManager playerManager = player.GetComponent<PlayerManager>();
@@ -299,8 +299,10 @@ public class Challenge : NetworkBehaviour
 
         string messageDecryptedP = decrypt(message, privateKey, idKeyPairs.getModule(passivePlayerId), 1);
         string messageDecryptedA = decrypt(messageDecryptedP, idKeyPairs.getEncode(activePlayerId), idKeyPairs.getModule(activePlayerId), 0);
-        playerManager.setPassword(messageDecryptedA);
-        player.GetComponent<PlayerNet>().cmdChallengeFree(gameObject);
+        playerManager.setPassword(messageDecryptedA); //questo da verificare
+       // PlayerManager test = findPlayerById(playerId);
+       // player.GetComponent<PlayerNet>().cmdChallengeFree(gameObject);
+        gameObject.GetComponent<Teleport>().rpcChallengeFree();
 
     }
 

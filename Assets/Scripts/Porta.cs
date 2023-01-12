@@ -8,6 +8,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Porta : NetworkBehaviour
 {
+    [SyncVar]
     public string password;
     public GameObject challenge;
     public GameObject selectingHand;
