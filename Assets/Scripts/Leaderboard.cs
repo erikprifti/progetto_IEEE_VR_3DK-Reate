@@ -6,21 +6,23 @@ using Mirror;
 
 public class Leaderboard : NetworkBehaviour
 {
-    public TMP_Text slot1;
-    public TMP_Text slot2;
-    public TMP_Text slot3;
-    public TMP_Text slot4;
+    public TMPmodifier slot1;
+    public TMPmodifier slot2;
+    public TMPmodifier slot3;
+    public TMPmodifier slot4;
+
+
 
 
     private int freeslot = 1;
 
-    public readonly Dictionary<int, TMP_Text> id_text_map = new Dictionary<int, TMP_Text>();
+    public readonly Dictionary<int, TMPmodifier> id_text_map = new Dictionary<int, TMPmodifier>();
 
     public Dictionary<int, GameObject> id_player_map = new Dictionary<int, GameObject>();
 
     public void Start()
     {
-        slot1.text = "cioa";
+        slot1.addName("pierino");
         id_text_map.Add(1, slot1);
         id_text_map.Add(2, slot2);
         id_text_map.Add(3, slot3);
@@ -40,10 +42,10 @@ public class Leaderboard : NetworkBehaviour
     [ClientRpc]
     public void rpcSetTextOnLB(int id)
     {
-        TMP_Text t = id_text_map.GetValueOrDefault(id);
+        TMPmodifier t = id_text_map.GetValueOrDefault(id);
         t.GetComponent<SelectablePlayer>().id = id;
 
-        t.text = "player " + id; 
+        t.addName("player " + id.ToString()); 
     }
 
 }
