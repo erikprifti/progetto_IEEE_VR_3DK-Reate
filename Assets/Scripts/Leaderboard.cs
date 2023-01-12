@@ -30,7 +30,9 @@ public class Leaderboard : NetworkBehaviour
         id_text_map.Add(2, slot2);
         id_text_map.Add(3, slot3);
         id_text_map.Add(4, slot4);
+        Debug.LogError("! display da start " );
 
+        displayPlayers();
     }
 
     public void addPlayer(int id, GameObject player) //su server, chaiamto da setPlayerInfo
@@ -44,6 +46,7 @@ public class Leaderboard : NetworkBehaviour
         for(int i = 0; i < 5; i++){
             if (id_player_map.ContainsKey(i))
             {
+                Debug.LogError("! player map contienee: " + i);
                 GameObject t = id_text_map.GetValueOrDefault(i);
                 t.GetComponent<SelectablePlayer>().id = i;
                 t.GetComponent<TextMeshProUGUI>().text = "player " + i;
