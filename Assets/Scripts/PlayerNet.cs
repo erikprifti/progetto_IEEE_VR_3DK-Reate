@@ -93,7 +93,7 @@ public class PlayerNet : NetworkBehaviour
     {
         challenge.GetComponent<Challenge>().sendMessage(playerP); //in server
         //cmdChallengeFreeTarget(gameObject, playerP);
-        challenge.GetComponent<Challenge>().rpcSendMessageTarget(playerP.GetComponent<NetworkIdentity>().connectionToClient, playerP); //setto challenge client specifico
+       // challenge.GetComponent<Challenge>().rpcSendMessageTarget(playerP.GetComponent<NetworkIdentity>().connectionToClient, playerP); //setto challenge client specifico
         challenge.GetComponent<Teleport>().rpcChallengeFreeTarget(playerP.GetComponent<NetworkIdentity>().connectionToClient); //enable challenge su client specifico
 
     }
