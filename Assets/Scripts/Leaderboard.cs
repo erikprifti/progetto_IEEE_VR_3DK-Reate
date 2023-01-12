@@ -16,6 +16,7 @@ public class Leaderboard : NetworkBehaviour
 
     public readonly Dictionary<int, GameObject> id_text_map = new Dictionary<int, GameObject>();
 
+    
     public Dictionary<int, GameObject> id_player_map = new Dictionary<int, GameObject>();
 
     public void Start()
@@ -38,6 +39,8 @@ public class Leaderboard : NetworkBehaviour
     public void addPlayer(int id, GameObject player) //su server, chaiamto da setPlayerInfo
     {
         id_player_map.Add(id, player);
+        //player.GetComponent<PlayerNet>().cmdUpdatePlayerMap();
+        Debug.LogError("! display da addPlayer ");
         displayPlayers();
     }
     
@@ -46,6 +49,8 @@ public class Leaderboard : NetworkBehaviour
         for(int i = 0; i < 5; i++){
             if (id_player_map.ContainsKey(i))
             {
+               
+
                 Debug.LogError("! player map contienee: " + i);
                 GameObject t = id_text_map.GetValueOrDefault(i);
                 t.GetComponent<SelectablePlayer>().id = i;
@@ -55,9 +60,18 @@ public class Leaderboard : NetworkBehaviour
     }
 
     [ClientRpc]
+    public void rpcClearPlayerMap()
+    {
+        id_player_map.Clear();
+
+    }
+    [ClientRpc]
     public void rpcSetTextOnLB(int id, GameObject player)
     {
-        addPlayer(id, player);
+      addPlayer(id, player);
+            
+       
+        
 
 
     }
