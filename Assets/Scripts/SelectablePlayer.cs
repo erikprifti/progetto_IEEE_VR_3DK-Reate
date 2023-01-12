@@ -26,8 +26,7 @@ public class SelectablePlayer : NetworkBehaviour
 
     public void onHoverEnter()
     {
-        int activeID = takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId();
-        if (id == 0 || id == activeID || challenge.GetComponent<Challenge>().activePlayerId == 0)
+        if (id == 0 || challenge.GetComponent<Challenge>().activePlayerId == 0)
         {
             return;
         }
@@ -41,7 +40,7 @@ public class SelectablePlayer : NetworkBehaviour
 
     public void OnSelection()
     {
-        Debug.LogError("selezione da" + takeScript.interactorsSelecting[0].transform.gameObject.name + "selezionato " + id);
+        Debug.LogError("selezione da" + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() + " selezionato " + id);
         if(id == 0 || challenge.GetComponent<Challenge>().activePlayerId == 0)
         {
             return;

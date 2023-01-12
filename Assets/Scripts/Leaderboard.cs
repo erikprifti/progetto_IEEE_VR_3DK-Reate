@@ -33,12 +33,22 @@ public class Leaderboard : NetworkBehaviour
 
     }
 
-    public void addPlayer(int id, GameObject player)
+    public void addPlayer(int id, GameObject player) //su server, chaiamto da setPlayerInfo
     {
         id_player_map.Add(id, player);
-        GameObject t = id_text_map.GetValueOrDefault(id);
-        t.GetComponent<SelectablePlayer>().id = id;
-        t.GetComponent<TextMeshProUGUI>().text = "player " + id;
+        displayPlayers();
+    }
+    
+    public void displayPlayers()
+    {
+        for(int i = 0; i < 5; i++){
+            if (id_player_map.ContainsKey(i))
+            {
+                GameObject t = id_text_map.GetValueOrDefault(i);
+                t.GetComponent<SelectablePlayer>().id = i;
+                t.GetComponent<TextMeshProUGUI>().text = "player " + i;
+            }
+        }
     }
 
     [ClientRpc]
