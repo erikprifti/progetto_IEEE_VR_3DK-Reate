@@ -31,17 +31,21 @@ public class Leaderboard : NetworkBehaviour
         id_text_map.Add(2, slot2);
         id_text_map.Add(3, slot3);
         id_text_map.Add(4, slot4);
-        Debug.LogError("! display da start " );
+        //Debug.LogError("! display da start " );
 
-        displayPlayers();
+        //displayPlayers();
     }
 
     public void addPlayer(int id, GameObject player) //su server, chaiamto da setPlayerInfo
     {
         id_player_map.Add(id, player);
+        GameObject t = id_text_map.GetValueOrDefault(id);
+        t.GetComponent<SelectablePlayer>().id = id;
+        t.GetComponent<TextMeshProUGUI>().text = "player " + id;
         //player.GetComponent<PlayerNet>().cmdUpdatePlayerMap();
-        Debug.LogError("! display da addPlayer ");
-        displayPlayers();
+        //Debug.LogError("! display da addPlayer ");
+
+        // displayPlayers();
     }
     
     public void displayPlayers()
@@ -68,12 +72,9 @@ public class Leaderboard : NetworkBehaviour
     [ClientRpc]
     public void rpcSetTextOnLB(int id, GameObject player)
     {
-      addPlayer(id, player);
-            
-       
-        
-
-
+         addPlayer(id, player);
+        Debug.LogError("after adding in rpcSetTextOnLB, added: " + id);
+        id_player_map.GetValueOrDefault(id);
     }
 
 }

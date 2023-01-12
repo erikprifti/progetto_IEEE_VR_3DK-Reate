@@ -11,6 +11,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class SelectablePlayer : NetworkBehaviour
 {
     public GameObject challenge;
+    public Leaderboard lb;
     public XRSimpleInteractable takeScript;
     public GameObject selectingHand;
     public Material verde;
@@ -43,9 +44,10 @@ public class SelectablePlayer : NetworkBehaviour
         Debug.LogError("selezione da" + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() + " selezionato " + id);
         if(id == 0 || challenge.GetComponent<Challenge>().activePlayerId == 0)
         {
+            GameObject p  = lb.id_player_map.GetValueOrDefault(id);
             return;
         }
-        Leaderboard lb = gameObject.GetComponentInParent<Leaderboard>();
+       
 
         int activeID = takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId();
         int passiveID = id;

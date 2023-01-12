@@ -105,6 +105,7 @@ public class PlayerManager : NetworkBehaviour
                 publicKeyEncode = idKeyPairs.getEncode(id);
                 publicKeyModule = idKeyPairs.getModule(id);
                 idKeyPairs.setUnavailable(id);
+
                 leaderBoard.addPlayer(id, gameObject); // on server
 
                 leaderBoard.rpcClearPlayerMap();
