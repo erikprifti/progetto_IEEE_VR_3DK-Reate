@@ -275,7 +275,6 @@ public class Challenge : NetworkBehaviour
             Debug.LogError("Momento di risoluzione challenge");
             return resolveChallenge(key, p.gameObject);
 
-
         }else 
             return null;
     }
@@ -415,7 +414,7 @@ public class Challenge : NetworkBehaviour
         PlayerManager p = findPlayerById(playerId);
      //   p.setPassword(messageDecryptedA); //questo da verificare
 
-        //// player.GetComponent<PlayerNet>().cmdChallengeFree(gameObject);
+        // player.GetComponent<PlayerNet>().cmdChallengeFree(gameObject);
         //gameObject.GetComponent<Teleport>().rpcChallengeFree();
         return messageDecryptedA;
     }
