@@ -15,6 +15,8 @@ TagManager:
   - T2
   - T3
   - T4
+  - StartButton
+  - ConfirmButton
   layers:
   - Default
   - TransparentFX

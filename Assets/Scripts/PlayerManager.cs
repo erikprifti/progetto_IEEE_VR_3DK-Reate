@@ -18,8 +18,8 @@ public class PlayerManager : NetworkBehaviour
     public int publicKeyEncode;
     [SyncVar]
     public int publicKeyModule;
-    [SyncVar]
     public string password;
+    public int privateKey;
     public NetworkIdentity networkIdentity;
 
     public XROrigin xrOrigin;
@@ -86,7 +86,8 @@ public class PlayerManager : NetworkBehaviour
         return password;
     }
 
-    public void setPassword(string p)
+    [TargetRpc]
+    public void rcpTargetSetPassword(NetworkConnection target, string p)
     {
         password = p;
     }
@@ -119,6 +120,10 @@ public class PlayerManager : NetworkBehaviour
 
     }
 
+    public void setPrivateKey(int k)
+    {
+        privateKey = k;
+    }
     private void OnPlayerDisconnected(NetworkIdentity player)
     {
         //da rivedere

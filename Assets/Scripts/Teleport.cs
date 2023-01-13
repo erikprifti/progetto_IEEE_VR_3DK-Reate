@@ -6,15 +6,17 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Teleport : NetworkBehaviour
 {
     public GameObject ChallengeRoom;
+    public GameObject challenge;
     public GameObject selectingHand;
     public XRSimpleInteractable takeScript;
+    public GameObject schermo;
     public Material rosso;
     public Material verde;
 
     public void Start()
     {
         ChallengeRoom = GameObject.FindGameObjectWithTag("ChallengeRoom");
-
+       challenge = GameObject.FindGameObjectWithTag("Challenge");
     }
 
 
@@ -24,10 +26,10 @@ public class Teleport : NetworkBehaviour
         //Debug.LogError("on selection in teleport, id selezionatore della challenge: " + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId());
         //Debug.LogError("on selection in teleport, id del passive: " + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId());
 
-        gameObject.GetComponent<BoxCollider>().enabled = false;
+       
         selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
-        selectingHand.GetComponent<HandChild>().player.cmdTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject);
-
+        selectingHand.GetComponent<HandChild>().player.cmdTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, challenge, gameObject);
+        gameObject.GetComponent<BoxCollider>().enabled = false;
         //if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == gameObject.GetComponent<Challenge>().passivePlayerId)
         //{
 
@@ -55,18 +57,12 @@ public class Teleport : NetworkBehaviour
     public void rpcSelectedTeleport(NetworkConnection target)
     {
         //if (isLocalPlayer) return;
-        //Debug.s("in rpcSelectedTeleport, before teleportation");
+        //Debug.LogError("in rpcSelectedTeleport, before teleportation");
 
         Teleportation();
     }
 
-    [ClientRpc]
-    public void rpcChallengeBusy()
-    {
-        gameObject.GetNamedChild("Schermo").GetComponent<MeshRenderer>().material = rosso;
-        gameObject.GetComponent<BoxCollider>().enabled = false;
-
-    }
+    
 
     [ClientRpc]
     public void rpcChallengeFree()

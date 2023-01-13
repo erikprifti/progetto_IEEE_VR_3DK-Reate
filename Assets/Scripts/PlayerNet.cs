@@ -17,11 +17,11 @@ public class PlayerNet : NetworkBehaviour
 {
     public XRDeviceSimulator XRsim;
 
-     void Start()
+    void Start()
     {
         if (!isLocalPlayer)
         {
-            XRsim.enabled = false; 
+            XRsim.enabled = false;
         }
     }
 
@@ -39,21 +39,32 @@ public class PlayerNet : NetworkBehaviour
     //}
 
     [Command]
-    public void cmdTeleportPlayer(GameObject player, GameObject challenge)
+    public void cmdTeleportPlayer(GameObject player, GameObject challenge, GameObject startButton)
     {
-        challenge.GetNamedChild("Schermo").GetComponent<MeshRenderer>().material = challenge.GetComponent<Teleport>().rosso;
-        challenge.GetComponent<BoxCollider>().enabled = false;
+     //   challenge.GetNamedChild("Schermo").GetComponent<MeshRenderer>().material = challenge.GetComponent<Teleport>().rosso;
+        //challenge.GetComponent<BoxCollider>().enabled = false;
 
-        challenge.GetComponent<Teleport>().rpcChallengeBusy();
-        challenge.GetComponent<Teleport>().rpcSelectedTeleport(player.GetComponent<NetworkIdentity>().connectionToClient);
-
+        
+        startButton.GetComponent<Teleport>().rpcSelectedTeleport(player.GetComponent<NetworkIdentity>().connectionToClient);
+        challenge.GetComponent<Challenge>().rpcChallengeBusy();
     }
 
     [Command]
-    public void cmdLobbyTeleportPlayer(GameObject player, GameObject btl)
+    public void cmdChallengeUpdate(int state, GameObject challenge, GameObject player)
+    {
+        if(state == 1)  //nextMove
+        {
+            challenge.GetComponent<Challenge>().rpcTargetChallengeNextMove(player.GetComponent<NetworkIdentity>().connectionToClient);
+        }
+    }
+
+    [Command]
+    public void cmdLobbyTeleportPlayer(GameObject player, GameObject btl, GameObject challenge)
     {
 
         btl.GetComponent<BackToLobby>().rpcLobbyTeleport(player.GetComponent<NetworkIdentity>().connectionToClient);
+        challenge.GetComponent<Challenge>().rpcTargetChallengeConfirm(player.GetComponent<NetworkIdentity>().connectionToClient);
+
 
     }
 
@@ -76,12 +87,13 @@ public class PlayerNet : NetworkBehaviour
 
         porta.GetComponent<Porta>().rpcFinalTeleport(play.GetComponent<NetworkIdentity>().connectionToClient);
         porta.GetComponent<Porta>().threshold++;
-        if (porta.GetComponent<Porta>().threshold == 2) {
+        if (porta.GetComponent<Porta>().threshold == 2)
+        {
             c.GetComponent<Challenge>().resetChallenge();
-           // porta.GetComponent<Porta>().rpcResetChallenge();
-            return; 
+            // porta.GetComponent<Porta>().rpcResetChallenge();
+            return;
         }
-        
+
 
     }
 
@@ -89,8 +101,8 @@ public class PlayerNet : NetworkBehaviour
     public void cmdSendMessage(GameObject challenge, GameObject playerP)
     {
         challenge.GetComponent<Challenge>().sendMessage(playerP); //in server
-        //cmdChallengeFreeTarget(gameObject, playerP);
-       // challenge.GetComponent<Challenge>().rpcSendMessageTarget(playerP.GetComponent<NetworkIdentity>().connectionToClient, playerP); //setto challenge client specifico
+                                                                  //cmdChallengeFreeTarget(gameObject, playerP);
+                                                                  // challenge.GetComponent<Challenge>().rpcSendMessageTarget(playerP.GetComponent<NetworkIdentity>().connectionToClient, playerP); //setto challenge client specifico
         challenge.GetComponent<Teleport>().rpcChallengeFreeTarget(playerP.GetComponent<NetworkIdentity>().connectionToClient); //enable challenge su client specifico
 
     }
@@ -110,7 +122,9 @@ public class PlayerNet : NetworkBehaviour
     [Command]
     public void cmdPlayChallenge(int key, GameObject challenge)
     {
-        challenge.GetComponent<Challenge>().play(key, gameObject.GetComponent<PlayerManager>().id);
+        string result = challenge.GetComponent<Challenge>().play(key, gameObject.GetComponent<PlayerManager>().id);
+        gameObject.GetComponent<PlayerManager>().rcpTargetSetPassword(gameObject.GetComponent<NetworkIdentity>().connectionToClient, result);
+
     }
 
 }

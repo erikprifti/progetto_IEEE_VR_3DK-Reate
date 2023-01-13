@@ -21,8 +21,12 @@ public class Challenge : NetworkBehaviour
     public string messageEncryptedP;
     [SyncVar]
     public string messageEncryptedA;
-    [SyncVar]
+    
     public string doorPassword;
+
+    public GameObject ConfirmButton;
+    public GameObject StartButton;
+    public GameObject Display;
    
     SyncList<long> tempP = new SyncList<long>();
 
@@ -32,7 +36,11 @@ public class Challenge : NetworkBehaviour
     {
         idKeyPairs = GameObject.FindWithTag("IdKeyPairs").GetComponent<IdKeyPairs>();
         porta = GameObject.FindWithTag("Porta").GetComponent<Porta>();
-        
+        StartButton = GameObject.FindWithTag("StartButton");
+
+        ConfirmButton = GameObject.FindWithTag("ConfirmButton");
+
+
     }
 
 
@@ -171,7 +179,7 @@ public class Challenge : NetworkBehaviour
         tempP.Clear();
     }
 
-    public void play(int key, int Id) //CHIMATA IN LOCALE
+    public string play(int key, int Id) //CHIMATA IN SERVER
     {
         Debug.LogError("IN PLAY");
         PlayerManager p = findPlayerById(Id);
@@ -182,14 +190,16 @@ public class Challenge : NetworkBehaviour
             string mex = generateMessage();
             messageEncryptedA = encrypt(mex, key, idKeyPairs.getModule(p.id), 0);
             porta.setPassword(doorPassword);
-            p.setPassword(doorPassword);
+            return doorPassword;
+            //p.setPassword(doorPassword);
         }
         else if(activePlayerId != 0 && passivePlayerId != 0)
         {
             //momento di decriptazione
-            resolveChallenge(key, p.gameObject);
+            return resolveChallenge(key, p.gameObject);
 
-        }
+        }else 
+            return null;
     }
 
     public void sendMessage(GameObject player) //player passivo a cui mandare mex
@@ -295,21 +305,21 @@ public class Challenge : NetworkBehaviour
 
         return decryptMex;
     }
-    public void resolveChallenge(int privateKey, GameObject player) //chiamata da command
+    public string resolveChallenge(int privateKey, GameObject player) //chiamata da command
     {
-        if (!player.CompareTag("Player")) { return; }
+        if (!player.CompareTag("Player")) { return null; }
         PlayerManager playerManager = player.GetComponent<PlayerManager>();
         int playerId = playerManager.getId();
-        if (!playerId.Equals(passivePlayerId)) { return; }
+        if (!playerId.Equals(passivePlayerId)) { return null; }
 
         string messageDecryptedP = decrypt(message, privateKey, idKeyPairs.getModule(passivePlayerId), 1);
         string messageDecryptedA = decrypt(messageDecryptedP, idKeyPairs.getEncode(activePlayerId), idKeyPairs.getModule(activePlayerId), 0);
         PlayerManager p = findPlayerById(playerId);
-        p.setPassword(messageDecryptedA); //questo da verificare
+     //   p.setPassword(messageDecryptedA); //questo da verificare
 
         // player.GetComponent<PlayerNet>().cmdChallengeFree(gameObject);
         gameObject.GetComponent<Teleport>().rpcChallengeFree();
-
+        return messageDecryptedA;
     }
 
     [TargetRpc]
@@ -319,6 +329,28 @@ public class Challenge : NetworkBehaviour
         sendMessage(player);
     }
 
+    [ClientRpc]
+    public void rpcChallengeBusy()
+    {
+        Display.GetComponentInParent<MeshRenderer>().material = Display.GetComponent<Display>().red;
+        Display.GetComponent<Display>().setDisplayBusy();
+        StartButton.GetComponent<BoxCollider>().enabled = false;
 
-    
+    }
+
+    [TargetRpc]
+    public void rpcTargetChallengeNextMove(NetworkConnection target)
+    {
+        Display.GetComponentInParent<MeshRenderer>().material = Display.GetComponent<Display>().red;
+        Display.GetComponent<Display>().setDisplayNextMove();
+        ConfirmButton.GetComponent<BoxCollider>().enabled = false;
+    }
+
+    [TargetRpc]
+    public void rpcTargetChallengeConfirm(NetworkConnection target)
+    {
+        Display.GetComponentInParent<MeshRenderer>().material = Display.GetComponent<Display>().red;
+        Display.GetComponent<Display>().setDisplayConfirm();
+        ConfirmButton.GetComponent<BoxCollider>().enabled = true;
+    }
 }
