@@ -46,9 +46,15 @@ public class Challenge : NetworkBehaviour
 
 
     //for encryption and decryption
-    long[] mb; //message in long array
-    long[] ma;
-    long[] en; //encrypted message in long array
+    long[] mbA; //message in long array
+    long[] maA;
+    long[] mbP; //message in long array
+    long[] maP;
+    long[] enA; //encrypted message in long array
+    long[] enP; //encrypted message in long array
+
+    long[] vettA;
+    long[] vettP;
     //public void setChallenge(int activePlayer, int passivePlayer)
     //{
 
@@ -77,79 +83,148 @@ public class Challenge : NetworkBehaviour
     }
 
 
-    //private void encrypt()
-    //{
-    //    mb = new long[message.Length];
-    //    ma = new long[message.Length];
+    private string encryptA(string mex, int key, int n)
+    {
+        mbA = new long[mex.Length];
+        maA = new long[mex.Length];
 
-    //    tempP = new SyncList<long>(); //temp mi salva i numeri che poi mi servono per decript
-    //    en = new long[message.Length];
-    //    long pt, ct, k;
-    //    long key = idKeyPairs.getEncode(passivePlayerId);
-    //    int n = idKeyPairs.getModule(passivePlayerId);
-    //    int i = 0;
+        vettA = new long[mex.Length];
+        enA = new long[mex.Length];
+        long pt, ct, k;
+        int i = 0;
 
-    //    for(int j = 0; j<message.Length; j++)
-    //    {
-    //        mb[j] = (int)message[j];
-    //    }
+        for (int j = 0; j < mex.Length; j++)
+        {
+            mbA[j] = (int)mex[j];
+        }
 
-    //    while (i < message.Length)
-    //    {
-    //        pt = mb[i];
-    //        pt = pt - 64;
-    //        k = 1;
-    //        for (long j = 0; j < key; j++)
-    //        {
-    //            k = k * pt;
-    //            k = k % n;
-    //        }
-    //        tempP[i] = k;
-    //        ct = k + 64;
-    //        en[i] = ct;
-    //        i++;
-    //    }
+        while (i < mex.Length)
+        {
+            pt = mbA[i];
+            pt = pt - 64;
+            k = 1;
+            for (long j = 0; j < key; j++)
+            {
+                k = k * pt;
+                k = k % n;
+            }
+            vettA[i] = k;
+            ct = k + 64;
+            enA[i] = ct;
+            i++;
+        }
 
-    //    string encryptMex = string.Empty;
-    //    for (i = 0; i < en.Length; i++)
-    //    {
-    //        encryptMex = encryptMex + (char)en[i];
-    //    }
-    //    messageEncryptedP = encryptMex;
+        string encryptMex = string.Empty;
+        for (i = 0; i < enA.Length; i++)
+        {
+            encryptMex = encryptMex + (char)enA[i];
+        }
+        messageEncryptedP = encryptMex;
+        return encryptMex;
 
-    //}
+    }
 
-    //public string decrypt(int key)
-    //{
-    //    long pt, ct, k;
-    //    int n = idKeyPairs.getModule(passivePlayerId);
-    //    int i = 0;
-    //    //invece che usare en e ma devo prendere la stringa encryptmessage e usarla come array
-    //    while (i < en.Length) 
-    //    {
+    private string encryptP(string mex, int key, int n)
+    {
+        mbP = new long[mex.Length];
+        maP = new long[mex.Length];
 
-    //        ct = tempP[i];
-    //        k = 1;
-    //        for (long j = 0; j < key; j++)
-    //        {
-    //            k = k * ct;
-    //            k = k % n;
-    //        }
-    //        pt = k + 64;
-    //        ma[i] = pt;
-        
-    //        i++;
-    //    }
+        vettP = new long[mex.Length];
+        enP = new long[mex.Length];
+        long pt, ct, k;
+        int i = 0;
 
-    //    string decryptMex = null;
+        for (int j = 0; j < mex.Length; j++)
+        {
+            mbP[j] = (int)mex[j];
+        }
 
-    //    for (i = 0; i < ma.Length; i++)
-    //    {
-    //        decryptMex = decryptMex + (char)ma[i];
-    //    }
+        while (i < mex.Length)
+        {
+            pt = mbP[i];
+            pt = pt - 64;
+            k = 1;
+            for (long j = 0; j < key; j++)
+            {
+                k = k * pt;
+                k = k % n;
+            }
+            vettP[i] = k;
+            ct = k + 64;
+            enP[i] = ct;
+            i++;
+        }
 
-    //    return decryptMex;
-    //}
+        string encryptMex = string.Empty;
+        for (i = 0; i < enP.Length; i++)
+        {
+            encryptMex = encryptMex + (char)enP[i];
+        }
+        messageEncryptedP = encryptMex;
+        return encryptMex;
+    }
+
+    public string decryptA(string mex, int key, int n)
+    {
+        long pt, ct, k;
+        int i = 0;
+        //invece che usare en e ma devo prendere la stringa encryptmessage e usarla come array
+        while (i < enA.Length)
+        {
+
+            ct = vettA[i];
+            k = 1;
+            for (long j = 0; j < key; j++)
+            {
+                k = k * ct;
+                k = k % n;
+            }
+            pt = k + 64;
+            maA[i] = pt;
+
+            i++;
+        }
+
+        string decryptMex = null;
+
+        for (i = 0; i < maA.Length; i++)
+        {
+            decryptMex = decryptMex + (char)maA[i];
+        }
+
+        return decryptMex;
+    }
+
+    public string decryptP(string mex, int key, int n)
+    {
+        long pt, ct, k;
+        int i = 0;
+        //invece che usare en e ma devo prendere la stringa encryptmessage e usarla come array
+        while (i < enP.Length)
+        {
+
+            ct = vettP[i];
+            k = 1;
+            for (long j = 0; j < key; j++)
+            {
+                k = k * ct;
+                k = k % n;
+            }
+            pt = k + 64;
+            maP[i] = pt;
+
+            i++;
+        }
+
+        string decryptMex = null;
+
+        for (i = 0; i < maP.Length; i++)
+        {
+            decryptMex = decryptMex + (char)maP[i];
+        }
+
+        return decryptMex;
+    }
 
     private PlayerManager findPlayerById(int activePlayerId)
     {
@@ -188,7 +263,8 @@ public class Challenge : NetworkBehaviour
         {
             activePlayerId = p.id;
             string mex = generateMessage();
-            messageEncryptedA = encrypt(mex, key, idKeyPairs.getModule(p.id), 0);
+            messageEncryptedA = encryptA(mex, key, idKeyPairs.getModule(p.id));
+          //  messageEncryptedA = encrypt(mex, key, idKeyPairs.getModule(p.id), 0);
             porta.setPassword(doorPassword);
             return doorPassword;
             //p.setPassword(doorPassword);
@@ -196,6 +272,7 @@ public class Challenge : NetworkBehaviour
         else if(activePlayerId != 0 && passivePlayerId != 0)
         {
             //momento di decriptazione
+            Debug.LogError("Momento di risoluzione challenge");
             return resolveChallenge(key, p.gameObject);
 
 
@@ -208,113 +285,133 @@ public class Challenge : NetworkBehaviour
         int pId = player.GetComponent<PlayerManager>().id;
         passivePlayerId = pId;
         int publicKey = idKeyPairs.getEncode(passivePlayerId);
-        messageEncryptedP = encrypt(messageEncryptedA, publicKey, idKeyPairs.getModule(pId), 1);
+        messageEncryptedP = encryptP(message, publicKey, idKeyPairs.getModule(pId));
+
+      // messageEncryptedP = encrypt(messageEncryptedA, publicKey, idKeyPairs.getModule(pId), 1);
         message = messageEncryptedP;
         
     }
 
-    private string encrypt(string mex, int key, int n, int caso)
-    {
+    //private string encrypt(string mex, int key, int n, int caso)
+    //{
 
-        mb = new long[mex.Length];
-        SyncList<long> temp;
+    //    mb = new long[mex.Length];
+    //    SyncList<long> temp;
 
-        if (caso == 0)
-        {
+    //    if (caso == 0)
+    //    {
             
-            temp = tempA;
-        }
-        else
-        {
+    //        temp = tempA;
+    //    }
+    //    else
+    //    {
             
-            temp = tempP;
-        }
+    //        temp = tempP;
+    //    }
 
-        en = new long[mex.Length];
-        long pt, ct, k;
-        int i = 0;
+    //    en = new long[mex.Length];
+    //    long pt, ct, k;
+    //    int i = 0;
 
-        for (int j = 0; j < mex.Length; j++)
-        {
-            mb[j] = (int)mex[j];
-        }
+    //    for (int j = 0; j < mex.Length; j++)
+    //    {
+    //        mb[j] = (int)mex[j];
+    //    }
 
-        while (i < mex.Length)
-        {
-            pt = mb[i];
-            pt = pt - 64;
-            k = 1;
-            for (long j = 0; j < key; j++)
-            {
-                k = k * pt;
-                k = k % n;
-            }
-            temp.Insert(i, k);
-           // temp[i] = k;
-            ct = k + 64;
-            en[i] = ct;
-            i++;
-        }
+    //    while (i < mex.Length)
+    //    {
+    //        pt = mb[i];
+    //        pt = pt - 64;
+    //        k = 1;
+    //        for (long j = 0; j < key; j++)
+    //        {
+    //            k = k * pt;
+    //            k = k % n;
+    //        }
+    //        temp.Insert(i, k);
+    //       // temp[i] = k;
+    //        ct = k + 64;
+    //        en[i] = ct;
+    //        i++;
+    //    }
 
-        string encryptMex = string.Empty;
-        for (i = 0; i < en.Length; i++)
-        {
-            encryptMex = encryptMex + (char)en[i];
-        }
+    //    string encryptMex = string.Empty;
+    //    for (i = 0; i < en.Length; i++)
+    //    {
+    //        encryptMex = encryptMex + (char)en[i];
+    //    }
 
-        return encryptMex;
-    }
+    //    return encryptMex;
+    //}
 
-    public string decrypt(string mex, int key, int n, int caso)
-    {
-        long pt, ct, k;
-        int i = 0;
-        ma = new long[mex.Length];
-        SyncList<long> temp;
+    //public string decrypt(string mex, int key, int n, int caso)
+    //{
+    //    long pt, ct, k;
+    //    int i = 0;
+    //    ma = new long[mex.Length];
+    //    SyncList<long> temp;
 
-        if (caso == 0)
-        {
-            temp = tempA;
-        }
-        else
-        {
-            temp = tempP;
-        }
-        //invece che usare en e ma devo prendere la stringa encryptmessage e usarla come array
-        while (i < mex.Length)
-        {
+    //    if (caso == 0)
+    //    {
+    //        temp = tempA;
+    //    }
+    //    else
+    //    {
+    //        temp = tempP;
+    //    }
+    //    //invece che usare en e ma devo prendere la stringa encryptmessage e usarla come array
+    //    while (i < mex.Length)
+    //    {
 
-            ct = temp[i];
-            k = 1;
-            for (long j = 0; j < key; j++)
-            {
-                k = k * ct;
-                k = k % n;
-            }
-            pt = k + 64;
-            ma[i] = pt;
+    //        ct = temp[i];
+    //        k = 1;
+    //        for (long j = 0; j < key; j++)
+    //        {
+    //            k = k * ct;
+    //            k = k % n;
+    //        }
+    //        pt = k + 64;
+    //        ma[i] = pt;
 
-            i++;
-        }
+    //        i++;
+    //    }
 
-        string decryptMex = null;
+    //    string decryptMex = null;
 
-        for (i = 0; i < ma.Length; i++)
-        {
-            decryptMex = decryptMex + (char)ma[i];
-        }
+    //    for (i = 0; i < ma.Length; i++)
+    //    {
+    //        Debug.LogError((char)ma[i]);
 
-        return decryptMex;
-    }
+    //        decryptMex = decryptMex + (char)ma[i];
+    //    }
+    //    Debug.LogError(decryptMex);
+
+    //    return decryptMex;
+    //}
+
+
     public string resolveChallenge(int privateKey, GameObject player) //chiamata da command
     {
-        if (!player.CompareTag("Player")) { return null; }
+        Debug.LogError("chiave del passivo: " + privateKey);
+
         PlayerManager playerManager = player.GetComponent<PlayerManager>();
         int playerId = playerManager.getId();
         if (!playerId.Equals(passivePlayerId)) { return null; }
 
-        string messageDecryptedP = decrypt(message, privateKey, idKeyPairs.getModule(passivePlayerId), 1);
-        string messageDecryptedA = decrypt(messageDecryptedP, idKeyPairs.getEncode(activePlayerId), idKeyPairs.getModule(activePlayerId), 0);
+        Debug.LogError("password prima si decrypt" + playerManager.password);
+
+        Debug.LogError(" messageEncryptedP:  messaggio criptato con la chiave pubblica dell passivo ->  " + messageEncryptedP);
+        Debug.LogError(" messageEncryptedA:  messaggio criptato con la chiave privata dell attivo ->  " + messageEncryptedA);
+
+        //message == messageEncrypted
+        string messageDecryptedP = decryptP(message, privateKey, idKeyPairs.getModule(passivePlayerId));
+      //  string messageDecryptedP = decrypt(message, privateKey, idKeyPairs.getModule(passivePlayerId), 1);
+        Debug.LogError("MessageDecrypteedP, decriptato con chiave privata del passivo " + messageDecryptedP);
+        string messageDecryptedA = decryptA(messageDecryptedP, idKeyPairs.getEncode(activePlayerId), idKeyPairs.getModule(activePlayerId));
+
+      //  string messageDecryptedA = decrypt(messageDecryptedP, idKeyPairs.getEncode(activePlayerId), idKeyPairs.getModule(activePlayerId), 0);
+        Debug.LogError("MessageDecrypteedA (con chiave pubblica attivo) e quindi password: " + messageDecryptedA);
+
         PlayerManager p = findPlayerById(playerId);
      //   p.setPassword(messageDecryptedA); //questo da verificare
 
