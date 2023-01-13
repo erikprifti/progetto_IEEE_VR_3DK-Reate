@@ -20,7 +20,7 @@ public class PlayerManager : NetworkBehaviour
     public int publicKeyEncode;
     [SyncVar]
     public int publicKeyModule;
-    public BigInteger password;
+    public int password;
     public int privateKey;
     public NetworkIdentity networkIdentity;
 
@@ -83,13 +83,13 @@ public class PlayerManager : NetworkBehaviour
         return id;
     }
 
-    public BigInteger getPassword()
+    public int getPassword()
     {
         return password;
     }
 
     [TargetRpc]
-    public void rcpTargetSetPassword(NetworkConnection target, BigInteger p)
+    public void rcpTargetSetPassword(NetworkConnection target, int p)
     {
         password = p;
     }

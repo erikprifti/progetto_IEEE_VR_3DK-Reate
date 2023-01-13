@@ -11,7 +11,7 @@ using System.Numerics;
 public class Porta : NetworkBehaviour
 {
     [SyncVar]
-    public BigInteger password;
+    public int password;
     public GameObject challenge;
     public GameObject selectingHand;
     public XRSimpleInteractable takeScript;
@@ -26,12 +26,12 @@ public class Porta : NetworkBehaviour
         challenge = GameObject.FindWithTag("Challenge");
     }
 
-    public void setPassword(BigInteger p)
+    public void setPassword(int p)
     {
         password = p;
     }
 
-    public bool verifyPassword(BigInteger p)
+    public bool verifyPassword(int p)
     {
         if (p.Equals(password))
         {

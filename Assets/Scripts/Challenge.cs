@@ -10,17 +10,17 @@ public class Challenge : NetworkBehaviour
     public IdKeyPairs idKeyPairs;
 
     [SyncVar]
-    public BigInteger message;
+    public int message;
     [SyncVar]
     public int activePlayerId;
     [SyncVar]
     public int passivePlayerId;
     [SyncVar]
-    public BigInteger messageEncryptedP;
+    public int messageEncryptedP;
     [SyncVar]
-    public BigInteger messageEncryptedA;
+    public int messageEncryptedA;
     
-    public BigInteger doorPassword;
+    public int doorPassword;
 
     public GameObject ConfirmButton;
     public GameObject StartButton;
@@ -68,7 +68,7 @@ public class Challenge : NetworkBehaviour
 
  
 
-    private BigInteger generateMessage()
+    private int generateMessage()
     {
         doorPassword = 1234;
         return doorPassword;
@@ -150,7 +150,7 @@ public class Challenge : NetworkBehaviour
     //}
 
 
-    private BigInteger encrypt(BigInteger mex, int key, int module)
+    private int encrypt(int mex, int key, int module)
     {
         Debug.LogError("in encrypt");
 
@@ -162,17 +162,21 @@ public class Challenge : NetworkBehaviour
 
         // long c = powerN(mex, key);
         BigInteger c = BigInteger.Pow(mex, key);
-        Debug.LogError(c);
+       // Debug.LogError(c);
+     //   BigInteger t = c % module;
+     //   Debug.LogError(t);
 
-        c = c % module;
-        messageEncryptedA = c;
-        return c;
+        int res = (int)(c % module);
+      //  Debug.LogError("res " + res );
+
+        messageEncryptedA = res;
+        return res;
     }
-    private BigInteger decrypt(BigInteger mex, int key, int module)
+    private int decrypt(int mex, int key, int module)
     {
         BigInteger c = BigInteger.Pow(mex, key);
-        c = c % module;
-        return c;
+        int res = (int)(c % module);
+        return res;
     }
 
     private PlayerManager findPlayerById(int activePlayerId)
@@ -203,7 +207,7 @@ public class Challenge : NetworkBehaviour
         //tempP.Clear();
     }
 
-    public BigInteger play(int key, int Id) //CHIMATA IN SERVER
+    public int play(int key, int Id) //CHIMATA IN SERVER
     {
       
         PlayerManager p = findPlayerById(Id);
@@ -211,7 +215,7 @@ public class Challenge : NetworkBehaviour
         if (activePlayerId == 0 && passivePlayerId == 0 ) //play chiamato dall attivo dopo aver messo la sua chiave privata con la quale decriptare per prima il messaggio
         {
             activePlayerId = p.id;
-            BigInteger mex = generateMessage();
+            int mex = generateMessage();
             messageEncryptedA = encrypt(mex, key, idKeyPairs.getModule(p.id));
             Debug.LogError("messageEncryptedA " + messageEncryptedA);
             porta.setPassword(doorPassword);
@@ -330,15 +334,15 @@ public class Challenge : NetworkBehaviour
 
     //    return decryptMex;
     //}
-    public BigInteger resolveChallenge(int privateKey, GameObject player) //chiamata da command
+    public int resolveChallenge(int privateKey, GameObject player) //chiamata da command
     {
         if (!player.CompareTag("Player")) { return 0; }
         PlayerManager playerManager = player.GetComponent<PlayerManager>();
         int playerId = playerManager.getId();
         if (!playerId.Equals(passivePlayerId)) { return 0; }
 
-        BigInteger messageDecryptedP = decrypt(message, privateKey, idKeyPairs.getModule(passivePlayerId));
-        BigInteger messageDecryptedA = decrypt(messageDecryptedP, idKeyPairs.getEncode(activePlayerId), idKeyPairs.getModule(activePlayerId));
+        int messageDecryptedP = decrypt(message, privateKey, idKeyPairs.getModule(passivePlayerId));
+        int messageDecryptedA = decrypt(messageDecryptedP, idKeyPairs.getEncode(activePlayerId), idKeyPairs.getModule(activePlayerId));
         PlayerManager p = findPlayerById(playerId);
      //   p.setPassword(messageDecryptedA); //questo da verificare
 
