@@ -198,6 +198,7 @@ public class Challenge : NetworkBehaviour
             //momento di decriptazione
             return resolveChallenge(key, p.gameObject);
 
+
         }else 
             return null;
     }
@@ -317,8 +318,8 @@ public class Challenge : NetworkBehaviour
         PlayerManager p = findPlayerById(playerId);
      //   p.setPassword(messageDecryptedA); //questo da verificare
 
-        // player.GetComponent<PlayerNet>().cmdChallengeFree(gameObject);
-        gameObject.GetComponent<Teleport>().rpcChallengeFree();
+        //// player.GetComponent<PlayerNet>().cmdChallengeFree(gameObject);
+        //gameObject.GetComponent<Teleport>().rpcChallengeFree();
         return messageDecryptedA;
     }
 
