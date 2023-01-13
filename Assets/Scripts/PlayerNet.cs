@@ -52,7 +52,7 @@ public class PlayerNet : NetworkBehaviour
     [Command]
     public void cmdChallengeUpdate(int state, GameObject challenge, GameObject player)
     {
-        if (state == 1)  //nextMove
+        if (state == 0)  //nextMove
         {
             challenge.GetComponent<Challenge>().rpcTargetChallengeNextMove(player.GetComponent<NetworkIdentity>().connectionToClient);
         }

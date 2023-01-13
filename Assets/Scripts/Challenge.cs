@@ -181,7 +181,7 @@ public class Challenge : NetworkBehaviour
 
     public string play(int key, int Id) //CHIMATA IN SERVER
     {
-        Debug.LogError("IN PLAY");
+      
         PlayerManager p = findPlayerById(Id);
 
         if (activePlayerId == 0 && passivePlayerId == 0 ) //play chiamato dall attivo dopo aver messo la sua chiave privata con la quale decriptare per prima il messaggio
