@@ -70,7 +70,7 @@ public class Challenge : NetworkBehaviour
 
     private int generateMessage()
     {
-        doorPassword = 1234;
+        doorPassword = 13;
         return doorPassword;
     }
 
