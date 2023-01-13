@@ -13,6 +13,7 @@ public class SelectablePlayer : NetworkBehaviour
     public XRSimpleInteractable takeScript;
     public GameObject selectingHand;
     public Material verde;
+    public int id;
  
 
    
@@ -22,51 +23,55 @@ public class SelectablePlayer : NetworkBehaviour
         challenge = GameObject.FindWithTag("Challenge");
 
     }
-    
-    public void OnSelectionPublicId()
-    {
-        Debug.LogError("in ONSelectionPublicId");
-        int activeID = takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId();
-        int passiveID = gameObject.GetComponent<PublicId>().id;
-        if (activeID == passiveID)
-            return;
-        Debug.LogError("in ONSelection " + activeID + " ha selezionato, mentre "  + passiveID + " è stato selezionato");
 
-    }
+
+
+    
     public void OnSelection()
     {
+        Leaderboard lb = gameObject.GetComponentInParent<Leaderboard>();
         
-        Debug.LogError("Ho interagito con " + takeScript.interactorsSelecting[0].transform.gameObject.name);
+        
+        Debug.LogError("selezione da " + takeScript.interactorsSelecting[0].transform.gameObject.name);
         int activeID = takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId();
-        int passiveID = gameObject.GetComponent<PlayerManager>().getId();
+        int passiveID = id;
         if (activeID == passiveID)
             return;
+        selectingHand = takeScript.interactorsSelecting[0].transform.gameObject; //selectingHand è l'attivo
+        Debug.LogError("in ONSelection " + activeID + " ha selezionato, mentre " + passiveID + " è stato selezionato");
+
+        //selectingHand.GetComponent<HandChild>().player.cmdSendMessage(challenge, activeID, passiveID); //passiamo a cmdSelectPlayer gameObject=player selezionato(passivePlayer)
+
         selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
         Debug.LogError("in ONSelection "+activeID + " ha selezionato, mentre " + passiveID + " è stato selezionato");
-        selectingHand.GetComponent<HandChild>().player.cmdSelectPlayer(gameObject, activeID, passiveID); //passiamo a cmdSelectPlayer gameObject=player selezionato(passivePlayer)
+
+        //qui deve chiamare le cose che sto facendo io sul pc di fede
+
+        //selectingHand.GetComponent<HandChild>().player.cmdSelectPlayer(gameObject, activeID, passiveID); //passiamo a cmdSelectPlayer gameObject=player selezionato(passivePlayer)
 
     }
 
-    public void Selected(int aID,int pID)
-    {
-        //Debug.Log("Ho interagito con " + takeScript.interactorsSelecting[0].transform.gameObject.name + " " + gameObject.name);
-        challenge.GetComponent<Challenge>().setChallenge(aID,pID);
-        challenge.GetNamedChild("Schermo").GetComponent<MeshRenderer>().material = verde; 
-        //challenge.GetComponent<SphereCollider>().enabled = true;
-    }
+    //public void Selected(int aID,int pID)
+    //{
+    //    //Debug.Log("Ho interagito con " + takeScript.interactorsSelecting[0].transform.gameObject.name + " " + gameObject.name);
+    //    challenge.GetComponent<Challenge>().setChallenge(aID,pID);
+    //    challenge.GetNamedChild("Schermo").GetComponent<MeshRenderer>().material = verde; 
+    //    //challenge.GetComponent<SphereCollider>().enabled = true;
+    //}
 
-    [ClientRpc]
-    public void rpcSelected(int aID, int pID)
-    {
-        //if (isLocalPlayer) return;
-        Selected(aID,pID);
-    }
+    //[ClientRpc]
+    //public void rpcSelected(int aID, int pID)
+    //{
+    //    //if (isLocalPlayer) return;
+    //    Selected(aID,pID);
+    //}
 
-    [TargetRpc]
-    public void rpcSelectableChallenge(NetworkConnection target)
-    {
-        challenge.GetComponent<BoxCollider>().enabled = true;
-    }
+    //[TargetRpc]
+    //public void rpcSelectableChallenge(NetworkConnection target)
+    //{
+    //    //da cambiare per new logic
+    //    challenge.GetComponent<BoxCollider>().enabled = true;
+    //}
 
 
 }

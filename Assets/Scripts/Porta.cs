@@ -45,8 +45,7 @@ public class Porta : NetworkBehaviour
     //di seguito un prototipo 
     public void OnSelection()
     {
-        if (passingTheTreshold < 2)
-        {
+        
             if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == challenge.GetComponent<Challenge>().passivePlayerId)
             {
                 selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
@@ -60,7 +59,7 @@ public class Porta : NetworkBehaviour
                 if (!verifyPassword(selectingHand.transform.gameObject.GetComponentInParent<PlayerManager>().getPassword())) { return; }
                 selectingHand.GetComponent<HandChild>().player.cmdFinalTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject, challenge);
             }
-        }
+        
 
     }
 

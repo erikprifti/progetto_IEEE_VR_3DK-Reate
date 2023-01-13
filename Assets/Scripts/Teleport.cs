@@ -1,6 +1,4 @@
 using Mirror;
-using System.Collections;
-using System.Collections.Generic;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -11,6 +9,7 @@ public class Teleport : NetworkBehaviour
     public GameObject selectingHand;
     public XRSimpleInteractable takeScript;
     public Material rosso;
+    public Material verde;
 
     public void Start()
     {
@@ -24,12 +23,16 @@ public class Teleport : NetworkBehaviour
         Debug.LogError("on selection in teleport, id selezionatore della challenge: " + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId());
         Debug.LogError("on selection in teleport, id del passive: " + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId());
 
-        if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == gameObject.GetComponent<Challenge>().passivePlayerId)
-        {
+        gameObject.GetComponent<BoxCollider>().enabled = false;
+        selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
+        selectingHand.GetComponent<HandChild>().player.cmdTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject);
 
-            selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
-            selectingHand.GetComponent<HandChild>().player.cmdTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject);
-        }
+        //if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == gameObject.GetComponent<Challenge>().passivePlayerId)
+        //{
+
+        //    selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
+        //    selectingHand.GetComponent<HandChild>().player.cmdTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject);
+        //}
 
     }
 
@@ -62,11 +65,25 @@ public class Teleport : NetworkBehaviour
     }
 
     [ClientRpc]
-    public void rpcChallengeStarted()
+    public void rpcChallengeBusy()
     {
         gameObject.GetNamedChild("Schermo").GetComponent<MeshRenderer>().material = rosso;
         gameObject.GetComponent<BoxCollider>().enabled = false;
 
     }
 
+    [ClientRpc]
+    public void rpcChallengeFree()
+    {
+        gameObject.GetNamedChild("Schermo").GetComponent<MeshRenderer>().material = verde;
+        gameObject.GetComponent<BoxCollider>().enabled = true;
+    }
+
+
+    [TargetRpc]
+    public void rpcChallengeFreeTarget(NetworkConnection target)
+    {
+        gameObject.GetNamedChild("Schermo").GetComponent<MeshRenderer>().material = verde;
+        gameObject.GetComponent<BoxCollider>().enabled = true;
+    }
 }
