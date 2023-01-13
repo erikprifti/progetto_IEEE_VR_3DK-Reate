@@ -32,7 +32,7 @@ public class BackToLobby : NetworkBehaviour
         Debug.LogError("In OnSelection in BackToLobby, password del selettore before: " + p.gameObject.GetComponent<PlayerManager>().password);
 
 
-        p.cmdPlayChallenge(key, challenge);
+        p.cmdPlayChallenge(key, challenge); //questo command spostarlo su interazione della challenge
      //   challenge.GetComponent<Challenge>().play(key, p.gameObject);
 
         Debug.LogError("In OnSelection in BackToLobby, password del selettore after: " + p.gameObject.GetComponent<PlayerManager>().password);

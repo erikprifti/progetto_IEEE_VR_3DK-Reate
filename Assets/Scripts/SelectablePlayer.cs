@@ -50,7 +50,7 @@ public class SelectablePlayer : NetworkBehaviour
 
     public void OnSelection()
     {
-        Debug.LogError("selezione da" + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() + " selezionato " + id);
+        //Debug.LogError("selezione da" + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() + " selezionato " + id);
         if(id == 0 || challenge.GetComponent<Challenge>().activePlayerId == 0)
         {
             return;
@@ -63,7 +63,7 @@ public class SelectablePlayer : NetworkBehaviour
             return;
 
         selectingHand = takeScript.interactorsSelecting[0].transform.gameObject; //selectingHand è l'attivo
-        Debug.LogError("in ONSelection " + activeID + " ha selezionato, mentre " + passiveID + " è stato selezionato");
+        //Debug.LogError("in ONSelection " + activeID + " ha selezionato, mentre " + passiveID + " è stato selezionato");
         GameObject playerP = lb.id_player_map.GetValueOrDefault(passiveID);
         selectingHand.GetComponent<HandChild>().player.cmdSendMessage(challenge, playerP); //passiamo a cmdSelectPlayer gameObject=player selezionato(passivePlayer)
       

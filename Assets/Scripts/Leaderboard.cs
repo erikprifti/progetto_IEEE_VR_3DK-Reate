@@ -55,7 +55,7 @@ public class Leaderboard : NetworkBehaviour
             {
                
 
-                Debug.LogError("! player map contienee: " + i);
+                //Debug.LogError("! player map contienee: " + i);
                 GameObject t = id_text_map.GetValueOrDefault(i);
                 t.GetComponent<SelectablePlayer>().id = i;
                 t.GetComponent<TextMeshProUGUI>().text = "player " + i;
@@ -73,7 +73,7 @@ public class Leaderboard : NetworkBehaviour
     public void rpcSetTextOnLB(int id, GameObject player)
     {
          addPlayer(id, player);
-        Debug.LogError("after adding in rpcSetTextOnLB, added: " + id);
+        //Debug.LogError("after adding in rpcSetTextOnLB, added: " + id);
         id_player_map.GetValueOrDefault(id);
     }
 

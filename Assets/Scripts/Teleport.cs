@@ -21,8 +21,8 @@ public class Teleport : NetworkBehaviour
     public void OnSelection()
     {
 
-        Debug.LogError("on selection in teleport, id selezionatore della challenge: " + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId());
-        Debug.LogError("on selection in teleport, id del passive: " + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId());
+        //Debug.LogError("on selection in teleport, id selezionatore della challenge: " + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId());
+        //Debug.LogError("on selection in teleport, id del passive: " + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId());
 
         gameObject.GetComponent<BoxCollider>().enabled = false;
         selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
@@ -45,14 +45,9 @@ public class Teleport : NetworkBehaviour
       //  GetComponent<MeshRenderer>().material = GetComponent<Teleport>().rosso;
 
         PlayerNet p = selectingHand.GetComponent<HandChild>().player;
-        Debug.LogError("in Teleportation, player id: " + p.gameObject.GetComponent<PlayerManager>().getId());
-        Debug.LogError("ChallengeRoom poisition: " + ChallengeRoom.transform.position);
 
         p.gameObject.transform.position = ChallengeRoom.transform.position;
      //   p.gameObject.transform.TransformPoint(ChallengeRoom.transform.position);
-
-        Debug.LogError("player after poisition: " + p.gameObject.transform.position);
-
 
     }
 
@@ -60,7 +55,7 @@ public class Teleport : NetworkBehaviour
     public void rpcSelectedTeleport(NetworkConnection target)
     {
         //if (isLocalPlayer) return;
-        Debug.LogError("in rpcSelectedTeleport, before teleportation");
+        //Debug.s("in rpcSelectedTeleport, before teleportation");
 
         Teleportation();
     }

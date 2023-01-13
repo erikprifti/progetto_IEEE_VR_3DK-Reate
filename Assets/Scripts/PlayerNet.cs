@@ -41,7 +41,6 @@ public class PlayerNet : NetworkBehaviour
     [Command]
     public void cmdTeleportPlayer(GameObject player, GameObject challenge)
     {
-        Debug.LogError("IN COMMAND TELEPORT PLAYER"); //su server
         challenge.GetNamedChild("Schermo").GetComponent<MeshRenderer>().material = challenge.GetComponent<Teleport>().rosso;
         challenge.GetComponent<BoxCollider>().enabled = false;
 
