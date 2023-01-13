@@ -9,7 +9,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Porta : NetworkBehaviour
 {
     [SyncVar]
-    public double password;
+    public int password;
     public GameObject challenge;
     public GameObject selectingHand;
     public XRSimpleInteractable takeScript;
@@ -24,12 +24,12 @@ public class Porta : NetworkBehaviour
         challenge = GameObject.FindWithTag("Challenge");
     }
 
-    public void setPassword(double p)
+    public void setPassword(int p)
     {
         password = p;
     }
 
-    public bool verifyPassword(double p)
+    public bool verifyPassword(int p)
     {
         if (p.Equals(password))
         {
