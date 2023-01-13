@@ -1736,6 +1736,7 @@ MonoBehaviour:
   takeScript: {fileID: -7958803593821527373}
   selectingHand: {fileID: 0}
   verde: {fileID: 2100000, guid: 57e4b756a1503654496e41418102ef32, type: 2}
+  id: 0
 --- !u!114 &917600830457950366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1801,6 +1802,7 @@ MonoBehaviour:
   syncInterval: 0.1
   challenge: {fileID: 0}
   idKeyPairs: {fileID: 0}
+  leaderBoard: {fileID: 0}
   id: 0
   publicKeyEncode: 0
   publicKeyModule: 0
