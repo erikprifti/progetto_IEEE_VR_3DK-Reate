@@ -174,8 +174,21 @@ public class Challenge : NetworkBehaviour
     }
     private int decrypt(int mex, int key, int module)
     {
+        Debug.LogError("in DEcrypt");
+
+        Debug.LogError(mex);
+
+        Debug.LogError(key);
+
+        Debug.LogError(module);
         BigInteger c = BigInteger.Pow(mex, key);
         int res = (int)(c % module);
+
+        Debug.LogError("c : " + c);
+        BigInteger t = c % module;
+        Debug.LogError("t: " + t);
+
+        Debug.LogError("res " + res);
         return res;
     }
 
@@ -342,7 +355,11 @@ public class Challenge : NetworkBehaviour
         if (!playerId.Equals(passivePlayerId)) { return 0; }
 
         int messageDecryptedP = decrypt(message, privateKey, idKeyPairs.getModule(passivePlayerId));
+        Debug.LogError("messageDEP " + messageDecryptedP);
+
         int messageDecryptedA = decrypt(messageDecryptedP, idKeyPairs.getEncode(activePlayerId), idKeyPairs.getModule(activePlayerId));
+        Debug.LogError("messageDEA " + messageDecryptedA);
+
         PlayerManager p = findPlayerById(playerId);
      //   p.setPassword(messageDecryptedA); //questo da verificare
 
