@@ -124,7 +124,7 @@ public class PlayerNet : NetworkBehaviour
     [Command]
     public void cmdPlayChallenge(int key, GameObject challenge)
     {
-        string result = challenge.GetComponent<Challenge>().play(key, gameObject.GetComponent<PlayerManager>().id);
+        double result = challenge.GetComponent<Challenge>().play(key, gameObject.GetComponent<PlayerManager>().id);
         gameObject.GetComponent<PlayerManager>().rcpTargetSetPassword(gameObject.GetComponent<NetworkIdentity>().connectionToClient, result);
 
     }
