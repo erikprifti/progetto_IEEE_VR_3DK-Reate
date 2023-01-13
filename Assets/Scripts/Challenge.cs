@@ -338,12 +338,23 @@ public class Challenge : NetworkBehaviour
 
     }
 
+    [ClientRpc]
+    public void rpcChallengeFree()
+    {
+        Display.GetComponentInParent<MeshRenderer>().material = Display.GetComponent<Display>().green;
+        Display.GetComponent<Display>().setDisplayAvailable();
+        StartButton.GetComponent<BoxCollider>().enabled = true;
+
+    }
+
     [TargetRpc]
     public void rpcTargetChallengeNextMove(NetworkConnection target)
     {
         Display.GetComponentInParent<MeshRenderer>().material = Display.GetComponent<Display>().red;
         Display.GetComponent<Display>().setDisplayNextMove();
         ConfirmButton.GetComponent<BoxCollider>().enabled = false;
+
+        StartButton.GetComponent<BoxCollider>().enabled = false;
     }
 
     [TargetRpc]
@@ -352,5 +363,13 @@ public class Challenge : NetworkBehaviour
         Display.GetComponentInParent<MeshRenderer>().material = Display.GetComponent<Display>().red;
         Display.GetComponent<Display>().setDisplayConfirm();
         ConfirmButton.GetComponent<BoxCollider>().enabled = true;
+    }
+
+    [TargetRpc]
+    public void rpcTargetChallengeWait(NetworkConnection target)
+    {
+        Display.GetComponentInParent<MeshRenderer>().material = Display.GetComponent<Display>().blu;
+        Display.GetComponent<Display>().setDisplayWaiting();
+        StartButton.GetComponent<BoxCollider>().enabled = true;
     }
 }

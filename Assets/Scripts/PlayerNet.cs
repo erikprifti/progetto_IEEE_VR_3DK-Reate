@@ -52,10 +52,12 @@ public class PlayerNet : NetworkBehaviour
     [Command]
     public void cmdChallengeUpdate(int state, GameObject challenge, GameObject player)
     {
-        if(state == 1)  //nextMove
+        if (state == 1)  //nextMove
         {
             challenge.GetComponent<Challenge>().rpcTargetChallengeNextMove(player.GetComponent<NetworkIdentity>().connectionToClient);
         }
+        else
+            challenge.GetComponent<Challenge>().rpcChallengeFree();
     }
 
     [Command]
@@ -103,8 +105,8 @@ public class PlayerNet : NetworkBehaviour
         challenge.GetComponent<Challenge>().sendMessage(playerP); //in server
                                                                   //cmdChallengeFreeTarget(gameObject, playerP);
                                                                   // challenge.GetComponent<Challenge>().rpcSendMessageTarget(playerP.GetComponent<NetworkIdentity>().connectionToClient, playerP); //setto challenge client specifico
-        challenge.GetComponent<Teleport>().rpcChallengeFreeTarget(playerP.GetComponent<NetworkIdentity>().connectionToClient); //enable challenge su client specifico
-
+        challenge.GetComponent<Challenge>().rpcChallengeBusy(); //enable challenge su client specifico
+        challenge.GetComponent<Challenge>().rpcTargetChallengeConfirm(playerP.GetComponent<NetworkIdentity>().connectionToClient);
     }
 
     //[Command]

@@ -15,7 +15,11 @@ public class ConfirmButton : MonoBehaviour
 
         GameObject challenge = GameObject.FindWithTag("Challenge");
         p.cmdPlayChallenge(k, challenge); //questo command spostarlo su interazione della challenge
-        p.cmdChallengeUpdate(1, challenge, p.gameObject);
+        if(challenge.GetComponent<Challenge>().passivePlayerId == 0)
+            p.cmdChallengeUpdate(0, challenge, p.gameObject);
+        else
+            p.cmdChallengeUpdate(1, challenge, p.gameObject);
+
         gameObject.GetComponent<BoxCollider>().enabled = false;
         //gameObject.GetComponentInParent<Challenge>().rpcTargetChallengeNextMove(p.gameObject.GetComponent<NetworkIdentity>().connectionToClient);
     }

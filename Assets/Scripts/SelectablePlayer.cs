@@ -37,7 +37,7 @@ public class SelectablePlayer : NetworkBehaviour
         }
         else if(id == selector)
             {
-            gameObject.GetComponent<TextMeshProUGUI>().color = Color.yellow;
+            gameObject.GetComponent<TextMeshProUGUI>().color = Color.red;
 
         }else
         gameObject.GetComponent<TextMeshProUGUI>().color = Color.green;
