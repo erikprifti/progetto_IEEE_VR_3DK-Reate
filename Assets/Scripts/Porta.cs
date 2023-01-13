@@ -4,12 +4,14 @@ using UnityEngine;
 using Mirror;
 using System;
 using UnityEngine.XR.Interaction.Toolkit;
+using System.Numerics;
+
 
 
 public class Porta : NetworkBehaviour
 {
     [SyncVar]
-    public long password;
+    public BigInteger password;
     public GameObject challenge;
     public GameObject selectingHand;
     public XRSimpleInteractable takeScript;
@@ -24,12 +26,12 @@ public class Porta : NetworkBehaviour
         challenge = GameObject.FindWithTag("Challenge");
     }
 
-    public void setPassword(long p)
+    public void setPassword(BigInteger p)
     {
         password = p;
     }
 
-    public bool verifyPassword(long p)
+    public bool verifyPassword(BigInteger p)
     {
         if (p.Equals(password))
         {

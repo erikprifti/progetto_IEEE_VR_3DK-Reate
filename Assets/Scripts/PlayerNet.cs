@@ -7,6 +7,8 @@ using TMPro;
 using UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
 using UnityEngine.XR.Interaction.Toolkit;
 using Unity.XR.CoreUtils;
+using System.Numerics;
+
 //using UnityEngine.InputSystem;
 //using UnityEditor;
 //using UnityEngine.UIElements;
@@ -124,7 +126,7 @@ public class PlayerNet : NetworkBehaviour
     [Command]
     public void cmdPlayChallenge(int key, GameObject challenge)
     {
-        long result = challenge.GetComponent<Challenge>().play(key, gameObject.GetComponent<PlayerManager>().id);
+        BigInteger result = challenge.GetComponent<Challenge>().play(key, gameObject.GetComponent<PlayerManager>().id);
         gameObject.GetComponent<PlayerManager>().rcpTargetSetPassword(gameObject.GetComponent<NetworkIdentity>().connectionToClient, result);
 
     }

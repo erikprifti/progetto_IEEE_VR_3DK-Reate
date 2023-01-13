@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
+using System.Numerics;
 
 public class Challenge : NetworkBehaviour
 {
@@ -9,17 +10,17 @@ public class Challenge : NetworkBehaviour
     public IdKeyPairs idKeyPairs;
 
     [SyncVar]
-    public long message;
+    public BigInteger message;
     [SyncVar]
     public int activePlayerId;
     [SyncVar]
     public int passivePlayerId;
     [SyncVar]
-    public long messageEncryptedP;
+    public BigInteger messageEncryptedP;
     [SyncVar]
-    public long messageEncryptedA;
+    public BigInteger messageEncryptedA;
     
-    public long doorPassword;
+    public BigInteger doorPassword;
 
     public GameObject ConfirmButton;
     public GameObject StartButton;
@@ -67,7 +68,7 @@ public class Challenge : NetworkBehaviour
 
  
 
-    private long generateMessage()
+    private BigInteger generateMessage()
     {
         doorPassword = 1234;
         return doorPassword;
@@ -148,31 +149,28 @@ public class Challenge : NetworkBehaviour
     //    return decryptMex;
     //}
 
-    private long powerN(long number, int power)
+
+    private BigInteger encrypt(BigInteger mex, int key, int module)
     {
-        long res = 1;
-        long sq = number;
-        while (power > 0)
-        {
-            if (power % 2 == 1)
-            {
-                res *= sq;
-            }
-            sq = sq * sq;
-            power /= 2;
-        }
-        return res;
-    }
-    private long encrypt(long mex, int key, int module)
-    {
-        long c = powerN(mex, key);
+        Debug.LogError("in encrypt");
+
+        Debug.LogError(mex);
+
+        Debug.LogError(key);
+
+        Debug.LogError(module);
+
+        // long c = powerN(mex, key);
+        BigInteger c = BigInteger.Pow(mex, key);
+        Debug.LogError(c);
+
         c = c % module;
         messageEncryptedA = c;
         return c;
     }
-    private long decrypt(long mex, int key, int module)
+    private BigInteger decrypt(BigInteger mex, int key, int module)
     {
-        long c = powerN(mex, key);
+        BigInteger c = BigInteger.Pow(mex, key);
         c = c % module;
         return c;
     }
@@ -205,7 +203,7 @@ public class Challenge : NetworkBehaviour
         //tempP.Clear();
     }
 
-    public long play(int key, int Id) //CHIMATA IN SERVER
+    public BigInteger play(int key, int Id) //CHIMATA IN SERVER
     {
       
         PlayerManager p = findPlayerById(Id);
@@ -213,8 +211,9 @@ public class Challenge : NetworkBehaviour
         if (activePlayerId == 0 && passivePlayerId == 0 ) //play chiamato dall attivo dopo aver messo la sua chiave privata con la quale decriptare per prima il messaggio
         {
             activePlayerId = p.id;
-            long mex = generateMessage();
+            BigInteger mex = generateMessage();
             messageEncryptedA = encrypt(mex, key, idKeyPairs.getModule(p.id));
+            Debug.LogError("messageEncryptedA " + messageEncryptedA);
             porta.setPassword(doorPassword);
             return doorPassword;
             //p.setPassword(doorPassword);
@@ -331,15 +330,15 @@ public class Challenge : NetworkBehaviour
 
     //    return decryptMex;
     //}
-    public long resolveChallenge(int privateKey, GameObject player) //chiamata da command
+    public BigInteger resolveChallenge(int privateKey, GameObject player) //chiamata da command
     {
         if (!player.CompareTag("Player")) { return 0; }
         PlayerManager playerManager = player.GetComponent<PlayerManager>();
         int playerId = playerManager.getId();
         if (!playerId.Equals(passivePlayerId)) { return 0; }
 
-        long messageDecryptedP = decrypt(message, privateKey, idKeyPairs.getModule(passivePlayerId));
-        long messageDecryptedA = decrypt(messageDecryptedP, idKeyPairs.getEncode(activePlayerId), idKeyPairs.getModule(activePlayerId));
+        BigInteger messageDecryptedP = decrypt(message, privateKey, idKeyPairs.getModule(passivePlayerId));
+        BigInteger messageDecryptedA = decrypt(messageDecryptedP, idKeyPairs.getEncode(activePlayerId), idKeyPairs.getModule(activePlayerId));
         PlayerManager p = findPlayerById(playerId);
      //   p.setPassword(messageDecryptedA); //questo da verificare
 

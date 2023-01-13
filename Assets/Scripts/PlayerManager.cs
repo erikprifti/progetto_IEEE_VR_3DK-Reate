@@ -6,6 +6,8 @@ using Unity.XR.CoreUtils;
 using UnityEngine.XR.Interaction.Toolkit.Inputs;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.InputSystem.XR;
+using System.Numerics;
+
 
 public class PlayerManager : NetworkBehaviour
 {
@@ -18,7 +20,7 @@ public class PlayerManager : NetworkBehaviour
     public int publicKeyEncode;
     [SyncVar]
     public int publicKeyModule;
-    public long password;
+    public BigInteger password;
     public int privateKey;
     public NetworkIdentity networkIdentity;
 
@@ -81,13 +83,13 @@ public class PlayerManager : NetworkBehaviour
         return id;
     }
 
-    public long getPassword()
+    public BigInteger getPassword()
     {
         return password;
     }
 
     [TargetRpc]
-    public void rcpTargetSetPassword(NetworkConnection target, long p)
+    public void rcpTargetSetPassword(NetworkConnection target, BigInteger p)
     {
         password = p;
     }
