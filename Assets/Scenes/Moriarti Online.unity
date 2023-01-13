@@ -1397,8 +1397,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9cc3d562042bb24a849004cbaad60ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  red: {fileID: 2100000, guid: 7682c9e0c03d2294f835758128b46c46, type: 2}
-  green: {fileID: 2100000, guid: 57e4b756a1503654496e41418102ef32, type: 2}
+  red: {fileID: 2100000, guid: 6ac21c5fef1050043aa715c4748d23e1, type: 2}
+  green: {fileID: 2100000, guid: a7d6245e2509a1049a549bb54fb22c3e, type: 2}
   blu: {fileID: 2100000, guid: 6ef225c95d60c814cb760f66a81c7e87, type: 2}
 --- !u!114 &180365275
 MonoBehaviour:
@@ -15912,6 +15912,7 @@ MonoBehaviour:
   slot2: {fileID: 0}
   slot3: {fileID: 0}
   slot4: {fileID: 0}
+  playerActive: {fileID: 0}
 --- !u!114 &1592881480
 MonoBehaviour:
   m_ObjectHideFlags: 0

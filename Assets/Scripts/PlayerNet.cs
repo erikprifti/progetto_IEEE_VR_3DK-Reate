@@ -23,6 +23,10 @@ public class PlayerNet : NetworkBehaviour
         {
             XRsim.enabled = false;
         }
+        else
+        {
+            FindObjectOfType<Leaderboard>().playerActive = this;
+        }
     }
 
     //[Command]

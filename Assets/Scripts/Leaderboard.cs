@@ -19,6 +19,8 @@ public class Leaderboard : NetworkBehaviour
     
     public Dictionary<int, GameObject> id_player_map = new Dictionary<int, GameObject>();
 
+    public PlayerNet playerActive;
+
     public void Start()
     {
         slot1 = GameObject.FindGameObjectWithTag("T1");
