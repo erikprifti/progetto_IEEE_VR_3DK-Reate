@@ -2402,7 +2402,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51222
+  m_Name: pb_Mesh40380
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4006,12 +4006,12 @@ MonoBehaviour:
   syncInterval: 0.1
   porta: {fileID: 0}
   idKeyPairs: {fileID: 0}
-  message: 
+  message: 0
   activePlayerId: 0
   passivePlayerId: 0
-  messageEncryptedP: 
-  messageEncryptedA: 
-  doorPassword: 
+  messageEncryptedP: 0
+  messageEncryptedA: 0
+  doorPassword: 0
   ConfirmButton: {fileID: 0}
   StartButton: {fileID: 0}
   Display: {fileID: 180365272}
@@ -5599,7 +5599,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh50972
+  m_Name: pb_Mesh40130
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9388,7 +9388,7 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0.1
-  password: 
+  password: 0
   challenge: {fileID: 0}
   selectingHand: {fileID: 0}
   takeScript: {fileID: 874579191}
@@ -18474,7 +18474,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51630
+  m_Name: pb_Mesh40788
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20264,9 +20264,9 @@ MeshRenderer:
   m_Materials:
   - {fileID: 5020847508040491909, guid: 1dd2cc4d2565fdb49902ac59a572e731, type: 3}
   - {fileID: 5020847508040491909, guid: 1dd2cc4d2565fdb49902ac59a572e731, type: 3}
-  - {fileID: 2100000, guid: 2805d7799c44a084da9722c6c8282bc4, type: 2}
-  - {fileID: 2100000, guid: 6dab5034e8ea95347830885745023c25, type: 2}
-  - {fileID: 1913499052663412561, guid: 1dd2cc4d2565fdb49902ac59a572e731, type: 3}
+  - {fileID: 2100000, guid: b377b1b354e24484c9942276759adc94, type: 2}
+  - {fileID: 2100000, guid: b377b1b354e24484c9942276759adc94, type: 2}
+  - {fileID: 2100000, guid: 6ef225c95d60c814cb760f66a81c7e87, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20464,7 +20464,7 @@ Transform:
   m_LocalRotation: {x: 5.4238797e-10, y: -0.107766844, z: -0.000000020187526, w: 0.9941762}
   m_LocalPosition: {x: -1.0760497, y: 0.21598029, z: 1.8477435}
   m_LocalScale: {x: -0.1703234, y: -0.12738653, z: -0.1703234}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 543450653297998430}
   m_RootOrder: 1
