@@ -318,7 +318,7 @@ public class Challenge : NetworkBehaviour
      //   p.setPassword(messageDecryptedA); //questo da verificare
 
         // player.GetComponent<PlayerNet>().cmdChallengeFree(gameObject);
-        gameObject.GetComponent<Teleport>().rpcChallengeFree();
+        //gameObject.GetComponent<Teleport>().rpcChallengeFree();
         return messageDecryptedA;
     }
 
