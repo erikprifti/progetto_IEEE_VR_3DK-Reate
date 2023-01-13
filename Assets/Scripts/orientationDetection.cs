@@ -24,6 +24,7 @@ public class orientationDetection : MonoBehaviour
     private int[] values = {0,0,0};
 
     private int key;
+    private bool calculated = false;
 
     public Interface _interface;
 
@@ -31,9 +32,11 @@ public class orientationDetection : MonoBehaviour
 
     public int passwordGenerator() //last method that confirm the challenge
     {
-        makeRotations();
-
-        multiplyMatrix();
+        if (!calculated) {
+            makeRotations();
+            multiplyMatrix();
+            calculated = true;
+        }
 
         Debug.Log(getKey());
 
