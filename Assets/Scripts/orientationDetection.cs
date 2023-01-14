@@ -22,21 +22,16 @@ public class orientationDetection : MonoBehaviour
                                   { 64, 128, 256 } };
 
     private int[] values = {0,0,0};
-
     private int key;
-    private bool calculated = false;
 
     public Interface _interface;
 
-    private static int[,,] cube;
+    private int[,,] rotated_matrix;
 
     public int passwordGenerator() //last method that confirm the challenge
     {
-        if (!calculated) {
-            makeRotations();
-            multiplyMatrix();
-            calculated = true;
-        }
+        makeRotations();
+        multiplyMatrix();
 
         Debug.Log(getKey());
 
@@ -45,17 +40,15 @@ public class orientationDetection : MonoBehaviour
 
     public void makeRotations()
     {
- //       cube = new int[3, 3, 3];
-
-        cube = _interface.Matrix;
+        rotated_matrix = _interface.Matrix;
 
         if (front.isActive() && coll_1.isActive() && front.isPosition())
         {
-            cube = ruotaX();
+            rotated_matrix = ruotaX();
 
             if (left.isActive())
             {
-                cube = ruotaZ();
+                rotated_matrix = ruotaZ();
             }
             else if (bottom.isActive())
             {
@@ -63,36 +56,36 @@ public class orientationDetection : MonoBehaviour
             }
             else if (right.isActive())
             {
-                cube = ruotaZ();
-                cube = ruotaZ();
-                cube = ruotaZ();
+                rotated_matrix = ruotaZ();
+                rotated_matrix = ruotaZ();
+                rotated_matrix = ruotaZ();
             }
             else
             {
-                cube = ruotaZ();
-                cube = ruotaZ();
+                rotated_matrix = ruotaZ();
+                rotated_matrix = ruotaZ();
             }
         }
         else if (back.isActive() && coll_1.isActive() && back.isPosition())
         {
-            cube = ruotaX();
-            cube = ruotaX();
-            cube = ruotaX();
+            rotated_matrix = ruotaX();
+            rotated_matrix = ruotaX();
+            rotated_matrix = ruotaX();
             
             if (left.isActive())
             {
-                cube = ruotaZ();
-                cube = ruotaZ();
-                cube = ruotaZ();
+                rotated_matrix = ruotaZ();
+                rotated_matrix = ruotaZ();
+                rotated_matrix = ruotaZ();
             }
             else if (bottom.isActive())
             {
-                cube = ruotaZ();
-                cube = ruotaZ();
+                rotated_matrix = ruotaZ();
+                rotated_matrix = ruotaZ();
             }
             else if (right.isActive())
             {
-                cube = ruotaZ();
+                rotated_matrix = ruotaZ();
             }
             else
             {
@@ -101,9 +94,9 @@ public class orientationDetection : MonoBehaviour
         }
         else if (left.isActive() && coll_1.isActive() && left.isPosition())
         {
-            cube = ruotaZ();
-            cube = ruotaZ();
-            cube = ruotaZ();
+            rotated_matrix = ruotaZ();
+            rotated_matrix = ruotaZ();
+            rotated_matrix = ruotaZ();
 
             if (front.isActive())
             {
@@ -111,23 +104,23 @@ public class orientationDetection : MonoBehaviour
             }
             else if (bottom.isActive())
             {
-                cube = ruotaX();
+                rotated_matrix = ruotaX();
             }
             else if (back.isActive())
             {
-                cube = ruotaX();
-                cube = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
             }
             else
             {
-                cube = ruotaX();
-                cube = ruotaX();
-                cube = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
             }
         }
         else if (right.isActive() && coll_1.isActive()  && back.isPosition())
         {
-            cube=ruotaZ();
+            rotated_matrix=ruotaZ();
 
             if (front.isActive())
             {
@@ -135,25 +128,25 @@ public class orientationDetection : MonoBehaviour
             }
             else if (bottom.isActive())
             {
-                cube = ruotaX();
+                rotated_matrix = ruotaX();
               
             }
             else if (back.isActive())
             {
-                cube = ruotaX();
-                cube = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
             }
             else
             {
-                cube = ruotaX();
-                cube = ruotaX();
-                cube = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
             }
         }
         else if(bottom.isActive() && coll_1.isActive() && bottom.isPosition())
         {
-            cube = ruotaX();
-            cube = ruotaX();
+            rotated_matrix = ruotaX();
+            rotated_matrix = ruotaX();
 
             if (back.isActive())
             {
@@ -161,18 +154,18 @@ public class orientationDetection : MonoBehaviour
             }
             if (right.isActive())
             {
-                cube = ruotaZ();
+                rotated_matrix = ruotaZ();
             }
             if (front.isActive())
             {
-                cube = ruotaZ();
-                cube = ruotaZ();
+                rotated_matrix = ruotaZ();
+                rotated_matrix = ruotaZ();
             }
             if (left.isActive())
             {
-                cube = ruotaZ();
-                cube = ruotaZ();
-                cube = ruotaZ();            }
+                rotated_matrix = ruotaZ();
+                rotated_matrix = ruotaZ();
+                rotated_matrix = ruotaZ();            }
         }
         else
         {
@@ -182,22 +175,20 @@ public class orientationDetection : MonoBehaviour
             }
             else if (left.isActive())
             {
-                cube = ruotaY();
+                rotated_matrix = ruotaY();
             }
             else if (back.isActive())
             {
-                cube = ruotaY();
-                cube = ruotaY();
+                rotated_matrix = ruotaY();
+                rotated_matrix = ruotaY();
             }
             else if(right.isActive())
             {
-                cube = ruotaY();
-                cube = ruotaY();
-                cube = ruotaY();
+                rotated_matrix = ruotaY();
+                rotated_matrix = ruotaY();
+                rotated_matrix = ruotaY();
             }
         }
-
- //       _interface.Matrix = cube;
 
         printMat();
     }
@@ -207,30 +198,30 @@ public class orientationDetection : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
-            temp = cube[i, 0, 0];
-            cube[i, 0, 0] = cube[i, 0, 2];
+            temp = rotated_matrix[i, 0, 0];
+            rotated_matrix[i, 0, 0] = rotated_matrix[i, 0, 2];
 
-            temp2 = cube[i, 2, 0];
-            cube[i, 2, 0] = temp;
+            temp2 = rotated_matrix[i, 2, 0];
+            rotated_matrix[i, 2, 0] = temp;
 
-            temp = cube[i, 2, 2];
-            cube[i, 2, 2] = temp2;
+            temp = rotated_matrix[i, 2, 2];
+            rotated_matrix[i, 2, 2] = temp2;
 
-            cube[i, 0, 2] = temp;
+            rotated_matrix[i, 0, 2] = temp;
 
-            temp = cube[i, 1, 0];
-            cube[i, 1, 0] = cube[i, 0, 1];
+            temp = rotated_matrix[i, 1, 0];
+            rotated_matrix[i, 1, 0] = rotated_matrix[i, 0, 1];
 
-            temp2 = cube[i, 2, 1];
-            cube[i, 2, 1] = temp;
+            temp2 = rotated_matrix[i, 2, 1];
+            rotated_matrix[i, 2, 1] = temp;
 
-            temp = cube[i, 1, 2];
-            cube[i, 1, 2] = temp2;
+            temp = rotated_matrix[i, 1, 2];
+            rotated_matrix[i, 1, 2] = temp2;
 
-            cube[i, 1, 0] = temp;
+            rotated_matrix[i, 1, 0] = temp;
         }
 
-        return cube;
+        return rotated_matrix;
     }
     private int[,,] ruotaY()
     {
@@ -238,31 +229,31 @@ public class orientationDetection : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
-            temp = cube[0, i, 2];
-            cube[0, i, 2] = cube[0, i, 0];
+            temp = rotated_matrix[0, i, 2];
+            rotated_matrix[0, i, 2] = rotated_matrix[0, i, 0];
 
-            temp2 = cube[2, i, 2];
-            cube[2, i, 2] = temp;
+            temp2 = rotated_matrix[2, i, 2];
+            rotated_matrix[2, i, 2] = temp;
 
-            temp = cube[2, i, 0];
-            cube[2, i, 0] = temp2;
+            temp = rotated_matrix[2, i, 0];
+            rotated_matrix[2, i, 0] = temp2;
 
-            cube[0, i, 0] = temp;
+            rotated_matrix[0, i, 0] = temp;
 
-            temp = cube[2, i, 1];
-            cube[2, i, 1] = cube[1, i, 2];
+            temp = rotated_matrix[2, i, 1];
+            rotated_matrix[2, i, 1] = rotated_matrix[1, i, 2];
 
-            temp2 = cube[1, i, 0];
-            cube[1, i, 0] = temp;
+            temp2 = rotated_matrix[1, i, 0];
+            rotated_matrix[1, i, 0] = temp;
 
-            temp = cube[0, i, 1];
-            cube[0, i, 1] = temp2;
+            temp = rotated_matrix[0, i, 1];
+            rotated_matrix[0, i, 1] = temp2;
 
-            cube[1, i, 2] = temp;
+            rotated_matrix[1, i, 2] = temp;
 
         }
 
-        return cube;
+        return rotated_matrix;
     } 
     private int[,,] ruotaZ()
     {
@@ -270,30 +261,30 @@ public class orientationDetection : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
-            temp = cube[2, 0, i];
-            cube[2, 0, i] = cube[0, 0, i];
+            temp = rotated_matrix[2, 0, i];
+            rotated_matrix[2, 0, i] = rotated_matrix[0, 0, i];
 
-            temp2 = cube[2, 2, i];
-            cube[2, 2, i] = temp;
+            temp2 = rotated_matrix[2, 2, i];
+            rotated_matrix[2, 2, i] = temp;
 
-            temp = cube[0, 2, i];
-            cube[0, 2, i] = temp2;
+            temp = rotated_matrix[0, 2, i];
+            rotated_matrix[0, 2, i] = temp2;
 
-            cube[0, 0, i] = temp;
+            rotated_matrix[0, 0, i] = temp;
 
-            temp = cube[2, 1, i];
-            cube[2, 1, i] = cube[1, 0, i];
+            temp = rotated_matrix[2, 1, i];
+            rotated_matrix[2, 1, i] = rotated_matrix[1, 0, i];
 
-            temp2 = cube[1, 2, i];
-            cube[1, 2, i] = temp;
+            temp2 = rotated_matrix[1, 2, i];
+            rotated_matrix[1, 2, i] = temp;
 
-            temp = cube[0, 1, i];
-            cube[0, 1, i] = temp2;
+            temp = rotated_matrix[0, 1, i];
+            rotated_matrix[0, 1, i] = temp2;
 
-            cube[1, 0, i] = temp;
+            rotated_matrix[1, 0, i] = temp;
         }
 
-        return cube;
+        return rotated_matrix;
     }
 
     public void printMat()
@@ -301,14 +292,12 @@ public class orientationDetection : MonoBehaviour
         // per adesso stampo solo la faccia frontale
         for (int i = 0; i < 3; i++)
         {
-            Debug.Log("cuberice " + i + ": \n");
-            Debug.Log(cube[0, 0, i] + " " + cube[1, 0, i] + " " + cube[2, 0, i] + "\n" +
-                      cube[0, 1, i] + " " + cube[1, 1, i] + " " + cube[2, 1, i] + "\n" +
-                      cube[0, 2, i] + " " + cube[1, 2, i] + " " + cube[2, 2, i]);
+            Debug.Log("rotated_matrixrice " + i + ": \n");
+            Debug.Log(rotated_matrix[0, 0, i] + " " + rotated_matrix[1, 0, i] + " " + rotated_matrix[2, 0, i] + "\n" +
+                      rotated_matrix[0, 1, i] + " " + rotated_matrix[1, 1, i] + " " + rotated_matrix[2, 1, i] + "\n" +
+                      rotated_matrix[0, 2, i] + " " + rotated_matrix[1, 2, i] + " " + rotated_matrix[2, 2, i]);
         }
     }
-
-
 
 
     public void multiplyMatrix()
@@ -322,10 +311,10 @@ public class orientationDetection : MonoBehaviour
             {
                 for(int k = 0; k < 3; k++)
                 {
-                    cube[k, j, i] = cube[k, j, i] * multiplier[j, k];
-//                      Debug.Log("reading from cube, prof " + i + ", riga " + j + ", colonna " + k + " : " + cube[k, j, i] + ", with multiplier:  " + multiplier[j, k]);
+                    rotated_matrix[k, j, i] = rotated_matrix[k, j, i] * multiplier[j, k];
+//                      Debug.Log("reading from rotated_matrix, prof " + i + ", riga " + j + ", colonna " + k + " : " + rotated_matrix[k, j, i] + ", with multiplier:  " + multiplier[j, k]);
 
-                    values[i] += cube[k, j, i];
+                    values[i] += rotated_matrix[k, j, i];
  //                   Debug.Log("after increment value " + i + ": " + values[i]);
                 }
             }
