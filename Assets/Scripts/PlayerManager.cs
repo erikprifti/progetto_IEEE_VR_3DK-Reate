@@ -38,11 +38,7 @@ public class PlayerManager : NetworkBehaviour
     public GameObject cRoom;
 
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.T))
-        gameObject.transform.position = cRoom.transform.position;
-    }
+   
 
     void Start()
     {

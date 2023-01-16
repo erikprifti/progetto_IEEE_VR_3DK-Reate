@@ -7,6 +7,9 @@ public class ConfirmButton : MonoBehaviour
 {
     public GameObject selectingHand;
     public XRSimpleInteractable takeScript;
+    public GameObject lb;
+
+ 
     public void OnSelection() //IN LOCALE
     {
         selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
@@ -18,11 +21,15 @@ public class ConfirmButton : MonoBehaviour
         gameObject.GetComponent<BoxCollider>().enabled = false;
 
         Debug.LogError(challenge.GetComponent<Challenge>().passivePlayerId);
-        if(challenge.GetComponent<Challenge>().passivePlayerId == 0)
+        if (challenge.GetComponent<Challenge>().passivePlayerId == 0)
+        {
             p.cmdChallengeUpdate(0, challenge, p.gameObject);
+            lb.GetComponent<Leaderboard>().enableText();
+        }
         else
             p.cmdChallengeUpdate(1, challenge, p.gameObject);
 
+        
         //gameObject.GetComponentInParent<Challenge>().rpcTargetChallengeNextMove(p.gameObject.GetComponent<NetworkIdentity>().connectionToClient);
     }
 }
