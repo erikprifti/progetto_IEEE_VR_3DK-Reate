@@ -11,7 +11,7 @@ public class Leaderboard : NetworkBehaviour
     public GameObject slot3;
     public GameObject slot4;
 
-
+    public GameObject confirmButton;
 
 
     public readonly Dictionary<int, GameObject> id_text_map = new Dictionary<int, GameObject>();
@@ -35,6 +35,7 @@ public class Leaderboard : NetworkBehaviour
         id_text_map.Add(4, slot4);
         //Debug.LogError("! display da start " );
 
+        confirmButton.GetComponent<ConfirmButton>().lb = gameObject;
         //displayPlayers();
     }
 
@@ -83,5 +84,23 @@ public class Leaderboard : NetworkBehaviour
         //Debug.LogError("after adding in rpcSetTextOnLB, added: " + id);
        // id_player_map.GetValueOrDefault(id);
     }
+
+    public void disableText()
+    {
+        slot1.GetComponent<BoxCollider>().enabled = false;
+        slot2.GetComponent<BoxCollider>().enabled = false;
+        slot3.GetComponent<BoxCollider>().enabled = false;
+        slot4.GetComponent<BoxCollider>().enabled = false;
+
+    }
+
+    public void enableText()
+    {
+        slot1.GetComponent<BoxCollider>().enabled = true;
+        slot2.GetComponent<BoxCollider>().enabled = true;
+        slot3.GetComponent<BoxCollider>().enabled = true;
+        slot4.GetComponent<BoxCollider>().enabled = true;
+    }
+
 
 }

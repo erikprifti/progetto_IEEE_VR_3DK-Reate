@@ -35,12 +35,13 @@ public class SelectablePlayer : NetworkBehaviour
             return;
 
         }
-        else if(id == selector)
-            {
-            gameObject.GetComponent<TextMeshProUGUI>().color = Color.red;
-
-        }else
-        gameObject.GetComponent<TextMeshProUGUI>().color = Color.green;
+        else if(challenge.GetComponent<Challenge>().activePlayerId != 0)
+        {
+            if(selector != id && challenge.GetComponent<Challenge>().passivePlayerId == 0)
+                gameObject.GetComponent<TextMeshProUGUI>().color = Color.green;
+            else
+                gameObject.GetComponent<TextMeshProUGUI>().color = Color.red;
+        }
     }
     
     public void onHoverExit()
@@ -50,16 +51,19 @@ public class SelectablePlayer : NetworkBehaviour
 
     public void OnSelection()
     {
-        //Debug.LogError("selezione da" + takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() + " selezionato " + id);
-        if(id == 0 || challenge.GetComponent<Challenge>().activePlayerId == 0)
+        int selectorID = takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId();
+        
+        if (id == 0 || challenge.GetComponent<Challenge>().activePlayerId == 0) //id non valido o challenge non attivata
+        {
+            return;
+        }else if(selectorID != challenge.GetComponent<Challenge>().activePlayerId) //se challenge attivata ma io non sono l'activePlayer
         {
             return;
         }
        
-
-        int activeID = takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId();
         int passiveID = id;
-        if (activeID == passiveID)
+        
+        if (selectorID == passiveID)
             return;
 
         selectingHand = takeScript.interactorsSelecting[0].transform.gameObject; //selectingHand è l'attivo
@@ -68,6 +72,7 @@ public class SelectablePlayer : NetworkBehaviour
         selectingHand.GetComponent<HandChild>().player.cmdSendMessage(challenge, playerP); //passiamo a cmdSelectPlayer gameObject=player selezionato(passivePlayer)
       
         gameObject.GetComponent<TextMeshProUGUI>().color = Color.red;
+        lb.disableText();
 
     }
 
