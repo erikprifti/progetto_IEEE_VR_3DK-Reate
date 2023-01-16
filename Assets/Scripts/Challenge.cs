@@ -40,7 +40,7 @@ public class Challenge : NetworkBehaviour
 
     private int generateMessage()
     {
-        doorPassword = 13;
+        doorPassword = 20;
         return doorPassword;
     }
 
@@ -59,11 +59,18 @@ public class Challenge : NetworkBehaviour
         BigInteger c = BigInteger.Pow(mex, key);
         int res = (int)(c % module);
 
-        messageEncryptedA = res;
+      //  messageEncryptedA = res;
         return res;
     }
     private int decrypt(int mex, int key, int module)
     {
+        Debug.LogError("in decrypt");
+
+        Debug.LogError(mex);
+
+        Debug.LogError(key);
+
+        Debug.LogError(module);
         BigInteger c = BigInteger.Pow(mex, key);
         int res = (int)(c % module);
 
@@ -123,6 +130,7 @@ public class Challenge : NetworkBehaviour
         passivePlayerId = pId;
         int publicKey = idKeyPairs.getEncode(passivePlayerId);
         messageEncryptedP = encrypt(messageEncryptedA, publicKey, idKeyPairs.getModule(pId));
+        Debug.LogError("messageEncryptedP " + messageEncryptedP);
         message = messageEncryptedP;
 
     }
