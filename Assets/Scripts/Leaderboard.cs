@@ -44,6 +44,9 @@ public class Leaderboard : NetworkBehaviour
         GameObject t = id_text_map.GetValueOrDefault(id);
         t.GetComponent<SelectablePlayer>().id = id;
         t.GetComponent<TextMeshProUGUI>().text = player.GetComponent<PlayerManager>().playerName;
+        if (player.GetComponent<PlayerManager>().playerName.Equals(PlayerInfo.instance.PlayerName)){
+            t.GetComponent<TextMeshProUGUI>().color = Color.red;
+        }
         //player.GetComponent<PlayerNet>().cmdUpdatePlayerMap();
         //Debug.LogError("! display da addPlayer ");
 
