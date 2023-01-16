@@ -4060,7 +4060,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1156130625}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &311935657
 MonoBehaviour:
@@ -7335,7 +7335,7 @@ BoxCollider:
   m_GameObject: {fileID: 536583795}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 638.3752, y: 47.17465, z: 0.9388534}
   m_Center: {x: 0.9770097, y: -0.2468551, z: 0.030573031}
@@ -10405,7 +10405,7 @@ BoxCollider:
   m_GameObject: {fileID: 744058840}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 638.3752, y: 47.17465, z: 0.9388534}
   m_Center: {x: 0.9770097, y: -0.2468551, z: 0.030573031}
@@ -13386,6 +13386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectingHand: {fileID: 0}
   takeScript: {fileID: 1023454776}
+  lb: {fileID: 0}
 --- !u!114 &1023454776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14845,8 +14846,8 @@ Transform:
   - {fileID: 295089800}
   - {fileID: 60597356}
   - {fileID: 1503280692}
-  - {fileID: 444502390}
   - {fileID: 311935656}
+  - {fileID: 444502390}
   - {fileID: 1189555319}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -17776,7 +17777,7 @@ BoxCollider:
   m_GameObject: {fileID: 1349058303}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 638.3752, y: 47.17465, z: 0.9388534}
   m_Center: {x: 0.9770097, y: -0.2468551, z: 0.030573031}
@@ -20474,6 +20475,7 @@ MonoBehaviour:
   slot2: {fileID: 0}
   slot3: {fileID: 0}
   slot4: {fileID: 0}
+  confirmButton: {fileID: 1023454773}
   playerActive: {fileID: 0}
 --- !u!114 &1592881480
 MonoBehaviour:
@@ -24629,7 +24631,7 @@ BoxCollider:
   m_GameObject: {fileID: 1885231873}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 638.3752, y: 47.17465, z: 0.9388534}
   m_Center: {x: 0.9770097, y: -0.2468551, z: 0.030573031}
