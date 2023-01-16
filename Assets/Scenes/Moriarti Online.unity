@@ -6362,8 +6362,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.37125576, y: 0.7119594, z: 0.31002453}
-  m_Center: {x: -1.0893738, y: -0.0010487138, z: -0.82472044}
+  m_Size: {x: 0.37125576, y: 0.20505616, z: 0.3100245}
+  m_Center: {x: -1.0893738, y: -0.0010427833, z: -0.8247222}
 --- !u!65 &463853307
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17416,7 +17416,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh78128
+  m_Name: pb_Mesh31210
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22101,8 +22101,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: " Grab the empty Cube\n\nBuild your key grabbing the little cubes and inserting
-    them in the empty cube\n\n Insert your key and go back to the arcade room"
+  m_text: 'Grab the empty Cube
+
+
+    Build your key grabbing the little cubes and
+    inserting them in the empty cube
+
+
+    Insert your key and go back to the arcade
+    room'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -22165,7 +22172,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 38.66632, w: 0}
+  m_margin: {x: -176.98792, y: 0, z: 38.66632, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
