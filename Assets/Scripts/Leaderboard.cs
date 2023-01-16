@@ -44,21 +44,22 @@ public class Leaderboard : NetworkBehaviour
         GameObject t = id_text_map.GetValueOrDefault(id);
         t.GetComponent<SelectablePlayer>().id = id;
         t.GetComponent<TextMeshProUGUI>().text = player.GetComponent<PlayerManager>().playerName;
-        if (player.GetComponent<PlayerManager>().playerName.Equals(PlayerInfo.instance.PlayerName)){
-            t.GetComponent<TextMeshProUGUI>().color = Color.red;
-        }
+        Debug.LogError("! display:  " + player.GetComponent<PlayerManager>().playerName);
+        //if (player.GetComponent<PlayerManager>().playerName.Equals(PlayerInfo.instance.PlayerName)){
+        //    t.GetComponent<TextMeshProUGUI>().color = Color.red;
+        //}
         //player.GetComponent<PlayerNet>().cmdUpdatePlayerMap();
         //Debug.LogError("! display da addPlayer ");
 
         // displayPlayers();
     }
-    
+
     //public void displayPlayers()
     //{
     //    for(int i = 0; i < 5; i++){
     //        if (id_player_map.ContainsKey(i))
     //        {
-               
+
 
     //            //Debug.LogError("! player map contienee: " + i);
     //            GameObject t = id_text_map.GetValueOrDefault(i);
@@ -79,7 +80,7 @@ public class Leaderboard : NetworkBehaviour
     {
          addPlayer(id, player);
         //Debug.LogError("after adding in rpcSetTextOnLB, added: " + id);
-        id_player_map.GetValueOrDefault(id);
+       // id_player_map.GetValueOrDefault(id);
     }
 
 }
