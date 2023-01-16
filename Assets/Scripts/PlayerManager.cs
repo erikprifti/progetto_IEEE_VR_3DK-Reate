@@ -21,6 +21,7 @@ public class PlayerManager : NetworkBehaviour
     public int password;
     public int privateKey;
     public NetworkIdentity networkIdentity;
+    [SyncVar]
     public string playerName;
 
     public XROrigin xrOrigin;
@@ -45,7 +46,7 @@ public class PlayerManager : NetworkBehaviour
 
     void Start()
     {
-        playerName = PlayerInfo.instance.PlayerName;
+        
         idKeyPairs = GameObject.FindWithTag("IdKeyPairs").GetComponent<IdKeyPairs>();
         challenge = GameObject.FindWithTag("Challenge").GetComponent<Challenge>();
         leaderBoard = GameObject.FindWithTag("LeaderBoard").GetComponent<Leaderboard>();
@@ -54,8 +55,8 @@ public class PlayerManager : NetworkBehaviour
         if (isLocalPlayer)
         {
             if (isClient) {
-
-                CmdSetPlayerInfo();
+                playerName = PlayerInfo.instance.PlayerName;
+                CmdSetPlayerInfo(playerName);
             }
 
             cameraActive.enabled = true;
@@ -95,8 +96,9 @@ public class PlayerManager : NetworkBehaviour
     }
 
     [Command]
-    public void CmdSetPlayerInfo()
+    public void CmdSetPlayerInfo(string name)
     {
+        playerName = name;
         for (int i = 1; i < 5; i++)
         {
             if (idKeyPairs.idAvailable(i))
@@ -113,6 +115,7 @@ public class PlayerManager : NetworkBehaviour
 
                 for (int j = 1; j <= leaderBoard.id_player_map.Count; j++)
                 {
+                    Debug.LogError("nome del j-esimo player: " + leaderBoard.id_player_map.GetValueOrDefault(j).GetComponent<PlayerManager>().playerName);
                     leaderBoard.rpcSetTextOnLB(j, leaderBoard.id_player_map.GetValueOrDefault(j));
                 }
                 break;
