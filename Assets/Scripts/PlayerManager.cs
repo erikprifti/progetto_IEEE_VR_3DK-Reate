@@ -21,6 +21,7 @@ public class PlayerManager : NetworkBehaviour
     public int password;
     public int privateKey;
     public NetworkIdentity networkIdentity;
+    public string playerName;
 
     public XROrigin xrOrigin;
     public InputActionManager iAM;
@@ -44,6 +45,7 @@ public class PlayerManager : NetworkBehaviour
 
     void Start()
     {
+        playerName = PlayerInfo.instance.PlayerName;
         idKeyPairs = GameObject.FindWithTag("IdKeyPairs").GetComponent<IdKeyPairs>();
         challenge = GameObject.FindWithTag("Challenge").GetComponent<Challenge>();
         leaderBoard = GameObject.FindWithTag("LeaderBoard").GetComponent<Leaderboard>();

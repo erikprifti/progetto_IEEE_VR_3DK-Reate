@@ -43,27 +43,27 @@ public class Leaderboard : NetworkBehaviour
         id_player_map.Add(id, player);
         GameObject t = id_text_map.GetValueOrDefault(id);
         t.GetComponent<SelectablePlayer>().id = id;
-        t.GetComponent<TextMeshProUGUI>().text = "player " + id;
+        t.GetComponent<TextMeshProUGUI>().text = player.GetComponent<PlayerManager>().playerName;
         //player.GetComponent<PlayerNet>().cmdUpdatePlayerMap();
         //Debug.LogError("! display da addPlayer ");
 
         // displayPlayers();
     }
     
-    public void displayPlayers()
-    {
-        for(int i = 0; i < 5; i++){
-            if (id_player_map.ContainsKey(i))
-            {
+    //public void displayPlayers()
+    //{
+    //    for(int i = 0; i < 5; i++){
+    //        if (id_player_map.ContainsKey(i))
+    //        {
                
 
-                //Debug.LogError("! player map contienee: " + i);
-                GameObject t = id_text_map.GetValueOrDefault(i);
-                t.GetComponent<SelectablePlayer>().id = i;
-                t.GetComponent<TextMeshProUGUI>().text = "player " + i;
-            }
-        }
-    }
+    //            //Debug.LogError("! player map contienee: " + i);
+    //            GameObject t = id_text_map.GetValueOrDefault(i);
+    //            t.GetComponent<SelectablePlayer>().id = i;
+    //            t.GetComponent<TextMeshProUGUI>().text = "player " + i;
+    //        }
+    //    }
+    //}
 
     [ClientRpc]
     public void rpcClearPlayerMap()
