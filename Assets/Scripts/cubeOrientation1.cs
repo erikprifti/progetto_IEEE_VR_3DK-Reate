@@ -9,13 +9,11 @@ public class cubeOrientation1 : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         _isActive = true;
-        Debug.Log("AAA cubo attivo");
     }
 
     public void OnTriggerExit(Collider other)
     {
         _isActive = false;
-        Debug.Log("AAA cubo uscito");
 
     }
     public bool isActive()

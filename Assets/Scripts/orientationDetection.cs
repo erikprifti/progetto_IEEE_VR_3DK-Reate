@@ -30,15 +30,10 @@ public class orientationDetection : MonoBehaviour
 
     public int passwordGenerator() //last method that confirm the challenge
     {
-        printMat();
         makeRotations();
         multiplyMatrix();
         resetRotationMatrix();
-        Debug.Log("SEPARATION");
-        printMat();
 
-
-        Debug.Log(getKey());
         int keyGen = getKey();
         resetValues();
         return keyGen;
@@ -49,7 +44,7 @@ public class orientationDetection : MonoBehaviour
         copyInterfaceInRotationMatrix();
         
 
-        if (front.isActive() && coll_1.isActive() && front.isPosition())
+        if (front.isActive() && coll_1.isActive() && front.isPosition()) //collider1 collide con front
         {
             rotated_matrix = ruotaX();
 
@@ -125,7 +120,7 @@ public class orientationDetection : MonoBehaviour
                 rotated_matrix = ruotaX();
             }
         }
-        else if (right.isActive() && coll_1.isActive()  && back.isPosition())
+        else if (right.isActive() && coll_1.isActive()  && right.isPosition())
         {
             rotated_matrix=ruotaZ();
 

@@ -33,6 +33,7 @@ public class Interface : MonoBehaviour
 
         //trigger
         gameObject.GetComponent<BoxCollider>().isTrigger = true;
+     //   gameObject.GetComponent<BoxCollider>().enabled = false;
 
         //parent
         parent = gameObject.transform.parent.gameObject;
@@ -56,7 +57,7 @@ public class Interface : MonoBehaviour
 
         //trigger
         gameObject.GetComponent<BoxCollider>().isTrigger = false;
-
+        //   gameObject.GetComponent<BoxCollider>().enabled = true;
     }
 
 }
