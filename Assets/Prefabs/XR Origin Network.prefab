@@ -1795,6 +1795,7 @@ MonoBehaviour:
   password: 0
   privateKey: 0
   networkIdentity: {fileID: 8461726665893524286}
+  playerName: 
   xrOrigin: {fileID: 1145141890269195023}
   iAM: {fileID: 1145141890269195022}
   cc: {fileID: -8923567878714385832}

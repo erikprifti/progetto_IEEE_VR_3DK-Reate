@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System;
 
 public class MenuController : MonoBehaviour
 {
@@ -59,11 +60,12 @@ public class MenuController : MonoBehaviour
 
     public void ConfirmButton()
     {
-        if (inputName.text != null && inputName.text!= "Enter Name")
+        if (inputName.text != null && inputName.text != "Enter Name")
         {
             PlayerInfo.instance.PlayerName = inputName.text;
             connectionArea.SetActive(true);
             nameArea.SetActive(false);
+             
         }
     }
 
