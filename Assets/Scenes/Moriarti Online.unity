@@ -16162,7 +16162,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31142
+  m_Name: pb_Mesh48868
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18059,6 +18059,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Socket_cubo
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 434b2f763b0465d4390a98517ed22af6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 434b2f763b0465d4390a98517ed22af6, type: 3}
 --- !u!1 &1532627056 stripped
@@ -18196,7 +18201,7 @@ BoxCollider:
   m_GameObject: {fileID: 1532627056}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.26033983, y: 1.9999996, z: 0.9154313}
   m_Center: {x: -0.8698302, y: 5.495374e-16, z: -0.24365036}
@@ -18222,7 +18227,7 @@ BoxCollider:
   m_GameObject: {fileID: 1532627056}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2, y: 0.25560263, z: 0.92796236}
   m_Center: {x: 0, y: 0.87221193, z: -0.23738493}
@@ -18235,7 +18240,7 @@ BoxCollider:
   m_GameObject: {fileID: 1532627056}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2, y: 0.25086123, z: 0.9226992}
   m_Center: {x: 0, y: -0.87458014, z: -0.23527601}
@@ -18264,7 +18269,7 @@ BoxCollider:
   m_GameObject: {fileID: 1532627056}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2, y: 1.9999998, z: 1.2161216}
   m_Center: {x: 0, y: -0.000007641075, z: -0.39194006}

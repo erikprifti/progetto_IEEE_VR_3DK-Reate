@@ -26,21 +26,28 @@ public class orientationDetection : MonoBehaviour
 
     public Interface _interface;
 
-    private int[,,] rotated_matrix;
+    private static int[,,] rotated_matrix = new int[3, 3, 3];
 
     public int passwordGenerator() //last method that confirm the challenge
     {
+        printMat();
         makeRotations();
         multiplyMatrix();
+        resetRotationMatrix();
+        Debug.Log("SEPARATION");
+        printMat();
+
 
         Debug.Log(getKey());
-
-        return getKey();
+        int keyGen = getKey();
+        resetValues();
+        return keyGen;
     }
 
     public void makeRotations()
     {
-        rotated_matrix = _interface.Matrix;
+        copyInterfaceInRotationMatrix();
+        
 
         if (front.isActive() && coll_1.isActive() && front.isPosition())
         {
@@ -190,7 +197,7 @@ public class orientationDetection : MonoBehaviour
             }
         }
 
-        printMat();
+        //printMat();
     }
     private int[,,] ruotaX()
     {
@@ -292,11 +299,17 @@ public class orientationDetection : MonoBehaviour
         // per adesso stampo solo la faccia frontale
         for (int i = 0; i < 3; i++)
         {
-            Debug.Log("rotated_matrixrice " + i + ": \n");
-            Debug.Log(rotated_matrix[0, 0, i] + " " + rotated_matrix[1, 0, i] + " " + rotated_matrix[2, 0, i] + "\n" +
-                      rotated_matrix[0, 1, i] + " " + rotated_matrix[1, 1, i] + " " + rotated_matrix[2, 1, i] + "\n" +
-                      rotated_matrix[0, 2, i] + " " + rotated_matrix[1, 2, i] + " " + rotated_matrix[2, 2, i]);
-        }
+          //  Debug.Log("rotated_matrixrice " + i + ": \n");
+            Debug.Log(_interface.Matrix[0, 0, i] + " " + _interface.Matrix[0, 1, i] + " " + _interface.Matrix[0, 2, i] + "\n" +
+            _interface.Matrix[1, 0, i] + " " + _interface.Matrix[1, 1, i] + " " + _interface.Matrix[1, 2, i] + "\n" +
+                             _interface.Matrix[2, 0, i] + " " + _interface.Matrix[2, 1, i] + " " + _interface.Matrix[2, 2, i]);
+            Debug.Log("rotatedMatrix: ");
+            
+            Debug.Log(rotated_matrix[0, 0, i] + " " + rotated_matrix[0, 1, i] + " " + rotated_matrix[0, 2, i] + "\n" +
+            rotated_matrix[1, 0, i] + " " + rotated_matrix[1, 1, i] + " " + rotated_matrix[1, 2, i] + "\n" +
+                             rotated_matrix[2, 0, i] + " " + rotated_matrix[2, 1, i] + " " + rotated_matrix[2, 2, i]);
+
+    }
     }
 
 
@@ -305,7 +318,7 @@ public class orientationDetection : MonoBehaviour
         //Debug.Log("Entrato in multiplyMatrix");
         for (int i = 0; i < 3; i++)
         {
-            Debug.Log("Entrato in multiplyMatrix " + i);
+        //    Debug.Log("Entrato in multiplyMatrix " + i);
             
             for (int j = 0; j < 3; j++)
             {
@@ -328,7 +341,7 @@ public class orientationDetection : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             values[i] = values[i] % 10;
-            Debug.Log(values[i]);
+           // Debug.Log(values[i]);
         }
     }
 
@@ -344,6 +357,43 @@ public class orientationDetection : MonoBehaviour
         return key;
     }
 
+   private void copyInterfaceInRotationMatrix()
+    {
+        for(int i = 0; i <3; i++)
+        {
+            for(int j = 0; j<3; j++)
+            {
+                for(int k = 0; k<3; k++)
+                {
+                    rotated_matrix[i, j, k] = _interface.Matrix[i, j, k];
+                }
+            }
+        }
+    }
+
+    private void resetRotationMatrix()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                for (int k = 0; k < 3; k++)
+                {
+                    rotated_matrix[i, j, k] = 0;
+                }
+            }
+        }
+    }
+
+    private void resetValues()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            values[i] = 0;
+            // Debug.Log(values[i]);
+        }
+
+    }
 }
 
 
