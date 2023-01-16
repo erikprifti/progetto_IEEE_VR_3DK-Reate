@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5279,8 +5279,8 @@ Transform:
   - {fileID: 2075697837}
   - {fileID: 380488778}
   - {fileID: 1443104219}
-  - {fileID: 601038760}
   - {fileID: 1795914856}
+  - {fileID: 601038760}
   m_Father: {fileID: 737367276}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13696,6 +13696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectingHand: {fileID: 0}
   takeScript: {fileID: 1023454776}
+  lb: {fileID: 0}
 --- !u!114 &1023454776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20999,6 +21000,7 @@ MonoBehaviour:
   slot2: {fileID: 0}
   slot3: {fileID: 0}
   slot4: {fileID: 0}
+  confirmButton: {fileID: 1023454773}
   playerActive: {fileID: 0}
 --- !u!114 &1592881480
 MonoBehaviour:
