@@ -499,7 +499,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60597351}
-  m_LocalRotation: {x: 0.017553238, y: -0.026903804, z: -0.70417565, w: 0.7092988}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.49894848, y: 0.13040154, z: 0.8378}
   m_LocalScale: {x: 0.027000004, y: 0.027000004, z: 0.027}
   m_ConstrainProportionsScale: 1
@@ -513,7 +513,7 @@ Transform:
   - {fileID: 887538373}
   m_Father: {fileID: 1156130625}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: -0.744, y: -3.606, z: -89.561}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &60597357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,6 +573,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 885294612}
+        m_TargetAssemblyTypeName: InsertCube, Assembly-CSharp
+        m_MethodName: uscito
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1170,7 +1182,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30888
+  m_Name: pb_Mesh83444
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5646,6 +5658,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0499998, y: 0.058190227, z: 0.16206668}
   m_Center: {x: -0.7500011, y: 0.06912944, z: -0.58445096}
+--- !u!65 &463853310
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463853302}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.19999997, y: 0.075057164, z: 0.08651138}
+  m_Center: {x: -0.7500011, y: 0.0011909046, z: -0.5441546}
 --- !u!1 &467865538
 GameObject:
   m_ObjectHideFlags: 0
@@ -12357,6 +12382,7 @@ GameObject:
   - component: {fileID: 885294610}
   - component: {fileID: 885294608}
   - component: {fileID: 885294609}
+  - component: {fileID: 885294612}
   m_Layer: 0
   m_Name: back
   m_TagString: Untagged
@@ -12470,8 +12496,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.1, z: 0.1}
-  m_Center: {x: -0.35, y: 0, z: 0}
+  m_Size: {x: 0.13050297, y: 0.1, z: 0.1}
+  m_Center: {x: -0.3347484, y: -1.3429009e-11, z: 0.000000002464622}
 --- !u!4 &885294611
 Transform:
   m_ObjectHideFlags: 0
@@ -12487,6 +12513,18 @@ Transform:
   m_Father: {fileID: 1532627057}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &885294612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885294607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7af843c6d9cc0bb42b61f440c5f608b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &887538372
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16840,7 +16878,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh101172
+  m_Name: pb_Mesh83738
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18022,7 +18060,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh40946
+  m_Name: pb_Mesh84302
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
