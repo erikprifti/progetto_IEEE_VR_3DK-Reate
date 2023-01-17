@@ -15,8 +15,8 @@ public class Porta : NetworkBehaviour
     public XRSimpleInteractable takeScript;
     public GameObject FinalScene;
     public Material azzurro;
-    [SyncVar]
-    public int threshold = 0;
+ //   [SyncVar]
+  //  public int threshold = 0;
 
     private void Start()
     {

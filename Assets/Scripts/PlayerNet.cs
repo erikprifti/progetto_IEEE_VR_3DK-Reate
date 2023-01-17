@@ -92,13 +92,13 @@ public class PlayerNet : NetworkBehaviour
     {
 
         porta.GetComponent<Porta>().rpcFinalTeleport(play.GetComponent<NetworkIdentity>().connectionToClient);
-        porta.GetComponent<Porta>().threshold++;
-        if (porta.GetComponent<Porta>().threshold == 2)
-        {
-            c.GetComponent<Challenge>().resetChallenge();
-            // porta.GetComponent<Porta>().rpcResetChallenge();
-            return;
-        }
+        //porta.GetComponent<Porta>().threshold++;
+        //if (porta.GetComponent<Porta>().threshold == 2)
+        //{
+        //    c.GetComponent<Challenge>().resetChallenge();
+        //    // porta.GetComponent<Porta>().rpcResetChallenge();
+        //    return;
+        //}
 
 
     }
@@ -131,6 +131,12 @@ public class PlayerNet : NetworkBehaviour
         int result = challenge.GetComponent<Challenge>().play(key, gameObject.GetComponent<PlayerManager>().id);
         gameObject.GetComponent<PlayerManager>().rcpTargetSetPassword(gameObject.GetComponent<NetworkIdentity>().connectionToClient, result);
 
+    }
+
+    [Command]
+    public void cmdTurnBackToLobby( GameObject player, GameObject finalDoor)
+    {
+        finalDoor.GetComponent<backToSalaGame>().rpcLobbyTeleport(player.GetComponent<NetworkIdentity>().connectionToClient);
     }
 
 }
