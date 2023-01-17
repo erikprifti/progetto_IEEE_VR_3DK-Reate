@@ -2568,6 +2568,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1145141888653756836}
     m_Modifications:
+    - target: {fileID: 2937204069651033959, guid: 1392f805216c47742996d4742c80721c,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8270855663187062767, guid: 1392f805216c47742996d4742c80721c,
         type: 3}
       propertyPath: m_RootOrder
@@ -2702,6 +2707,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: XR Controller Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 7655812912622807707, guid: 9f3369e30fbd31f4bb596b1a99babe83,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f3369e30fbd31f4bb596b1a99babe83, type: 3}
