@@ -17,6 +17,7 @@ TagManager:
   - T4
   - StartButton
   - ConfirmButton
+  - BackToLobby
   layers:
   - Default
   - TransparentFX
