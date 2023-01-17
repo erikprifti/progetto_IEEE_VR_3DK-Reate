@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Socket_0_2_1 : MonoBehaviour
+public class Socket_0_2_1 : Socket
 {
     public Interface _interface;
 

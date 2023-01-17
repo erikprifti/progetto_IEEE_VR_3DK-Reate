@@ -5,7 +5,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class InsertCube : MonoBehaviour
 {
-    
+   public  GameObject gabbia;
+    public Material OK;
+    public Material NOK;
     public void OnTriggerEnter(Collider other)
     {
         GameObject bl;
@@ -15,7 +17,7 @@ public class InsertCube : MonoBehaviour
             Debug.Log("inserito");
             bl.GetComponentInChildren<displayBL>().setBLAvailable();
             bl.GetComponent<XRSimpleInteractable>().enabled = true;
-            
+            gabbia.GetComponent<MeshRenderer>().material = OK;
         }
     }
 
@@ -26,5 +28,7 @@ public class InsertCube : MonoBehaviour
         Debug.Log("rimosso");
         bl.GetComponent<XRSimpleInteractable>().enabled = false;
         bl.GetComponentInChildren<displayBL>().setBLUnavailable();
+        gabbia.GetComponent<MeshRenderer>().material = NOK;
+
     }
 }

@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Socket_1_1_0 : MonoBehaviour
-{
+public class Socket_1_1_0 : Socket
+{ 
     public Interface _interface;
 
     int x = 0;
