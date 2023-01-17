@@ -46,25 +46,36 @@ public class Porta : NetworkBehaviour
     //di seguito un prototipo 
     public void OnSelection()
     {
-        
+
         if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == challenge.GetComponent<Challenge>().passivePlayerId)
         {
             selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
             Debug.LogError("password di " + selectingHand.GetComponentInParent<PlayerManager>().getId() + " alla porta: " + selectingHand.transform.gameObject.GetComponentInParent<PlayerManager>().getPassword());
-            if (!verifyPassword(selectingHand.transform.gameObject.GetComponentInParent<PlayerManager>().getPassword())) { return; }
+            if (!verifyPassword(selectingHand.transform.gameObject.GetComponentInParent<PlayerManager>().getPassword())) {
+                showError();
+                return; }
             selectingHand.GetComponent<HandChild>().player.cmdFinalTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject, challenge);
         }
 
-        if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == challenge.GetComponent<Challenge>().activePlayerId)
+        else if (takeScript.interactorsSelecting[0].transform.gameObject.GetComponentInParent<PlayerManager>().getId() == challenge.GetComponent<Challenge>().activePlayerId)
         {
             selectingHand = takeScript.interactorsSelecting[0].transform.gameObject;
             Debug.LogError("password di " + selectingHand.GetComponentInParent<PlayerManager>().getId() + " alla porta: " + selectingHand.transform.gameObject.GetComponentInParent<PlayerManager>().getPassword());
 
-            if (!verifyPassword(selectingHand.transform.gameObject.GetComponentInParent<PlayerManager>().getPassword())) { return; }
+            if (!verifyPassword(selectingHand.transform.gameObject.GetComponentInParent<PlayerManager>().getPassword())) {
+                showError();
+                return; }
             selectingHand.GetComponent<HandChild>().player.cmdFinalTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject, challenge);
         }
+        else
+            showError();
         
 
+    }
+
+    public void showError()
+    {
+        challenge.GetComponent<Challenge>().showPasswordError();
     }
 
     public void FinalTeleport()

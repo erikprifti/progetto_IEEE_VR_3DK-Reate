@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -26,7 +25,7 @@ public class ConfirmButton : MonoBehaviour
             p.cmdChallengeUpdate(0, challenge, p.gameObject);
             lb.GetComponent<Leaderboard>().enableText();
         }
-        else
+        else //passive player sta cpnfermando
             p.cmdChallengeUpdate(1, challenge, p.gameObject);
 
         

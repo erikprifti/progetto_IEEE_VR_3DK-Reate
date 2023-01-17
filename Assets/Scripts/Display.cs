@@ -4,11 +4,15 @@ using UnityEngine;
 using TMPro;
 public class Display : MonoBehaviour
 {
-    static string available = "I'm free\nPlay with me!";
-    static string busy = "Sorry!\nSomone is already playing!";
-    static string waiting = "I'm waiting for you!";
+    static string available = "Play with me!\n Select Start to create a Private Room!";
+    static string busy = "Sorry!\nSomeone is already playing!";
+    static string waiting = "I'm waiting for you!\n Play with me by selecting Start!";
     static string nextMove = "Select a player on the board";
-    static string confirm = "Confirm!";
+    static string confirm = "Confirm if your key is correct!";
+    static string selectDoor = "Personal Room created\n Select the Door to enter it";
+    static string destroy = "CHALLENGE DISABLED\nSelect the Door to enter the Private Room";
+    static string error = "PASSWORD NOT CORRECT\nYou have insert an incorrect key!\n Or\n A Private Room hasn't been created yet";
+
     private TextMeshProUGUI display;
     public Material red;
     public Material green;
@@ -41,5 +45,22 @@ public class Display : MonoBehaviour
         display.GetComponent<TextMeshProUGUI>().text = confirm;
     }
 
+    public void setDisplayDestroy()
+    {
+        display.GetComponent<TextMeshProUGUI>().text = destroy;
+
+    }
+
+    public void setDisplayToDoor()
+    {
+        display.GetComponent<TextMeshProUGUI>().text = selectDoor;
+
+    }
+
+    public void setDisplayError()
+    {
+        display.GetComponent<TextMeshProUGUI>().text = error;
+
+    }
 }
 

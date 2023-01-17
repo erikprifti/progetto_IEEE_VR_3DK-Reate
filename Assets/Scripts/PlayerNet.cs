@@ -61,7 +61,11 @@ public class PlayerNet : NetworkBehaviour
             challenge.GetComponent<Challenge>().rpcTargetChallengeNextMove(player.GetComponent<NetworkIdentity>().connectionToClient);
         }
         else
-            challenge.GetComponent<Challenge>().rpcChallengeFree();
+        { //passive player ha confermato
+            challenge.GetComponent<Challenge>().rpcChallengeDestroy();
+            challenge.GetComponent<Challenge>().rpcTargetEnableDoor(player.GetComponent<NetworkIdentity>().connectionToClient);
+
+        }
     }
 
     [Command]
@@ -104,12 +108,13 @@ public class PlayerNet : NetworkBehaviour
     }
 
     [Command]
-    public void cmdSendMessage(GameObject challenge, GameObject playerP)
+    public void cmdSendMessage(GameObject challenge, GameObject playerP, GameObject playerA)
     {
         challenge.GetComponent<Challenge>().sendMessage(playerP); //in server
                                                                   //cmdChallengeFreeTarget(gameObject, playerP);
                                                                   // challenge.GetComponent<Challenge>().rpcSendMessageTarget(playerP.GetComponent<NetworkIdentity>().connectionToClient, playerP); //setto challenge client specifico
         challenge.GetComponent<Challenge>().rpcChallengeBusy(); //enable challenge su client specifico
+        challenge.GetComponent<Challenge>().rpcTargetChallengeToDoor(playerA.GetComponent<NetworkIdentity>().connectionToClient);
         challenge.GetComponent<Challenge>().rpcTargetChallengeWait(playerP.GetComponent<NetworkIdentity>().connectionToClient);
     }
 

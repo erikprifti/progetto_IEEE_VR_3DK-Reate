@@ -177,6 +177,23 @@ public class Challenge : NetworkBehaviour
 
     }
 
+    [ClientRpc]
+    public void rpcChallengeDestroy()
+    {
+        Display.GetComponentInParent<MeshRenderer>().material = Display.GetComponent<Display>().red;
+        Display.GetComponent<Display>().setDisplayDestroy();
+        StartButton.GetComponent<BoxCollider>().enabled = false;
+        ConfirmButton.GetComponent<BoxCollider>().enabled = false;
+
+
+    }
+
+    [TargetRpc]
+    public void rpcTargetEnableDoor(NetworkConnection target)
+    {
+        porta.GetComponent<BoxCollider>().enabled = true;
+    }
+
     [TargetRpc]
     public void rpcTargetChallengeNextMove(NetworkConnection target)
     {
@@ -203,5 +220,22 @@ public class Challenge : NetworkBehaviour
         Display.GetComponentInParent<MeshRenderer>().material = Display.GetComponent<Display>().blu;
         Display.GetComponent<Display>().setDisplayWaiting();
         StartButton.GetComponent<BoxCollider>().enabled = true;
+    }
+
+    [TargetRpc]
+    public void rpcTargetChallengeToDoor(NetworkConnection target)
+    {
+        Display.GetComponentInParent<MeshRenderer>().material = Display.GetComponent<Display>().red;
+        Display.GetComponent<Display>().setDisplayToDoor();
+        StartButton.GetComponent<BoxCollider>().enabled = false;
+        ConfirmButton.GetComponent<BoxCollider>().enabled = false;
+        porta.GetComponent<BoxCollider>().enabled = true;
+
+    }
+
+    public void showPasswordError()
+    {
+        Display.GetComponentInParent<MeshRenderer>().material = Display.GetComponent<Display>().red;
+        Display.GetComponent<Display>().setDisplayError();
     }
 }
