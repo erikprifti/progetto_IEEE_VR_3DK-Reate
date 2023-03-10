@@ -21266,21 +21266,1302 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1156130625}
     m_Modifications:
+    - target: {fileID: 18179131486026774, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 18179131486026774, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 18179131486026774, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 18179131486026774, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 18179131486026774, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 18179131486026774, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 18179131486026774, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 18179131486026774, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 18179131486026774, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 18179131486026774, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 18179131486026774, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303769}
+    - target: {fileID: 18179131486026774, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 144179548282986303, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 144179548282986303, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 144179548282986303, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 144179548282986303, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 144179548282986303, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 144179548282986303, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 144179548282986303, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 144179548282986303, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 144179548282986303, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 144179548282986303, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 144179548282986303, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303783}
+    - target: {fileID: 144179548282986303, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 203594140134914332, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 203594140134914332, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 203594140134914332, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 203594140134914332, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 203594140134914332, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 203594140134914332, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 203594140134914332, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 203594140134914332, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 203594140134914332, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 203594140134914332, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 203594140134914332, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303781}
+    - target: {fileID: 203594140134914332, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 230658245970832841, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 230658245970832841, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 230658245970832841, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 230658245970832841, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 230658245970832841, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 230658245970832841, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 230658245970832841, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 230658245970832841, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 230658245970832841, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 230658245970832841, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 230658245970832841, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303778}
+    - target: {fileID: 230658245970832841, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
     - target: {fileID: 319756340682685068, guid: ed5b218189675cf44a4cd5666bc9522f,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -1.8
       objectReference: {fileID: 0}
+    - target: {fileID: 469205533751911689, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 469205533751911689, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 469205533751911689, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 469205533751911689, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 469205533751911689, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 469205533751911689, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 469205533751911689, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 469205533751911689, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 469205533751911689, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 469205533751911689, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 469205533751911689, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303768}
+    - target: {fileID: 469205533751911689, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 998483249059819585, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 998483249059819585, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 998483249059819585, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 998483249059819585, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 998483249059819585, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 998483249059819585, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 998483249059819585, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 998483249059819585, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 998483249059819585, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 998483249059819585, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 998483249059819585, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303779}
+    - target: {fileID: 998483249059819585, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 1006608555243575496, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 1006608555243575496, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 1006608555243575496, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 1006608555243575496, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 1006608555243575496, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 1006608555243575496, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 1006608555243575496, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 1006608555243575496, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 1006608555243575496, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 1006608555243575496, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 1006608555243575496, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303767}
+    - target: {fileID: 1006608555243575496, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
     - target: {fileID: 1408864208711234505, guid: ed5b218189675cf44a4cd5666bc9522f,
         type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 732085025}
+    - target: {fileID: 2077308368860031734, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 2077308368860031734, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 2077308368860031734, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 2077308368860031734, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 2077308368860031734, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 2077308368860031734, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 2077308368860031734, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 2077308368860031734, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 2077308368860031734, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 2077308368860031734, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 2077308368860031734, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303775}
+    - target: {fileID: 2077308368860031734, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 2868914275792498782, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 2868914275792498782, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 2868914275792498782, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 2868914275792498782, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 2868914275792498782, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 2868914275792498782, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 2868914275792498782, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 2868914275792498782, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 2868914275792498782, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 2868914275792498782, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 2868914275792498782, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303760}
+    - target: {fileID: 2868914275792498782, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 3103701025511228322, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 3103701025511228322, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 3103701025511228322, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 3103701025511228322, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 3103701025511228322, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 3103701025511228322, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 3103701025511228322, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 3103701025511228322, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 3103701025511228322, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 3103701025511228322, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 3103701025511228322, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303757}
+    - target: {fileID: 3103701025511228322, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 3337207917282750189, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 3337207917282750189, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 3337207917282750189, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 3337207917282750189, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 3337207917282750189, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 3337207917282750189, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 3337207917282750189, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 3337207917282750189, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 3337207917282750189, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 3337207917282750189, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 3337207917282750189, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303763}
+    - target: {fileID: 3337207917282750189, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 3398876009223747869, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 3398876009223747869, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 3398876009223747869, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 3398876009223747869, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 3398876009223747869, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 3398876009223747869, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 3398876009223747869, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 3398876009223747869, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 3398876009223747869, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 3398876009223747869, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 3398876009223747869, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303766}
+    - target: {fileID: 3398876009223747869, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 3459745179398494091, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 3459745179398494091, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 3459745179398494091, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 3459745179398494091, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 3459745179398494091, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 3459745179398494091, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 3459745179398494091, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 3459745179398494091, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 3459745179398494091, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 3459745179398494091, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 3459745179398494091, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303782}
+    - target: {fileID: 3459745179398494091, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 4105783422245297100, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 4105783422245297100, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 4105783422245297100, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 4105783422245297100, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 4105783422245297100, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 4105783422245297100, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 4105783422245297100, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 4105783422245297100, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 4105783422245297100, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 4105783422245297100, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 4105783422245297100, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303758}
+    - target: {fileID: 4105783422245297100, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 5368082649408068884, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 5368082649408068884, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 5368082649408068884, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 5368082649408068884, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 5368082649408068884, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 5368082649408068884, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 5368082649408068884, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 5368082649408068884, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 5368082649408068884, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 5368082649408068884, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 5368082649408068884, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303761}
+    - target: {fileID: 5368082649408068884, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 5386581469086691165, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 5386581469086691165, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 5386581469086691165, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 5386581469086691165, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 5386581469086691165, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 5386581469086691165, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 5386581469086691165, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 5386581469086691165, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 5386581469086691165, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 5386581469086691165, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 5386581469086691165, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303772}
+    - target: {fileID: 5386581469086691165, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
     - target: {fileID: 5655788241075370797, guid: ed5b218189675cf44a4cd5666bc9522f,
         type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5716193778586105418, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 5716193778586105418, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 5716193778586105418, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 5716193778586105418, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 5716193778586105418, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 5716193778586105418, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 5716193778586105418, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 5716193778586105418, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 5716193778586105418, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 5716193778586105418, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 5716193778586105418, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303770}
+    - target: {fileID: 5716193778586105418, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 5861406545685708785, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 5861406545685708785, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 5861406545685708785, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 5861406545685708785, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 5861406545685708785, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 5861406545685708785, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 5861406545685708785, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 5861406545685708785, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 5861406545685708785, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 5861406545685708785, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 5861406545685708785, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303777}
+    - target: {fileID: 5861406545685708785, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 6179279811631636031, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 6179279811631636031, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 6179279811631636031, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 6179279811631636031, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 6179279811631636031, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 6179279811631636031, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 6179279811631636031, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 6179279811631636031, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 6179279811631636031, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 6179279811631636031, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 6179279811631636031, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303765}
+    - target: {fileID: 6179279811631636031, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 6259872534875520241, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 6259872534875520241, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 6259872534875520241, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 6259872534875520241, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 6259872534875520241, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 6259872534875520241, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 6259872534875520241, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 6259872534875520241, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 6259872534875520241, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 6259872534875520241, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 6259872534875520241, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303759}
+    - target: {fileID: 6259872534875520241, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 6983990782650562581, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 6983990782650562581, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 6983990782650562581, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 6983990782650562581, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 6983990782650562581, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 6983990782650562581, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 6983990782650562581, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 6983990782650562581, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 6983990782650562581, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 6983990782650562581, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 6983990782650562581, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303774}
+    - target: {fileID: 6983990782650562581, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
     - target: {fileID: 7158018889071665924, guid: ed5b218189675cf44a4cd5666bc9522f,
         type: 3}
       propertyPath: m_RootOrder
@@ -21346,18 +22627,561 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 732085025}
+    - target: {fileID: 7158018889698811151, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7158018889698811151, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7158018889698811151, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7171156685541063469, guid: ed5b218189675cf44a4cd5666bc9522f,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.79
       objectReference: {fileID: 0}
+    - target: {fileID: 7234286319540983508, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 7234286319540983508, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 7234286319540983508, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 7234286319540983508, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 7234286319540983508, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 7234286319540983508, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 7234286319540983508, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 7234286319540983508, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 7234286319540983508, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 7234286319540983508, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 7234286319540983508, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303776}
+    - target: {fileID: 7234286319540983508, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 7288616929224423613, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 7288616929224423613, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 7288616929224423613, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 7288616929224423613, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 7288616929224423613, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 7288616929224423613, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 7288616929224423613, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 7288616929224423613, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 7288616929224423613, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 7288616929224423613, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 7288616929224423613, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303762}
+    - target: {fileID: 7288616929224423613, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 7400650642053319065, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 7400650642053319065, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 7400650642053319065, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 7400650642053319065, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 7400650642053319065, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 7400650642053319065, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 7400650642053319065, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 7400650642053319065, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 7400650642053319065, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 7400650642053319065, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 7400650642053319065, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303771}
+    - target: {fileID: 7400650642053319065, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 7854122755301894384, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 7854122755301894384, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 7854122755301894384, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 7854122755301894384, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 7854122755301894384, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 7854122755301894384, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 7854122755301894384, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 7854122755301894384, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 7854122755301894384, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 7854122755301894384, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 7854122755301894384, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303764}
+    - target: {fileID: 7854122755301894384, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 8325765842755331140, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 8325765842755331140, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 8325765842755331140, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 8325765842755331140, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 8325765842755331140, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 8325765842755331140, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 8325765842755331140, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 8325765842755331140, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 8325765842755331140, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 8325765842755331140, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 8325765842755331140, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303780}
+    - target: {fileID: 8325765842755331140, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
     - target: {fileID: 8867574766502523130, guid: ed5b218189675cf44a4cd5666bc9522f,
         type: 3}
       propertyPath: m_InteractionLayers.m_Bits
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9145773974633233286, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: blu
+      value: 
+      objectReference: {fileID: 2100000, guid: daf9f59ff68bd9440861ae1d998c48d2, type: 2}
+    - target: {fileID: 9145773974633233286, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosa
+      value: 
+      objectReference: {fileID: 2100000, guid: 61cb403e0e17fe345b90f2491f5214d1, type: 2}
+    - target: {fileID: 9145773974633233286, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: rosso
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+    - target: {fileID: 9145773974633233286, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: verde
+      value: 
+      objectReference: {fileID: 2100000, guid: d0d47dad95ef9d7429805492b3e1582d, type: 2}
+    - target: {fileID: 9145773974633233286, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: viola
+      value: 
+      objectReference: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
+    - target: {fileID: 9145773974633233286, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: giallo
+      value: 
+      objectReference: {fileID: 2100000, guid: 817e5a0c65fc9cd44b4f7053849180af, type: 2}
+    - target: {fileID: 9145773974633233286, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: grigio
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ea9918297f1084d8c7db255c0a562a, type: 2}
+    - target: {fileID: 9145773974633233286, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: azzurro
+      value: 
+      objectReference: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
+    - target: {fileID: 9145773974633233286, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: marrone
+      value: 
+      objectReference: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
+    - target: {fileID: 9145773974633233286, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: arancione
+      value: 
+      objectReference: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
+    - target: {fileID: 9145773974633233286, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 7158018888812303773}
+    - target: {fileID: 9145773974633233286, guid: ed5b218189675cf44a4cd5666bc9522f,
+        type: 3}
+      propertyPath: colorReference
+      value: 
+      objectReference: {fileID: -4588935814955671715, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed5b218189675cf44a4cd5666bc9522f, type: 3}
+--- !u!23 &7158018888812303757 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5351632515215704471, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303758 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6461806250641218041, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303759 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4001965241704038084, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303760 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5081802680618758763, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303761 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3110048293991210785, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303762 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 319756340682685064, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303763 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5694373069666282712, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303764 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 984368296538467013, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303765 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3789613024664083466, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303766 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5655788241075370792, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303767 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7831319868768623357, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303768 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7481795345768130364, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303769 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6996002385941020195, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303770 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3316233983199294591, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303771 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 568080567088368556, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303772 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3140879789072395624, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303773 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2286155366025050547, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303774 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 124482674952583712, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303775 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 9043872627325216963, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303776 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 374651836565902561, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303777 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3459249376319176132, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303778 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7090117975090081788, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303779 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7821923460462113396, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303780 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1359331879538599537, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303781 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7171156685541063465, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303782 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5860631312014693822, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158018888812303783 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7158018889698811146, guid: ed5b218189675cf44a4cd5666bc9522f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7158018888812303756}
+  m_PrefabAsset: {fileID: 0}
 --- !u!23 &7482519837387392512
 MeshRenderer:
   m_ObjectHideFlags: 0
