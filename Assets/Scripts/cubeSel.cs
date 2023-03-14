@@ -11,19 +11,37 @@ public class cubeSel : MonoBehaviour
     public MeshRenderer meshRenderer = null;
     public XRSimpleInteractable takeScript;
     public  Material currentColor;
-    public static Material grigio; //0
-    public static Material rosso;  //1
-    public static Material verde;  //2
-    public static Material blu;    //3
-    public static Material rosa;   //4
-    public static Material giallo;  //5
-    public static Material arancione;  //6
-    public static Material viola;  //7
-    public static Material azzurro;  //8
-    public static Material marrone;  //9
+    public  Material grigio; //0
+    public  Material rosso;  //1
+    public  Material verde;  //2
+    public  Material blu;    //3
+    public  Material rosa;   //4
+    public  Material giallo;  //5
+    public  Material arancione;  //6
+    public  Material viola;  //7
+    public  Material azzurro;  //8
+    public  Material marrone;  //9
     public int value = 0;
+    public Material[] colors;
+    private void Start()
+    {
+        colors = new Material[10];
+        colors[0] = grigio;
+        colors[1] = rosso;
+        colors[2] = verde;
+        colors[3] = blu;
+        colors[4] = rosa;
+        colors[5] = giallo;
+        colors[6] = arancione;
+        colors[7] = viola;
+        colors[8] = azzurro;
+        colors[9] = marrone;
 
-    private Material[] colors = { grigio, rosso, verde, blu, rosa, giallo, arancione, viola, azzurro, marrone };
+        for(int i = 0; i<10; i++)
+        {
+            Debug.LogError(colors[i]);
+        }
+    }
 
     GameObject parent;
     private bool entered = false;
@@ -60,6 +78,7 @@ public class cubeSel : MonoBehaviour
 
 
         colorReference.action.started += changeColor;
+        Debug.LogError("sfter addition of changecolor");
 
     }
 
@@ -84,11 +103,14 @@ public class cubeSel : MonoBehaviour
 
     private void changeColor(InputAction.CallbackContext context)
     {
-       // bool isActive = !gameObject.activeSelf;
+
+        // bool isActive = !gameObject.activeSelf;
         currentColor = colors[value];
         meshRenderer.material = currentColor;
         value++;
-        if(value == 10) { value = 0; }
+        if(value == 10) {
+            value = 0; 
+        }
 
 
     }

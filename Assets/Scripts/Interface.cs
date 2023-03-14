@@ -19,6 +19,8 @@ public class Interface : MonoBehaviour
     {
         matrix[x, y, z] = 1;
         //Debug.Log("Occupato : " + x + y + z );
+        //qui prendere valore del colore cubetto e sommarlo
+
     }
     public void setSocketFree(int x, int y, int z)
     {
