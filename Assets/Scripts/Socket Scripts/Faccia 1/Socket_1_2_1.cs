@@ -12,7 +12,7 @@ public class Socket_1_2_1 : Socket
 
     public void setOccupied()
     {
-        _interface.setSocketOccupied(x, y, z);
+        _interface.setSocketOccupied(x, y, z, 0);
     }
     public void setFree()
     {

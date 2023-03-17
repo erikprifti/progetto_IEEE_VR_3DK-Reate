@@ -37,10 +37,7 @@ public class cubeSel : MonoBehaviour
         colors[8] = azzurro;
         colors[9] = marrone;
 
-        for(int i = 0; i<10; i++)
-        {
-            Debug.LogError(colors[i]);
-        }
+       
     }
 
     GameObject parent;
@@ -114,4 +111,54 @@ public class cubeSel : MonoBehaviour
 
 
     }
+
+    public int getValueColor()
+    {
+       if(currentColor == grigio)
+        {
+            return 0;
+        }else if(currentColor == rosso)
+        {
+            return 1;
+        }else  if(currentColor == verde)
+        {
+            return 2;
+        }
+        else if (currentColor == blu)
+        {
+            return 3;
+        }
+        else if (currentColor == rosa)
+        {
+            return 4;
+        }
+        else if (currentColor == giallo)
+        {
+            return 5;
+        }
+        else if (currentColor == arancione)
+        {
+            return 6;
+        }
+        else if (currentColor == viola)
+        {
+            return 7;
+        }
+        else if (currentColor == azzurro)
+        {
+            return 8;
+        }
+        else if (currentColor == marrone)
+        {
+            return 9;
+        }
+        else 
+        {
+            Debug.LogError("error in getValueColor");
+            return 0;
+        }
+
+
+    }
+    
 }
