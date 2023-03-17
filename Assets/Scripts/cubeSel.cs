@@ -101,13 +101,17 @@ public class cubeSel : MonoBehaviour
     private void changeColor(InputAction.CallbackContext context)
     {
 
-        // bool isActive = !gameObject.activeSelf;
-        currentColor = colors[value];
-        meshRenderer.material = currentColor;
-        value++;
-        if(value == 10) {
-            value = 0; 
-        }
+        //attenzione che nel cubo cambiano tutti!!
+        bool isActive = !gameObject.activeSelf;
+        
+            currentColor = colors[value];
+            meshRenderer.material = currentColor;
+            value++;
+            if (value == 10)
+            {
+                value = 0;
+            }
+        
 
 
     }
