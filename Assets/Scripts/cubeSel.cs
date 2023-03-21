@@ -21,7 +21,8 @@ public class cubeSel : MonoBehaviour
     public  Material viola;  //7
     public  Material azzurro;  //8
     public  Material marrone;  //9
-    public int value = 0;
+    public int counter = 0;
+    private int value;
     public Material[] colors;
     private void Start()
     {
@@ -41,13 +42,13 @@ public class cubeSel : MonoBehaviour
     }
 
     GameObject parent;
-    private bool entered = false;
+    private bool inHand = false;
 
     public void OnSelection()
     {
         GameObject handController = takeScript.interactorsSelecting[0].transform.gameObject;
 
-            entered = true;
+            
             //Kinematic
             gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
@@ -63,7 +64,8 @@ public class cubeSel : MonoBehaviour
 
         if (handController.GetComponent<HandChild>() != null)
         {
-            //position
+            //position  sul controller, cubetto in mano
+            inHand = true;
             gameObject.transform.position = handController.GetComponent<HandChild>().offsetCube.transform.position;
             gameObject.transform.rotation = handController.GetComponent<HandChild>().offsetCube.transform.rotation;
         }
@@ -75,7 +77,6 @@ public class cubeSel : MonoBehaviour
 
 
         colorReference.action.started += changeColor;
-        Debug.LogError("sfter addition of changecolor");
 
     }
 
@@ -88,31 +89,29 @@ public class cubeSel : MonoBehaviour
 
             //Kinematic
             gameObject.GetComponent<Rigidbody>().isKinematic = false;
-            entered = false;
+            inHand = false;
         }
 
         colorReference.action.started -= changeColor;
 
-        //trigger
-        //  gameObject.GetComponent<BoxCollider>().isTrigger = false;
-        //   gameObject.GetComponent<BoxCollider>().enabled = true;
+
     }
 
     private void changeColor(InputAction.CallbackContext context)
     {
 
-        //attenzione che nel cubo cambiano tutti!!
-        bool isActive = !gameObject.activeSelf;
-        
-            currentColor = colors[value];
+        if (inHand)
+        {
+            currentColor = colors[counter];
             meshRenderer.material = currentColor;
-            value++;
-            if (value == 10)
+            counter++;
+            if (counter == 10)
             {
-                value = 0;
+                counter = 0;
             }
-        
+            value = getValueColor();
 
+        }
 
     }
 

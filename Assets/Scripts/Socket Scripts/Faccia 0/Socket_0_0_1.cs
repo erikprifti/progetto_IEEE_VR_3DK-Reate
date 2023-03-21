@@ -31,12 +31,14 @@ public class Socket_0_0_1 : Socket
         value = args.interactableObject.transform.gameObject.GetComponent<cubeSel>().getValueColor();
         Debug.Log("provo in socket 001: " + value);
         Debug.Log($"{args.interactorObject} hovered over {args.interactableObject}", this);
+        setOccupied();
     }
 
     public void OnHoverExited(HoverExitEventArgs args)
     {
         value = 0;
         Debug.Log($"{args.interactorObject} stopped hovering over {args.interactableObject}", this);
+        setFree();
     }
 
 }

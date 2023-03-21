@@ -5,7 +5,6 @@ using UnityEngine;
 public class orientationDetection : MonoBehaviour
 
 
-
 {
     public socketCollision front;
     public socketCollision back;
@@ -310,6 +309,7 @@ public class orientationDetection : MonoBehaviour
 
     public void multiplyMatrix()
     {
+        int value = 0;
         //Debug.Log("Entrato in multiplyMatrix");
         for (int i = 0; i < 3; i++)
         {
@@ -319,24 +319,32 @@ public class orientationDetection : MonoBehaviour
             {
                 for(int k = 0; k < 3; k++)
                 {
-                    rotated_matrix[k, j, i] = rotated_matrix[k, j, i] * multiplier[j, k];
+
+                    value = 0;
+                    if (rotated_matrix[k, j, i] != 0)
+                    {
+                        value = rotated_matrix[k, j, i] - 1;
+                        rotated_matrix[k, j, i] = rotated_matrix[k, j, i] - value;
+                    }
+                    rotated_matrix[k, j, i] = (rotated_matrix[k, j, i]) * multiplier[j, k];
 //                      Debug.Log("reading from rotated_matrix, prof " + i + ", riga " + j + ", colonna " + k + " : " + rotated_matrix[k, j, i] + ", with multiplier:  " + multiplier[j, k]);
 
-                    values[i] += rotated_matrix[k, j, i];
- //                   Debug.Log("after increment value " + i + ": " + values[i]);
+                    values[i] += rotated_matrix[k, j, i] + value;
+ //o.                   Debug.Log("after increment value " + i + ": " + values[i]);
                 }
             }
         }
- //       Debug.Log("finito in multiplyMatrix");
+
 
     }
 
     public void filterValues()
     {
         for (int i = 0; i < 3; i++)
-        {
+        {           
+            Debug.LogError("valore di values[i]: " +values[i]);
+
             values[i] = values[i] % 10;
-           // Debug.Log(values[i]);
         }
     }
 
