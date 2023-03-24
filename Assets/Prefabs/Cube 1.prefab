@@ -359,4 +359,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 345150791228c0e47b0e28829a732aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colorReference: {fileID: 0}
+  meshRenderer: {fileID: 0}
   takeScript: {fileID: 519855081164046523}
+  currentColor: {fileID: 0}
+  grigio: {fileID: 0}
+  rosso: {fileID: 0}
+  verde: {fileID: 0}
+  blu: {fileID: 0}
+  rosa: {fileID: 0}
+  giallo: {fileID: 0}
+  arancione: {fileID: 0}
+  viola: {fileID: 0}
+  azzurro: {fileID: 0}
+  marrone: {fileID: 0}
+  value: 0
+  colors: []

@@ -34,7 +34,7 @@ public class Interface : MonoBehaviour
         gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
         //trigger
-        gameObject.GetComponent<BoxCollider>().isTrigger = true;
+        gameObject.GetComponent<MeshCollider>().isTrigger = true;
      //   gameObject.GetComponent<BoxCollider>().enabled = false;
 
         //parent
@@ -58,7 +58,7 @@ public class Interface : MonoBehaviour
         gameObject.GetComponent<Rigidbody>().isKinematic = false;
 
         //trigger
-        gameObject.GetComponent<BoxCollider>().isTrigger = false;
+        gameObject.GetComponent<MeshCollider>().isTrigger = false;
         //   gameObject.GetComponent<BoxCollider>().enabled = true;
     }
 

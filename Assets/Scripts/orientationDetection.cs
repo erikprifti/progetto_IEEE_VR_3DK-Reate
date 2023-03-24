@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class orientationDetection : MonoBehaviour
 
-
-
 {
     public socketCollision front;
     public socketCollision back;
-    public socketCollision left;
-    public socketCollision right;
-    public socketCollision bottom;
-
+    public socketCollision lato1;
+    public socketCollision lato2;
+    public socketCollision lato3;
+    public socketCollision lato4;
+    public socketCollision lato5;
+    public socketCollision lato6;
+    public socketCollision lato7;
+    public socketCollision lato8;
+    public socketCollision lato9;
     public cubeOrientation1 coll_1;
     public cubeOrientation2 coll_2;
 
@@ -42,158 +45,79 @@ public class orientationDetection : MonoBehaviour
     public void makeRotations()
     {
         copyInterfaceInRotationMatrix();
-        
-
         if (front.isActive() && coll_1.isActive() && front.isPosition()) //collider1 collide con front
-        {
+       {
             rotated_matrix = ruotaX();
+            printMat();
 
-            if (left.isActive())
-            {
-                rotated_matrix = ruotaZ();
-            }
-            else if (bottom.isActive())
+            if (lato1.isActive())
             {
                 // già nel verso giusto
             }
-            else if (right.isActive())
+            else if (lato2.isActive())
             {
-                rotated_matrix = ruotaZ();
-                rotated_matrix = ruotaZ();
-                rotated_matrix = ruotaZ();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
             }
-            else
+            else if (lato3.isActive())
             {
-                rotated_matrix = ruotaZ();
-                rotated_matrix = ruotaZ();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
             }
-        }
-        else if (back.isActive() && coll_1.isActive() && back.isPosition())
-        {
-            rotated_matrix = ruotaX();
-            rotated_matrix = ruotaX();
-            rotated_matrix = ruotaX();
-            
-            if (left.isActive())
+            else if (lato4.isActive())
             {
-                rotated_matrix = ruotaZ();
-                rotated_matrix = ruotaZ();
-                rotated_matrix = ruotaZ();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
             }
-            else if (bottom.isActive())
+            else if (lato5.isActive())
             {
-                rotated_matrix = ruotaZ();
-                rotated_matrix = ruotaZ();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
             }
-            else if (right.isActive())
+            else if (lato6.isActive())
             {
-                rotated_matrix = ruotaZ();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
             }
-            else
+            else if (lato7.isActive())
             {
-                // già a posto
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
             }
-        }
-        else if (left.isActive() && coll_1.isActive() && left.isPosition())
-        {
-            rotated_matrix = ruotaZ();
-            rotated_matrix = ruotaZ();
-            rotated_matrix = ruotaZ();
+            else if (lato8.isActive())
+            {
+                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaX();
+            }
+            else if (lato9.isActive())
+            {
+                rotated_matrix = ruotaX();
+            }
 
-            if (front.isActive())
-            {
-                // posizione già giusta
-            }
-            else if (bottom.isActive())
-            {
-                rotated_matrix = ruotaX();
-            }
-            else if (back.isActive())
-            {
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-            }
-            else
-            {
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-            }
         }
-        else if (right.isActive() && coll_1.isActive()  && right.isPosition())
-        {
-            rotated_matrix=ruotaZ();
-
-            if (front.isActive())
-            {
-                // già a posto
-            }
-            else if (bottom.isActive())
-            {
-                rotated_matrix = ruotaX();
-              
-            }
-            else if (back.isActive())
-            {
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-            }
-            else
-            {
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-            }
-        }
-        else if(bottom.isActive() && coll_1.isActive() && bottom.isPosition())
-        {
-            rotated_matrix = ruotaX();
-            rotated_matrix = ruotaX();
-
-            if (back.isActive())
-            {
-                // già a posto
-            }
-            if (right.isActive())
-            {
-                rotated_matrix = ruotaZ();
-            }
-            if (front.isActive())
-            {
-                rotated_matrix = ruotaZ();
-                rotated_matrix = ruotaZ();
-            }
-            if (left.isActive())
-            {
-                rotated_matrix = ruotaZ();
-                rotated_matrix = ruotaZ();
-                rotated_matrix = ruotaZ();            }
-        }
-        else
-        {
-            if (front.isActive())
-            {
-                // già orientato nel verso predefinito
-            }
-            else if (left.isActive())
-            {
-                rotated_matrix = ruotaY();
-            }
-            else if (back.isActive())
-            {
-                rotated_matrix = ruotaY();
-                rotated_matrix = ruotaY();
-            }
-            else if(right.isActive())
-            {
-                rotated_matrix = ruotaY();
-                rotated_matrix = ruotaY();
-                rotated_matrix = ruotaY();
-            }
-        }
-
-        //printMat();
     }
+
     private int[,,] ruotaX()
     {
         int temp, temp2;
@@ -225,109 +149,45 @@ public class orientationDetection : MonoBehaviour
 
         return rotated_matrix;
     }
-    private int[,,] ruotaY()
-    {
-        int temp, temp2;
-
-        for (int i = 0; i < 3; i++)
-        {
-            temp = rotated_matrix[0, i, 2];
-            rotated_matrix[0, i, 2] = rotated_matrix[0, i, 0];
-
-            temp2 = rotated_matrix[2, i, 2];
-            rotated_matrix[2, i, 2] = temp;
-
-            temp = rotated_matrix[2, i, 0];
-            rotated_matrix[2, i, 0] = temp2;
-
-            rotated_matrix[0, i, 0] = temp;
-
-            temp = rotated_matrix[2, i, 1];
-            rotated_matrix[2, i, 1] = rotated_matrix[1, i, 2];
-
-            temp2 = rotated_matrix[1, i, 0];
-            rotated_matrix[1, i, 0] = temp;
-
-            temp = rotated_matrix[0, i, 1];
-            rotated_matrix[0, i, 1] = temp2;
-
-            rotated_matrix[1, i, 2] = temp;
-
-        }
-
-        return rotated_matrix;
-    } 
-    private int[,,] ruotaZ()
-    {
-        int temp, temp2;
-
-        for (int i = 0; i < 3; i++)
-        {
-            temp = rotated_matrix[2, 0, i];
-            rotated_matrix[2, 0, i] = rotated_matrix[0, 0, i];
-
-            temp2 = rotated_matrix[2, 2, i];
-            rotated_matrix[2, 2, i] = temp;
-
-            temp = rotated_matrix[0, 2, i];
-            rotated_matrix[0, 2, i] = temp2;
-
-            rotated_matrix[0, 0, i] = temp;
-
-            temp = rotated_matrix[2, 1, i];
-            rotated_matrix[2, 1, i] = rotated_matrix[1, 0, i];
-
-            temp2 = rotated_matrix[1, 2, i];
-            rotated_matrix[1, 2, i] = temp;
-
-            temp = rotated_matrix[0, 1, i];
-            rotated_matrix[0, 1, i] = temp2;
-
-            rotated_matrix[1, 0, i] = temp;
-        }
-
-        return rotated_matrix;
-    }
 
     public void printMat()
     {
         // per adesso stampo solo la faccia frontale
         for (int i = 0; i < 3; i++)
         {
-          //  Debug.Log("rotated_matrixrice " + i + ": \n");
+            //  Debug.Log("rotated_matrixrice " + i + ": \n");
             Debug.Log(_interface.Matrix[0, 0, i] + " " + _interface.Matrix[0, 1, i] + " " + _interface.Matrix[0, 2, i] + "\n" +
             _interface.Matrix[1, 0, i] + " " + _interface.Matrix[1, 1, i] + " " + _interface.Matrix[1, 2, i] + "\n" +
                              _interface.Matrix[2, 0, i] + " " + _interface.Matrix[2, 1, i] + " " + _interface.Matrix[2, 2, i]);
             Debug.Log("rotatedMatrix: ");
-            
+
             Debug.Log(rotated_matrix[0, 0, i] + " " + rotated_matrix[0, 1, i] + " " + rotated_matrix[0, 2, i] + "\n" +
             rotated_matrix[1, 0, i] + " " + rotated_matrix[1, 1, i] + " " + rotated_matrix[1, 2, i] + "\n" +
                              rotated_matrix[2, 0, i] + " " + rotated_matrix[2, 1, i] + " " + rotated_matrix[2, 2, i]);
 
+        }
     }
-    }
-
 
     public void multiplyMatrix()
     {
         //Debug.Log("Entrato in multiplyMatrix");
         for (int i = 0; i < 3; i++)
         {
-        //    Debug.Log("Entrato in multiplyMatrix " + i);
-            
+            //    Debug.Log("Entrato in multiplyMatrix " + i);
+
             for (int j = 0; j < 3; j++)
             {
-                for(int k = 0; k < 3; k++)
+                for (int k = 0; k < 3; k++)
                 {
                     rotated_matrix[k, j, i] = rotated_matrix[k, j, i] * multiplier[j, k];
-//                      Debug.Log("reading from rotated_matrix, prof " + i + ", riga " + j + ", colonna " + k + " : " + rotated_matrix[k, j, i] + ", with multiplier:  " + multiplier[j, k]);
+                    //                      Debug.Log("reading from rotated_matrix, prof " + i + ", riga " + j + ", colonna " + k + " : " + rotated_matrix[k, j, i] + ", with multiplier:  " + multiplier[j, k]);
 
                     values[i] += rotated_matrix[k, j, i];
- //                   Debug.Log("after increment value " + i + ": " + values[i]);
+                    //                   Debug.Log("after increment value " + i + ": " + values[i]);
                 }
             }
         }
- //       Debug.Log("finito in multiplyMatrix");
+        //       Debug.Log("finito in multiplyMatrix");
 
     }
 
@@ -336,7 +196,7 @@ public class orientationDetection : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             values[i] = values[i] % 10;
-           // Debug.Log(values[i]);
+            // Debug.Log(values[i]);
         }
     }
 
@@ -348,17 +208,17 @@ public class orientationDetection : MonoBehaviour
     public int getKey()
     {
         filterValues();
-        key = values[0] + values[1]*10 + values[2]*100;
+        key = values[0] + values[1] * 10 + values[2] * 100;
         return key;
     }
 
-   private void copyInterfaceInRotationMatrix()
+    private void copyInterfaceInRotationMatrix()
     {
-        for(int i = 0; i <3; i++)
+        for (int i = 0; i < 3; i++)
         {
-            for(int j = 0; j<3; j++)
+            for (int j = 0; j < 3; j++)
             {
-                for(int k = 0; k<3; k++)
+                for (int k = 0; k < 3; k++)
                 {
                     rotated_matrix[i, j, k] = _interface.Matrix[i, j, k];
                 }
@@ -389,6 +249,81 @@ public class orientationDetection : MonoBehaviour
         }
 
     }
+
+
 }
+
+
+
+
+
+
+//private int[,,] ruotaY()
+//{
+//    int temp, temp2;
+
+//    for (int i = 0; i < 3; i++)
+//    {
+//        temp = rotated_matrix[0, i, 2];
+//        rotated_matrix[0, i, 2] = rotated_matrix[0, i, 0];
+
+//        temp2 = rotated_matrix[2, i, 2];
+//        rotated_matrix[2, i, 2] = temp;
+
+//        temp = rotated_matrix[2, i, 0];
+//        rotated_matrix[2, i, 0] = temp2;
+
+//        rotated_matrix[0, i, 0] = temp;
+
+//        temp = rotated_matrix[2, i, 1];
+//        rotated_matrix[2, i, 1] = rotated_matrix[1, i, 2];
+
+//        temp2 = rotated_matrix[1, i, 0];
+//        rotated_matrix[1, i, 0] = temp;
+
+//        temp = rotated_matrix[0, i, 1];
+//        rotated_matrix[0, i, 1] = temp2;
+
+//        rotated_matrix[1, i, 2] = temp;
+
+//    }
+
+//    return rotated_matrix;
+//} 
+//private int[,,] ruotaZ()
+//{
+//    int temp, temp2;
+
+//    for (int i = 0; i < 3; i++)
+//    {
+//        temp = rotated_matrix[2, 0, i];
+//        rotated_matrix[2, 0, i] = rotated_matrix[0, 0, i];
+
+//        temp2 = rotated_matrix[2, 2, i];
+//        rotated_matrix[2, 2, i] = temp;
+
+//        temp = rotated_matrix[0, 2, i];
+//        rotated_matrix[0, 2, i] = temp2;
+
+//        rotated_matrix[0, 0, i] = temp;
+
+//        temp = rotated_matrix[2, 1, i];
+//        rotated_matrix[2, 1, i] = rotated_matrix[1, 0, i];
+
+//        temp2 = rotated_matrix[1, 2, i];
+//        rotated_matrix[1, 2, i] = temp;
+
+//        temp = rotated_matrix[0, 1, i];
+//        rotated_matrix[0, 1, i] = temp2;
+
+//        rotated_matrix[1, 0, i] = temp;
+//    }
+
+//    return rotated_matrix;
+//}
+
+
+
+
 
 
