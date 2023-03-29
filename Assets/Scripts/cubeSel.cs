@@ -10,18 +10,19 @@ public class cubeSel : MonoBehaviour
 
     public MeshRenderer meshRenderer = null;
     public XRSimpleInteractable takeScript;
-    public  Material currentColor;
-    public  Material grigio; //0
-    public  Material rosso;  //1
-    public  Material verde;  //2
-    public  Material blu;    //3
-    public  Material rosa;   //4
-    public  Material giallo;  //5
-    public  Material arancione;  //6
-    public  Material viola;  //7
-    public  Material azzurro;  //8
-    public  Material marrone;  //9
-    public int value = 0;
+    public Material currentColor;
+    public Material grigio; //0
+    public Material rosso;  //1
+    public Material verde;  //2
+    public Material blu;    //3
+    public Material rosa;   //4
+    public Material giallo;  //5
+    public Material arancione;  //6
+    public Material viola;  //7
+    public Material azzurro;  //8
+    public Material marrone;  //9
+    public int counter = 0;
+    private int value;
     public Material[] colors;
     private void Start()
     {
@@ -37,36 +38,34 @@ public class cubeSel : MonoBehaviour
         colors[8] = azzurro;
         colors[9] = marrone;
 
-        for(int i = 0; i<10; i++)
-        {
-            Debug.LogError(colors[i]);
-        }
+
     }
 
     GameObject parent;
-    private bool entered = false;
+    private bool inHand = false;
 
     public void OnSelection()
     {
         GameObject handController = takeScript.interactorsSelecting[0].transform.gameObject;
 
-            entered = true;
-            //Kinematic
-            gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
-            //trigger
-            // gameObject.GetComponent<BoxCollider>().isTrigger = true;
-            //   gameObject.GetComponent<BoxCollider>().enabled = false;
+        //Kinematic
+        gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
-            //parent
-            parent = gameObject.transform.parent.gameObject;
+        //trigger
+        // gameObject.GetComponent<BoxCollider>().isTrigger = true;
+        //   gameObject.GetComponent<BoxCollider>().enabled = false;
 
-            //GameObject handController = takeScript.interactorsSelecting[0].transform.gameObject;
-            gameObject.transform.parent = handController.transform;
+        //parent
+        parent = gameObject.transform.parent.gameObject;
+
+        //GameObject handController = takeScript.interactorsSelecting[0].transform.gameObject;
+        gameObject.transform.parent = handController.transform;
 
         if (handController.GetComponent<HandChild>() != null)
         {
-            //position
+            //position  sul controller, cubetto in mano
+            inHand = true;
             gameObject.transform.position = handController.GetComponent<HandChild>().offsetCube.transform.position;
             gameObject.transform.rotation = handController.GetComponent<HandChild>().offsetCube.transform.rotation;
         }
@@ -78,7 +77,6 @@ public class cubeSel : MonoBehaviour
 
 
         colorReference.action.started += changeColor;
-        Debug.LogError("sfter addition of changecolor");
 
     }
 
@@ -91,27 +89,81 @@ public class cubeSel : MonoBehaviour
 
             //Kinematic
             gameObject.GetComponent<Rigidbody>().isKinematic = false;
-            entered = false;
+            inHand = false;
         }
 
         colorReference.action.started -= changeColor;
 
-        //trigger
-        //  gameObject.GetComponent<BoxCollider>().isTrigger = false;
-        //   gameObject.GetComponent<BoxCollider>().enabled = true;
+
     }
 
     private void changeColor(InputAction.CallbackContext context)
     {
 
-        // bool isActive = !gameObject.activeSelf;
-        currentColor = colors[value];
-        meshRenderer.material = currentColor;
-        value++;
-        if(value == 10) {
-            value = 0; 
+        if (inHand)
+        {
+            currentColor = colors[counter];
+            meshRenderer.material = currentColor;
+            counter++;
+            if (counter == 10)
+            {
+                counter = 0;
+            }
+            value = getValueColor();
+
+        }
+
+    }
+
+    public int getValueColor()
+    {
+        if (currentColor == grigio)
+        {
+            return 0;
+        }
+        else if (currentColor == rosso)
+        {
+            return 1;
+        }
+        else if (currentColor == verde)
+        {
+            return 2;
+        }
+        else if (currentColor == blu)
+        {
+            return 3;
+        }
+        else if (currentColor == rosa)
+        {
+            return 4;
+        }
+        else if (currentColor == giallo)
+        {
+            return 5;
+        }
+        else if (currentColor == arancione)
+        {
+            return 6;
+        }
+        else if (currentColor == viola)
+        {
+            return 7;
+        }
+        else if (currentColor == azzurro)
+        {
+            return 8;
+        }
+        else if (currentColor == marrone)
+        {
+            return 9;
+        }
+        else
+        {
+            Debug.LogError("error in getValueColor");
+            return 0;
         }
 
 
     }
+
 }
