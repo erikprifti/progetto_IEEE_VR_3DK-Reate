@@ -6,18 +6,19 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Interface : MonoBehaviour
 {
     public XRSimpleInteractable takeScript;
-    private static int[,,] matrix = new int[3,3,3];
+    private static int[,,] matrix = new int[3, 3, 3];
     GameObject parent;
-  
+
     public int[,,] Matrix
     {
         get { return matrix; }
         set { matrix = value; }
     }
-   
-    public void setSocketOccupied(int x, int y, int z)
+
+    public void setSocketOccupied(int x, int y, int z, int value)
     {
-        matrix[x, y, z] = 1;
+
+        matrix[x, y, z] = 1 + value;
         //Debug.Log("Occupato : " + x + y + z );
         //qui prendere valore del colore cubetto e sommarlo
 
@@ -35,7 +36,7 @@ public class Interface : MonoBehaviour
 
         //trigger
         gameObject.GetComponent<MeshCollider>().isTrigger = true;
-     //   gameObject.GetComponent<BoxCollider>().enabled = false;
+        //   gameObject.GetComponent<BoxCollider>().enabled = false;
 
         //parent
         parent = gameObject.transform.parent.gameObject;
