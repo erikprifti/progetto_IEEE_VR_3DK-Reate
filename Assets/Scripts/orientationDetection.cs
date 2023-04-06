@@ -5,7 +5,6 @@ using UnityEngine;
 public class orientationDetection : MonoBehaviour
 
 {
-    public socketCollision front;
     public socketCollision back;
     public socketCollision lato1;
     public socketCollision lato2;
@@ -20,16 +19,14 @@ public class orientationDetection : MonoBehaviour
     public cubeOrientation2 coll_2;
 
 
-    private int[,] multiplier = { { 1, 2, 4 }, 
-                                  { 8, 16, 32 }, 
-                                  { 64, 128, 256 } };
+    private int[] multiplier = {  1, 2, 4, 8, 16, 32, 64, 128, 256 };
 
     private int[] values = {0,0,0};
     private int key;
 
     public Interface _interface;
 
-    private static int[,,] rotated_matrix = new int[3, 3, 3];
+    private static int[,] rotated_matrix = new int[9, 3];
 
     public int passwordGenerator() //last method that confirm the challenge
     {
@@ -44,10 +41,8 @@ public class orientationDetection : MonoBehaviour
 
     public void makeRotations()
     {
-        copyInterfaceInRotationMatrix();
-        if (front.isActive() && coll_1.isActive() && front.isPosition()) //collider1 collide con front
+        if (back.isActive()) //collider1 collide con front
        {
-            rotated_matrix = ruotaX();
             printMat();
 
             if (lato1.isActive())
@@ -56,99 +51,41 @@ public class orientationDetection : MonoBehaviour
             }
             else if (lato2.isActive())
             {
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaZ(1);
             }
             else if (lato3.isActive())
             {
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaZ(2);
             }
             else if (lato4.isActive())
             {
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaZ(3);
             }
             else if (lato5.isActive())
             {
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaZ(4);
             }
             else if (lato6.isActive())
             {
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaZ(5);
             }
             else if (lato7.isActive())
             {
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaZ(6);
             }
             else if (lato8.isActive())
             {
-                rotated_matrix = ruotaX();
-                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaZ(7);
             }
             else if (lato9.isActive())
             {
-                rotated_matrix = ruotaX();
+                rotated_matrix = ruotaZ(8);
             }
 
         }
     }
 
-    private int[,,] ruotaX()
-    {
-        int temp, temp2;
-
-        for (int i = 0; i < 3; i++)
-        {
-            temp = rotated_matrix[i, 0, 0];
-            rotated_matrix[i, 0, 0] = rotated_matrix[i, 0, 2];
-
-            temp2 = rotated_matrix[i, 2, 0];
-            rotated_matrix[i, 2, 0] = temp;
-
-            temp = rotated_matrix[i, 2, 2];
-            rotated_matrix[i, 2, 2] = temp2;
-
-            rotated_matrix[i, 0, 2] = temp;
-
-            temp = rotated_matrix[i, 1, 0];
-            rotated_matrix[i, 1, 0] = rotated_matrix[i, 0, 1];
-
-            temp2 = rotated_matrix[i, 2, 1];
-            rotated_matrix[i, 2, 1] = temp;
-
-            temp = rotated_matrix[i, 1, 2];
-            rotated_matrix[i, 1, 2] = temp2;
-
-            rotated_matrix[i, 1, 0] = temp;
-        }
-
-        return rotated_matrix;
-    }
+   
 
     public void printMat()
     {
@@ -161,9 +98,9 @@ public class orientationDetection : MonoBehaviour
                              _interface.Matrix[2, 0, i] + " " + _interface.Matrix[2, 1, i] + " " + _interface.Matrix[2, 2, i]);
             Debug.Log("rotatedMatrix: ");
 
-            Debug.Log(rotated_matrix[0, 0, i] + " " + rotated_matrix[0, 1, i] + " " + rotated_matrix[0, 2, i] + "\n" +
-            rotated_matrix[1, 0, i] + " " + rotated_matrix[1, 1, i] + " " + rotated_matrix[1, 2, i] + "\n" +
-                             rotated_matrix[2, 0, i] + " " + rotated_matrix[2, 1, i] + " " + rotated_matrix[2, 2, i]);
+            //Debug.Log(rotated_matrix[0, 0, i] + " " + rotated_matrix[0, 1, i] + " " + rotated_matrix[0, 2, i] + "\n" +
+            //rotated_matrix[1, 0, i] + " " + rotated_matrix[1, 1, i] + " " + rotated_matrix[1, 2, i] + "\n" +
+            //                 rotated_matrix[2, 0, i] + " " + rotated_matrix[2, 1, i] + " " + rotated_matrix[2, 2, i]);
 
         }
     }
@@ -176,23 +113,20 @@ public class orientationDetection : MonoBehaviour
         {
             //    Debug.Log("Entrato in multiplyMatrix " + i);
 
-            for (int j = 0; j < 3; j++)
+            for (int j = 0; j < 9; j++)
             {
-                for (int k = 0; k < 3; k++)
+                value = 0;
+                if (rotated_matrix[j, i] != 0)
                 {
-
-                    value = 0;
-                    if (rotated_matrix[k, j, i] != 0)
-                    {
-                        value = rotated_matrix[k, j, i] - 1;
-                        rotated_matrix[k, j, i] = rotated_matrix[k, j, i] - value;
-                    }
-                    rotated_matrix[k, j, i] = (rotated_matrix[k, j, i]) * multiplier[j, k];
-                    //                      Debug.Log("reading from rotated_matrix, prof " + i + ", riga " + j + ", colonna " + k + " : " + rotated_matrix[k, j, i] + ", with multiplier:  " + multiplier[j, k]);
-
-                    values[i] += rotated_matrix[k, j, i] + value;
-                    //o.                   Debug.Log("after increment value " + i + ": " + values[i]);
+                    value = rotated_matrix[j, i] - 1;
+                    rotated_matrix[j, i] = rotated_matrix[j, i] - value;
                 }
+                rotated_matrix[j, i] = (rotated_matrix[j, i]) * multiplier[j];
+                //                      Debug.Log("reading from rotated_matrix, prof " + i + ", riga " + j + ", colonna " + k + " : " + rotated_matrix[k, j, i] + ", with multiplier:  " + multiplier[j, k]);
+
+                values[i] += rotated_matrix[j, i] + value;
+                //o.                   Debug.Log("after increment value " + i + ": " + values[i]);
+               
             }
         }
     }
@@ -226,7 +160,7 @@ public class orientationDetection : MonoBehaviour
             {
                 for (int k = 0; k < 3; k++)
                 {
-                    rotated_matrix[i, j, k] = _interface.Matrix[i, j, k];
+                    rotated_matrix[i+3*j, k] = _interface.Matrix[i, j, k];
                 }
             }
         }
@@ -240,7 +174,7 @@ public class orientationDetection : MonoBehaviour
             {
                 for (int k = 0; k < 3; k++)
                 {
-                    rotated_matrix[i, j, k] = 0;
+                    rotated_matrix[i+3*j, k] = 0;
                 }
             }
         }
@@ -256,12 +190,57 @@ public class orientationDetection : MonoBehaviour
 
     }
 
+    private int[,] ruotaZ(int n)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                for (int k = 0; k < 3; k++)
+                {
+                    rotated_matrix[( n + i + 3 * j) % 9  , k] = _interface.Matrix[i, j, k];
+                }
+            }
+        }
+
+        return rotated_matrix;
+    }
 
 }
 
 
 
+//private int[,,] ruotaX()
+//{
+//    int temp, temp2;
 
+//    for (int i = 0; i < 3; i++)
+//    {
+//        temp = rotated_matrix[i, 0, 0];
+//        rotated_matrix[i, 0, 0] = rotated_matrix[i, 0, 2];
+
+//        temp2 = rotated_matrix[i, 2, 0];
+//        rotated_matrix[i, 2, 0] = temp;
+
+//        temp = rotated_matrix[i, 2, 2];
+//        rotated_matrix[i, 2, 2] = temp2;
+
+//        rotated_matrix[i, 0, 2] = temp;
+
+//        temp = rotated_matrix[i, 1, 0];
+//        rotated_matrix[i, 1, 0] = rotated_matrix[i, 0, 1];
+
+//        temp2 = rotated_matrix[i, 2, 1];
+//        rotated_matrix[i, 2, 1] = temp;
+
+//        temp = rotated_matrix[i, 1, 2];
+//        rotated_matrix[i, 1, 2] = temp2;
+
+//        rotated_matrix[i, 1, 0] = temp;
+//    }
+
+//    return rotated_matrix;
+//}
 
 
 //private int[,,] ruotaY()
@@ -296,37 +275,7 @@ public class orientationDetection : MonoBehaviour
 
 //    return rotated_matrix;
 //} 
-//private int[,,] ruotaZ()
-//{
-//    int temp, temp2;
 
-//    for (int i = 0; i < 3; i++)
-//    {
-//        temp = rotated_matrix[2, 0, i];
-//        rotated_matrix[2, 0, i] = rotated_matrix[0, 0, i];
-
-//        temp2 = rotated_matrix[2, 2, i];
-//        rotated_matrix[2, 2, i] = temp;
-
-//        temp = rotated_matrix[0, 2, i];
-//        rotated_matrix[0, 2, i] = temp2;
-
-//        rotated_matrix[0, 0, i] = temp;
-
-//        temp = rotated_matrix[2, 1, i];
-//        rotated_matrix[2, 1, i] = rotated_matrix[1, 0, i];
-
-//        temp2 = rotated_matrix[1, 2, i];
-//        rotated_matrix[1, 2, i] = temp;
-
-//        temp = rotated_matrix[0, 1, i];
-//        rotated_matrix[0, 1, i] = temp2;
-
-//        rotated_matrix[1, 0, i] = temp;
-//    }
-
-//    return rotated_matrix;
-//}
 
 
 
