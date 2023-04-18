@@ -30,12 +30,18 @@ public class orientationDetection : MonoBehaviour
 
     public int passwordGenerator() //last method that confirm the challenge
     {
+        printMat();
+
+        copyInterfaceInRotationMatrix();
         makeRotations();
+        printMat();
         multiplyMatrix();
-        resetRotationMatrix();
 
         int keyGen = getKey();
+        
         resetValues();
+        resetRotationMatrix();
+
         return keyGen;
     }
 
@@ -43,11 +49,12 @@ public class orientationDetection : MonoBehaviour
     {
         if (back.isActive()) //collider1 collide con front
        {
-            printMat();
 
             if (lato1.isActive())
             {
+                Debug.Log("lato1 attivo");
                 // già nel verso giusto
+
             }
             else if (lato2.isActive())
             {
@@ -90,23 +97,34 @@ public class orientationDetection : MonoBehaviour
     public void printMat()
     {
         // per adesso stampo solo la faccia frontale
-        for (int i = 0; i < 3; i++)
-        {
-            //  Debug.Log("rotated_matrixrice " + i + ": \n");
-            Debug.Log(_interface.Matrix[0, 0, i] + " " + _interface.Matrix[0, 1, i] + " " + _interface.Matrix[0, 2, i] + "\n" +
-            _interface.Matrix[1, 0, i] + " " + _interface.Matrix[1, 1, i] + " " + _interface.Matrix[1, 2, i] + "\n" +
-                             _interface.Matrix[2, 0, i] + " " + _interface.Matrix[2, 1, i] + " " + _interface.Matrix[2, 2, i]);
-            Debug.Log("rotatedMatrix: ");
+        //for (int i = 0; i < 3; i++)
+        //{
+        //    //  Debug.Log("rotated_matrixrice " + i + ": \n");
+        //    Debug.Log(_interface.Matrix[0, 0, i] + " " + _interface.Matrix[0, 1, i] + " " + _interface.Matrix[0, 2, i] + "\n" +
+        //    _interface.Matrix[1, 0, i] + " " + _interface.Matrix[1, 1, i] + " " + _interface.Matrix[1, 2, i] + "\n" +
+        //                     _interface.Matrix[2, 0, i] + " " + _interface.Matrix[2, 1, i] + " " + _interface.Matrix[2, 2, i]);
+        //    Debug.Log("rotatedMatrix: ");
 
-            //Debug.Log(rotated_matrix[0, 0, i] + " " + rotated_matrix[0, 1, i] + " " + rotated_matrix[0, 2, i] + "\n" +
-            //rotated_matrix[1, 0, i] + " " + rotated_matrix[1, 1, i] + " " + rotated_matrix[1, 2, i] + "\n" +
-            //                 rotated_matrix[2, 0, i] + " " + rotated_matrix[2, 1, i] + " " + rotated_matrix[2, 2, i]);
+        //    //Debug.Log(rotated_matrix[0, 0, i] + " " + rotated_matrix[0, 1, i] + " " + rotated_matrix[0, 2, i] + "\n" +
+        //    //rotated_matrix[1, 0, i] + " " + rotated_matrix[1, 1, i] + " " + rotated_matrix[1, 2, i] + "\n" +
+        //    //                 rotated_matrix[2, 0, i] + " " + rotated_matrix[2, 1, i] + " " + rotated_matrix[2, 2, i]);
+
+        //}
+
+        for(int i = 0; i < 3; i++)
+        {
+            Debug.Log(rotated_matrix[0, i] + ", " + rotated_matrix[1, i] + ", " + rotated_matrix[2, i] + ", " + rotated_matrix[3, i] + ", " + rotated_matrix[4, i] 
+                + ", " + rotated_matrix[5, i] +  ", " + rotated_matrix[6, i] + ", " + rotated_matrix[7, i] + ", " + rotated_matrix[8, i] );
 
         }
+
+
     }
 
     public void multiplyMatrix()
     {
+        Debug.Log("mult matrix");
+
         int value = 0;
         //Debug.Log("Entrato in multiplyMatrix");
         for (int i = 0; i < 3; i++)
@@ -116,23 +134,26 @@ public class orientationDetection : MonoBehaviour
             for (int j = 0; j < 9; j++)
             {
                 value = 0;
-                if (rotated_matrix[j, i] != 0)
-                {
-                    value = rotated_matrix[j, i] - 1;
-                    rotated_matrix[j, i] = rotated_matrix[j, i] - value;
-                }
-                rotated_matrix[j, i] = (rotated_matrix[j, i]) * multiplier[j];
-                //                      Debug.Log("reading from rotated_matrix, prof " + i + ", riga " + j + ", colonna " + k + " : " + rotated_matrix[k, j, i] + ", with multiplier:  " + multiplier[j, k]);
+                //if (rotated_matrix[j, i] != 0)
+                //{
+                //    value = rotated_matrix[j, i] - 1;
+                //    rotated_matrix[j, i] = rotated_matrix[j, i] - value;
+                //}
+                //rotated_matrix[j, i] = (rotated_matrix[j, i]) * multiplier[j];
+                ////                      Debug.Log("reading from rotated_matrix, prof " + i + ", riga " + j + ", colonna " + k + " : " + rotated_matrix[k, j, i] + ", with multiplier:  " + multiplier[j, k]);
 
-                values[i] += rotated_matrix[j, i] + value;
-                //o.                   Debug.Log("after increment value " + i + ": " + values[i]);
-               
+                //values[i] += rotated_matrix[j, i] + value;
+                ////o.                   Debug.Log("after increment value " + i + ": " + values[i]);
+
+                values[i] += rotated_matrix[j, i] * multiplier[j];
+
             }
         }
     }
 
     public void filterValues()
     {
+        Debug.Log("filtra valori");
         for (int i = 0; i < 3; i++)
         {
             values[i] = values[i] % 10;
@@ -149,11 +170,16 @@ public class orientationDetection : MonoBehaviour
     {
         filterValues();
         key = values[0] + values[1] * 10 + values[2] * 100;
+
+        Debug.Log("restituisce chiave");
+
         return key;
     }
 
     private void copyInterfaceInRotationMatrix()
     {
+        Debug.Log("copio matrice");
+
         for (int i = 0; i < 3; i++)
         {
             for (int j = 0; j < 3; j++)
@@ -168,6 +194,7 @@ public class orientationDetection : MonoBehaviour
 
     private void resetRotationMatrix()
     {
+        Debug.Log("resetta matrice");
         for (int i = 0; i < 3; i++)
         {
             for (int j = 0; j < 3; j++)
@@ -187,11 +214,14 @@ public class orientationDetection : MonoBehaviour
             values[i] = 0;
             // Debug.Log(values[i]);
         }
+        Debug.Log("resetta matrice");
 
     }
 
     private int[,] ruotaZ(int n)
     {
+        Debug.Log("ruota di " +n);
+
         for (int i = 0; i < 3; i++)
         {
             for (int j = 0; j < 3; j++)
