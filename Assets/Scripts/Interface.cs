@@ -6,28 +6,28 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Interface : MonoBehaviour
 {
     public XRSimpleInteractable takeScript;
-    private static int[,,] matrix = new int[3, 3, 3];
+    private static int[,] matrix = new int[9, 3];
     GameObject parent;
 
-    public int[,,] Matrix
+    public int[,] Matrix
     {
         get { return matrix; }
         set { matrix = value; }
     }
 
-    public void setSocketOccupied(int x, int y, int z, int value)
+    public void setSocketOccupied(int x, int y, int value)
     {
-        Debug.Log("occupato" + x + y + z);
-        matrix[x, y, z] = 1 + value;
+        Debug.Log("occupato" + x + y );
+        matrix[x, y] = value;
         //Debug.Log("Occupato : " + x + y + z );
         //qui prendere valore del colore cubetto e sommarlo
 
     }
-    public void setSocketFree(int x, int y, int z)
+    public void setSocketFree(int x, int y)
     {
-        Debug.Log("libero" + x + y + z);
+        Debug.Log("libero" + x + y);
 
-        matrix[x, y, z] = 0;
+        matrix[x, y] = 0;
         //Debug.Log("Libero : " + x + y + z);
     }
 

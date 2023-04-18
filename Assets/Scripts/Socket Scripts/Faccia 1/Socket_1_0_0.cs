@@ -9,8 +9,7 @@ public class Socket_1_0_0 : Socket
     public Interface _interface;
     public XRSocketInteractor socket;
     int x = 0;
-    int y = 0;
-    int z = 0;
+    int y = 1;
     int value = 0;
 
     public void setOccupied()
@@ -23,7 +22,7 @@ public class Socket_1_0_0 : Socket
     }
     public void setFree()
     {
-        _interface.setSocketFree(x, y, z);
+        _interface.setSocketFree(x, y);
     }
 
     public void OnHoverEntered(HoverEnterEventArgs args)
