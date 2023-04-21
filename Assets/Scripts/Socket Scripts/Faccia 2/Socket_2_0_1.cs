@@ -17,7 +17,7 @@ public class Socket_2_0_1 : Socket
 
         //int value = socket.interactablesHovered[0].transform.gameObject.GetComponent<cubeSel>().getValueColor();
         //legge giusta ma setSocket legge prima fare 2 funzioni diverse :)
-        _interface.setSocketOccupied(x, y);
+        _interface.setSocketOccupied(x, y, value);
 
     }
     public void setFree()
