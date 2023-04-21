@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class socketCollision : MonoBehaviour
 {
@@ -18,7 +20,9 @@ public class socketCollision : MonoBehaviour
             {
                 _isPosition = true;
             }
-         //   Debug.Log("AAA socket attivo");
+            //   Debug.Log("AAA socket attivo");
+
+            
         }
         
     }
@@ -43,4 +47,6 @@ public class socketCollision : MonoBehaviour
     {
         return _isPosition;
     }
+
+
 }

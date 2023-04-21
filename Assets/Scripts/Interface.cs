@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -56,11 +57,13 @@ public class Interface : MonoBehaviour
         gameObject.transform.parent = parent.transform;
 
         //Kinematic
-        gameObject.GetComponent<Rigidbody>().isKinematic = false;
+  
+      //  gameObject.GetComponent<Rigidbody>().isKinematic = false;
 
         //trigger
         gameObject.GetComponent<BoxCollider>().isTrigger = false;
         //   gameObject.GetComponent<BoxCollider>().enabled = true;
     }
 
+ 
 }

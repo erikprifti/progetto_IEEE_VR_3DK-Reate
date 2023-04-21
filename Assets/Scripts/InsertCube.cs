@@ -9,11 +9,12 @@ public class InsertCube : MonoBehaviour
     public Material OK;
     public Material NOK;
     public void OnTriggerEnter(Collider other)
-    {
+    { 
         GameObject bl;
         bl = GameObject.FindWithTag("BackToLobby");
         if (other.GetComponent<Interface>())
         {
+          
             Debug.Log("inserito");
             bl.GetComponentInChildren<displayBL>().setBLAvailable();
             bl.GetComponent<XRSimpleInteractable>().enabled = true;
