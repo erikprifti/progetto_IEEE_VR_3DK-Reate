@@ -24,6 +24,8 @@ public class cubeSel : MonoBehaviour
     public int counter = 0;
     private int value;
     public Material[] colors;
+    GameObject parent;
+
     private void Start()
     {
         colors = new Material[10];
@@ -38,10 +40,11 @@ public class cubeSel : MonoBehaviour
         colors[8] = azzurro;
         colors[9] = marrone;
 
-       
+     //   parent = gameObject.transform.parent.gameObject;
+
     }
 
-    GameObject parent;
+     
     private bool inHand = false;
 
     public void OnSelection()

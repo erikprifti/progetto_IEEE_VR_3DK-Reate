@@ -330,7 +330,7 @@ public class orientationDetection : MonoBehaviour
 //                      Debug.Log("reading from rotated_matrix, prof " + i + ", riga " + j + ", colonna " + k + " : " + rotated_matrix[k, j, i] + ", with multiplier:  " + multiplier[j, k]);
 
                     values[i] += rotated_matrix[k, j, i] + value;
- //o.                   Debug.Log("after increment value " + i + ": " + values[i]);
+                    Debug.Log("after increment value " + i + ": " + values[i]);
                 }
             }
         }
