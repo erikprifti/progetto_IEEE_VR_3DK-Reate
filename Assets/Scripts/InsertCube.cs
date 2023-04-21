@@ -15,6 +15,7 @@ public class InsertCube : MonoBehaviour
         if (other.GetComponent<Interface>())
         {
             Debug.Log("inserito");
+
             bl.GetComponentInChildren<displayBL>().setBLAvailable();
             bl.GetComponent<XRSimpleInteractable>().enabled = true;
             GetComponent<MeshRenderer>().material = OK;
@@ -23,9 +24,10 @@ public class InsertCube : MonoBehaviour
 
     public void uscito()
     {
+        Debug.Log("rimosso");
+
         GameObject bl;
         bl = GameObject.FindWithTag("BackToLobby");
-        Debug.Log("rimosso");
         bl.GetComponent<XRSimpleInteractable>().enabled = false;
         bl.GetComponentInChildren<displayBL>().setBLUnavailable();
         GetComponent<MeshRenderer>().material = NOK;

@@ -25,7 +25,7 @@ public class cubeSel : MonoBehaviour
     public Material[] colors;
     private void Start()
     {
-        colors = new Material[10];
+        colors = new Material[9];
         colors[0] = grigio;
         colors[1] = rosso;
         colors[2] = verde;
@@ -102,7 +102,7 @@ public class cubeSel : MonoBehaviour
             currentColor = colors[counter];
             meshRenderer.material = currentColor;
             counter++;
-            if (counter == 9)
+            if (counter == 10)
             {
                 counter = 0;
             }
