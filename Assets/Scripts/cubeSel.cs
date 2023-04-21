@@ -23,6 +23,7 @@ public class cubeSel : MonoBehaviour
     public int counter = 0;
     private int value;
     public Material[] colors;
+    GameObject parent;
     private void Start()
     {
         colors = new Material[9];
@@ -35,10 +36,10 @@ public class cubeSel : MonoBehaviour
         colors[6] = arancione;
         colors[7] = viola;
         colors[8] = azzurro;
-
+        parent = gameObject.transform.parent.gameObject;
     }
 
-    GameObject parent;
+   
     private bool inHand = false;
 
     public void OnSelection()
@@ -54,7 +55,7 @@ public class cubeSel : MonoBehaviour
         //   gameObject.GetComponent<BoxCollider>().enabled = false;
 
         //parent
-        parent = gameObject.transform.parent.gameObject;
+     //  parent = gameObject.transform.parent.gameObject;
 
         //GameObject handController = takeScript.interactorsSelecting[0].transform.gameObject;
         gameObject.transform.parent = handController.transform;
@@ -102,7 +103,7 @@ public class cubeSel : MonoBehaviour
             currentColor = colors[counter];
             meshRenderer.material = currentColor;
             counter++;
-            if (counter == 10)
+            if (counter == 9)
             {
                 counter = 0;
             }
