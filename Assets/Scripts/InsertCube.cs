@@ -19,6 +19,7 @@ public class InsertCube : MonoBehaviour
             bl.GetComponentInChildren<displayBL>().setBLAvailable();
             bl.GetComponent<XRSimpleInteractable>().enabled = true;
             cilindroInterno.GetComponent<MeshRenderer>().material = OK;
+            other.GetComponent<Rigidbody>().isKinematic = false;
             
         }
     }
@@ -32,6 +33,7 @@ public class InsertCube : MonoBehaviour
         bl.GetComponent<XRSimpleInteractable>().enabled = false;
         bl.GetComponentInChildren<displayBL>().setBLUnavailable();
         cilindroInterno.GetComponent<MeshRenderer>().material = NOK;
+        cilindroInterno.GetComponentInParent<Rigidbody>().isKinematic = true;
 
     }
 }

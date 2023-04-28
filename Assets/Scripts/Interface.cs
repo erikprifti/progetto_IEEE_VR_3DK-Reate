@@ -58,7 +58,7 @@ public class Interface : MonoBehaviour
         gameObject.transform.parent = parent.transform;
 
         //Kinematic
-        gameObject.GetComponent<Rigidbody>().isKinematic = false;
+   //     gameObject.GetComponent<Rigidbody>().isKinematic = false;
 
         //trigger
         gameObject.GetComponent<MeshCollider>().isTrigger = false;
