@@ -8,19 +8,25 @@ public class InsertCube : MonoBehaviour
     public GameObject cilindroInterno;
     public Material OK;
     public Material NOK;
+    public cubeOrientation2 coll2;
+
+    public Interface key;
+
     public void OnTriggerEnter(Collider other)
     {
         GameObject bl;
         bl = GameObject.FindWithTag("BackToLobby");
-        if (other.GetComponent<Interface>())
+        if (other.GetComponent<Interface>() )
         {
-            Debug.Log("inserito");
-
-            bl.GetComponentInChildren<displayBL>().setBLAvailable();
-            bl.GetComponent<XRSimpleInteractable>().enabled = true;
-            cilindroInterno.GetComponent<MeshRenderer>().material = OK;
-            other.GetComponent<Rigidbody>().isKinematic = false;
+            float a = key.transform.rotation.eulerAngles.z;
+            key.transform.Rotate(0,0,a-(a%(360/9)));
+          
+                bl.GetComponentInChildren<displayBL>().setBLAvailable();
+                bl.GetComponent<XRSimpleInteractable>().enabled = true;
+                cilindroInterno.GetComponent<MeshRenderer>().material = OK;
             
+            
+            other.GetComponent<Rigidbody>().isKinematic = false;
         }
     }
 
