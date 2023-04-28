@@ -827,7 +827,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &113951857
@@ -2426,7 +2425,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &245166194
@@ -2831,7 +2829,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &254603135
@@ -3236,7 +3233,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &272687200
@@ -4421,7 +4417,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &389201724
@@ -7167,7 +7162,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &570859109
@@ -8119,7 +8113,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &612531925
@@ -10684,7 +10677,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &792929739
@@ -11089,7 +11081,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &806464619
@@ -11637,7 +11628,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &836195566
@@ -12042,7 +12032,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &844654169
@@ -13580,6 +13569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af843c6d9cc0bb42b61f440c5f608b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cilindroInterno: {fileID: 2054685159}
   OK: {fileID: 2100000, guid: 8d13cac9e313ccd448c6b67db80c4ffd, type: 2}
   NOK: {fileID: 2100000, guid: 6ac21c5fef1050043aa715c4748d23e1, type: 2}
 --- !u!1 &902091345
@@ -14602,7 +14592,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &930926570
@@ -15360,7 +15349,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &946823774
@@ -17544,7 +17532,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &1127969676
@@ -17949,7 +17936,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &1130061175
@@ -19035,7 +19021,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &1173769559
@@ -19440,7 +19425,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &1178338145
@@ -19851,7 +19835,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &1212159615
@@ -20351,7 +20334,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &1232390122
@@ -21313,7 +21295,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &1302478383
@@ -21581,7 +21562,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh133076
+  m_Name: pb_Mesh31328
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22372,7 +22353,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &1374249469
@@ -23531,7 +23511,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &1461201554
@@ -25124,7 +25103,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7613cb13186c35046875a026b24bc139,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.8962
+      value: 0.7448
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7613cb13186c35046875a026b24bc139,
         type: 3}
@@ -25366,7 +25345,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -26049,7 +26028,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &1698414180
@@ -26907,7 +26885,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &1721993728
@@ -28444,7 +28421,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &1883307734
@@ -30094,7 +30070,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &1958426509
@@ -31872,6 +31847,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb21f5c579e7b1d48a640c59859fb1ef, type: 3}
+--- !u!1 &2054685159 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: eb21f5c579e7b1d48a640c59859fb1ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 2054685158}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2068346638
 GameObject:
   m_ObjectHideFlags: 0
@@ -32999,7 +32980,6 @@ MonoBehaviour:
   arancione: {fileID: 2100000, guid: ada3cc4207a12874f80dad2029407b20, type: 2}
   viola: {fileID: 2100000, guid: a875d033116b48e45868172000bd54ec, type: 2}
   azzurro: {fileID: 2100000, guid: 7be07cc342a7c3d42ab181b6968e4f0d, type: 2}
-  marrone: {fileID: 2100000, guid: 932b21c144e0e1043918e2e62f46484c, type: 2}
   counter: 0
   colors: []
 --- !u!114 &2143810982

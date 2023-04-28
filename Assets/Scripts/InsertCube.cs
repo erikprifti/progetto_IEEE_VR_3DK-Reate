@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class InsertCube : MonoBehaviour
 {
-   
+    public GameObject cilindroInterno;
     public Material OK;
     public Material NOK;
     public void OnTriggerEnter(Collider other)
@@ -18,7 +18,8 @@ public class InsertCube : MonoBehaviour
 
             bl.GetComponentInChildren<displayBL>().setBLAvailable();
             bl.GetComponent<XRSimpleInteractable>().enabled = true;
-            GetComponent<MeshRenderer>().material = OK;
+            cilindroInterno.GetComponent<MeshRenderer>().material = OK;
+            
         }
     }
 
@@ -30,7 +31,7 @@ public class InsertCube : MonoBehaviour
         bl = GameObject.FindWithTag("BackToLobby");
         bl.GetComponent<XRSimpleInteractable>().enabled = false;
         bl.GetComponentInChildren<displayBL>().setBLUnavailable();
-        GetComponent<MeshRenderer>().material = NOK;
+        cilindroInterno.GetComponent<MeshRenderer>().material = NOK;
 
     }
 }
