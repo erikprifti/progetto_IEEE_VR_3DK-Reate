@@ -62,34 +62,58 @@ public class orientationDetection : MonoBehaviour
             else if (lato2.isActive())
             {
                 rotated_matrix = ruotaZ(1);
+
+                float a = this.transform.eulerAngles.z;
+                this.transform.Rotate(0,0,40-a);
             }
             else if (lato3.isActive())
             {
                 rotated_matrix = ruotaZ(2);
+
+                float a = this.transform.eulerAngles.z;
+                this.transform.Rotate(0, 0, 80 - a);
             }
             else if (lato4.isActive())
             {
                 rotated_matrix = ruotaZ(3);
+
+                float a = this.transform.eulerAngles.z;
+                this.transform.Rotate(0, 0, 120 - a);
             }
             else if (lato5.isActive())
             {
                 rotated_matrix = ruotaZ(4);
+
+                float a = this.transform.eulerAngles.z;
+                this.transform.Rotate(0, 0, 160 - a);
             }
             else if (lato6.isActive())
             {
                 rotated_matrix = ruotaZ(5);
+
+                float a = this.transform.eulerAngles.z;
+                this.transform.Rotate(0, 0, 200 - a);
             }
             else if (lato7.isActive())
             {
                 rotated_matrix = ruotaZ(6);
+
+                float a = this.transform.eulerAngles.z;
+                this.transform.Rotate(0, 0, 240 - a);
             }
             else if (lato8.isActive())
             {
                 rotated_matrix = ruotaZ(7);
+
+                float a = this.transform.eulerAngles.z;
+                this.transform.Rotate(0, 0, 280 - a);
             }
             else if (lato9.isActive())
             {
                 rotated_matrix = ruotaZ(8);
+
+                float a = this.transform.eulerAngles.z;
+                this.transform.Rotate(0, 0, 320 - a);
             }
 
         }

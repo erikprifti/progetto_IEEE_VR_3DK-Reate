@@ -14,14 +14,16 @@ public class InsertCube : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        Debug.LogError("dentro insert cube");
         GameObject bl;
         bl = GameObject.FindWithTag("BackToLobby");
         if (other.GetComponent<Interface>() )
         {
-            float a = key.transform.rotation.eulerAngles.z;
-            key.transform.Rotate(0,0,a-(a%(360/9)));
-          
-                bl.GetComponentInChildren<displayBL>().setBLAvailable();
+            //float a = key.transform.rotation.eulerAngles.z;
+            //Debug.Log(a);
+            //key.transform.Rotate(0,0,a-(a%(360/9)));
+            
+            bl.GetComponentInChildren<displayBL>().setBLAvailable();
                 bl.GetComponent<XRSimpleInteractable>().enabled = true;
                 cilindroInterno.GetComponent<MeshRenderer>().material = OK;
             
