@@ -19,6 +19,7 @@ public class InsertCube : MonoBehaviour
             bl.GetComponentInChildren<displayBL>().setBLAvailable();
             bl.GetComponent<XRSimpleInteractable>().enabled = true;
             gabbia.GetComponent<MeshRenderer>().material = OK;
+            other.GetComponent<Rigidbody>().isKinematic = false;
         }
     }
 
@@ -30,6 +31,8 @@ public class InsertCube : MonoBehaviour
         bl.GetComponent<XRSimpleInteractable>().enabled = false;
         bl.GetComponentInChildren<displayBL>().setBLUnavailable();
         gabbia.GetComponent<MeshRenderer>().material = NOK;
+
+        gabbia.GetComponentInParent<Rigidbody>().isKinematic = true;
 
     }
 }

@@ -33,7 +33,7 @@ public class Interface : MonoBehaviour
     public void OnSelection()
     {
         //Kinematic
-        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+       gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
         //trigger
         gameObject.GetComponent<BoxCollider>().isTrigger = true;
