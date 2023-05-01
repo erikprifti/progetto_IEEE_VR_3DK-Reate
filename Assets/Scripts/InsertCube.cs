@@ -19,18 +19,34 @@ public class InsertCube : MonoBehaviour
         bl = GameObject.FindWithTag("BackToLobby");
         if (other.GetComponent<Interface>() )
         {
-            //float a = key.transform.rotation.eulerAngles.z;
-            //Debug.Log(a);
-            //key.transform.Rotate(0,0,a-(a%(360/9)));
-            
+            snapCylinder();
+
             bl.GetComponentInChildren<displayBL>().setBLAvailable();
-                bl.GetComponent<XRSimpleInteractable>().enabled = true;
-                cilindroInterno.GetComponent<MeshRenderer>().material = OK;
-            
+            bl.GetComponent<XRSimpleInteractable>().enabled = true;
+            cilindroInterno.GetComponent<MeshRenderer>().material = OK;
             
             other.GetComponent<Rigidbody>().isKinematic = false;
         }
     }
+
+    public void snapCylinder()
+    {
+        float a = key.transform.rotation.eulerAngles.z; //initial angle
+        Debug.Log(a);
+        float b = a % (360 / 9);                       //offset
+
+        if(b > 20)
+        {
+            key.transform.Rotate(0, 0, 40-b);
+        }
+        else
+        {
+            key.transform.Rotate(0, 0, -b);
+        }
+
+        //key.transform.Rotate(0, 0, a - (a % (360 / 9)));
+    }
+
 
     public void uscito()
     {
