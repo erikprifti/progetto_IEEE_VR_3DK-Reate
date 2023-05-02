@@ -17,6 +17,8 @@ public class orientationDetection : MonoBehaviour
     public socketCollision lato9;
     public cubeOrientation1 coll_1;
     public cubeOrientation2 coll_2;
+    public Material giusto;
+    public GameObject cilindro;
 
 
     private int[] multiplier = {  1, 2, 4, 8, 16, 32, 64, 128, 256 };
@@ -38,6 +40,11 @@ public class orientationDetection : MonoBehaviour
         multiplyMatrix();
 
         int keyGen = getKey();
+
+        if (keyGen == 564)
+        {
+            cilindro.GetComponent<MeshRenderer>().material = giusto;
+        }
         
         resetValues();
         resetRotationMatrix();

@@ -18,6 +18,7 @@ TagManager:
   - StartButton
   - ConfirmButton
   - BackToLobby
+  - Cilindro
   layers:
   - Default
   - TransparentFX

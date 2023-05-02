@@ -12,12 +12,17 @@ public class BackToLobby : NetworkBehaviour
     public GameObject selectingHand;
     public XRSimpleInteractable takeScript;
     public orientationDetection _oriDet;
+    public GameObject cilindro;
+    public GameObject cilindroInterno;
+    public Material NOK;
+    public grabbables gb;
     //  public Material azzurro;
 
     public void Start()
     {
         Lobby = GameObject.FindGameObjectWithTag("Lobby");
         challenge = GameObject.FindWithTag("Challenge");
+        cilindro = GameObject.FindWithTag("Cilindro");
     }
 
     public void OnSelection() //IN LOCALE
@@ -31,6 +36,10 @@ public class BackToLobby : NetworkBehaviour
 
         p.gameObject.GetComponent<PlayerManager>().setPrivateKey(key);
 
+        cilindro.GetComponent<ResetPosition>().ResetFunction();
+        cilindro.GetComponent<Rigidbody>().isKinematic = true;
+        cilindroInterno.GetComponent<MeshRenderer>().material = NOK;
+        gb.resetGrabbables();
 
         //Debug.LogError("In OnSelection in BackToLobby, password del selettore before: " + p.gameObject.GetComponent<PlayerManager>().password);
         //p.cmdPlayChallenge(key, challenge); //questo command spostarlo su interazione della challenge
