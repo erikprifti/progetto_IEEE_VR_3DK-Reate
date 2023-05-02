@@ -12,12 +12,19 @@ public class BackToLobby : NetworkBehaviour
     public GameObject selectingHand;
     public XRSimpleInteractable takeScript;
     public orientationDetection _oriDet;
+    public GameObject cubo;
+    public Material NOK;
+    public Grabbables gb;
+    public GameObject gabbia;
+  
     //  public Material azzurro;
 
     public void Start()
     {
         Lobby = GameObject.FindGameObjectWithTag("Lobby");
         challenge = GameObject.FindWithTag("Challenge");
+        cubo = GameObject.FindWithTag("Cubo");
+
     }
 
     public void OnSelection() //IN LOCALE
@@ -30,6 +37,11 @@ public class BackToLobby : NetworkBehaviour
         PlayerNet p = selectingHand.GetComponent<HandChild>().player;
 
         p.gameObject.GetComponent<PlayerManager>().setPrivateKey(key);
+
+        cubo.GetComponent<ResetPosition>().ResetFucntion();
+        cubo.GetComponent<Rigidbody>().isKinematic = true;
+        gabbia.GetComponent<MeshRenderer>().material = NOK;
+        gb.ResetGrabbables();
 
 
         //Debug.LogError("In OnSelection in BackToLobby, password del selettore before: " + p.gameObject.GetComponent<PlayerManager>().password);

@@ -14,6 +14,8 @@ public class orientationDetection : MonoBehaviour
 
     public cubeOrientation1 coll_1;
     public cubeOrientation2 coll_2;
+    public GameObject cubo;
+    public Material giusto;
 
 
     private int[,] multiplier = { { 1, 2, 4 }, 
@@ -34,6 +36,11 @@ public class orientationDetection : MonoBehaviour
         resetRotationMatrix();
 
         int keyGen = getKey();
+
+        if(keyGen == 111) {
+            cubo.GetComponent<MeshRenderer>().material = giusto;
+
+        }
         resetValues();
         return keyGen;
     }

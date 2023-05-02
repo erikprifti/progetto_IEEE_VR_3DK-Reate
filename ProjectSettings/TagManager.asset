@@ -19,6 +19,7 @@ TagManager:
   - ConfirmButton
   - BackToLobby
   - Wall
+  - Cubo
   layers:
   - Default
   - TransparentFX
