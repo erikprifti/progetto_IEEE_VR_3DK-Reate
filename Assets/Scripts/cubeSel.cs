@@ -40,7 +40,7 @@ public class cubeSel : MonoBehaviour
         colors[8] = azzurro;
         colors[9] = marrone;
 
-     //   parent = gameObject.transform.parent.gameObject;
+        parent = gameObject.transform.parent.gameObject;
 
     }
 
@@ -60,7 +60,7 @@ public class cubeSel : MonoBehaviour
             //   gameObject.GetComponent<BoxCollider>().enabled = false;
 
             //parent
-            parent = gameObject.transform.parent.gameObject;
+           // parent = gameObject.transform.parent.gameObject;
 
             //GameObject handController = takeScript.interactorsSelecting[0].transform.gameObject;
             gameObject.transform.parent = handController.transform;
