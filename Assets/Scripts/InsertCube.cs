@@ -16,16 +16,20 @@ public class InsertCube : MonoBehaviour
         bl = GameObject.FindWithTag("BackToLobby");
         if (other.GetComponent<Interface>())
         {
-          
+
             Debug.Log("inserito");
             bl.GetComponentInChildren<displayBL>().setBLAvailable();
             bl.GetComponent<XRSimpleInteractable>().enabled = true;
             other.GetComponent<Rigidbody>().isKinematic = false;
 
 
-            if(oriDet.checkKey()>0) gabbia.GetComponent<MeshRenderer>().material = NOK;
-
-            gabbia.GetComponent<MeshRenderer>().material = OK;
+            if (oriDet.checkKey() > 0) { 
+                gabbia.GetComponent<MeshRenderer>().material = NOK;
+            }
+            else
+            {
+                gabbia.GetComponent<MeshRenderer>().material = OK;
+            }
 
 
         }
