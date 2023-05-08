@@ -53,7 +53,7 @@ public class orientationDetection : MonoBehaviour
 
         int[,,] key2 = new int[3, 3, 3]{ { { 0,0,0}, { 6,0,2}, { 0,0,0} },
                                           { { 3,0,0}, { 0,0,0}, { 0,0,0} },
-                                          { { 0,0,0}, { 0,0,0}, { 0,0,8} } };
+                                          { { 0,0,0}, { 0,0,0}, { 0,8,0} } };
 
 
         makeRotations();
