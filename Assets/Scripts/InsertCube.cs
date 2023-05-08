@@ -5,9 +5,11 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class InsertCube : MonoBehaviour
 {
-   public  GameObject gabbia;
+    public  GameObject gabbia;
     public Material OK;
     public Material NOK;
+
+    public orientationDetection oriDet;
     public void OnTriggerEnter(Collider other)
     { 
         GameObject bl;
@@ -18,8 +20,14 @@ public class InsertCube : MonoBehaviour
             Debug.Log("inserito");
             bl.GetComponentInChildren<displayBL>().setBLAvailable();
             bl.GetComponent<XRSimpleInteractable>().enabled = true;
-            gabbia.GetComponent<MeshRenderer>().material = OK;
             other.GetComponent<Rigidbody>().isKinematic = false;
+
+
+            if(oriDet.checkKey()>0) gabbia.GetComponent<MeshRenderer>().material = NOK;
+
+            gabbia.GetComponent<MeshRenderer>().material = OK;
+
+
         }
     }
 

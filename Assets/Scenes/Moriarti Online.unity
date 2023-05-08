@@ -4457,6 +4457,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1dd2cc4d2565fdb49902ac59a572e731,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1dd2cc4d2565fdb49902ac59a572e731,
+        type: 3}
       propertyPath: m_TagString
       value: BackToLobby
       objectReference: {fileID: 0}
@@ -9913,6 +9918,7 @@ MonoBehaviour:
   gabbia: {fileID: 767900243}
   OK: {fileID: 2100000, guid: 8d13cac9e313ccd448c6b67db80c4ffd, type: 2}
   NOK: {fileID: 2100000, guid: 6ac21c5fef1050043aa715c4748d23e1, type: 2}
+  oriDet: {fileID: 0}
 --- !u!1001 &887538372
 PrefabInstance:
   m_ObjectHideFlags: 0

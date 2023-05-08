@@ -37,12 +37,55 @@ public class orientationDetection : MonoBehaviour
 
         int keyGen = getKey();
 
-        if(keyGen == 111) {
-            cubo.GetComponent<MeshRenderer>().material = giusto;
-
-        }
+       
         resetValues();
         return keyGen;
+    }
+
+    public int checkKey()
+    {
+        int[] err = new int[2];
+
+        int[,,] key1 = new int[3, 3, 3]{ { { 0,3,0}, { 0,0,0}, { 0,0,0} },
+                                           { { 7,0,0}, { 0,2,0}, { 0,0,0} },
+                                           { { 0,0,0}, { 0,0,0}, { 0,0,8} } };
+
+
+        int[,,] key2 = new int[3, 3, 3]{ { { 0,0,0}, { 6,0,2}, { 0,0,0} },
+                                          { { 3,0,0}, { 0,0,0}, { 0,0,0} },
+                                          { { 0,0,0}, { 0,0,0}, { 0,0,8} } };
+
+
+        makeRotations();
+        multiplyMatrix();
+
+        for (int i = 0; i < 3; i++)
+        {
+            for(int j = 0; j < 3; j++)
+            {
+                for(int k = 0; k < 3; k++)
+                {
+                    if (rotated_matrix[i,j,k] != key1[i,j,k])
+                    {
+                        err[0]++;
+                    }
+                    if (rotated_matrix[i, j, k] != key2[i, j, k])
+                    {
+                        err[1]++;
+                    }
+                }
+            }
+        }
+
+        Debug.Log("Floating key errors: " + err[0]);
+        Debug.Log("Handeled key errors: " + err[1]);
+
+        resetRotationMatrix();
+
+        if (err[0] == 0 || err[1] == 0) return 0;
+
+        return 1;
+
     }
 
     public void makeRotations()
