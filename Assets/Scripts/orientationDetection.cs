@@ -167,22 +167,32 @@ public class orientationDetection : MonoBehaviour
 
     public void multiplyMatrix()
     {
-        Debug.Log("mult matrix");
-
         int value = 0;
         //Debug.Log("Entrato in multiplyMatrix");
-        for (int i = 0; i < 3; i++)
-        {
+       
             //    Debug.Log("Entrato in multiplyMatrix " + i);
 
-            for (int j = 0; j < 9; j++)
+            for (int j = 0; j < 3; j++)
             {
-                value = 0;
-               
-                values[i] += rotated_matrix[j, i] * multiplier[j];
+                for (int k = 0; k < 9; k++)
+                {
 
+                    value = 0;
+                    if (rotated_matrix[k, j] != 0)
+                    {
+                        value = rotated_matrix[k, j] - 1;
+                        rotated_matrix[k, j] = rotated_matrix[k, j] - value;
+                    }
+                    rotated_matrix[k, j] = (rotated_matrix[k, j]) * multiplier[k];
+                    //                      Debug.Log("reading from rotated_matrix, prof " + i + ", riga " + j + ", colonna " + k + " : " + rotated_matrix[k, j, i] + ", with multiplier:  " + multiplier[j, k]);
+
+                    values[j] += rotated_matrix[k, j] + value;
+                    Debug.Log("after increment value " + j + ": " + values[j]);
+                }
             }
-        }
+        
+
+
     }
 
     public void filterValues()
