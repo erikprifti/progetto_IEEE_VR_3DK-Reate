@@ -154,7 +154,7 @@ public class cubeSel : MonoBehaviour
         else
         {
            // Debug.LogError("error in getValueColor");
-            return 1;
+            return 0;
         }
 
 

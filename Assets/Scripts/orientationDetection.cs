@@ -55,7 +55,7 @@ public class orientationDetection : MonoBehaviour
         int[,] key1 = new int[3,9]{
             { 0,3,0,0,0,5,0,0,0},
             { 0,0,4,0,0,0,0,0,0},
-            { 1,0,0,0,0,0,0,0,0} };
+            { 0,0,0,0,0,0,0,0,1} };
        
         int[,] key2 = new int[3, 9]{
             { 0,0,0,0,0,0,8,0,0},
@@ -63,7 +63,6 @@ public class orientationDetection : MonoBehaviour
             { 0,0,6,0,0,0,0,0,0} };
 
         makeRotations();
-        multiplyMatrix();
 
         for (int i = 0; i < 3; i++)
         {
