@@ -11,16 +11,15 @@ public class cubeSel : MonoBehaviour
     public MeshRenderer meshRenderer = null;
     public XRSimpleInteractable takeScript;
     public  Material currentColor;
-    public  Material grigio; //0
-    public  Material rosso;  //1
-    public  Material verde;  //2
-    public  Material blu;    //3
-    public  Material rosa;   //4
-    public  Material giallo;  //5
-    public  Material arancione;  //6
-    public  Material viola;  //7
-    public  Material azzurro;  //8
-    public  Material marrone;  //9
+    public  Material grigio; //1
+    public  Material rosso;  //2
+    public  Material verde;  //3
+    public  Material blu;    //4
+    public  Material rosa;   //5
+    public  Material giallo;  //6
+    public  Material arancione;  //7
+    public  Material viola;  //8
+    public  Material azzurro;  //9
     public int counter = 0;
     private int value;
     public Material[] colors;
@@ -38,7 +37,6 @@ public class cubeSel : MonoBehaviour
         colors[6] = arancione;
         colors[7] = viola;
         colors[8] = azzurro;
-        colors[9] = marrone;
 
         parent = gameObject.transform.parent.gameObject;
 
@@ -108,7 +106,7 @@ public class cubeSel : MonoBehaviour
             currentColor = colors[counter];
             meshRenderer.material = currentColor;
             counter++;
-            if (counter == 10)
+            if (counter == 9)
             {
                 counter = 0;
             }
@@ -122,45 +120,41 @@ public class cubeSel : MonoBehaviour
     {
        if(currentColor == grigio)
         {
-            return 0;
+            return 1;
         }else if(currentColor == rosso)
         {
-            return 1;
-        }else  if(currentColor == verde)
-        {
             return 2;
-        }
-        else if (currentColor == blu)
+        }else  if(currentColor == verde)
         {
             return 3;
         }
-        else if (currentColor == rosa)
+        else if (currentColor == blu)
         {
             return 4;
         }
-        else if (currentColor == giallo)
+        else if (currentColor == rosa)
         {
             return 5;
         }
-        else if (currentColor == arancione)
+        else if (currentColor == giallo)
         {
             return 6;
         }
-        else if (currentColor == viola)
+        else if (currentColor == arancione)
         {
             return 7;
         }
-        else if (currentColor == azzurro)
+        else if (currentColor == viola)
         {
             return 8;
         }
-        else if (currentColor == marrone)
+        else if (currentColor == azzurro)
         {
             return 9;
         }
         else 
         {
-            Debug.LogError("error in getValueColor");
+            //Debug.LogError("error in getValueColor");
             return 0;
         }
 
