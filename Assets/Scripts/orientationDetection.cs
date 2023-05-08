@@ -41,16 +41,52 @@ public class orientationDetection : MonoBehaviour
 
         int keyGen = getKey();
 
-        if (keyGen == 564)
-        {
-            cilindro.GetComponent<MeshRenderer>().material = giusto;
-        }
         
         resetValues();
         resetRotationMatrix();
 
         return keyGen;
     }
+
+    public int checkKey()
+    {
+        int[] err = new int[2];
+
+        int[,] key1 = new int[3,9]{
+            { 0,3,0,0,0,5,0,0,0},
+            { 0,0,4,0,0,0,0,0,0},
+            { 1,0,0,0,0,0,0,0,0} };
+       
+        int[,] key2 = new int[3, 9]{
+            { 0,0,0,0,0,0,8,0,0},
+            { 0,2,0,0,3,0,0,0,0},
+            { 0,0,6,0,0,0,0,0,0} };
+
+        makeRotations();
+        multiplyMatrix();
+
+        for (int i = 0; i < 3; i++)
+        {
+            for(int j = 0; j < 9; j++)
+            {
+                if (rotated_matrix[j, i] != key1[i,j]) err[0]++;
+                if (rotated_matrix[j, i] != key2[i, j]) err[1]++;
+            }
+        }
+
+        Debug.Log("Floating cylinder errors: " + err[0]);
+        Debug.Log("Handeled cylinder errors: " + err[1]);
+
+        resetRotationMatrix();
+
+        if (err[0] == 0 || err[1] == 0)
+        {
+            return 0;
+        }
+
+        return 1;
+    }
+
 
     public void makeRotations()
     {

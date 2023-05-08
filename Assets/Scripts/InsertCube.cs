@@ -9,8 +9,9 @@ public class InsertCube : MonoBehaviour
     public Material OK;
     public Material NOK;
     public cubeOrientation2 coll2;
-
     public Interface key;
+
+    public orientationDetection oriDet;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -23,9 +24,17 @@ public class InsertCube : MonoBehaviour
 
             bl.GetComponentInChildren<displayBL>().setBLAvailable();
             bl.GetComponent<XRSimpleInteractable>().enabled = true;
-            cilindroInterno.GetComponent<MeshRenderer>().material = OK;
-            
             other.GetComponent<Rigidbody>().isKinematic = false;
+
+            if (oriDet.checkKey() > 0) { 
+                cilindroInterno.GetComponent<MeshRenderer>().material = NOK;
+            }
+            else
+            {
+                cilindroInterno.GetComponent<MeshRenderer>().material = OK;
+            }
+
+
         }
     }
 
