@@ -26,13 +26,9 @@ public class InsertCube : MonoBehaviour
             bl.GetComponent<XRSimpleInteractable>().enabled = true;
             other.GetComponent<Rigidbody>().isKinematic = false;
 
-            if (oriDet.checkKey() > 0) { 
-                cilindroInterno.GetComponent<MeshRenderer>().material = NOK;
-            }
-            else
-            {
+           
                 cilindroInterno.GetComponent<MeshRenderer>().material = OK;
-            }
+            
 
 
         }
