@@ -20,6 +20,17 @@ public class orientationDetection : MonoBehaviour
     public Material giusto;
     public GameObject cilindro;
 
+        int[] err = new int[2];
+
+       static int[,] key1 = new int[3,9]{
+            { 0,3,0,0,0,5,0,0,0},
+            { 0,0,4,0,0,0,0,0,0},
+            { 0,0,0,0,0,0,0,0,1} };
+       
+       static int[,] key2 = new int[3, 9]{
+            { 0,0,0,0,0,0,0,9,0},
+            { 0,2,0,0,3,0,0,0,0},
+            { 0,0,6,0,0,0,0,0,0} };
 
     private int[] multiplier = {  1, 2, 4, 8, 16, 32, 64, 128, 256 };
 
@@ -41,6 +52,7 @@ public class orientationDetection : MonoBehaviour
 
         int keyGen = getKey();
 
+
         
         resetValues();
         resetRotationMatrix();
@@ -50,39 +62,35 @@ public class orientationDetection : MonoBehaviour
 
     public int checkKey()
     {
-        int[] err = new int[2];
-
-        int[,] key1 = new int[3,9]{
-            { 0,3,0,0,0,5,0,0,0},
-            { 0,0,4,0,0,0,0,0,0},
-            { 0,0,0,0,0,0,0,0,1} };
-       
-        int[,] key2 = new int[3, 9]{
-            { 0,0,0,0,0,0,0,9,0},
-            { 0,2,0,0,3,0,0,0,0},
-            { 0,0,6,0,0,0,0,0,0} };
-
+        
         makeRotations();
-
+        printMat();
+        multiplyMatrix();
+        printMat();
         for (int i = 0; i < 3; i++)
         {
             for(int j = 0; j < 9; j++)
             {
-                if (rotated_matrix[j, i] != key1[i,j]) err[0]++;
-                if (rotated_matrix[j, i] != key2[i, j]) err[1]++;
+                if (rotated_matrix[j, i] != key1[i,j]) 
+                    err[0]++;
+                if (rotated_matrix[j, i] != key2[i, j]) 
+                    err[1]++;
             }
         }
 
         Debug.Log("Floating cylinder errors: " + err[0]);
         Debug.Log("Handeled cylinder errors: " + err[1]);
 
+        
         resetRotationMatrix();
 
         if (err[0] == 0 || err[1] == 0)
-        {
+        { err[0] = 0;
+            err[1] = 0;
             return 0;
         }
-
+        err[0] = 0;
+        err[1] = 0;
         return 1;
     }
 
@@ -153,16 +161,18 @@ public class orientationDetection : MonoBehaviour
 
     public void printMat()
     {
-       
+        Debug.Log("PRINTO LA ROTATED MATRIX");
         for(int i = 0; i < 3; i++)
         {
-            Debug.Log(rotated_matrix[0, i] + ", " + rotated_matrix[1, i] + ", " + rotated_matrix[2, i] + ", " + rotated_matrix[3, i] + ", " + rotated_matrix[4, i] 
-                + ", " + rotated_matrix[5, i] +  ", " + rotated_matrix[6, i] + ", " + rotated_matrix[7, i] + ", " + rotated_matrix[8, i] );
+            Debug.Log(rotated_matrix[0, i] + ", " + rotated_matrix[1, i] + ", " + rotated_matrix[2, i] + 
+                ", " + rotated_matrix[3, i] + ", " + rotated_matrix[4, i] + ", " + rotated_matrix[5, i] +  
+                ", " + rotated_matrix[6, i] + ", " + rotated_matrix[7, i] + ", " + rotated_matrix[8, i] );
 
         }
 
 
     }
+
 
     public void multiplyMatrix()
     {
@@ -186,7 +196,7 @@ public class orientationDetection : MonoBehaviour
                     //                      Debug.Log("reading from rotated_matrix, prof " + i + ", riga " + j + ", colonna " + k + " : " + rotated_matrix[k, j, i] + ", with multiplier:  " + multiplier[j, k]);
 
                     values[j] += rotated_matrix[k, j] + value;
-                    Debug.Log("after increment value " + j + ": " + values[j]);
+                   // Debug.Log("after increment value " + j + ": " + values[j]);
                 }
             }
         

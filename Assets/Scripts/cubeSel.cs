@@ -108,6 +108,7 @@ public class cubeSel : MonoBehaviour
                 counter = 0;
             }
             value = getValueColor();
+            //Debug.Log(counter);
 
         }
 

@@ -13761,10 +13761,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cilindroInterno: {fileID: 2054685159}
   OK: {fileID: 2100000, guid: 8d13cac9e313ccd448c6b67db80c4ffd, type: 2}
-  NOK: {fileID: 2100000, guid: 5fc10a6f1b403ba47aae9519fc8f6f0c, type: 2}
+  NOK: {fileID: 2100000, guid: 6ac21c5fef1050043aa715c4748d23e1, type: 2}
   coll2: {fileID: 1155988580}
   key: {fileID: 1618229216}
-  oriDet: {fileID: 0}
+  oriDet: {fileID: 1532627059}
 --- !u!1 &902091345
 GameObject:
   m_ObjectHideFlags: 0
