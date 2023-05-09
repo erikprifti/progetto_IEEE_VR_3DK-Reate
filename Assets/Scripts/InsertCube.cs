@@ -23,13 +23,9 @@ public class InsertCube : MonoBehaviour
             other.GetComponent<Rigidbody>().isKinematic = false;
 
 
-            if (oriDet.checkKey() > 0) { 
-                gabbia.GetComponent<MeshRenderer>().material = NOK;
-            }
-            else
-            {
+          
                 gabbia.GetComponent<MeshRenderer>().material = OK;
-            }
+            
 
 
         }
