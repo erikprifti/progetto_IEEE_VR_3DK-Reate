@@ -18,11 +18,12 @@ public class ConfirmButton : MonoBehaviour
         GameObject challenge = GameObject.FindWithTag("Challenge");
         p.cmdPlayChallenge(k, challenge); //questo command spostarlo su interazione della challenge       
         gameObject.GetComponent<BoxCollider>().enabled = false;
-
-        Debug.LogError(challenge.GetComponent<Challenge>().passivePlayerId);
+        Debug.LogError("play password del selettore after: " + p.gameObject.GetComponent<PlayerManager>().password);
+        //Debug.LogError(challenge.GetComponent<Challenge>().passivePlayerId);
         if (challenge.GetComponent<Challenge>().passivePlayerId == 0)
         {
             p.cmdChallengeUpdate(0, challenge, p.gameObject);
+            
             lb.GetComponent<Leaderboard>().enableText();
         }
         else //passive player sta cpnfermando

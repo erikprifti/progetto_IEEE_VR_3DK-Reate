@@ -36,10 +36,10 @@ public class BackToLobby : NetworkBehaviour
 
         p.gameObject.GetComponent<PlayerManager>().setPrivateKey(key);
 
-        cilindro.GetComponent<ResetPosition>().ResetFunction();
-        cilindro.GetComponent<Rigidbody>().isKinematic = true;
-        cilindroInterno.GetComponent<MeshRenderer>().material = NOK;
-        gb.resetGrabbables();
+        //cilindro.GetComponent<ResetPosition>().ResetFunction();
+        //cilindro.GetComponent<Rigidbody>().isKinematic = true;
+        //cilindroInterno.GetComponent<MeshRenderer>().material = NOK;
+        //gb.resetGrabbables();
 
         //Debug.LogError("In OnSelection in BackToLobby, password del selettore before: " + p.gameObject.GetComponent<PlayerManager>().password);
         //p.cmdPlayChallenge(key, challenge); //questo command spostarlo su interazione della challenge
