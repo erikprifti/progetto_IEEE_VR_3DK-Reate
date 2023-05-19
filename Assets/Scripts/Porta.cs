@@ -53,7 +53,8 @@ public class Porta : NetworkBehaviour
             Debug.LogError("password di " + selectingHand.GetComponentInParent<PlayerManager>().getId() + " alla porta: " + selectingHand.transform.gameObject.GetComponentInParent<PlayerManager>().getPassword());
             if (!verifyPassword(selectingHand.transform.gameObject.GetComponentInParent<PlayerManager>().getPassword())) {
                 showError();
-                return; }
+                return; 
+            }
             selectingHand.GetComponent<HandChild>().player.cmdFinalTeleportPlayer(selectingHand.GetComponent<HandChild>().player.gameObject, gameObject, challenge);
         }
 
