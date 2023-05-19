@@ -208,6 +208,7 @@ public class Challenge : NetworkBehaviour
     [TargetRpc]
     public void rpcTargetChallengeConfirm(NetworkConnection target)
     {
+        Debug.LogError("IN CHALLENGE CONFIRM");
         Display.GetComponentInParent<MeshRenderer>().material = Display.GetComponent<Display>().red;
         Display.GetComponent<Display>().setDisplayConfirm();
         StartButton.GetComponent<BoxCollider>().enabled = true;
