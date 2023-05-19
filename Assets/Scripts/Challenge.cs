@@ -48,13 +48,13 @@ public class Challenge : NetworkBehaviour
 
     private int encrypt(int mex, int key, int module)
     {
-        Debug.LogError("in encrypt");
+        //Debug.LogError("in encrypt");
 
-        Debug.LogError(mex);
+        //Debug.LogError(mex);
 
-        Debug.LogError(key);
+        //Debug.LogError(key);
 
-        Debug.LogError(module);
+        //Debug.LogError(module);
 
         BigInteger c = BigInteger.Pow(mex, key);
         int res = (int)(c % module);
@@ -107,10 +107,11 @@ public class Challenge : NetworkBehaviour
 
         if (activePlayerId == 0 && passivePlayerId == 0) //play chiamato dall attivo dopo aver messo la sua chiave privata con la quale decriptare per prima il messaggio
         {
+            Debug.LogError("dentro if di play challenge");
             activePlayerId = p.id;
             int mex = generateMessage();
             messageEncryptedA = encrypt(mex, key, idKeyPairs.getModule(p.id));
-            Debug.LogError("messageEncryptedA " + messageEncryptedA);
+            Debug.LogError("messageEncryptedA " + messageEncryptedA + " DoorPassword = " + doorPassword);
             porta.setPassword(doorPassword);
             return doorPassword;
         }

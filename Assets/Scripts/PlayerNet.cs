@@ -134,6 +134,7 @@ public class PlayerNet : NetworkBehaviour
     public void cmdPlayChallenge(int key, GameObject challenge)
     {
         int result = challenge.GetComponent<Challenge>().play(key, gameObject.GetComponent<PlayerManager>().id);
+        Debug.LogError("in cmdPlayChallenge di " + gameObject.GetComponent<PlayerManager>().getId()+ " " + result);
         gameObject.GetComponent<PlayerManager>().rcpTargetSetPassword(gameObject.GetComponent<NetworkIdentity>().connectionToClient, result);
 
     }

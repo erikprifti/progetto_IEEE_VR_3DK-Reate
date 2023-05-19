@@ -79,7 +79,7 @@ public class PlayerManager : NetworkBehaviour
     {
         return id;
     }
-
+        
     public int getPassword()
     {
         return password;
@@ -88,6 +88,7 @@ public class PlayerManager : NetworkBehaviour
     [TargetRpc]
     public void rcpTargetSetPassword(NetworkConnection target, int p)
     {
+        Debug.LogError("set password p = "+p);
         password = p;
     }
 
@@ -111,7 +112,7 @@ public class PlayerManager : NetworkBehaviour
 
                 for (int j = 1; j <= leaderBoard.id_player_map.Count; j++)
                 {
-                    Debug.LogError("nome del j-esimo player: " + leaderBoard.id_player_map.GetValueOrDefault(j).GetComponent<PlayerManager>().playerName);
+                   // Debug.LogError("nome del j-esimo player: " + leaderBoard.id_player_map.GetValueOrDefault(j).GetComponent<PlayerManager>().playerName);
                     leaderBoard.rpcSetTextOnLB(j, leaderBoard.id_player_map.GetValueOrDefault(j));
                 }
                 break;

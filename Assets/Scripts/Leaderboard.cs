@@ -79,7 +79,7 @@ public class Leaderboard : NetworkBehaviour
     [ClientRpc]
     public void rpcSetTextOnLB(int id, GameObject player)
     {
-        Debug.LogError(id + "    " +  player.GetComponent<PlayerManager>().playerName);
+       // Debug.LogError(id + "    " +  player.GetComponent<PlayerManager>().playerName);
          addPlayer(id, player);
         //Debug.LogError("after adding in rpcSetTextOnLB, added: " + id);
        // id_player_map.GetValueOrDefault(id);
