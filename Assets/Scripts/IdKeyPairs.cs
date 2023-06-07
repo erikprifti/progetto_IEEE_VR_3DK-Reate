@@ -10,11 +10,13 @@ public class IdKeyPairs : MonoBehaviour
 
     static readonly Dictionary<int, PublicKey> idKeyPairs = new Dictionary<int, PublicKey>
     {
-        { 1, new PublicKey(203, 253)},
-        { 2, new PublicKey(435, 493)},
-        { 3, new PublicKey(811, 893)},
-        { 4, new PublicKey(181, 221)},
+        { 1, new PublicKey(203, 253)}, //private key = (867, 253)
+        { 2, new PublicKey(435, 493)}, //private key = (379, 493)
+        { 3, new PublicKey(811, 893)}, //private key = (487, 893)
+        { 4, new PublicKey(181, 221)}, //private key = (157, 221)
     };
+    
+    
 
 
     static Dictionary<int, bool> id_available = new Dictionary<int, bool>()
