@@ -3,6 +3,8 @@
 
 ![cube1](KeysScreenshots/vr23d-sub1063-i16.png) 
 
+## Video
+Link to video: https://youtu.be/8aWGNW8Q-gI
 
 ## Abstract
 The Metaverse is becoming a social and economic ecosystem in which users can meet each other, exchange personal data, and make transactions. In this respect, authentication can be easily forecasted to be one of the key aspects for the development of social, immersive Virtual Reality (VR) environments. Notwithstanding, there is still a lack of techniques that can authenticate the users while protecting their sensitive data and leveraging the intrinsic characteristics of VR experiences. In this scenario, the present paper introduces a novel authentication schema based on asymmetric cryptography. More specifically, the proposed approach supports the creation of breakout rooms in which only mutually authenticated users can access. Due to the adoption of the asymmetric cryptography schema, the users are requested to create and insert their personal and secret private keys. To this aim, the current paper proposes and investigates four different interfaces for creating and inserting the keys, leveraging the three-dimensionality of the immersive environment.
