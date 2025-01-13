@@ -1,5 +1,5 @@
 # 3DK-Reate: Create Your Own 3D Key for Distributed Authentication in the Metaverse
-#### 2023 IEEE Gaming, Entertainment, and Media Conference (GEM) -> [paper]([https://ieeexplore.ieee.org/abstract/document/10390314]))
+#### 2023 IEEE Gaming, Entertainment, and Media Conference (GEM) -> [paper](https://ieeexplore.ieee.org/abstract/document/10390314)
 
 ![cube1](KeysScreenshots/vr23d-sub1063-i16.png) 
 
